@@ -1,9 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
-  entry: './demo/main.js',
+  entry: './site/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -42,14 +41,14 @@ module.exports = {
     ]
   },
   vue: {
+    // autoprefixer: {
+    //   browsers: ['last 2 versions']
+    // },
+
     loaders: {
-      css: ExtractTextPlugin.extract("css"),
-      sass: ExtractTextPlugin.extract("css!sass")
+      scss: 'style!css!sass'
     }
   },
-  plugins: [
-    new ExtractTextPlugin("style.css")
-  ],
   devServer: {
     historyApiFallback: true,
     noInfo: true
