@@ -1,5 +1,5 @@
 # vonic
-Vue.js be cool with ionic UI.
+SPA Framework based on Vue.js, be cool with ionic UI.
 
 ## setup
 ```

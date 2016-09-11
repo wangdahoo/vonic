@@ -19,7 +19,9 @@
     }
   }
 </script>
-<style>
+<style lang="scss">
+  @import "../scss/mixins";
+
   html, body {
     height: 100%;
   }
@@ -29,6 +31,13 @@
   }
 
   .view-container {
-    height: 100%;
+    @include display-flex();
   }
+
+  .page {
+    @include flex();
+    background-color: #f4f4f4;
+    padding: 54px 0 0 0;
+  }
+
 </style>

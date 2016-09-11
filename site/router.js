@@ -6,10 +6,17 @@ const routers = {
     }
   },
 
-  '/dashboard': {
+  '/home': {
     component (resolve) {
-      require(['./views/dashboard.vue'], resolve);
+      require(['./views/home.vue'], resolve);
     }
   },
+
+  '/widgets/radio': {
+    component (resolve) {
+      require(['./views/radio.vue'], resolve);
+    }
+  },
+
 };
 export default routers;
