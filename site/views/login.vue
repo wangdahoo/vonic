@@ -1,6 +1,6 @@
 <template>
   <div class="view-container">
-    <von-header title="Login" show-back-button="false">
+    <von-header title="Login">
     </von-header>
     <div class="page">
 
@@ -10,15 +10,15 @@
 
       <div class="list login-form">
         <label class="item item-input">
-          <input type="tel" placeholder="Username">
+          <input type="text" placeholder="Username" v-model="username">
         </label>
         <label class="item item-input">
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Password" v-model="password">
         </label>
       </div>
 
       <div class="padding">
-        <button class="button button-positive button-block" @click="login()">
+        <button class="button button-positive button-block" @click="login(username, password)">
           login
         </button>
       </div>
@@ -58,13 +58,15 @@
 
     data(){
       return {
+        username: 'admin',
+        password: 'admin',
         tips: 'Use \'admin\' as username & password.'
       }
     },
 
     methods: {
-      login() {
-        $router.go('home')
+      login(username, password) {
+        console.log(username, password);
       }
     }
   }
