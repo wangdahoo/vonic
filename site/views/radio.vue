@@ -4,7 +4,11 @@
     </von-header>
 
     <div class="page">
-      <von-radio :options="gender"></von-radio>
+      <von-radio :options="genderOptions" :value.sync="gender"></von-radio>
+
+      <p class="padding">
+        checked: {{ gender }}
+      </p>
     </div>
   </div>
 </template>
@@ -14,7 +18,7 @@
 </style>
 <script>
   import VonHeader from '../../src/components/von-header.vue'
-  import VonRadio from '../../src/components/von-radio/index.vue'
+  import VonRadio from '../../src/components/von-radio.vue'
 
   export default{
     components: {
@@ -24,16 +28,10 @@
 
     data(){
       return {
-        gender: [{
-          text: 'Male'
-        },{
-          text: 'Female'
-        }]
+        gender: 0,
+
+        genderOptions: ["Male", "Female"]
       }
-    },
-
-    methods: {
-
     }
   }
 </script>
