@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+html, body {
+  height: 100%;
+}
+
+app {
+  height: 100%;
+}
+
+.item {
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444;
+}

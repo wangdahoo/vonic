@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './site/main.js',
+  entry: './demo/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -10,11 +10,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, '../node_modules')],
+    fallback: [path.join(__dirname, './node_modules')],
     alias: {
-      'src': path.resolve(__dirname, '../../src'),
-      'assets': path.resolve(__dirname, '../../src/assets'),
-      'components': path.resolve(__dirname, '../../src/components')
+      'vonic': path.resolve(__dirname, './src'),
     }
   },
   resolveLoader: {

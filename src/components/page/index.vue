@@ -1,8 +1,23 @@
 <template>
-  <div class="page"><slot></slot></div>
+  <div class="page" v-bind:class="{'has-header': hasHeader == 'true'}"><slot></slot></div>
 </template>
 
-<style lang="scss" scoped>
+<script>
+  export default {
+    props: {
+      hasHeader: {
+        type: [String],
+        default() {
+          return 'false'
+        }
+      }
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import "../scss/scafolding";
+
   .page {
     box-sizing: border-box;
     position: absolute;
@@ -12,8 +27,11 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #F4F4F4;
-    touch-action: none;
-    -ms-touch-action: none;
+
+    background-color: $default-page-bg;
+
+    &.has-header {
+      padding-top: $header-height + 10px;
+    }
   }
 </style>

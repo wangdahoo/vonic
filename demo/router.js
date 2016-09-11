@@ -12,15 +12,9 @@ const routers = {
     }
   },
 
-  '/effects/pull-to-refresh': {
+  '/effects/scroll': {
     component (resolve) {
-      require(['./views/pull-to-refresh.vue'], resolve);
-    }
-  },
-
-  '/showcases/login': {
-    component (resolve) {
-      require(['./views/login.vue'], resolve);
+      require(['./views/scroll.vue'], resolve);
     }
   },
 

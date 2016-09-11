@@ -1,5 +1,7 @@
 <template>
-  <div class="page">
+  <page has-header="true">
+    <von-header title="Scroll"></von-header>
+    <page-content>
       <scroll :on-refresh="onRefresh" :on-infinite="onInfinite">
         <div class='content-padded' id="list">
           <h2>current time: {{time}}</h2>
@@ -22,13 +24,18 @@
           <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
         </div>
       </scroll>
-  </div>
+    </page-content>
+  </page>
 </template>
 
 <script>
-  import Scroll from '../../src/components/scroll'
+  import { Page, PageContent, VonHeader, Scroll } from 'vonic'
+
   export default {
     components: {
+      Page,
+      PageContent,
+      VonHeader,
       Scroll
     },
     data () {

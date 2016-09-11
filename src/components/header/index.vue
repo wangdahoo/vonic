@@ -1,16 +1,14 @@
 <template>
   <div class="{{ headerClass }}">
     <!-- backButton -->
-    <button v-show="showBackButton" class="button button-clear" @click="onBackButtonClick()">
+    <button v-show="showBackButton == 'true'" class="button button-clear" @click="onBackButtonClick()">
         <i class="icon ion-ios-arrow-back positive"></i> <span class="positive"> {{ backButton.text }}</span>
     </button>
 
     <h1 class="title">{{ title }}</h1>
   </div>
 </template>
-<style>
 
-</style>
 <script>
   export default{
     props: {
@@ -22,19 +20,16 @@
         }
       },
       showBackButton: {
-        type: Boolean,
+        type: String,
         default() {
-          return true
-        },
-        coerce(val) {
-          return val != 'false'
+          return 'true'
         }
       },
       backButton: {
         type: Object,
         default() {
           return {
-            text: 'Back',
+            text: '返回',
             url: ''
           }
         }
