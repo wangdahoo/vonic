@@ -9,6 +9,10 @@
       单选框
       <i class="icon ion-ios-arrow-right"></i>
     </div>
+    <div class="item item-icon-right" v-link="{ path: '/widgets/checkbox' }">
+      复选框
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
 
     <div class="item item-divider">
       效果

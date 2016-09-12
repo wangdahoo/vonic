@@ -29,7 +29,8 @@
     height: 100%;
     background-color: $default-page-bg;
 
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     &.has-header {

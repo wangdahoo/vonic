@@ -12,6 +12,12 @@ const routers = {
     }
   },
 
+  '/widgets/checkbox': {
+    component (resolve) {
+      require(['./views/checkbox.vue'], resolve);
+    }
+  },
+
   '/effects/scroll': {
     component (resolve) {
       require(['./views/scroll.vue'], resolve);
