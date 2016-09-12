@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-  @import "../scss/mixins";
+  @import "../scss/scafolding";
 
   .page-content {
     @include flex();

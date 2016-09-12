@@ -27,11 +27,16 @@
     right: 0;
     width: 100%;
     height: 100%;
-
     background-color: $default-page-bg;
 
     &.has-header {
-      padding-top: $header-height + 10px;
+      .page-content {
+        padding-top: $header-height;
+      }
+
+      .scroll {
+        top: 0
+      }
     }
   }
 </style>

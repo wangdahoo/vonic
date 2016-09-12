@@ -18,16 +18,16 @@
         <slot name="refresh">
           <div class="preloader"></div>
           <div class="pull-to-refresh-arrow"></div>
-          <span class="label-down">Pull Down to Refresh</span>
-          <span class="label-up">Release to Refresh</span>
-          <span class="label-refresh">Refreshing...</span>
+          <span class="label-down">下拉刷新</span>
+          <span class="label-up">松开刷新</span>
+          <span class="label-refresh">正在刷新..</span>
         </slot>
       </div>
       <slot></slot>
       <div class="infinite-layer" v-if="onInfinite">
         <slot name="infinite">
           <div class="infinite-preloader"></div>
-          <div>Loading...</div>
+          <span class="label-loading">正在加载..</span>
         </slot>
       </div>
     </div>
@@ -135,7 +135,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-  $layer-height: 2.2rem;
+  $layer-height: 40px;
   $color-text-gray: #aaa;
 
   @keyframes preloader-spin {
@@ -147,7 +147,6 @@ export default {
   @mixin preloader() {
     width: 20px;
     height: 20px;
-    transform-origin: 50%;
     animation: preloader-spin 1s steps(12, end) infinite;
     &:after {
       display: block;
@@ -155,9 +154,8 @@ export default {
       height: 100%;
       content: "";
       background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><line id='l' x1='60' x2='60' y1='7' y2='27' stroke='#6c6c6c' stroke-width='11' stroke-linecap='round'/></defs><g><use xlink:href='#l' opacity='.27'/><use xlink:href='#l' opacity='.27' transform='rotate(30 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(60 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(90 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(120 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(150 60,60)'/><use xlink:href='#l' opacity='.37' transform='rotate(180 60,60)'/><use xlink:href='#l' opacity='.46' transform='rotate(210 60,60)'/><use xlink:href='#l' opacity='.56' transform='rotate(240 60,60)'/><use xlink:href='#l' opacity='.66' transform='rotate(270 60,60)'/><use xlink:href='#l' opacity='.75' transform='rotate(300 60,60)'/><use xlink:href='#l' opacity='.85' transform='rotate(330 60,60)'/></g></svg>");
-
       background-repeat: no-repeat;
-      background-position: 50%;
+      background-position: center;
       background-size: 100%;
     }
   }
@@ -175,22 +173,22 @@ export default {
       @include preloader();
     }
     .pull-to-refresh-arrow {
-      width: 0.65rem;
-      height: 1rem;
+      width: 20px;
+      height: 20px;
       background: no-repeat center;
       background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 40'><polygon points='9,22 9,0 17,0 17,22 26,22 13.5,40 0,22' fill='#8c8c8c'/></svg>");
-
-      background-size: 0.65rem 1rem;
+      background-size: 10.4px 16px;
       z-index: 10;
       transform: rotate(0deg) translate3d(0, 0, 0);
       transition-duration: 300ms;
+      margin-left: -20px;
     }
 
   }
 
   .scroll {
     position: absolute;
-    top: 0;
+    top: -$layer-height;
     right: 0;
     bottom: 0;
     left: 0;
@@ -228,26 +226,22 @@ export default {
 
   .scroll-inner {
     position: absolute;
-    top: -$layer-height;
+    /* top: -$layer-height; */
+    top: 0;
     width: 100%;
     transition-duration: 300ms;
   }
 
   .label-down, .label-up, .label-refresh {
     display: none;
-    width: 9rem;
     text-align: center;
-  }
-
-  .label-refresh {
-    width: 5rem;
   }
 
   .pull-down .label-down,
   .pull-up .label-up,
   .refreshing .label-refresh {
     display: block;
-    padding-left: .5rem;
+    width: 5.5em;
   }
 
   .pull-to-refresh-layer {
@@ -257,7 +251,7 @@ export default {
   }
 
   .infinite-layer {
-    height: 2.2rem;
+    height: $layer-height;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,6 +260,12 @@ export default {
 
   .infinite-preloader {
     @include preloader();
-    margin-right: .5rem;
   }
+
+  .label-loading {
+    display: block;
+    width: 5.5em;
+    text-align: center;
+  }
+
 </style>
