@@ -1,11 +1,5 @@
 const routers = {
 
-  '/login': {
-    component (resolve) {
-      require(['./views/login.vue'], resolve);
-    }
-  },
-
   '/home': {
     component (resolve) {
       require(['./views/home.vue'], resolve);
@@ -15,6 +9,12 @@ const routers = {
   '/widgets/radio': {
     component (resolve) {
       require(['./views/radio.vue'], resolve);
+    }
+  },
+
+  '/effects/scroll': {
+    component (resolve) {
+      require(['./views/scroll.vue'], resolve);
     }
   },
 
