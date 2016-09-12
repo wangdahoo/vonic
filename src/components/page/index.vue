@@ -16,7 +16,7 @@
 </script>
 
 <style lang="scss">
-  @import "../scss/scafolding";
+  @import "../scss/vonic";
 
   .page {
     box-sizing: border-box;
@@ -34,7 +34,7 @@
     -webkit-overflow-scrolling: touch;
 
     &.has-header {
-      padding-top: $header-height + 10px;
+      padding-top: $header-height;
 
       .scroll {
         top: 0

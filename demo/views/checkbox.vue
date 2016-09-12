@@ -1,6 +1,11 @@
 <template>
   <von-header title="复选框"></von-header>
   <page has-header="true">
+
+    <div class="item item-divider">
+      选择感兴趣的板块:
+    </div>
+
     <von-checkbox :options="topics" :value.sync="chosenTopics"></von-checkbox>
 
     <p class="padding">

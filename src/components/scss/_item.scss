@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixins";
+
+.item {
+  border: none; // clear border
+
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444;
+
+  @include thin-border($default-border-color, 0);
+
+  &:after {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  &.item-divider {
+    margin-top: 1px;
+    &:after {
+      border: none;
+    }
+  }
+
+}

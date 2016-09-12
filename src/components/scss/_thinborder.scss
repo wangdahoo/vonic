@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+.thin-border-vertical {
+  @include thin-border($default-border-color, 0);
+  &:after {
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+.thin-border-top {
+  @include thin-border($default-border-color, 0);
+  &:after {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+.thin-border-bottom {
+  @include thin-border($default-border-color, 0);
+  &:after {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}

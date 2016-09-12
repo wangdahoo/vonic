@@ -1,6 +1,10 @@
 <template>
   <von-header title="单选框"></von-header>
   <page has-header="true">
+    <div class="item item-divider">
+      选择性别:
+    </div>
+
     <von-radio :options="genderOptions" :value.sync="gender"></von-radio>
 
     <p class="padding">
