@@ -6,11 +6,15 @@
       表单
     </div>
     <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
-      单选框
+      单选框 Radio
       <i class="icon ion-ios-arrow-right"></i>
     </div>
     <div class="item item-icon-right" v-link="{ path: '/widgets/checkbox' }">
-      复选框
+      复选框 Checkbox
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+    <div class="item item-icon-right" v-link="{ path: '/widgets/toggle' }">
+      开关按钮 Toggle
       <i class="icon ion-ios-arrow-right"></i>
     </div>
 

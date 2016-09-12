@@ -13,11 +13,6 @@
   @import "../scss/variables";
 
   .von-checkbox {
-    .item {
-      padding: 10px 15px;
-      font-size: 14px;
-      line-height: 20px;
-    }
 
     .item-icon-right {
       .icon {

@@ -22,6 +22,7 @@
     "babel-preset-stage-2": "^6.0.0",
     "cross-env": "^1.0.6",
     "css-loader": "^0.23.0",
+    "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.9.3",
     "sass-loader": "^4.0.2",

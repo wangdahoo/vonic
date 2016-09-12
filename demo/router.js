@@ -18,6 +18,12 @@ const routers = {
     }
   },
 
+  '/widgets/toggle': {
+    component (resolve) {
+      require(['./views/toggle.vue'], resolve);
+    }
+  },
+
   '/effects/scroll': {
     component (resolve) {
       require(['./views/scroll.vue'], resolve);

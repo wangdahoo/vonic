@@ -12,7 +12,7 @@
 <style lang="scss" scoped>
   .von-radio {
     .item {
-      padding: 10px 15px 10px 40px;
+      padding: 15px 15px 15px 50px;
       font-size: 14px;
       line-height: 20px;
     }
@@ -20,7 +20,7 @@
     .item-icon-left {
       .icon {
         font-size: 28px;
-        left: 5px;
+        left: 10px;
       }
     }
 
