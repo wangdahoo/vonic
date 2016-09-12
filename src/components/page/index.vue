@@ -29,10 +29,11 @@
     height: 100%;
     background-color: $default-page-bg;
 
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
     &.has-header {
-      .page-content {
-        padding-top: $header-height;
-      }
+      padding-top: $header-height + 10px;
 
       .scroll {
         top: 0

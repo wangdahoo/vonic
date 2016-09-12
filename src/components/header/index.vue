@@ -9,6 +9,12 @@
   </div>
 </template>
 
+<style lang="scss" scoped>
+  .bar-header {
+    position: fixed;
+  }
+</style>
+
 <script>
   export default{
     props: {

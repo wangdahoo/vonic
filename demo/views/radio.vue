@@ -1,15 +1,12 @@
 <template>
+  <von-header title="单选框"></von-header>
   <page has-header="true">
-    <page-content>
-      <von-header title="单选框"></von-header>
+    <von-radio :options="genderOptions" :value.sync="gender"></von-radio>
 
-      <von-radio :options="genderOptions" :value.sync="gender"></von-radio>
-
-      <p class="padding">
-        option index: {{ gender }}<br>
-        option text: {{ genderOptions[gender] }}
-      </p>
-    </page-content>
+    <p class="padding">
+      option index: {{ gender }}<br>
+      option text: {{ genderOptions[gender] }}
+    </p>
   </page>
 </template>
 <style lang="scss" scoped>

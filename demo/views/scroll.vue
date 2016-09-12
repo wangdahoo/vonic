@@ -1,56 +1,54 @@
 <template>
+  <von-header title="Scroll"></von-header>
   <page has-header="true">
-    <von-header title="Scroll"></von-header>
-    <page-content>
-      <scroll :on-refresh="onRefresh" :on-infinite="onInfinite">
-        <div class='padding' id="words">
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-          <p>Keep Walking, be 2 with you.</p>
-        </div>
-      </scroll>
-    </page-content>
+    <scroll :on-refresh="onRefresh" :on-infinite="onInfinite">
+      <div class='padding' id="words">
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+        <p>Keep Walking, be 2 with you.</p>
+      </div>
+    </scroll>
   </page>
 </template>
 
 <script>
-  import { Page, PageContent, VonHeader, Scroll } from 'vonic'
+  import {Page, PageContent, VonHeader, Scroll} from 'vonic'
 
   export default {
     components: {
