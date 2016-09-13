@@ -24,6 +24,12 @@ const routers = {
     }
   },
 
+  '/widgets/tabs': {
+    component (resolve) {
+      require(['./views/tabs.vue'], resolve);
+    }
+  },
+
   '/effects/scroll': {
     component (resolve) {
       require(['./views/scroll.vue'], resolve);

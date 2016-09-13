@@ -17,6 +17,10 @@
       开关按钮 Toggle
       <i class="icon ion-ios-arrow-right"></i>
     </div>
+    <div class="item item-icon-right" v-link="{ path: '/widgets/tabs' }">
+      Tabs
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
 
     <div class="item item-divider">
       效果

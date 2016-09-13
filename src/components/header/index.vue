@@ -1,7 +1,7 @@
 <template>
   <div class="{{ headerClass }}">
     <!-- backButton -->
-    <button v-show="showBackButton == 'true'" class="button button-clear" @click="onBackButtonClick()">
+    <button class="button button-clear" v-show="showBackButton == 'true'" @click="onBackButtonClick()">
         <i class="icon ion-ios-arrow-back positive"></i> <span class="positive"> {{ backButton.text }}</span>
     </button>
 
