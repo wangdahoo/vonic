@@ -8,17 +8,16 @@
     </p>
 
     <p>
-      active category index: {{ activeCategoryIndex }}
+      active category index: {{ categories[activeCategoryIndex] }}
     </p>
 
     <tabs :tab-items="categories"
           :active-index.sync="activeCategoryIndex"
           position="bottom"
           bg-color="assertive"
-          tab-color="light"></tabs>
-
-
-
+          tab-color="light"
+          :on-tab-changed="onCategoryChanged"
+    ></tabs>
   </page>
 </template>
 <style lang="scss" scoped>
@@ -62,6 +61,12 @@
         ],
 
         activeCategoryIndex: 0
+      }
+    },
+
+    methods: {
+      onCategoryChanged(activeIndex) {
+        console.log('category changed, current tab index is:', activeIndex);
       }
     }
   }

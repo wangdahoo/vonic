@@ -20,7 +20,6 @@
     margin-top: 0px;
   }
 
-
 </style>
 <script>
 
@@ -56,12 +55,17 @@
         validator(value) {
           return value >= 0
         }
+      },
+
+      onTabChanged: {
+        type: Function
       }
     },
 
     methods: {
       tabChanged(index) {
         this.activeIndex = index
+        if (this.onTabChanged) this.onTabChanged(this.activeIndex)
       }
     }
   }

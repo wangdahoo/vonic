@@ -58,15 +58,12 @@
       Scroll
     },
     data () {
-      return {
-        time: new Date()
-      }
+      return {}
     },
     methods: {
       onRefresh (done) {
         let self = this
         setTimeout(function () {
-          self.time = new Date()
           done()  // call done
         }, 1500)
       },
