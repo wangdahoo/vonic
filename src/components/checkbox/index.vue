@@ -2,7 +2,7 @@
   <div class="list von-checkbox">
     <label class="item item-icon-right"
            v-for="(index, option) in options">
-      <input type="checkbox" name="{{ checkboxId }}" v-model="value" @click="onOptionClick(index)">
+      <input type="checkbox" name="{{ checkboxName }}" id="{{ checkboxName + '-' + index }}" @click="onOptionClick(index)">
       <span>{{ option }}</span>
       <i class="icon"
          :class="{'ion-ios-checkmark-empty assertive': isChecked(index)}"></i>
@@ -65,7 +65,7 @@
 
     data() {
       return {
-        checkboxId: 'von-checkbox-' + uuid.v4().substr(0, 8)
+        checkboxName: 'von-checkbox-' + uuid.v4().substr(0, 8),
       }
     }
   }
