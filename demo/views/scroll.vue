@@ -48,12 +48,11 @@
 </template>
 
 <script>
-  import {Page, PageContent, VonHeader, Scroll} from 'vonic'
+  import {Page, VonHeader, Scroll} from 'vonic'
 
   export default {
     components: {
       Page,
-      PageContent,
       VonHeader,
       Scroll
     },

@@ -3,7 +3,7 @@
 
   <page has-header="true">
     <div class="item item-divider">
-      表单
+      组件
     </div>
     <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
       单选框 Radio
@@ -21,6 +21,11 @@
       Tabs
       <i class="icon ion-ios-arrow-right"></i>
     </div>
+    <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
+      Cells
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+
 
     <div class="item item-divider">
       效果
@@ -47,12 +52,11 @@
 
 </style>
 <script>
-  import { Page, PageContent, VonHeader } from 'vonic'
+  import { Page, VonHeader } from 'vonic'
 
   export default{
     components: {
       Page,
-      PageContent,
       VonHeader
     },
 

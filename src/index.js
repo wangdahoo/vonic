@@ -5,6 +5,7 @@ import VonRadio from './components/radio'
 import VonCheckbox from './components/checkbox'
 import VonToggle from './components/toggle'
 import Tabs from './components/tabs'
+import Cells from './components/cells'
 
 module.exports = {
   Page,
@@ -13,5 +14,6 @@ module.exports = {
   VonRadio,
   VonCheckbox,
   VonToggle,
-  Tabs
+  Tabs,
+  Cells
 }

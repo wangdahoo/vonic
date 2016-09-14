@@ -18,12 +18,11 @@
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, PageContent, VonHeader, VonCheckbox } from 'vonic'
+  import { Page, VonHeader, VonCheckbox } from 'vonic'
 
   export default{
     components: {
       Page,
-      PageContent,
       VonHeader,
       VonCheckbox
     },

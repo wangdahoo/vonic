@@ -30,6 +30,12 @@ const routers = {
     }
   },
 
+  '/widgets/cells': {
+    component (resolve) {
+      require(['./views/cells.vue'], resolve);
+    }
+  },
+
   '/effects/scroll': {
     component (resolve) {
       require(['./views/scroll.vue'], resolve);

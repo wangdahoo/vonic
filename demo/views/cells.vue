@@ -1,0 +1,100 @@
+<template>
+  <von-header title="Cells"></von-header>
+  <page has-header="true">
+    <cells :cell-items="cells_33" cell-class="cells_33-cell"
+           :on-cell-click="onCellClick"></cells>
+    <cells :cell-items="cells_24" cell-class="cells_44-cell"
+           :rows="2" :cols="4"></cells>
+  </page>
+</template>
+<style lang="scss">
+
+  .cells_33-cell {
+    color: #666;
+    padding: 40px 0 !important;
+  }
+
+  .cells_44-cell {
+    color: #666;
+    padding: 25px 0;
+
+    span {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -moz-box-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+
+      color: #666;
+
+      .icon {
+        font-size: 28px;
+      }
+    }
+  }
+
+</style>
+<script>
+  import _ from 'lodash'
+  import { Page, VonHeader, Cells } from 'vonic'
+
+  export default{
+    components: {
+      Page,
+      VonHeader,
+      Cells
+    },
+
+    data(){
+      return {
+        cells_33: [
+          'cell 1',
+          'cell 2',
+          'cell 3',
+          'cell 4',
+          'cell 5',
+          'cell 6',
+          'cell 7'
+        ],
+
+        cells_24: [
+          '<span><i class="icon ion-heart assertive"></i><i>cell 1</i></span>',
+          '<span><i class="icon ion-gear-a positive"></i><i>cell 2</i></span>',
+          '<span><i class="icon ion-chatbubbles balanced"></i><i>cell 2</i></span>',
+          '<span><i class="icon ion-star energized"></i><i>cell 4</i></span>',
+          '<span><i class="icon ion-paper-airplane calm"></i><i>cell 5</i></span>',
+          '<span><i class="icon ion-images royal"></i><i>cell 6</i></span>',
+          '<span><i class="icon ion-android-person dark"></i><i>cell 7</i></span>',
+        ],
+
+      }
+    },
+
+    methods: {
+      onCellClick(cellIndex) {
+        alert('cell ' + cellIndex + ' clicked!');
+      }
+    }
+  }
+</script>

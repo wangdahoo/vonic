@@ -19,12 +19,11 @@
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, PageContent, VonHeader, VonRadio } from 'vonic'
+  import { Page, VonHeader, VonRadio } from 'vonic'
 
   export default{
     components: {
       Page,
-      PageContent,
       VonHeader,
       VonRadio
     },

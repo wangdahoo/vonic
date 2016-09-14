@@ -31,12 +31,11 @@
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, PageContent, VonHeader, Tabs } from 'vonic'
+  import { Page, VonHeader, Tabs } from 'vonic'
 
   export default{
     components: {
       Page,
-      PageContent,
       VonHeader,
       Tabs
     },

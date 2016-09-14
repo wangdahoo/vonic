@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",
+    "fastclick": "^1.0.6",
     "lodash": "^4.15.0",
     "node-uuid": "^1.4.7",
     "vue": "^1.0.0",

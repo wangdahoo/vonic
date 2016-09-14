@@ -29,3 +29,6 @@ router.redirect({
 router.start(App, 'app');
 
 window.$router = router;
+
+// import FastClick from 'fastclick'
+// FastClick.attach(document.body);
