@@ -1,6 +1,7 @@
 <template>
-  <von-header title="单选框"></von-header>
-  <page has-header="true">
+  <div class="page has-header">
+    <von-header title="单选框"></von-header>
+
     <div class="item item-divider">
       选择性别:
     </div>
@@ -11,7 +12,7 @@
       option index: {{ gender }}<br>
       option text: {{ genderOptions[gender] }}
     </p>
-  </page>
+  </div>
 </template>
 <style lang="scss" scoped>
 
@@ -19,7 +20,7 @@
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, VonHeader, VonRadio } from 'vonic'
+  import {Page, VonHeader, VonRadio} from 'vonic'
 
   export default{
     components: {

@@ -1,11 +1,12 @@
 <template>
-  <von-header title="Cells"></von-header>
-  <page has-header="true">
+  <div class="page has-header">
+    <von-header title="Cells"></von-header>
+
     <cells :cell-items="cells_33" cell-class="cells_33-cell"
            :on-cell-click="onCellClick"></cells>
     <cells :cell-items="cells_24" cell-class="cells_44-cell"
            :rows="2" :cols="4"></cells>
-  </page>
+  </div>
 </template>
 <style lang="scss">
 
@@ -57,7 +58,7 @@
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, VonHeader, Cells } from 'vonic'
+  import {Page, VonHeader, Cells} from 'vonic'
 
   export default{
     components: {

@@ -1,6 +1,7 @@
 <template>
-  <von-header title="Tabs"></von-header>
-  <page has-header="true">
+  <div class="page has-header">
+    <von-header title="Tabs"></von-header>
+
     <tabs :tab-items="tabs" :active-index.sync="activeTabIndex"></tabs>
 
     <p>
@@ -18,7 +19,7 @@
           tab-color="light"
           :on-tab-changed="onCategoryChanged"
     ></tabs>
-  </page>
+  </div>
 </template>
 <style lang="scss" scoped>
   p {
@@ -31,7 +32,7 @@
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, VonHeader, Tabs } from 'vonic'
+  import {Page, VonHeader, Tabs} from 'vonic'
 
   export default{
     components: {

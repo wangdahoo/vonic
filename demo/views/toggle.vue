@@ -1,19 +1,19 @@
 <template>
-  <von-header title="开关按钮"></von-header>
-  <page has-header="true">
+  <div class="page has-header">
+    <von-header title="开关按钮"></von-header>
 
     <von-toggle :text="toggleText" :value.sync="pushNotification"></von-toggle>
 
     <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
 
-  </page>
+  </div>
 </template>
 <style lang="scss" scoped>
 
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, VonHeader, VonToggle } from 'vonic'
+  import {Page, VonHeader, VonToggle} from 'vonic'
 
   export default{
     components: {

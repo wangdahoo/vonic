@@ -1,6 +1,7 @@
 <template>
-  <von-header title="Scroll"></von-header>
-  <page has-header="true">
+  <div class="page has-header">
+    <von-header title="Scroll"></von-header>
+
     <scroll :on-refresh="onRefresh" :on-infinite="onInfinite">
       <div class='padding' id="words">
         <p>Keep Walking, be 2 with you.</p>
@@ -44,7 +45,7 @@
         <p>Keep Walking, be 2 with you.</p>
       </div>
     </scroll>
-  </page>
+  </div>
 </template>
 
 <script>

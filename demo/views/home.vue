@@ -1,7 +1,7 @@
 <template>
-  <von-header title="Vonic" show-back-button="false"></von-header>
+  <div class="page has-header">
+    <von-header title="Vonic" show-back-button="false"></von-header>
 
-  <page has-header="true">
     <div class="item item-divider">
       组件
     </div>
@@ -26,7 +26,6 @@
       <i class="icon ion-ios-arrow-right"></i>
     </div>
 
-
     <div class="item item-divider">
       效果
     </div>
@@ -34,7 +33,7 @@
       Scroll
       <i class="icon ion-ios-arrow-right"></i>
     </div>
-  </page>
+  </div>
 </template>
 <style lang="scss" scoped>
 
@@ -52,7 +51,7 @@
 
 </style>
 <script>
-  import { Page, VonHeader } from 'vonic'
+  import {Page, VonHeader} from 'vonic'
 
   export default{
     components: {
@@ -61,13 +60,9 @@
     },
 
     data(){
-      return {
-
-      }
+      return {}
     },
 
-    methods: {
-
-    }
+    methods: {}
   }
 </script>

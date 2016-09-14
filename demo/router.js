@@ -1,45 +1,31 @@
 const routers = {
 
   '/home': {
-    component (resolve) {
-      require(['./views/home.vue'], resolve);
-    }
+    component: require('./views/home.vue')
   },
 
   '/widgets/radio': {
-    component (resolve) {
-      require(['./views/radio.vue'], resolve);
-    }
+    component: require('./views/radio.vue')
   },
 
   '/widgets/checkbox': {
-    component (resolve) {
-      require(['./views/checkbox.vue'], resolve);
-    }
+    component: require('./views/checkbox.vue')
   },
 
   '/widgets/toggle': {
-    component (resolve) {
-      require(['./views/toggle.vue'], resolve);
-    }
+    component: require('./views/toggle.vue')
   },
 
   '/widgets/tabs': {
-    component (resolve) {
-      require(['./views/tabs.vue'], resolve);
-    }
+    component: require('./views/tabs.vue')
   },
 
   '/widgets/cells': {
-    component (resolve) {
-      require(['./views/cells.vue'], resolve);
-    }
+    component: require('./views/cells.vue')
   },
 
   '/effects/scroll': {
-    component (resolve) {
-      require(['./views/scroll.vue'], resolve);
-    }
+    component: require('./views/scroll.vue')
   },
 
 };

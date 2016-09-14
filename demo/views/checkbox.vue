@@ -1,6 +1,6 @@
 <template>
-  <von-header title="复选框"></von-header>
-  <page has-header="true">
+  <div class="page has-header">
+    <von-header title="复选框"></von-header>
 
     <div class="item item-divider">
       选择感兴趣的板块:
@@ -11,14 +11,14 @@
     <p class="padding">
       chosen topics: {{ chosenTopics }}
     </p>
-  </page>
+  </div>
 </template>
 <style lang="scss" scoped>
 
 </style>
 <script>
   import _ from 'lodash'
-  import { Page, VonHeader, VonCheckbox } from 'vonic'
+  import {Page, VonHeader, VonCheckbox} from 'vonic'
 
   export default{
     components: {
