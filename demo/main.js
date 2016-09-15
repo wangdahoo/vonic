@@ -1,10 +1,50 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Routers from './router'
+Vue.use(VueRouter)
+
+// Demos
+import Home from './components/home'
+import Radio from './components/radio'
+import Checkbox from './components/checkbox'
+import Toggle from './components/toggle'
+import Tabs from './components/tabs'
+import Cells from './components/cells'
+import Scroll from './components/scroll'
+
+const routers = {
+
+  '/home': {
+    component: Home
+  },
+
+  '/widgets/radio': {
+    component: Radio
+  },
+
+  '/widgets/checkbox': {
+    component: Checkbox
+  },
+
+  '/widgets/toggle': {
+    component: Toggle
+  },
+
+  '/widgets/tabs': {
+    component: Tabs
+  },
+
+  '/widgets/cells': {
+    component: Cells
+  },
+
+  '/effects/scroll': {
+    component: Scroll
+  },
+
+};
+
 
 Vue.transition('view', {enterClass: 'view-enter', leaveClass: 'view-leave'})
-
-Vue.use(VueRouter)
 
 Vue.config.debug = true
 
@@ -14,7 +54,7 @@ let router = new VueRouter({
   history: true
 })
 
-router.map(Routers)
+router.map(routers)
 
 router.beforeEach((t) => {
   window.scrollTo(0, 0)

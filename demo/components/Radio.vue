@@ -2,16 +2,19 @@
   <div class="page has-header">
     <von-header title="单选框"></von-header>
 
-    <div class="item item-divider">
-      选择性别:
+    <div class="page-content">
+      <div class="item item-divider">
+        选择性别:
+      </div>
+
+      <von-radio :options="genderOptions" :value.sync="gender"></von-radio>
+
+      <p class="padding">
+        option index: {{ gender }}<br>
+        option text: {{ genderOptions[gender] }}
+      </p>
     </div>
 
-    <von-radio :options="genderOptions" :value.sync="gender"></von-radio>
-
-    <p class="padding">
-      option index: {{ gender }}<br>
-      option text: {{ genderOptions[gender] }}
-    </p>
   </div>
 </template>
 <style lang="scss" scoped>

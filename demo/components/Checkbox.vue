@@ -2,15 +2,17 @@
   <div class="page has-header">
     <von-header title="复选框"></von-header>
 
-    <div class="item item-divider">
-      选择感兴趣的板块:
+    <div class="page-content">
+      <div class="item item-divider">
+        选择感兴趣的板块:
+      </div>
+
+      <von-checkbox :options="topics" :value.sync="chosenTopics"></von-checkbox>
+
+      <p class="padding">
+        chosen topics: {{ chosenTopics }}
+      </p>
     </div>
-
-    <von-checkbox :options="topics" :value.sync="chosenTopics"></von-checkbox>
-
-    <p class="padding">
-      chosen topics: {{ chosenTopics }}
-    </p>
   </div>
 </template>
 <style lang="scss" scoped>

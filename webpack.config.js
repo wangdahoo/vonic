@@ -48,10 +48,6 @@ module.exports = {
     ]
   },
   vue: {
-    // autoprefixer: {
-    //   browsers: ['last 2 versions']
-    // },
-
     loaders: {
       scss: 'style!css!sass'
     }

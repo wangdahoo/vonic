@@ -11,7 +11,7 @@
 
 <style lang="scss" scoped>
   .bar-header {
-    position: fixed;
+
   }
 </style>
 

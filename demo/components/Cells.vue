@@ -2,10 +2,18 @@
   <div class="page has-header">
     <von-header title="Cells"></von-header>
 
-    <cells :cell-items="cells_33" cell-class="cells_33-cell"
-           :on-cell-click="onCellClick"></cells>
-    <cells :cell-items="cells_24" cell-class="cells_44-cell"
-           :rows="2" :cols="4"></cells>
+    <div class="page-content">
+
+      <cells :cell-items="cells_22" cell-class="cells_22-cell"
+             :rows="2" :cols="2"></cells>
+
+      <cells :cell-items="cells_24" cell-class="cells_44-cell"
+             :rows="2" :cols="4"></cells>
+
+      <cells :cell-items="cells_33" cell-class="cells_33-cell"
+             :on-cell-click="onCellClick"></cells>
+
+    </div>
   </div>
 </template>
 <style lang="scss">
@@ -15,9 +23,16 @@
     padding: 40px 0 !important;
   }
 
+  .cells_22-cell {
+    padding: 50px 0;
+  }
+
   .cells_44-cell {
-    color: #666;
     padding: 25px 0;
+  }
+
+  .cells_22-cell, .cells_44-cell {
+    color: #666;
 
     span {
       display: -webkit-box;
@@ -58,17 +73,25 @@
 </style>
 <script>
   import _ from 'lodash'
-  import {Page, VonHeader, Cells} from 'vonic'
+  import {Page, Scroll, VonHeader, Cells} from 'vonic'
 
   export default{
     components: {
       Page,
+      Scroll,
       VonHeader,
       Cells
     },
 
     data(){
       return {
+        cells_22: [
+          '<span><i class="icon ion-checkmark-circled balanced"></i><i>cell 1</i></span>',
+          '<span><i class="icon ion-close-circled assertive"></i><i>cell 2</i></span>',
+          '<span><i class="icon ion-information-circled energized"></i><i>cell 3</i></span>',
+          '<span><i class="icon ion-help-circled calm"></i><i>cell 4</i></span>',
+        ],
+
         cells_33: [
           'cell 1',
           'cell 2',
@@ -80,13 +103,12 @@
         ],
 
         cells_24: [
-          '<span><i class="icon ion-heart assertive"></i><i>cell 1</i></span>',
-          '<span><i class="icon ion-gear-a positive"></i><i>cell 2</i></span>',
-          '<span><i class="icon ion-chatbubbles balanced"></i><i>cell 2</i></span>',
-          '<span><i class="icon ion-star energized"></i><i>cell 4</i></span>',
-          '<span><i class="icon ion-paper-airplane calm"></i><i>cell 5</i></span>',
-          '<span><i class="icon ion-images royal"></i><i>cell 6</i></span>',
-          '<span><i class="icon ion-android-person dark"></i><i>cell 7</i></span>',
+          '<span><i class="icon ion-android-apps positive"></i></span>',
+          '<span><i class="icon ion-android-search positive"></i></span>',
+          '<span><i class="icon ion-android-star assertive"></i></span>',
+          '<span><i class="icon ion-android-share positive"></i></span>',
+          '<span><i class="icon ion-android-person dark"></i></span>',
+          '<span><i class="icon ion-android-settings dark"></i></span>',
         ],
 
       }

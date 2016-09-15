@@ -62,13 +62,11 @@
     },
     methods: {
       onRefresh (done) {
-        let self = this
         setTimeout(function () {
           done()  // call done
         }, 1500)
       },
       onInfinite (done) {
-        console.log('infinite')
         setTimeout(function () {
           var f = document.createDocumentFragment()
           for (let i = 0; i < 10; i++) {

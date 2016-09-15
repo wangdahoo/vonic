@@ -31,8 +31,8 @@
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
 
-    transition: opacity,transform .5s cubic-bezier(.36, .66, .04, 1);
-    -webkit-transition: opacity,-webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
+    transition: opacity,transform .4s cubic-bezier(.36, .66, .04, 1);
+    -webkit-transition: opacity,-webkit-transform .4s cubic-bezier(.36, .66, .04, 1);
 
     &.view-enter {
       z-index: 2;
@@ -63,6 +63,24 @@
       transform: translate3d(100%, 0, 0);
       -webkit-transform: translate3d(100%, 0, 0);
     }
+  }
+
+  /* page content */
+  .page .page-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    width: auto;
+    height: auto;
+  }
+
+  .page.has-header > .page-content {
+    padding-top: 44px;
   }
 
 </style>

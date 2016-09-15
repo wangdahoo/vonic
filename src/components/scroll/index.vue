@@ -195,10 +195,6 @@ export default {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 
-    &.content {
-      position: absolute;
-    }
-
     &.touching .scroll-inner {
       transition-duration: 0ms;
     }

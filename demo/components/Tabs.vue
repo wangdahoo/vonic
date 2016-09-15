@@ -4,13 +4,15 @@
 
     <tabs :tab-items="tabs" :active-index.sync="activeTabIndex"></tabs>
 
-    <p>
-      active tab index: {{ activeTabIndex }}
-    </p>
+    <div class="page-content">
+      <p>
+        active tab index: {{ activeTabIndex }}
+      </p>
 
-    <p>
-      active category index: {{ categories[activeCategoryIndex] }}
-    </p>
+      <p>
+        active category index: {{ categories[activeCategoryIndex] }}
+      </p>
+    </div>
 
     <tabs :tab-items="categories"
           :active-index.sync="activeCategoryIndex"

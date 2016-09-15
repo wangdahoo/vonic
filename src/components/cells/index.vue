@@ -90,7 +90,7 @@
 
     methods: {
       renderCell(r, c) {
-        let index = r * this.rows + c
+        let index = r * this.cols + c
         return this.cellItems[index]
       },
 
