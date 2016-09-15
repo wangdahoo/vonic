@@ -86,7 +86,11 @@
   }
 
   .page.has-header > .page-content {
-    padding-top: 44px;
+    padding-top: $header-height;
+  }
+
+  .page.has-header > .page-content.padding-top {
+    padding-top: $header-height + $padding;
   }
 
 </style>

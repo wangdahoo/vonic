@@ -20,15 +20,14 @@
         <button-bar theme="dark" :tab-items="tabs" :active-index="activeTabIndex[6]"></button-bar>
       </div>
 
-
       <div class="item item-divider">
-        promotions:
+        商品分类:
       </div>
       <div class="padding light-bg">
         <button-bar theme="assertive" :tab-items="promotions" :active-index.sync="promotionIndex"></button-bar>
       </div>
       <div class="item">
-        promotion index: {{ promotions[promotionIndex] }}
+        选中: {{ promotions[promotionIndex] }}
       </div>
 
     </div>

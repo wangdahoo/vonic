@@ -2,9 +2,17 @@
   <div class="page has-header">
     <von-header title="开关按钮"></von-header>
 
-    <von-toggle :text="toggleText" :value.sync="pushNotification"></von-toggle>
+    <div class="page-content padding-top">
+      <von-toggle :text="toggleText" :value.sync="pushNotification"></von-toggle>
+      <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
 
-    <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
+      <div class="item">其他主题色</div>
+      <von-toggle text="assertive" theme="assertive" :value="true"></von-toggle>
+      <von-toggle text="positive" theme="positive" :value="true"></von-toggle>
+      <von-toggle text="energized" theme="energized" :value="true"></von-toggle>
+      <von-toggle text="calm" theme="calm" :value="true"></von-toggle>
+      <von-toggle text="dark" theme="dark" :value="true"></von-toggle>
+    </div>
 
   </div>
 </template>

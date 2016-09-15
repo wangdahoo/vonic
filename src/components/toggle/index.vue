@@ -1,7 +1,7 @@
 <template>
   <div class="item item-toggle von-toggle">
     {{ text }}
-    <label class="toggle" @click="onToggle()">
+    <label class="{{ toggleClass() }}" @click="onToggle()">
       <input type="checkbox" id="{{ toggleId }}">
       <div class="track">
         <div class="handle"></div>
@@ -26,7 +26,11 @@
       value: {
         type: Boolean,
         required: true
-      }
+      },
+      theme: {
+        type: String,
+        default: 'balanced'
+      },
     },
 
     data() {
@@ -40,6 +44,11 @@
     },
 
     methods: {
+      toggleClass() {
+        console.log('toggle toggle-' + this.theme)
+        return 'toggle toggle-' + this.theme
+      },
+
       onToggle() {
         this.value = document.getElementById(this.toggleId).checked
       }
