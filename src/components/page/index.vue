@@ -25,6 +25,8 @@
     }
   }
 
+  $view-box-shadow: -4px 0px 5px #ddd;
+
   .view {
     z-index: 1;
     opacity: 1;
@@ -33,6 +35,10 @@
 
     transition: opacity,transform .4s cubic-bezier(.36, .66, .04, 1);
     -webkit-transition: opacity,-webkit-transform .4s cubic-bezier(.36, .66, .04, 1);
+
+    -moz-box-shadow: $view-box-shadow;
+    -webkit-box-shadow: $view-box-shadow;
+    box-shadow: $view-box-shadow;
 
     &.view-enter {
       z-index: 2;

@@ -35,7 +35,7 @@
       },
       backButtonText: {
         type: String,
-        default: '返回'
+        default: 'Back'
       }
     },
 

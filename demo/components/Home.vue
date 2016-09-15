@@ -7,19 +7,23 @@
         组件
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
-        单选框 Radio
+        Radio <span class="note">单选框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/checkbox' }">
-        复选框 Checkbox
+        Checkbox <span class="note">复选框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/toggle' }">
-        开关按钮 Toggle
+        Toggle <span class="note">开关按钮</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/tabs' }">
         Tabs
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+      <div class="item item-icon-right" v-link="{ path: '/widgets/buttonbar' }">
+        ButtonBar <span class="note">iOS 风格的 Tabs</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
@@ -48,6 +52,13 @@
       right: 0;
       color: #ccc;
       font-size: 24px;
+    }
+
+    span.note {
+      color: #aaa;
+      font-size: 13px;
+      float: right;
+      margin-right: 15px;
     }
   }
 

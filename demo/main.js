@@ -3,13 +3,14 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 // Demos
-import Home from './components/home'
-import Radio from './components/radio'
-import Checkbox from './components/checkbox'
-import Toggle from './components/toggle'
-import Tabs from './components/tabs'
-import Cells from './components/cells'
-import Scroll from './components/scroll'
+import Home from './components/Home'
+import Radio from './components/Radio'
+import Checkbox from './components/Checkbox'
+import Toggle from './components/Toggle'
+import Tabs from './components/Tabs'
+import ButtonBar from './components/ButtonBar'
+import Cells from './components/Cells'
+import Scroll from './components/Scroll'
 
 const routers = {
 
@@ -31,6 +32,10 @@ const routers = {
 
   '/widgets/tabs': {
     component: Tabs
+  },
+
+  '/widgets/buttonbar': {
+    component: ButtonBar
   },
 
   '/widgets/cells': {

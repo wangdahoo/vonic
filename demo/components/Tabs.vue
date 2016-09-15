@@ -12,6 +12,7 @@
       <p>
         active category index: {{ categories[activeCategoryIndex] }}
       </p>
+
     </div>
 
     <tabs :tab-items="categories"

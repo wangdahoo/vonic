@@ -3,7 +3,7 @@
     <div class="tabs">
       <a v-for="(index, tabItem) in tabItems"
          class="tab-item"
-         v-bind:class="{'active': activeIndex == index}"
+         :class="{'active': activeIndex == index}"
          @click="tabChanged(index)">
         {{ tabItem }}
       </a>
@@ -31,26 +31,19 @@
 
 </style>
 <script>
-
   export default{
     props: {
       position: {
         type: String,
-        default() {
-          return "top"
-        }
+        default: 'top'
       },
       bgColor: {
         type: String,
-        default() {
-          return "light"
-        }
+        default: 'light'
       },
       tabColor: {
         type: String,
-        default() {
-          return "positive"
-        }
+        default: 'positive'
       },
 
       tabItems: {
