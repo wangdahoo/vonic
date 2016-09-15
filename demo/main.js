@@ -1,19 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Routers from './router'
-// Vue.transition('fade', { enterClass: 'fadeIn', leaveClass: 'fadeOut'})
-// Vue.transition('slide', { enterClass: 'slideInRight', leaveClass: 'slideOutLeft'})
-// Vue.transition('slide-reverse', { enterClass: 'slideInLeft', leaveClass: 'slideOutRight'})
+
+Vue.transition('view', {enterClass: 'view-enter', leaveClass: 'view-leave'})
 
 Vue.use(VueRouter)
 
 Vue.config.debug = true
 
-let App = Vue.extend(require('./app.vue'))
+let App = Vue.extend()
 
 let router = new VueRouter({
-  history: true,
-  // transitionOnLoad: true
+  history: true
 })
 
 router.map(Routers)
@@ -21,23 +19,10 @@ router.map(Routers)
 router.beforeEach((t) => {
   window.scrollTo(0, 0)
 
-  if (t.to.path == localStorage.getItem('vonic:last_path')) {
-    console.log('back!');
-    try {
-      let page = document.querySelector('.page')
-      console.log(page);
-      Vue.transition('slide', { enterClass: 'slideInLeft', leaveClass: 'slideOutRight'})
-    } catch (e) {
-      console.log(e);
-    }
-  } else {
-    try {
-      let page = document.querySelector('.page')
-      console.log(page);
-      Vue.transition('slide', { enterClass: 'slideInRight', leaveClass: 'slideOutLeft'})
-    } catch (e) {
-      console.log(e);
-    }
+  try {
+    console.log('router.app.$el', router.app.$el.className)
+  } catch (e) {
+    console.info(e);
   }
 
   t.next()
@@ -45,16 +30,16 @@ router.beforeEach((t) => {
 
 router.afterEach((t) => {
   console.log((t.from.path || '') + ' => ' + t.to.path)
-  localStorage.setItem('vonic:last_path', t.from.path)
+
 })
 
 router.redirect({
   '*': "/home"
 })
 
-router.start(App, 'app')
-
 window.$router = router
+
+router.start(App, '#app')
 
 // import FastClick from 'fastclick'
 // FastClick.attach(document.body)

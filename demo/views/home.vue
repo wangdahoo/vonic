@@ -51,6 +51,7 @@
 
 </style>
 <script>
+  import Vue from 'vue'
   import {Page, VonHeader} from 'vonic'
 
   export default{

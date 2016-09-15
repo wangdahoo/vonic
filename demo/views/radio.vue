@@ -20,6 +20,7 @@
 </style>
 <script>
   import _ from 'lodash'
+  import Vue from 'vue'
   import {Page, VonHeader, VonRadio} from 'vonic'
 
   export default{
@@ -34,6 +35,14 @@
         gender: 0,
         genderOptions: ["男", "女"]
       }
+    },
+
+    ready() {
+
+    },
+
+    methods: {
+
     }
   }
 </script>

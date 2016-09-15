@@ -25,38 +25,44 @@
     }
   }
 
-  .page-enter {
+  .view {
     z-index: 1;
-    transform: translate3d(100%, 0, 0);
-    -webkit-transform: translate3d(100%, 0, 0);
-    transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.36, .66, .04, 1);
-    -webkit-transition-timing-function: cubic-bezier(.36, .66, .04, 1);
-    transition-property: transform;
-    -webkit-transition-property: -webkit-transform;
-  }
-  .page-enter.page-enter-active {
-    z-index: 2;
+    opacity: 1;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
+
+    transition: opacity,transform .5s cubic-bezier(.36, .66, .04, 1);
+    -webkit-transition: opacity,-webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
+
+    &.view-enter {
+      z-index: 2;
+      opacity: 1;
+      transform: translate3d(100%, 0, 0);
+      -webkit-transform: translate3d(100%, 0, 0);
+    }
+
+    &.view-leave {
+      z-index: 1;
+      opacity: 0.8;
+      transform: translate3d(-33%, 0, 0);
+      -webkit-transform: translate3d(-33%, 0, 0);
+    }
   }
-  .page-leave {
-    z-index: 2;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.36, .66, .04, 1);
-    -webkit-transition-timing-function: cubic-bezier(.36, .66, .04, 1);
-    transition-property: opacity, transform;
-    -webkit-transition-property: opacity, -webkit-transform;
-  }
-  .page-leave.page-leave-active {
-    z-index: 1;
-    opacity: 0.9;
-    transform: translate3d(-33%, 0, 0);
-    -webkit-transform: translate3d(-33%, 0, 0);
+
+  .transition-reverse > .view {
+    &.view-enter {
+      z-index: 1;
+      opacity: 0.8;
+      transform: translate3d(-33%, 0, 0);
+      -webkit-transform: translate3d(-33%, 0, 0);
+    }
+
+    &.view-leave {
+      z-index: 2;
+      opacity: 1;
+      transform: translate3d(100%, 0, 0);
+      -webkit-transform: translate3d(100%, 0, 0);
+    }
   }
 
 </style>

@@ -2,7 +2,7 @@
   <div class="{{ headerClass }}">
     <!-- backButton -->
     <button class="button button-clear" v-show="showBackButton == 'true'" @click="onBackButtonClick()">
-        <i class="icon ion-ios-arrow-back positive"></i> <span class="positive"> {{ backButton.text }}</span>
+        <i class="icon ion-ios-arrow-back positive"></i> <span class="positive"> {{ backButtonText }}</span>
     </button>
 
     <h1 class="title">{{ title }}</h1>
@@ -16,6 +16,8 @@
 </style>
 
 <script>
+  import Vue from 'vue'
+
   export default{
     props: {
       title: String,
@@ -31,24 +33,21 @@
           return 'true'
         }
       },
-      backButton: {
-        type: Object,
-        default() {
-          return {
-            text: '返回',
-            url: ''
-          }
-        }
+      backButtonText: {
+        type: String,
+        default: '返回'
       }
     },
 
     methods: {
       onBackButtonClick() {
-        if (this.backButton.url) {
-          // todo
-        } else {
-          history.go(-1)
-        }
+        let app = document.getElementById('app');
+        app.className = 'transition-reverse';
+        setTimeout(() => {
+          app.className = '';
+        }, 500)
+
+        history.go(-1)
       }
     }
   }
