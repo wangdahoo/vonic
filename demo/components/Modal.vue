@@ -1,0 +1,31 @@
+<template>
+  <div class="page has-header">
+    <von-header title="Modal"></von-header>
+
+    <div class="page-content">
+
+    </div>
+  </div>
+</template>
+<style lang="scss" scoped>
+
+</style>
+<script>
+  import {Page, VonHeader, ButtonBar} from 'vonic'
+
+  export default{
+    components: {
+      Page,
+      VonHeader,
+    },
+
+    data(){
+      return {
+      }
+    },
+
+    methods: {
+
+    }
+  }
+</script>

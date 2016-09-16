@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+import VonApp from './components/app'
+
 class VonicApp {
   constructor(el, routers, defaultRouterUrl) {
     this.el = el
@@ -10,7 +12,7 @@ class VonicApp {
   }
 
   start() {
-    let App = Vue.extend();
+    let App = Vue.extend(VonApp);
     let router = new VueRouter({
       history: true
     })
@@ -31,7 +33,7 @@ class VonicApp {
    *  - back
    */
   nextTransition(direction) {
-    let el = document.querySelector(this.el)
+    let el = document.querySelector('[von-app]')
     switch (direction) {
       case 'back':
         el.className = 'transition-reverse'
@@ -57,7 +59,7 @@ export default {
     const routers = options.routers
     const defaultRouterUrl = options.defaultRouterUrl
 
-    let app = new VonicApp(el, routers, defaultRouterUrl)
+    let app = new VonicApp('von-app', routers, defaultRouterUrl)
     app.start()
 
     window.$vonic = app

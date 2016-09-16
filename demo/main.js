@@ -8,6 +8,7 @@ import Checkbox from './components/Checkbox'
 import Toggle from './components/Toggle'
 import Tabs from './components/Tabs'
 import ButtonBar from './components/ButtonBar'
+import Modal from './components/Modal'
 import Cells from './components/Cells'
 import Scroll from './components/Scroll'
 
@@ -34,6 +35,10 @@ const routers = {
 
   '/widgets/buttonbar': {
     component: ButtonBar
+  },
+
+  '/widgets/modal': {
+    component: Modal
   },
 
   '/widgets/cells': {

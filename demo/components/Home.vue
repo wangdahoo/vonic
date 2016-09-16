@@ -26,6 +26,10 @@
         ButtonBar <span class="note">iOS 风格的 Tabs</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
+      <div class="item item-icon-right" v-link="{ path: '/widgets/modal' }">
+        Modal <span class="note">模态框</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
         Cells
         <i class="icon ion-ios-arrow-right"></i>
