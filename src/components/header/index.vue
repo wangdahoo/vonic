@@ -18,7 +18,7 @@
 <script>
   import Vue from 'vue'
 
-  export default{
+  export default {
     props: {
       title: String,
       headerClass: {
@@ -41,12 +41,7 @@
 
     methods: {
       onBackButtonClick() {
-        let app = document.getElementById('app');
-        app.className = 'transition-reverse';
-        setTimeout(() => {
-          app.className = '';
-        }, 500)
-
+        $vonic.nextTransition('back')
         history.go(-1)
       }
     }
