@@ -1,6 +1,8 @@
 # vonic ![In Development](https://img.shields.io/badge/vonic-%20in%20development%20-green.svg)
 SPA Framework based on Vue.js, be cool with ionic UI.
 
+> visit demo at: [https://wangdahoo.github.io/vonic/docs/](https://wangdahoo.github.io/vonic/docs/)
+
 ## setup
 ```
 $ npm install
@@ -11,4 +13,3 @@ $ bower install
 ```
 $ npm run dev
 ```
-> visit demo at http://127.0.0.1:8080/
