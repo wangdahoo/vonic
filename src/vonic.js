@@ -13,7 +13,7 @@ class VonicApp {
   start() {
     let App = Vue.extend(VonApp);
     let router = new VueRouter({
-      history: true
+      history: false
     })
     router.map(this.routers)
 
