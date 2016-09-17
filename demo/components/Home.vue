@@ -52,7 +52,7 @@
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 
   .item-divider:first-of-type {
     border-top: none;

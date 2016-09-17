@@ -19,6 +19,25 @@
 </template>
 <style lang="scss" scoped>
 
+  .item-divider:first-of-type {
+    border-top: none;
+  }
+
+  .item-icon-right {
+    .icon {
+      right: 0;
+      color: #ccc;
+      font-size: 24px;
+    }
+
+    span.note {
+      color: #aaa;
+      font-size: 13px;
+      float: right;
+      margin-right: 15px;
+    }
+  }
+
 </style>
 <script>
   import {Page, VonHeader, Alert} from 'vonic'

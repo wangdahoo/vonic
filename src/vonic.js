@@ -66,10 +66,14 @@ export default {
 
     // 类似的这种兼容性代码, 暂时放在这个位置
     // for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport.
-    document.documentElement.addEventListener('touchstart', function (event) {
-      if (event.touches.length > 1) {
-        event.preventDefault();
+    document.documentElement.addEventListener('touchstart', (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
       }
     }, false);
+
+    // document.documentElement.addEventListener('touchend', (e) => {
+    //
+    // }, false);
   }
 }
