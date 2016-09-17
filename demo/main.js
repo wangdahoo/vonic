@@ -8,6 +8,7 @@ import Checkbox from './components/Checkbox'
 import Toggle from './components/Toggle'
 import Tabs from './components/Tabs'
 import ButtonBar from './components/ButtonBar'
+import Popup from './components/Popup'
 import Modal from './components/Modal'
 import Cells from './components/Cells'
 import Scroll from './components/Scroll'
@@ -37,6 +38,10 @@ const routers = {
     component: ButtonBar
   },
 
+  '/widgets/popup': {
+    component: Popup
+  },
+
   '/widgets/modal': {
     component: Modal
   },
@@ -52,7 +57,6 @@ const routers = {
 };
 
 Vue.use(Vonic, {
-  el: '#app',
   routers: routers,
   defaultRouterUrl: '/home'
 })

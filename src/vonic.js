@@ -5,8 +5,7 @@ Vue.use(VueRouter)
 import VonApp from './components/app'
 
 class VonicApp {
-  constructor(el, routers, defaultRouterUrl) {
-    this.el = el
+  constructor(routers, defaultRouterUrl) {
     this.routers = routers
     this.defaultRouterUrl = defaultRouterUrl
   }
@@ -21,7 +20,8 @@ class VonicApp {
     router.redirect({
       '*': this.defaultRouterUrl
     })
-    router.start(App, this.el)
+
+    router.start(App, 'von-app')
 
     window.$router = router
   }
@@ -55,11 +55,10 @@ export default {
   install(Vue, options) {
     Vue.transition('view', {enterClass: 'view-enter', leaveClass: 'view-leave'})
 
-    const el = options.el
     const routers = options.routers
     const defaultRouterUrl = options.defaultRouterUrl
 
-    let app = new VonicApp('von-app', routers, defaultRouterUrl)
+    let app = new VonicApp(routers, defaultRouterUrl)
     app.start()
 
     window.$vonic = app

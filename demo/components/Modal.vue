@@ -11,7 +11,7 @@
 
 </style>
 <script>
-  import {Page, VonHeader, ButtonBar} from 'vonic'
+  import {Page, VonHeader} from 'vonic'
 
   export default{
     components: {

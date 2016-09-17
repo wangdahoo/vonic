@@ -23,10 +23,16 @@
   }
 
   .tabs-top > .tabs {
-    border-bottom: 1px solid $default-border-color;
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+     border-bottom: 1px solid $default-border-color;
+     @media only screen and (-webkit-min-device-pixel-ratio: 2) {
       border-bottom: 0.5px solid $default-border-color;
     }
+
+/*    border-bottom: none;
+    $tabs-box-shadow: 0 3px 6px darken($default-page-bg, 6.5%);
+    -moz-box-shadow: $tabs-box-shadow;
+    -webkit-box-shadow: $tabs-box-shadow;
+    box-shadow: $tabs-box-shadow;*/
   }
 
 </style>
