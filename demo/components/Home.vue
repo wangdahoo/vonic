@@ -1,8 +1,25 @@
 <template>
   <div class="page has-header">
-    <von-header title="Vonic" show-back-button="false"></von-header>
-
+    <!--<von-header title="Vonic" show-back-button="false"></von-header>-->
     <div class="page-content">
+      <div class="logo">
+        <img src="../assets/vonic.svg" width="100" height="100"/>
+      </div>
+
+      <div class="code-name">
+        Vonic
+      </div>
+
+      <div class="code-intro">
+        =
+        <br>
+        Vue.js
+        <br>
+        +
+        <br>
+        ionic UI
+      </div>
+
       <div class="item item-divider">
         组件
       </div>
@@ -53,6 +70,43 @@
   </div>
 </template>
 <style lang="scss" scoped>
+
+  .page-content {
+    padding-top: 100px;
+
+    .logo {
+      width: 100%;
+      text-align: center;
+      img {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+    }
+
+    .code-name {
+      text-align: center;
+      font-family: "Italiana", sans-serif !important;
+      color: #47B584;
+      font-style: normal;
+      font-variant-ligatures: normal;
+      font-variant-caps: normal;
+      font-variant-numeric: normal;
+      font-weight: normal;
+      font-stretch: normal;
+      font-size: 40px;
+      line-height: normal;
+      text-transform: lowercase;
+      margin-bottom: 20px;
+    }
+
+    .code-intro {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #32584F;
+    }
+  }
 
   .item-divider:first-of-type {
     border-top: none;
