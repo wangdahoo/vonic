@@ -22,8 +22,6 @@
 
 </style>
 <script>
-  import _ from 'lodash'
-  import Vue from 'vue'
   import {Page, VonHeader, VonRadio} from 'vonic'
 
   export default{

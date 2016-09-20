@@ -1,267 +1,319 @@
 <template>
-  <div class="scroll"
-       :class="{
-         'pull-down': (state === 0),
-         'pull-up': (state === 1),
-         refreshing: (state === 2),
-         touching: touching
-       }"
-      @touchstart="onRefresh ? touchStart($event) : undefined"
-      @touchmove="onRefresh ? touchMove($event) : undefined"
-      @touchend="onRefresh ? touchEnd($event) : undefined"
-      @scroll="(onInfinite || infiniteLoading) ? onScroll($event) : undefined"
-       >
-    <div class="scroll-inner"
-      :style="{ transform: 'translate3d(0, ' + top + 'px, 0)' }"
-      >
-      <div class="pull-to-refresh-layer" v-if="!!onRefresh">
-        <slot name="refresh">
-          <div class="preloader"></div>
-          <div class="pull-to-refresh-arrow"></div>
-          <span class="label-down">下拉刷新</span>
-          <span class="label-up">松开刷新</span>
-          <span class="label-refresh">正在刷新..</span>
-        </slot>
+  <div class="page-content" id="{{ pageId }}"
+       @touchstart="touchStart($event)"
+       @touchmove="touchMove($event)"
+       @touchend="touchEnd($event)"
+  >
+    <div class="scroll-inner" id="{{ contentId }}">
+      <div v-if="onRefresh" class="pull-to-refresh-layer"
+           :class="{'active': state == 1, 'active refreshing': state == 2}">
+        <span class="spinner-holder">
+          <img class="arrow" v-if="state != 2" src="./assets/arrow.svg">
+          <span class="text" v-if="state != 2">{{ refreshText }}</span>
+          <img class="spinner" v-if="state == 2" src="./assets/spinner.svg">
+        </span>
       </div>
+
       <slot></slot>
-      <div class="infinite-layer" v-if="onInfinite">
-        <slot name="infinite">
-          <div class="infinite-preloader"></div>
-          <span class="label-loading">正在加载..</span>
-        </slot>
+
+      <div v-if="onInfinite" class="loading-layer" :class="{'active': showLoading}">
+        <span class="spinner-holder">
+          <img class="spinner" src="./assets/spinner.svg">
+        </span>
       </div>
     </div>
   </div>
 </template>
+<style scoped>
 
-<script>
-export default {
-  props: {
-    offset: {
-      type: Number,
-      default: 44
-    },
-    onRefresh: {
-      type: Function,
-      default: undefined,
-      required: false
-    },
-    onInfinite: {
-      type: Function,
-      default: undefined,
-      require: false
-    }
-  },
-  data () {
-    return {
-      top: 0,
-      state: 0, // 0:down, 1: up, 2: refreshing
-      startY: 0,
-      touching: false,
-
-      infiniteLoading: false
-    }
-  },
-  methods: {
-    touchStart (e) {
-      this.startY = e.targetTouches[0].pageY
-      this.touching = true
-    },
-    touchMove (e) {
-      if (this.$el.scrollTop > 0 || !this.touching) {
-        return
-      }
-      let diff = e.targetTouches[0].pageY - this.startY
-      if (diff > 0) e.preventDefault()
-      this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
-
-      if (this.state === 2) { // in refreshing
-        return
-      }
-      if (this.top >= this.offset) {
-        this.state = 1
-      } else {
-        this.state = 0
-      }
-    },
-    touchEnd (e) {
-      this.touching = false
-      if (this.state === 2) { // in refreshing
-        this.state = 2
-        this.top = this.offset
-        return
-      }
-      if (this.top >= this.offset) { // do refresh
-        this.refresh()
-      } else {  // cancel refresh
-        this.state = 0
-        this.top = 0
-      }
-    },
-    refresh () {
-      this.state = 2
-      this.top = this.offset
-      this.onRefresh(this.refreshDone)
-    },
-    refreshDone () {
-      this.state = 0
-      this.top = 0
-    },
-
-    infinite () {
-      this.infiniteLoading = true
-      this.onInfinite(this.infiniteDone)
-    },
-
-    infiniteDone () {
-      this.infiniteLoading = false
-    },
-
-    onScroll (e) {
-      if (this.infiniteLoading) {
-        return
-      }
-      let outerHeight = this.$el.clientHeight
-      let innerHeight = this.$el.querySelector('.scroll-inner').clientHeight
-      let scrollTop = this.$el.scrollTop
-      let ptrHeight = this.onRefresh ? this.$el.querySelector('.pull-to-refresh-layer').clientHeight : 0
-      let infiniteHeight = this.$el.querySelector('.infinite-layer').clientHeight
-      let bottom = innerHeight - outerHeight - scrollTop - ptrHeight
-
-      if (bottom < infiniteHeight) this.infinite()
-    }
-  }
-}
-</script>
-<style lang="scss" scoped>
-
-  $layer-height: 40px;
-  $color-text-gray: #aaa;
-
-  @keyframes preloader-spin {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @mixin preloader() {
-    width: 20px;
-    height: 20px;
-    animation: preloader-spin 1s steps(12, end) infinite;
-    &:after {
-      display: block;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><line id='l' x1='60' x2='60' y1='7' y2='27' stroke='#6c6c6c' stroke-width='11' stroke-linecap='round'/></defs><g><use xlink:href='#l' opacity='.27'/><use xlink:href='#l' opacity='.27' transform='rotate(30 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(60 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(90 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(120 60,60)'/><use xlink:href='#l' opacity='.27' transform='rotate(150 60,60)'/><use xlink:href='#l' opacity='.37' transform='rotate(180 60,60)'/><use xlink:href='#l' opacity='.46' transform='rotate(210 60,60)'/><use xlink:href='#l' opacity='.56' transform='rotate(240 60,60)'/><use xlink:href='#l' opacity='.66' transform='rotate(270 60,60)'/><use xlink:href='#l' opacity='.75' transform='rotate(300 60,60)'/><use xlink:href='#l' opacity='.85' transform='rotate(330 60,60)'/></g></svg>");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-    }
-  }
-
-  .pull-to-refresh-layer {
-    position: relative;
-    left: 0;
-    top: 0;
+  .page-content {
     width: 100%;
-    height: $layer-height;
-    color: $color-text-gray;
-
-    .preloader {
-      visibility: hidden;
-      @include preloader();
-    }
-    .pull-to-refresh-arrow {
-      width: 20px;
-      height: 20px;
-      background: no-repeat center;
-      background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 40'><polygon points='9,22 9,0 17,0 17,22 26,22 13.5,40 0,22' fill='#8c8c8c'/></svg>");
-      background-size: 10.4px 16px;
-      z-index: 10;
-      transform: rotate(0deg) translate3d(0, 0, 0);
-      transition-duration: 300ms;
-      margin-left: -20px;
-    }
-
-  }
-
-  .scroll {
+    height: 100%;
     position: absolute;
-    top: -$layer-height;
-    right: 0;
-    bottom: 0;
+    top: 0;
     left: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-
-    &.touching .scroll-inner {
-      transition-duration: 0ms;
-    }
-    &:not(.refreshing) {
-      .pull-to-refresh-layer .preloader {
-        animation: none;
-      }
-    }
-    &.refreshing {
-      .pull-to-refresh-arrow {
-        visibility: hidden;
-        transition-duration: 0ms;
-      }
-      .preloader {
-        visibility: visible;
-      }
-    }
-    &.pull-up {
-      .pull-to-refresh-arrow {
-        transform: rotate(180deg) translate3d(0, 0, 0);
-      }
-    }
-
+    overflow: hidden;
   }
 
   .scroll-inner {
-    position: absolute;
-    /* top: -$layer-height; */
-    top: 0;
     width: 100%;
-    transition-duration: 300ms;
-  }
 
-  .label-down, .label-up, .label-refresh {
-    display: none;
-    text-align: center;
-  }
-
-  .pull-down .label-down,
-  .pull-up .label-up,
-  .refreshing .label-refresh {
-    display: block;
-    width: 5.5em;
+    -webkit-transform-origin: left top;
+    -webkit-transform: translateZ(0);
+    -moz-transform-origin: left top;
+    -moz-transform: translateZ(0);
+    -ms-transform-origin: left top;
+    -ms-transform: translateZ(0);
+    -o-transform-origin: left top;
+    -o-transform: translateZ(0);
+    transform-origin: left top;
+    transform: translateZ(0);
   }
 
   .pull-to-refresh-layer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .infinite-layer {
-    height: $layer-height;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $color-text-gray;
-  }
-
-  .infinite-preloader {
-    @include preloader();
-  }
-
-  .label-loading {
-    display: block;
-    width: 5.5em;
+    width: 100%;
+    height: 60px;
+    margin-top: -60px;
     text-align: center;
+    font-size: 16px;
+    color: #ccc;
+  }
+
+  .pull-to-refresh-layer.active {
+
+  }
+
+  .pull-to-refresh-layer.refreshing {
+
+  }
+
+  .loading-layer {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+    color: #ccc;
+
+    opacity: 0;
+    transition: opacity .15s linear;
+    -webkit-transition: opacity .15s linear;
+  }
+
+  .loading-layer.active {
+    opacity: 1;
+  }
+
+  .spinner-holder {
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .spinner-holder .arrow {
+    width: 20px;
+    height: 20px;
+    margin: 8px auto 0 auto;
+  }
+
+  .spinner-holder .text {
+    display: block;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 28px;
+    color: #aaa;
+  }
+
+  .spinner-holder .spinner {
+    margin-top: 14px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .pull-to-refresh-layer > .spinner-holder > .arrow
+  {
+    -webkit-transform: translate3d(0,0,0) rotate(0deg);
+    transform: translate3d(0,0,0) rotate(0deg);
+
+    transition: transform .2s linear;
+    -webkit-transition: -webkit-transform .2s linear;
+  }
+
+  .pull-to-refresh-layer.active > .spinner-holder > .arrow
+  {
+    -webkit-transform: translate3d(0,0,0) rotate(180deg);
+    transform: translate3d(0,0,0) rotate(180deg);
   }
 
 </style>
+<script>
+  import uuid from 'node-uuid'
+  import './module/core'
+  import getContentRender from './module/render'
+
+  const page_id = 'page-' + uuid.v4().substr(0, 8)
+  const content_id = 'content-' + uuid.v4().substr(0, 8)
+
+  let scroller, page, content, pullToRefreshLayer;
+  let mousedown = false;
+
+  let loadMoreTimer;
+  let scrollbottom = false;
+
+  export default{
+    props: {
+      onRefresh: Function,
+      onInfinite: Function,
+
+      refreshText: {
+        type: Text,
+        default: '下拉刷新'
+      },
+    },
+
+    data(){
+      return {
+        pageId: page_id,
+        contentId: content_id,
+        state: 0, // 0: pull to refresh, 1: release to refresh, 2: refreshing
+        stateText: 'Pull to Refresh',
+
+        showLoading: false
+      }
+    },
+
+    ready() {
+      page = document.getElementById(this.pageId)
+      content = document.getElementById(this.contentId)
+      pullToRefreshLayer = content.getElementsByTagName("div")[0]
+
+      scroller = new Scroller(getContentRender(content), {
+        scrollingX: false,
+        scrollingY: true
+      });
+
+      // enable PullToRefresh
+      if (this.onRefresh) {
+        scroller.activatePullToRefresh(60, () => {
+          this.state = 1
+        }, () => {
+          this.state = 0
+        }, () => {
+          this.state = 2
+
+          this.$on('$finishPullToRefresh', () => {
+            setTimeout(() => {
+              this.state = 0
+              this.finishPullToRefresh()
+            })
+          })
+
+          this.onRefresh()
+        })
+      }
+
+      // enable infinite loading
+      if (this.onInfinite) {
+        // TODO
+
+        loadMoreTimer = setInterval(() => {
+          let {left, top, zoom} = scroller.getValues()
+
+          if (top + 60 > content.offsetHeight - page.clientHeight) {
+            if (scrollbottom) return
+            scrollbottom = true
+            this.showLoading = true
+            // scroller.scrollTo(0, 50000, true)
+
+            this.onInfinite()
+
+            setTimeout(() => {
+              scrollbottom = false
+            }, 1500)
+          }
+
+        }, 20);
+      }
+
+      // setup scroller
+      let rect = page.getBoundingClientRect()
+      scroller.setPosition(rect.left + page.clientLeft, rect.top + page.clientTop)
+
+      window.$scrollerDelegate = {
+        resize: this.resize,
+        finishPullToRefresh: this.finishPullToRefresh,
+        triggerPullToRefresh: this.triggerPullToRefresh
+      }
+    },
+
+    destroyed() {
+//      console.log('Scroller Component Destroyed.');
+
+      if (loadMoreTimer) clearInterval(loadMoreTimer);
+    },
+
+    methods: {
+      getStateText(state) {
+        if (state == 1) {
+          return 'Release to Refresh'
+        } else if (state == 2) {
+          return 'Refreshing...'
+        } else {
+          return 'Pull to Refresh'
+        }
+      },
+
+      resize() {
+        scroller.setDimensions(page.clientWidth, page.clientHeight, content.offsetWidth, content.offsetHeight);
+      },
+
+      finishPullToRefresh() {
+        scroller.finishPullToRefresh()
+        setTimeout(() => {
+          this.resize()
+        })
+      },
+
+      triggerPullToRefresh() {
+        scroller.triggerPullToRefresh()
+      },
+
+      scrollTo(x, y, animate) {
+        scroller.scrollTo(x, y, animate)
+      },
+
+      scrollBy(x, y, animate) {
+        scroller.scrollBy(x, y, animate)
+      },
+
+      touchStart(e) {
+        // Don't react if initial down happens on a form element
+        if (e.target.tagName.match(/input|textarea|select/i)) {
+          return
+        }
+        scroller.doTouchStart(e.touches, e.timeStamp)
+        e.preventDefault()
+      },
+
+      touchMove(e) {
+        scroller.doTouchMove(e.touches, e.timeStamp)
+      },
+
+      touchEnd(e) {
+        scroller.doTouchEnd(e.timeStamp)
+      },
+
+      mouseDown(e) {
+        // Don't react if initial down happens on a form element
+        if (e.target.tagName.match(/input|textarea|select/i)) {
+          return
+        }
+        scroller.doTouchStart([{
+          pageX: e.pageX,
+          pageY: e.pageY
+        }], e.timeStamp)
+        mousedown = true
+      },
+
+      mouseMove(e) {
+        if (!mousedown) {
+          return
+        }
+        scroller.doTouchMove([{
+          pageX: e.pageX,
+          pageY: e.pageY
+        }], e.timeStamp)
+        mousedown = true
+      },
+
+      mouseUp(e) {
+        if (!mousedown) {
+          return
+        }
+        scroller.doTouchEnd(e.timeStamp)
+        mousedown = false
+      },
+
+    }
+
+  }
+</script>

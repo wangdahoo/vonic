@@ -1,7 +1,6 @@
 <template>
-  <div class="page has-header">
-    <!--<von-header title="Vonic" show-back-button="false"></von-header>-->
-    <div class="page-content">
+  <div class="page">
+    <div class="page-content home">
       <div class="logo">
         <img src="../assets/vonic.svg" width="100" height="100"/>
       </div>
@@ -56,13 +55,14 @@
         Scroll
         <i class="icon ion-ios-arrow-right"></i>
       </div>
+
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 
-  .page-content {
-    padding-top: 100px;
+  .home {
+    padding-top: 50px;
 
     .logo {
       width: 100%;
@@ -113,18 +113,11 @@
 </style>
 <script>
   import Vue from 'vue'
-  import {Page, VonHeader} from 'vonic'
+  import {Page} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader
-    },
-
-    data(){
-      return {}
-    },
-
-    methods: {}
+      Page
+    }
   }
 </script>

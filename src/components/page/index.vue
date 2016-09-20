@@ -85,6 +85,7 @@
     left: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     width: auto;
     height: auto;
