@@ -11,10 +11,7 @@
     width: 100%;
     height: 100%;
     background-color: $default-page-bg;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
 
     &.has-header {
       padding-top: $header-height;

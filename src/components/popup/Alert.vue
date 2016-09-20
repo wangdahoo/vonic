@@ -20,15 +20,12 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-  .popup {
-    color: #444;
-  }
 
-  .popup-buttons > .button {
-    margin-bottom: 0;
-  }
+<style lang="scss" scoped>
+  @import "index";
+
 </style>
+
 <script>
   import _ from 'lodash'
 

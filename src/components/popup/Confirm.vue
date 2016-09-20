@@ -13,7 +13,7 @@
       </div>
 
       <div class="popup-buttons">
-        <button class="{{ 'button button-outline button-' + cancelTheme }}" @click="onCancel()">
+        <button class="{{ 'button button-' + cancelTheme }}" @click="onCancel()">
           {{ cancelText }}
         </button>
 
@@ -25,18 +25,12 @@
   </div>
 </template>
 <style lang="scss" scoped>
-  .popup {
-    color: #444;
+  @import "index";
+
+  .button-default {
+    border: 1px solid #e3e3e3;
   }
 
-  .popup-buttons > .button {
-    margin-bottom: 0;
-
-    margin-right: 10px;
-    &:last-child {
-      margin-right: 0px;
-    }
-  }
 </style>
 <script>
   import _ from 'lodash'
@@ -54,7 +48,7 @@
         okText: '确定',
         okTheme: 'assertive',
         cancelText: '取消',
-        cancelTheme: 'stable',
+        cancelTheme: 'default',
         state: 0 // 0: hidden, 1: showing, 2: active
       }
     },

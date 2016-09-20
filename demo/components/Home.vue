@@ -10,16 +10,6 @@
         Vonic
       </div>
 
-      <div class="code-intro">
-        =
-        <br>
-        Vue.js
-        <br>
-        +
-        <br>
-        ionic UI
-      </div>
-
       <div class="item item-divider">
         组件
       </div>
@@ -98,13 +88,6 @@
       line-height: normal;
       text-transform: lowercase;
       margin-bottom: 20px;
-    }
-
-    .code-intro {
-      width: 100%;
-      text-align: center;
-      font-size: 12px;
-      color: #32584F;
     }
   }
 

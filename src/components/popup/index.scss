@@ -1,0 +1,18 @@
+.popup {
+  color: #444;
+  width: 280px;
+  border-radius: 3px;
+
+  .popup-head {
+    border-bottom-color: #e3e3e3;
+  }
+}
+
+.popup-buttons > .button {
+  margin-bottom: 0;
+
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0px;
+  }
+}
