@@ -5,9 +5,7 @@
         <img src="../assets/vonic.svg" width="80" height="80"/>
       </div>
 
-      <div class="code-name">
-        Vonic
-      </div>
+      <div class="code-name">vonic</div>
 
       <div class="item item-divider text-center" style="color: #999">
         JS Components
@@ -53,14 +51,20 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 
+  @font-face {
+    font-family: 'Yatra One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Yatra One'), url(../assets/YatraOne.woff) format('woff');
+  }
+
   .home {
-    padding: 40px 0 40px 0;
+    padding: 30px 0 40px 0;
 
     .logo {
       width: 100%;
@@ -71,11 +75,12 @@
     }
 
     .code-name {
+      font-size: 18px;
+      font-family: 'Yatra One', sans-serif;
+      // -webkit-font-smoothing: subpixel-antialiased !important;
       text-align: center;
       color: #47B584;
-      font-size: 32px;
-      text-transform: lowercase;
-      margin-bottom: 10px;
+      padding-left: 2px;
     }
   }
 
