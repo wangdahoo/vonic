@@ -12,8 +12,8 @@ label > * {
   pointer-events: none;
 }
 
-* {
-  font-family: sans-serif;
+body {
+  font-family: sans-serif !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
   font-weight: 100;
 }

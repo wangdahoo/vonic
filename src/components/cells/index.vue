@@ -33,9 +33,6 @@
       @include justify-content(center);
 
       @include thin-border-custom($default-border-color, 0, right);
-      &:first-of-type {
-        @include thin-border-custom($default-border-color, 0, horizontal);
-      }
 
       &:last-of-type {
         border-right: none;
