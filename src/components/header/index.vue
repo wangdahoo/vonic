@@ -24,7 +24,7 @@
       headerClass: {
         String,
         default() {
-          return 'bar bar-header bar-light'
+          return 'bar bar-header'
         }
       },
       showBackButton: {

@@ -38,7 +38,7 @@ module.exports = {
         loader: 'vue-html'
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg)|((eot|woff|ttf|svg)[\?]?.*)$/,
         loader: 'url',
         query: {
           limit: 10000,
@@ -54,7 +54,7 @@ module.exports = {
   },
   vue: {
     loaders: {
-      scss: 'style!css!sass'
+      scss: 'style!css!sass',
     }
   },
   devServer: {
