@@ -68,6 +68,7 @@ if (process.env.NODE_ENV === 'production') {
 
   // docs
   module.exports.output.path = path.resolve(__dirname, './docs')
+  module.exports.output.publicPath = ''
 
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
