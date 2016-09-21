@@ -30,8 +30,8 @@
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
 
-    transition: opacity,transform .5s cubic-bezier(.36, .66, .04, 1);
-    -webkit-transition: opacity,-webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
+    transition: opacity,transform 400ms cubic-bezier(.36, .66, .04, 1);
+    -webkit-transition: opacity,-webkit-transform 400ms cubic-bezier(.36, .66, .04, 1);
 
     -moz-box-shadow: $view-box-shadow;
     -webkit-box-shadow: $view-box-shadow;

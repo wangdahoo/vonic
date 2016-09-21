@@ -15,7 +15,7 @@
     "node-uuid": "^1.4.7",
     "vue": "^1.0.0",
     "vue-router": "^0.7.13",
-    "vue-scroller": "^0.1.6"
+    "vue-scroller": "^0.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

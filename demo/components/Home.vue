@@ -2,15 +2,15 @@
   <div class="page">
     <div class="page-content home">
       <div class="logo">
-        <img src="../assets/vonic.svg" width="100" height="100"/>
+        <img src="../assets/vonic.svg" width="80" height="80"/>
       </div>
 
       <div class="code-name">
         Vonic
       </div>
 
-      <div class="item item-divider">
-        组件
+      <div class="item item-divider text-center" style="color: #999">
+        JS Components
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
         Radio <span class="note">单选框</span>
@@ -48,13 +48,11 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-divider">
-        效果
-      </div>
       <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
-        Scroll
+        Scroll <span class="note">下拉刷新、无限加载</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
+
 
     </div>
   </div>
@@ -62,14 +60,12 @@
 <style lang="scss" scoped>
 
   .home {
-    padding-top: 50px;
+    padding: 40px 0 40px 0;
 
     .logo {
       width: 100%;
       text-align: center;
       img {
-        width: 100px;
-        height: 100px;
         margin: 0 auto;
       }
     }
@@ -84,10 +80,10 @@
       font-variant-numeric: normal;
       font-weight: normal;
       font-stretch: normal;
-      font-size: 40px;
+      font-size: 32px;
       line-height: normal;
       text-transform: lowercase;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   }
 

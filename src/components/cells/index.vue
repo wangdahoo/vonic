@@ -17,23 +17,12 @@
     @include display-flex();
     @include flex-direction(column);
 
-    border-width: 1px 0;
-    border-style: solid;
-    border-color: $default-border-color;
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-      border-width: 0.5px 0;
-    }
-
     .row {
       padding: 0;
       @include flex(1);
-      border-bottom: 1px solid $default-border-color;
-      @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        border-bottom: 0.5px solid $default-border-color;
-      }
-
-      &:last-of-type {
-        border-bottom: none;
+      @include thin-border-custom($default-border-color, 0, bottom);
+      &:first-of-type {
+        @include thin-border-custom($default-border-color, 0, vertical);
       }
     }
 
@@ -43,9 +32,9 @@
       @include flex(1);
       @include justify-content(center);
 
-      border-right: 1px solid $default-border-color;
-      @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        border-right: 0.5px solid $default-border-color;
+      @include thin-border-custom($default-border-color, 0, right);
+      &:first-of-type {
+        @include thin-border-custom($default-border-color, 0, horizontal);
       }
 
       &:last-of-type {
@@ -104,7 +93,7 @@
 
       handleCellClick(r, c) {
         let cellIndex = r * this.rows + c
-//        console.log(cellIndex)
+        // console.log(cellIndex)
 
         if (this.onCellClick) this.onCellClick(cellIndex)
       }

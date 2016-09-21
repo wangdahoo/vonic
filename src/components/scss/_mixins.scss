@@ -206,3 +206,45 @@
     }
   }
 }
+
+@mixin thin-border-custom($color, $radius, $custom: vertical) {
+  $border-width: 1px;
+
+  @if $custom == vertical {
+    $border-width: 1px 0 1px 0;
+  } @else if $custom == horizontal {
+    $border-width: 0 1px 0 1px;
+  } @else if $custom == left {
+    $border-width: 0 0 0 1px;
+  } @else if $custom == right {
+    $border-width: 0 1px 0 0;
+  } @else if $custom == top {
+    $border-width: 1px 0 0 0;
+  } @else if $custom == bottom {
+    $border-width: 0 0 1px 0;
+  }
+
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-width: $border-width;
+    border-color: $color;
+    border-style: solid;
+    border-radius: $radius;
+    transform-origin: 0 0;
+    z-index: 0;
+    box-sizing: border-box;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      height: 200%;
+      width: 200%;
+      transform: scale(0.5);
+      border-radius: ($radius * 2);
+    }
+  }
+}
