@@ -72,16 +72,8 @@
 
     .code-name {
       text-align: center;
-      font-family: "Italiana", sans-serif !important;
       color: #47B584;
-      font-style: normal;
-      font-variant-ligatures: normal;
-      font-variant-caps: normal;
-      font-variant-numeric: normal;
-      font-weight: normal;
-      font-stretch: normal;
       font-size: 32px;
-      line-height: normal;
       text-transform: lowercase;
       margin-bottom: 10px;
     }

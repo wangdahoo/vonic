@@ -35,7 +35,7 @@
       @include thin-border-custom($default-border-color, 0, right);
 
       &:last-of-type {
-        border-right: none;
+        border-right-width: 0;
       }
     }
   }
