@@ -11,14 +11,3 @@ app {
 label > * {
   pointer-events: none;
 }
-
-body {
-  font-family: sans-serif !important;
-  -webkit-font-smoothing: subpixel-antialiased !important;
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: sans-serif;
-  src: local("Helvetica");
-}

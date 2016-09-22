@@ -3,120 +3,157 @@
     <von-header title="Cells"></von-header>
 
     <div class="page-content">
+      <div class="cells" style="margin-bottom: 10px">
+        <div class="row" v-for="r in [0,1,2]">
+          <div class="col"  v-for="c in [0,1,2,3]" @click="onCellClick()">
+            <div class="padding">
+              <i class="{{ icons[4*r + c] }}"></i>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <cells :cell-items="cells_22" cell-class="cells_22-cell"
-             :rows="2" :cols="2"></cells>
+      <div class="cells" style="margin-bottom: 10px">
+        <div class="row" v-for="r in [0,1,2]">
+          <div class="col"  v-for="c in [0,1,2]" @click="onCellClick()">
+            <div class="padding">
+              <i class="{{ icons[4*r + c] }}"></i>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <cells :cell-items="cells_24" cell-class="cells_44-cell"
-             :rows="2" :cols="4"></cells>
-
-      <cells :cell-items="cells_33" cell-class="cells_33-cell"
-             :on-cell-click="onCellClick"></cells>
-
+      <div class="cells">
+        <div class="row" v-for="r in [0,1]">
+          <div class="col"  v-for="c in [0,1]" @click="onCellClick()">
+            <div class="padding-bg">
+              <i class="{{ icons[4*r + c] }}"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-<style lang="scss">
 
-  .cells_33-cell {
-    color: #666;
-    padding: 40px 0 !important;
-  }
+<style lang="scss" scoped>
 
-  .cells_22-cell {
-    padding: 50px 0;
-  }
+  $default-border-color: #ddd;
 
-  .cells_44-cell {
-    padding: 25px 0;
-  }
+  @mixin thin-border-custom($color, $radius, $custom: vertical) {
+    $border-width: 1px;
 
-  .cells_22-cell, .cells_44-cell {
-    color: #666;
+    @if $custom == vertical {
+      $border-width: 1px 0 1px 0;
+    } @else if $custom == horizontal {
+      $border-width: 0 1px 0 1px;
+    } @else if $custom == left {
+      $border-width: 0 0 0 1px;
+    } @else if $custom == right {
+      $border-width: 0 1px 0 0;
+    } @else if $custom == top {
+      $border-width: 1px 0 0 0;
+    } @else if $custom == bottom {
+      $border-width: 0 0 1px 0;
+    }
 
-    span {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -moz-box;
-      display: -moz-flex;
-      display: -ms-flexbox;
-      display: flex;
+    position: relative;
 
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-      -moz-box-flex: 1;
-      -moz-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
-
-      -webkit-box-direction: normal;
-      -webkit-box-orient: vertical;
-      -webkit-flex-direction: column;
-      -moz-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
-
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      -moz-justify-content: center;
-      justify-content: center;
-
-      color: #666;
-
-      .icon {
-        font-size: 28px;
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-width: $border-width;
+      border-color: $color;
+      border-style: solid;
+      border-radius: $radius;
+      transform-origin: 0 0;
+      z-index: 0;
+      box-sizing: border-box;
+      @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        height: 200%;
+        width: 200%;
+        transform: scale(0.5);
+        border-radius: ($radius * 2);
       }
     }
   }
 
+  .page-content {
+    padding-top: 54px !important;
+  }
+
+  .cells {
+    @include thin-border-custom($default-border-color, 0, top);
+
+    &:last-of-type {
+      margin-bottom: 10px;
+    }
+
+    background-color: #FFF;
+
+    .row {
+      padding: 0;
+
+      @include thin-border-custom($default-border-color, 0, bottom);
+
+      .col {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        @include thin-border-custom($default-border-color, 0, right);
+        &:last-of-type {
+          border-right-width: 0;
+        }
+      }
+    }
+  }
+
+  .padding {
+    padding: 30px 0;
+  }
+
+  .padding-bg {
+    padding: 50px 0;
+  }
+
 </style>
 <script>
-  import _ from 'lodash'
-  import {Page, Scroll, VonHeader, Cells} from 'vonic'
+  import {Page, VonHeader} from 'vonic'
 
   export default{
     components: {
       Page,
-      Scroll,
       VonHeader,
-      Cells
     },
 
     data(){
       return {
-        cells_22: [
-          '<span><i class="icon ion-checkmark-circled balanced"></i><i>cell 1</i></span>',
-          '<span><i class="icon ion-close-circled assertive"></i><i>cell 2</i></span>',
-          '<span><i class="icon ion-information-circled energized"></i><i>cell 3</i></span>',
-          '<span><i class="icon ion-help-circled calm"></i><i>cell 4</i></span>',
-        ],
+        icons: [
+          'icon ion-ios-arrow-up',
+          'icon ion-ios-arrow-down',
+          'icon ion-ios-arrow-left',
+          'icon ion-ios-arrow-right',
 
-        cells_33: [
-          'cell 1',
-          'cell 2',
-          'cell 3',
-          'cell 4',
-          'cell 5',
-          'cell 6',
-          'cell 7'
-        ],
+          'icon ion-ios-arrow-thin-up',
+          'icon ion-ios-arrow-thin-down',
+          'icon ion-ios-arrow-thin-left',
+          'icon ion-ios-arrow-thin-right',
 
-        cells_24: [
-          '<span><i class="icon ion-android-apps positive"></i></span>',
-          '<span><i class="icon ion-android-search positive"></i></span>',
-          '<span><i class="icon ion-android-star assertive"></i></span>',
-          '<span><i class="icon ion-android-share positive"></i></span>',
-          '<span><i class="icon ion-android-person dark"></i></span>',
-          '<span><i class="icon ion-android-settings dark"></i></span>',
-        ],
-
+          'icon ion-android-arrow-up',
+          'icon ion-android-arrow-down',
+          'icon ion-android-arrow-back',
+          'icon ion-android-arrow-forward',
+        ]
       }
     },
 
     methods: {
-      onCellClick(cellIndex) {
-        alert('cell ' + cellIndex + ' clicked!');
+      onCellClick() {
+        console.log('cell clicked');
       }
     }
   }
