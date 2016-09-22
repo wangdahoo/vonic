@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "description": "Vue.js be cool with ionic UI",
+  "description": "SPA Framework based on Vue.js, be cool with ionic UI.",
   "author": "wangdahoo <157195705@qq.com>",
   "private": true,
   "scripts": {
