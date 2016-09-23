@@ -42,7 +42,7 @@
       </div>
 
       <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
-        Cells
+        Cells <span class="note">九宫格、十六宫格布局</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 

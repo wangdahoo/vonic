@@ -6,7 +6,7 @@ import VonRadio from './components/radio'
 import VonCheckbox from './components/checkbox'
 import VonToggle from './components/toggle'
 import Tabs from './components/tabs'
-// import {Cells, Cell} from './components/cells'
+import {Cells} from './components/cells'
 import ButtonBar from './components/buttonbar'
 
 import Vonic from './vonic'
@@ -22,8 +22,7 @@ module.exports = {
   VonCheckbox,
   VonToggle,
   Tabs,
-  // Cells,
-  // Cell,
+  Cells,
   ButtonBar,
 
   Vonic

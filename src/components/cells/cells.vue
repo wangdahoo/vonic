@@ -1,38 +1,84 @@
 <template>
   <div class="cells">
-    <div class="row">
-      <slot></slot>
+    <div class="hairline-top"></div>
+    <div class="row" v-for="r in rows">
+      <div class="col" v-for="c in cols" @click="cellClicked(r*cols.length + c)">
+        <div v-if="c" class="hairline-left"></div>
+        {{{ items[r*cols.length + c] }}}
+      </div>
+      <div class="hairline-bottom"></div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-  @import "../scss/variables";
   @import "../scss/mixins";
 
+  .hairline-top:before {
+    @include hairline(top);
+  }
+
+  .hairline-bottom:after {
+    @include hairline(bottom);
+  }
+
+  .hairline-left:before {
+    @include hairline(left);
+  }
+
+  .hairline-right:after {
+    @include hairline(right);
+  }
+
   .cells {
-    @include thin-border-custom($default-border-color, 0, top);
-
-    &:last-of-type {
-      margin-bottom: 10px;
-    }
-
+    margin: 10px 0;
+    position: relative;
     background-color: #FFF;
-
     .row {
+      position: relative;
+      margin: 0;
       padding: 0;
-
-      @include thin-border-custom($default-border-color, 0, bottom);
-
       .col {
         margin: 0;
         padding: 0;
+        position: relative;
         text-align: center;
-        @include thin-border-custom($default-border-color, 0, right);
-        &:last-of-type {
-          border-right-width: 0;
-        }
       }
     }
   }
 </style>
+<script>
+  import _ from 'lodash'
+
+  export default {
+    props: {
+      row: {
+        type: [Number, String],
+        default: 3
+      },
+      col: {
+        type: [Number, String],
+        default: 3
+      },
+      items: {
+        type: Array,
+        required: true
+      },
+      onCellClick: Function
+    },
+
+    data() {
+      return {
+        rows: _.range(parseInt(this.row)),
+        cols: _.range(parseInt(this.col))
+      }
+    },
+
+    methods: {
+      cellClicked(cellIndex) {
+        // console.log(cellIndex)
+        if (this.onCellClick) this.onCellClick(cellIndex)
+      }
+    }
+  }
+</script>
