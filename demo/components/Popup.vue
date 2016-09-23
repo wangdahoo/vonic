@@ -14,6 +14,17 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
+      <div class="item item-icon-right" @click="showAlertIOS()">
+        iOS Alert <span class="note">iOS 风格提示框</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
+      <!--<div class="item item-icon-right" @click="showConfirmIOS()">
+        iOS Confirm <span class="note">iOS 风格确认框</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>-->
+
+
     </div>
   </div>
 </template>
@@ -59,18 +70,16 @@
     },
 
     methods: {
-      showAlert() {
+      showAlert(cssClass) {
         $alert.show({
           content: 'Hello!',
           okTheme: 'positive'
         }).then(() => {
-
-          console.log('alert hide');
-
+          console.log('alert hide.');
         })
       },
 
-      showConfirm() {
+      showConfirm(cssClass) {
         $confirm.show({
           content: '在"微信"中打开链接吗?',
           okText: '打开'
@@ -78,6 +87,16 @@
           console.log('confirm result: ', res);
         })
       },
+
+      showAlertIOS() {
+        $alert_ios.show({
+          title: '无法打开网页',
+          content: 'Safari打不开网页，因为网址无效。',
+          okText: '好'
+        }).then(() => {
+          console.log('alert hide.');
+        })
+      }
 
     }
   }

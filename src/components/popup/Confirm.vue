@@ -25,7 +25,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-  @import "index";
+  @import "./popup";
 
   .button-default {
     border: 1px solid #e3e3e3;

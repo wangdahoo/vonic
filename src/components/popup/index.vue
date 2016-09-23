@@ -1,9 +1,12 @@
 <script>
+
   import Alert from './Alert'
+  import AlertIOS from './AlertIOS'
   import Confirm from './Confirm'
 
   export default {
     Alert,
-    Confirm
+    AlertIOS,
+    Confirm,
   }
 </script>
