@@ -33,7 +33,7 @@
     right: auto;
     height: 1px;
     width: 100%;
-    background-color: #aaa;
+    background-color: #ddd;
     display: block;
     z-index: 15;
     transform-origin: 50% 100%;
