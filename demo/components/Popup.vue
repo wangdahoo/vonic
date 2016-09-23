@@ -19,10 +19,10 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <!--<div class="item item-icon-right" @click="showConfirmIOS()">
+      <div class="item item-icon-right" @click="showConfirmIOS()">
         iOS Confirm <span class="note">iOS 风格确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>-->
+      </div>
 
 
     </div>
@@ -70,7 +70,7 @@
     },
 
     methods: {
-      showAlert(cssClass) {
+      showAlert() {
         $alert.show({
           content: 'Hello!',
           okTheme: 'positive'
@@ -79,7 +79,7 @@
         })
       },
 
-      showConfirm(cssClass) {
+      showConfirm() {
         $confirm.show({
           content: '在"微信"中打开链接吗?',
           okText: '打开'
@@ -96,8 +96,17 @@
         }).then(() => {
           console.log('alert hide.');
         })
-      }
+      },
 
+      showConfirmIOS() {
+        $confirm_ios.show({
+          title: '在"微信"中打开链接吗?',
+          cancelText: '取消',
+          okText: '打开'
+        }).then((res) => {
+          console.log('confirm result: ', res);
+        })
+      },
     }
   }
 </script>

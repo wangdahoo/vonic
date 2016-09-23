@@ -13,6 +13,10 @@
       </div>
 
       <div class="popup-buttons">
+        <button class="{{ 'button button-block button-positive button-outline button-cancel' }}" @click="onCancel()">
+          {{{ cancelText }}}
+          <div class="hairline-right"></div>
+        </button>
         <button class="{{ 'button button-block button-positive button-outline button-ok' }}" @click="onOk()">
           {{{ okText }}}
         </button>
@@ -22,24 +26,15 @@
 </template>
 
 <style lang="scss" scoped>
+  @import "../scss/mixins";
   @import "./popup";
 
   .hairline-bottom:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: atuo;
-    bottom: 0;
-    right: auto;
-    height: 1px;
-    width: 100%;
-    background-color: #aaa;
-    display: block;
-    z-index: 15;
-    transform-origin: 50% 100%;
-    -webkit-transform-origin: 50% 100%;
-    transform: scaleY(0.5);
-    -webkit-transform: scaleY(0.5);
+    @include hairline(bottom);
+  }
+
+  .hairline-right:after {
+    @include hairline(right);
   }
 
   @font-face {
@@ -55,7 +50,7 @@
       padding: 20px 0 22px 0;
       border-bottom: none;
       position: relative;
-      .popup-title, .popup-sub-title {
+      .popup-title, .popup-sub-title, .button-ok, .button-cancel {
         font-family: sans-serif;
         color: #000;
       }
@@ -82,7 +77,11 @@
       height: 45px;
       min-height: 45px;
 
-      .button-ok {
+      .button {
+        margin-right: 0;
+      }
+
+      .button-ok, .button-cancel {
         -webkit-font-smoothing: subpixel-antialiased !important;
 
         background-color: none;
@@ -96,12 +95,22 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
 
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-
         &:active {
           background-color: rgba(0,0,0,0.15);
         }
+      }
+
+      .button-ok {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 10px;
+      }
+
+      .button-cancel {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10;
+        font-weight: 600;
+        font-family: sans-serif;
+
       }
     }
   }
@@ -122,6 +131,7 @@
         title: '提示',
         content: '',
         okText: '确定',
+        cancelText: '取消',
         okTheme: 'assertive',
         state: 0 // 0: hidden, 1: showing, 2: active
       }
@@ -140,10 +150,14 @@
         this.state = 1
 
         this.promise = new Promise((resolve, reject) => {
-          this.$on('AlertOkEvent', () => {
-            // console.log('AlertOkEvent');
+          this.$on('ConfirmOkEvent', () => {
             this.hide()
-            resolve()
+            resolve(true)
+          })
+
+          this.$on('ConfirmCancelEvent', () => {
+            this.hide()
+            resolve(false)
           })
         });
 
@@ -164,7 +178,11 @@
       },
 
       onOk() {
-        this.$dispatch('AlertOkEvent')
+        this.$dispatch('ConfirmOkEvent')
+      },
+
+      onCancel() {
+        this.$dispatch('ConfirmCancelEvent')
       }
     }
   }

@@ -11,3 +11,10 @@ app {
 label > * {
   pointer-events: none;
 }
+
+.backdrop {
+  background-color: rgba(0,0,0,0.3);
+
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
