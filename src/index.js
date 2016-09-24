@@ -9,9 +9,12 @@ import Tabs from './components/tabs'
 import {Cells} from './components/cells'
 import ButtonBar from './components/buttonbar'
 
+import {Input, Search} from './components/input'
+
 import Vonic from './vonic'
 
 const Scroll = Scroller
+const VonInput = Input
 
 module.exports = {
   Page,
@@ -24,6 +27,9 @@ module.exports = {
   Tabs,
   Cells,
   ButtonBar,
+
+  VonInput,
+  Search,
 
   Vonic
 }

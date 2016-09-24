@@ -36,7 +36,6 @@
   }
 </style>
 <script>
-  import uuid from 'node-uuid'
 
   export default{
     props: {
@@ -52,7 +51,7 @@
 
     data() {
       return {
-        radioId: 'von-radio-' + uuid.v4().substr(0, 8)
+        radioId: 'von-radio-' + Math.random().toString(36).substring(3, 8)
       }
     },
 

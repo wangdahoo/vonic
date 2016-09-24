@@ -29,7 +29,6 @@
   }
 </style>
 <script>
-  import uuid from 'node-uuid'
   import _ from 'lodash'
 
   export default{
@@ -65,7 +64,7 @@
 
     data() {
       return {
-        checkboxName: 'von-checkbox-' + uuid.v4().substr(0, 8),
+        checkboxName: 'von-checkbox-' + Math.random().toString(36).substring(3, 8)
       }
     }
   }

@@ -8,7 +8,15 @@
       <div class="code-name">vonic</div>
 
       <div class="item item-divider text-center" style="color: #999">
-        JS Components
+        UI Components
+      </div>
+      <div class="item item-icon-right" v-link="{ path: '/widgets/form' }">
+        Form <span class="note">表单</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+      <div class="item item-icon-right" v-link="{ path: '/widgets/search' }">
+        Search <span class="note">搜索</span>
+        <i class="icon ion-ios-arrow-right"></i>
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
         Radio <span class="note">单选框</span>
