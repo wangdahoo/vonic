@@ -12,6 +12,7 @@ import Popup from './components/Popup'
 import Modal from './components/Modal'
 import Cells from './components/Cells'
 import Scroll from './components/Scroll'
+import Header from './components/Header'
 
 const routers = {
   '/home': {
@@ -52,6 +53,10 @@ const routers = {
 
   '/effects/scroll': {
     component: Scroll
+  },
+
+  '/widgets/header': {
+    component: Header
   },
 
 };
