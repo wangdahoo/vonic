@@ -1,13 +1,13 @@
 <template>
   <div class="cells">
-    <div class="hairline-top"></div>
     <div class="row" v-for="r in rows">
+      <div class="hairline-top"></div>
       <div class="col" v-for="c in cols" @click="cellClicked(r*cols.length + c)">
         <div v-if="c" class="hairline-left"></div>
         {{{ items[r*cols.length + c] }}}
       </div>
-      <div class="hairline-bottom"></div>
     </div>
+    <div class="hairline-bottom"></div>
   </div>
 </template>
 

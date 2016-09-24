@@ -22,11 +22,27 @@
       'ConfirmIos': ConfirmIOS
     },
 
+    data() {
+      return {
+        gradeClass: 'grade-a'
+      }
+    },
+
     ready() {
       window.$alert = this.$refs.alert
       window.$alert_ios = this.$refs.alert_ios
       window.$confirm = this.$refs.confirm
       window.$confirm_ios = this.$refs.confirm_ios
+
+      // detect iOS device
+      let is_ios_device = /iPad|iPhone|iPod/.test(navigator.userAgent)
+      // grade-a for ios, grade-b for android & other
+      if (is_ios_device) {
+        this.gradeClass = 'grade-a'
+      } else {
+        this.gradeClass = 'grade-b'
+      }
+      document.querySelector('body').className = this.gradeClass
     }
   }
 </script>

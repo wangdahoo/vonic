@@ -165,7 +165,6 @@
   position: absolute;
   background-color: #ddd;
   display: block;
-  z-index: 15;
   @if $position == left {
     left: 0;
     top: 0;
@@ -206,9 +205,25 @@
     right: auto;
     height: 1px;
     width: 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
     transform: scaleY(0.5);
     -webkit-transform: scaleY(0.5);
   }
+}
+
+// transition
+@mixin transition-duration($transition-duration) {
+  -webkit-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
+
+@mixin transition-timing-function($transition-timing) {
+   -webkit-transition-timing-function: $transition-timing;
+           transition-timing-function: $transition-timing;
+ }
+
+@mixin transition-property($property) {
+  -webkit-transition-property: $property;
+          transition-property: $property;
 }
