@@ -49,6 +49,7 @@
 
   /* iOS 风格 */
   .popup.ios {
+    height: auto;
     width: 280px;
     border-radius: 10px;
     .popup-head {
