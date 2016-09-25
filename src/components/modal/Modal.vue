@@ -10,6 +10,7 @@
 
 <script>
   import Vue from 'vue'
+  import _ from 'lodash'
 
   function getModalTemplate(modalId) {
     return '<div class="modal slide-in-up" id="' + modalId + '"></div>'
@@ -21,7 +22,7 @@
         this.$el.className = 'modal slide-in-up active'
         setTimeout(() => {
           this.$el.className += ' ng-enter ng-enter-active'
-        })
+        }, 10)
       },
 
       hide() {
@@ -34,54 +35,66 @@
     data() {
       return {
         active: false,
-        modalId: '',
-        instance: undefined,
-        instances: {}
+        instances: {},
+        showed: []
       }
     },
 
     methods: {
-      fromComponent(component) {
-        this.modalId = 'von-modal-' + Math.random().toString(36).substring(3, 8)
+      fromComponent(delegateId, component) {
+        let modalId = 'von-modal-' + Math.random().toString(36).substring(3, 8)
         let wrapper = document.querySelector('[von-modal-wrapper]')
-        wrapper.innerHTML = getModalTemplate(this.modalId)
+        wrapper.innerHTML += getModalTemplate(modalId)
 
         Vue.nextTick(() => {
           let options = Object.assign({}, component, {mixins: [ModalMixin]})
           let ModalComponent = Vue.extend(options)
 
-          if (this.instance == undefined) {
-            this.instance = new ModalComponent({
-              el: '#' + this.modalId
-            })
-          }
+          this.instances[delegateId] = new ModalComponent({
+            el: '#' + modalId
+          })
         })
       },
 
-      show() {
-        if (this.instance) {
+      show(delegateId) {
+        if (delegateId && this.instances[delegateId]) {
           this.active = true
-          this.instance.show()
+          this.instances[delegateId].show()
+          this.showed.push(delegateId)
+        } else {
+          // do nothing..
         }
       },
 
-      hide() {
-        if (this.instance) {
-          this.instance.hide()
+      hide(delegateId) {
+        if (delegateId && this.instances[delegateId]) {
+          this.instances[delegateId].hide()
           setTimeout(() => {
             this.active = false
           }, 300)
+          this.showed = _.filter(this.showed, (d) => { return delegateId != d })
+        } else if (this.showed.length > 0) {
+          let _delegateId = this.showed.pop()
+          this.instances[_delegateId].hide()
+          setTimeout(() => {
+            this.active = false
+          }, 300)
+        } else {
+          // do nothing..
         }
       },
 
       destroy() {
-        if (this.instance) {
-          // reset dom
-          this.instance.$destroy()
-          this.instance = undefined
-          let wrapper = document.querySelector('[von-modal-wrapper]')
-          wrapper.innerHTML = ''
-        }
+        _.each(this.instances, (instance) => {
+          instance.$destroy()
+        })
+        this.instances = []
+        let wrapper = document.querySelector('[von-modal-wrapper]')
+        wrapper.innerHTML = ''
+      },
+
+      getDelegate(delegateId) {
+        return _.find(this.instances, (v, k) => { return k == delegateId })
       }
     }
   }

@@ -8,7 +8,7 @@
     >
   </von-header>
 
-    <div class="page-content">
+    <div class="padding">
       <p>
         这是一个模态窗
       </p>
@@ -19,12 +19,13 @@
 
 </style>
 <script>
-  import {Page, VonHeader} from 'vonic'
+  import {Page, VonHeader, Scroll} from 'vonic'
 
   export default{
     components: {
       Page,
       VonHeader,
+      Scroll
     },
 
     data(){
