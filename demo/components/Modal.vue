@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="模态窗"></von-header>
+    <von-header title="模态窗" :on-back-button-click="back"></von-header>
 
     <div class="page-content">
       <div class="padding">
@@ -41,6 +41,12 @@
 
       showMultiModal() {
         $vonicModal.show('multi_modal')
+      },
+
+      back() {
+        console.log('custom go back')
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
       }
     }
   }
