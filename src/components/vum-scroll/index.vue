@@ -19,7 +19,7 @@
           <div class="preloader"></div>
           <div class="pull-to-refresh-arrow"></div>
           <span class="label-down">下拉刷新</span>
-          <span class="label-up">松开刷新</span>
+          <span class="label-up">释放刷新</span>
           <span class="label-refresh">正在刷新..</span>
         </slot>
       </div>
@@ -192,7 +192,8 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     &.touching .scroll-inner {

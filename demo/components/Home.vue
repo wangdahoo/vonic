@@ -60,10 +60,10 @@
       </div>
 
       <div class="item item-icon-right" v-link="{ path: '/effects/vum-scroll' }">
-        VumScroll <span class="note">下拉刷新、无限加载</span>
+        VumScroll <span class="note">基于vum代码改写的scroll组件</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
-      
+
       <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
         Loading <span class="note">加载提示</span>
         <i class="icon ion-ios-arrow-right"></i>

@@ -7,7 +7,7 @@
                 :on-menu-button-click="close"
                 header-class="bar-dark"
     >
-  </von-header>
+    </von-header>
 
     <div class="page-content">
       <div class="padding">

@@ -6,6 +6,7 @@
       <div class="padding">
         <button class="button button-positive button-block" @click="showModal()">默认模态窗</button>
         <button class="button button-positive button-block" @click="showMultiModal()">多个模态窗</button>
+        <button class="button button-positive button-block button-outline" @click="showScrollModal()">内置Scroll组件</button>
       </div>
     </div>
   </div>
@@ -17,6 +18,7 @@
   import {Page, VonHeader} from 'vonic'
   import DefaultModal from './DefaultModal'
   import MultiModal from './MultiModal'
+  import ScrollModal from './ScrollModal'
 
   export default{
     components: {
@@ -32,6 +34,7 @@
     ready() {
       $vonicModal.fromComponent('default_modal', DefaultModal)
       $vonicModal.fromComponent('multi_modal', MultiModal)
+      $vonicModal.fromComponent('scroll_modal', ScrollModal)
     },
 
     methods: {
@@ -41,6 +44,10 @@
 
       showMultiModal() {
         $vonicModal.show('multi_modal')
+      },
+
+      showScrollModal() {
+        $vonicModal.show('scroll_modal')
       },
 
       back() {
