@@ -137,7 +137,7 @@
 
         setTimeout(() => {
           $loading.hide()
-        }, 1500)
+        }, 3000)
       }
     }
   }
