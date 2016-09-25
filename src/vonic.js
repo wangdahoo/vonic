@@ -61,7 +61,7 @@ class VonicApp {
         el.className = 'transition-reverse'
         setTimeout(() => {
           el.className = ''
-        }, 550)
+        }, 500)
         break
       default:
         el.className = ''

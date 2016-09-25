@@ -8,6 +8,7 @@
     <alert-ios v-ref:alert_ios></alert-ios>
     <confirm v-ref:confirm></confirm>
     <confirm-ios v-ref:confirm_ios></confirm-ios>
+    <loading v-ref:loading></loading>
 
     <modal v-ref:modal></modal>
   </div>
@@ -16,6 +17,7 @@
 <script>
   import { Alert, AlertIOS, Confirm, ConfirmIOS } from './popup'
   import { Modal } from './modal'
+  import { Loading } from './loading'
 
   export default {
     components: {
@@ -23,8 +25,8 @@
       'AlertIos': AlertIOS,
       Confirm,
       'ConfirmIos': ConfirmIOS,
-
-      Modal
+      Modal,
+      Loading
     },
 
     data() {
@@ -38,6 +40,7 @@
       window.$alert_ios = this.$refs.alert_ios
       window.$confirm = this.$refs.confirm
       window.$confirm_ios = this.$refs.confirm_ios
+      window.$loading = this.$refs.loading
 
       window.$vonicModal = this.$refs.modal
 

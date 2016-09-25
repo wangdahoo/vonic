@@ -64,6 +64,11 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div> -->
 
+      <div class="item item-icon-right" @click="showLoading()">
+        Loading <span class="note">加载中提示</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
     </div>
   </div>
 </template>
@@ -124,6 +129,16 @@
   export default{
     components: {
       Page
+    },
+
+    methods: {
+      showLoading(tips) {
+        $loading.show(tips)
+
+        setTimeout(() => {
+          $loading.hide()
+        }, 1500)
+      }
     }
   }
 </script>

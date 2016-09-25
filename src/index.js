@@ -11,6 +11,8 @@ import ButtonBar from './components/buttonbar'
 
 import {Input, Search} from './components/input'
 
+import {Loading} from './components/loading'
+
 import Vonic from './vonic'
 
 const Scroll = Scroller
@@ -30,6 +32,8 @@ module.exports = {
 
   VonInput,
   Search,
+
+  Loading,
 
   Vonic
 }
