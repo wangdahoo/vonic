@@ -88,22 +88,22 @@ export default {
     FastClick.attach(document.body)
 
     // 类似的这种兼容性代码, 暂时放在这个位置
-    // for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport.
-    document.documentElement.addEventListener('touchstart', (e) => {
-      if (e.touches.length > 1) {
-        e.preventDefault();
-      }
-    }, false);
-
-    // disable double click to zoom
-    let lastTouchEnd = 0;
-    document.documentElement.addEventListener('touchend', (e) => {
-      let now = Date.now();
-      if (now - lastTouchEnd < 300) {
-        e.preventDefault();
-      }
-
-      lastTouchEnd = now
-    }, false);
+    // // for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport.
+    // document.documentElement.addEventListener('touchstart', (e) => {
+    //   if (e.touches.length > 1) {
+    //     e.preventDefault();
+    //   }
+    // }, false);
+    //
+    // // disable double click to zoom
+    // let lastTouchEnd = 0;
+    // document.documentElement.addEventListener('touchend', (e) => {
+    //   let now = Date.now();
+    //   if (now - lastTouchEnd < 300) {
+    //     e.preventDefault();
+    //   }
+    //
+    //   lastTouchEnd = now
+    // }, false);
   }
 }

@@ -64,8 +64,13 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div> -->
 
-      <div class="item item-icon-right" @click="showLoading()">
-        Loading <span class="note">加载中提示</span>
+      <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
+        Loading <span class="note">加载提示</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
+      <div class="item item-icon-right" @click="showToast()">
+        Toast <span class="note">文字提示</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
@@ -138,6 +143,10 @@
         setTimeout(() => {
           $loading.hide()
         }, 3000)
+      },
+
+      showToast() {
+        $loading.toast('发送成功')
       }
     }
   }
