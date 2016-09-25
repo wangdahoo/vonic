@@ -2,14 +2,3 @@
 SPA Framework based on Vue.js, be cool with ionic UI.
 
 > visit demo at: [https://wangdahoo.github.io/vonic/docs/](https://wangdahoo.github.io/vonic/docs/)
-
-## setup
-```
-$ npm install
-$ bower install
-```
-
-## run demo
-```
-$ npm run dev
-```
