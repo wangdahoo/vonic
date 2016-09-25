@@ -6,13 +6,12 @@
                 menu-button-icon="icon ion-ios-close-empty positive"
                 :on-menu-button-click="close"
     >
-    </von-header>
+  </von-header>
 
     <div class="page-content">
-      <p class="padding">
+      <p>
         这是一个模态窗
       </p>
-
     </div>
   </div>
 </template>

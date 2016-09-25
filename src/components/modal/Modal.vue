@@ -35,7 +35,8 @@
       return {
         active: false,
         modalId: '',
-        instance: undefined
+        instance: undefined,
+        instances: {}
       }
     },
 
@@ -69,7 +70,7 @@
           this.instance.hide()
           setTimeout(() => {
             this.active = false
-          }, 250)
+          }, 300)
         }
       },
 

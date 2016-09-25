@@ -79,7 +79,7 @@
   }
 
   /* page content */
-  .page .page-content {
+  .page .page-content, .modal .page-content {
     position: absolute;
     top: 0;
     right: 0;
@@ -100,6 +100,10 @@
   .page.has-header > .page-content.padding-top {
     padding-top: $header-height + $padding;
   }
+
+   .modal .page-content {
+     padding-top: $header-height;
+   }
 
   // grade-b
   .grade-b .view {

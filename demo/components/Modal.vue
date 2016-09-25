@@ -5,6 +5,7 @@
     <div class="page-content">
       <div class="padding">
         <button class="button button-positive button-block" @click="showModal()">显示模态窗</button>
+        <button class="button button-positive button-block" @click="showScrllerInModal()">模态窗中的Scroller</button>
       </div>
     </div>
   </div>
@@ -15,6 +16,7 @@
 <script>
   import {Page, VonHeader} from 'vonic'
   import MyModal from './MyModal'
+  import ScrollModal from './ScrollModal'
 
   export default{
     components: {
@@ -28,11 +30,16 @@
     },
 
     ready() {
-      $vonicModal.fromComponent(MyModal)
+      // $vonicModal.fromComponent(MyModal)
+      $vonicModal.fromComponent(ScrollModal)
     },
 
     methods: {
       showModal() {
+        $vonicModal.show()
+      },
+
+      showScrllerInModal() {
         $vonicModal.show()
       }
     }
