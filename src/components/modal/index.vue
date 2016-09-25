@@ -1,18 +1,6 @@
-<template>
-
-</template>
-<style>
-
-</style>
 <script>
-  export default{
-    data(){
-      return{
-
-      }
-    },
-    components:{
-
-    }
+  import Modal from './Modal'
+  export default {
+    Modal
   }
 </script>

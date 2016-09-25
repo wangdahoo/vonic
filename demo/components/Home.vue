@@ -10,12 +10,12 @@
       <div class="item item-divider text-center" style="color: #999">
         UI Components
       </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/form' }">
-        Form <span class="note">表单</span>
+      <div class="item item-icon-right" v-link="{ path: '/widgets/input' }">
+        Input <span class="note">文本框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/search' }">
-        Search <span class="note">搜索</span>
+        Search <span class="note">搜索框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
@@ -45,7 +45,7 @@
       </div>
 
       <div class="item item-icon-right" v-link="{ path: '/widgets/modal' }">
-        Modal <span class="note">模态框</span>
+        Modal <span class="note">模态窗</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 

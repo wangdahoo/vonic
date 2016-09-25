@@ -97,7 +97,7 @@
         border-top-right-radius: 0;
 
         &:active {
-          background-color: rgba(0,0,0,0.15);
+          background-color: rgba(0,0,0,0.10);
         }
       }
 

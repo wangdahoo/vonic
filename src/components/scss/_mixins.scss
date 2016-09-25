@@ -213,6 +213,18 @@
 }
 
 // transition
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration) {
+  -webkit-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
 @mixin transition-duration($transition-duration) {
   -webkit-transition-duration: $transition-duration;
           transition-duration: $transition-duration;
@@ -226,4 +238,34 @@
 @mixin transition-property($property) {
   -webkit-transition-property: $property;
           transition-property: $property;
+}
+
+// transform
+@mixin rotate($degrees) {
+  @include transform( rotate($degrees) );
+}
+@mixin scale($ratio) {
+  @include transform( scale($ratio) );
+}
+@mixin translate($x, $y) {
+  @include transform( translate($x, $y) );
+}
+@mixin skew($x, $y) {
+  @include transform( skew($x, $y) );
+  -webkit-backface-visibility: hidden;
+}
+@mixin translate3d($x, $y, $z) {
+  @include transform( translate3d($x, $y, $z) );
+}
+@mixin translateZ($z) {
+  @include transform( translateZ($z) );
+}
+@mixin transform($val) {
+  -webkit-transform: $val;
+          transform: $val;
+}
+
+@mixin transform-origin($left, $top) {
+  -webkit-transform-origin: $left $top;
+          transform-origin: $left $top;
 }

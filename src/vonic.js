@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import VonApp from './components/app'
+import Storage from './services/storage'
 
 class VonicApp {
   constructor(routers, defaultRouterUrl) {
@@ -16,6 +17,26 @@ class VonicApp {
       history: false
     })
     router.map(this.routers)
+
+    router.beforeEach(() => {
+      // destroy modals
+      $vonicModal.destroy()
+
+      // save position
+      let content = document.querySelector('.page-content')
+      let scrollTop = content && content.scrollTop
+      window.__last_page_position__ = Storage.get('von:last_page_position') || 0;
+      Storage.set('von:last_page_position', scrollTop || 0)
+    })
+
+    router.afterEach(() => {
+      Vue.nextTick(() => {
+        let content = document.querySelectorAll('.page-content')[1]
+        // console.log(content, window.__last_page_position__);
+        if (content)
+          content.scrollTop = window.__last_page_position__
+      })
+    })
 
     router.redirect({
       '*': this.defaultRouterUrl
@@ -48,8 +69,6 @@ class VonicApp {
     return el.className ? 'back' : 'forward'
   }
 }
-
-import Storage from './services/storage'
 
 export default {
   install(Vue, options) {

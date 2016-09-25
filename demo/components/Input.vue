@@ -1,45 +1,55 @@
 <template>
   <div class="page has-header">
-    <von-header title="Input"></von-header>
+    <von-header title="文本框"></von-header>
 
     <div class="page-content padding-top">
 
-      <!-- type: text, password, email, tel -->
-      <div class="item item-divider">
-        有标签:
-      </div>
-      <von-input type="text" :value.sync="username" placeholder="用户名/手机/邮箱" label="用户名"></von-input>
-      <von-input type="password" :value.sync="password" placeholder="密码" label="密码" style="margin-bottom: 5px;"></von-input>
-
-      <div class="padding">
-        <button class="button button-positive button-block">确认</button>
+      <div class="item item-icon-right" v-link="{ path: '/widgets/defaultInput' }">
+        Default<span class="note">默认</span>
+        <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-divider">
-        无标签:
+      <div class="item item-icon-right" v-link="{ path: '/widgets/floatingLabel' }">
+        Floating Label<span class="note">悬浮标签效果</span>
+        <i class="icon ion-ios-arrow-right"></i>
       </div>
-      <von-input type="text" :value.sync="username" placeholder="用户名/手机/邮箱"></von-input>
 
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 
+  .item-divider:first-of-type {
+    border-top: none;
+  }
+
+  .item-icon-right {
+    .icon {
+      right: 0;
+      color: #ccc;
+      font-size: 24px;
+    }
+
+    span.note {
+      color: #aaa;
+      font-size: 13px;
+      float: right;
+      margin-right: 15px;
+    }
+  }
+
 </style>
 <script>
-  import {Page, VonHeader, VonInput} from 'vonic'
+  import {Page, VonHeader} from 'vonic'
 
   export default{
     components: {
       Page,
       VonHeader,
-      VonInput
     },
 
     data(){
       return {
-        username: '',
-        password: ''
       }
     },
 

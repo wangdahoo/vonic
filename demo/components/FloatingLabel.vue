@@ -4,8 +4,11 @@
 
     <div class="page-content padding-top">
 
-      <von-input type="text" :value.sync="username" placeholder="用户名" label="用户名" floating-label="true"></von-input>
-      <von-input type="password" :value.sync="password" placeholder="密码" label="密码" floating-label="true"></von-input>
+      <div class="item item-divider">输入文字试试:</div>
+
+      <von-input type="text" :value.sync="username" placeholder="Username" label="Username" floating-label="true"></von-input>
+      <von-input type="email" :value.sync="email" placeholder="Email" label="Email" floating-label="true"></von-input>
+      <von-input type="tel" :value.sync="phone" placeholder="Phone" label="Phone" floating-label="true"></von-input>
 
       <div class="padding">
         <button class="button button-positive button-block">确认</button>
@@ -28,7 +31,8 @@
     data(){
       return {
         username: '',
-        password: ''
+        email: '',
+        phone: ''
       }
     }
   }

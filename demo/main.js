@@ -3,8 +3,8 @@ import { Vonic } from 'vonic'
 
 // Demos
 import Home from './components/Home'
-import Form from './components/Form'
 import Input from './components/Input'
+import DefaultInput from './components/DefaultInput'
 import FloatingLabel from './components/FloatingLabel'
 import Search from './components/Search'
 import Radio from './components/Radio'
@@ -14,6 +14,7 @@ import Tabs from './components/Tabs'
 import ButtonBar from './components/ButtonBar'
 import Popup from './components/Popup'
 import Modal from './components/Modal'
+// import Modal from './components/MyModal'
 import Cells from './components/Cells'
 import Scroll from './components/Scroll'
 import Header from './components/Header'
@@ -23,12 +24,12 @@ const routers = {
     component: Home
   },
 
-  '/widgets/form': {
-    component: Form
-  },
-
   '/widgets/input': {
     component: Input
+  },
+
+  '/widgets/defaultInput': {
+    component: DefaultInput
   },
 
   '/widgets/floatingLabel': {

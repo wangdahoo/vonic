@@ -8,18 +8,23 @@
     <alert-ios v-ref:alert_ios></alert-ios>
     <confirm v-ref:confirm></confirm>
     <confirm-ios v-ref:confirm_ios></confirm-ios>
+
+    <modal v-ref:modal></modal>
   </div>
 </template>
 
 <script>
   import { Alert, AlertIOS, Confirm, ConfirmIOS } from './popup'
+  import { Modal } from './modal'
 
   export default {
     components: {
       Alert,
       'AlertIos': AlertIOS,
       Confirm,
-      'ConfirmIos': ConfirmIOS
+      'ConfirmIos': ConfirmIOS,
+
+      Modal
     },
 
     data() {
@@ -33,6 +38,8 @@
       window.$alert_ios = this.$refs.alert_ios
       window.$confirm = this.$refs.confirm
       window.$confirm_ios = this.$refs.confirm_ios
+
+      window.$vonicModal = this.$refs.modal
 
       // detect iOS device
       let is_ios_device = /iPad|iPhone|iPod/.test(navigator.userAgent)

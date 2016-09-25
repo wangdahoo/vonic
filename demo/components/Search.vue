@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="Search"></von-header>
+    <von-header title="搜索框"></von-header>
 
     <div class="page-content">
 
