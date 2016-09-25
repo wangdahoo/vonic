@@ -60,12 +60,41 @@
       transform: translate3d(-33%, 0, 0);
       -webkit-transform: translate3d(-33%, 0, 0);
     }
+  }
 
-    // iOS Nav Bar Transition
-    &.view-enter [von-header] {
-      background: transparent;
+  // iOS Nav Bar Transition
+  .grade-a .view {
+    .von-header {
+      .button,
+      .title {
+        @include transition-duration($ios-transition-duration);
+        @include transition-timing-function($ios-transition-timing-function);
+        -webkit-transition-property: opacity;
+                transition-property: opacity;
+
+        opacity: 1;
+      }
+    }
+
+    &.view-enter .von-header {
+      &.bar {
+        background: transparent;
+      }
+
+      .button,
+      .title {
+        opacity: 0;
+      }
+    }
+
+    &.view-leave .von-header {
+      .button,
+      .title {
+        opacity: 0;
+      }
     }
   }
+
 
   .transition-reverse > .view {
     &.view-enter {

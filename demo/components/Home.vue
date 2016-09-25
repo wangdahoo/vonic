@@ -59,10 +59,10 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/header' }">
+      <!-- <div class="item item-icon-right" v-link="{ path: '/widgets/header' }">
         Header <span class="note">导航栏、标题栏</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </div> -->
 
     </div>
   </div>

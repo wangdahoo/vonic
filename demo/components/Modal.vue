@@ -44,7 +44,6 @@
       },
 
       back() {
-        console.log('custom go back')
         $vonic.nextTransition('back')
         $router.go({path: '/home'})
       }
