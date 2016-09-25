@@ -1,7 +1,7 @@
 <template>
 
   <div class="page has-header">
-    <von-header title="Scroll" :on-back-button-click="back"></von-header>
+    <von-header title="VumScroll" :on-back-button-click="back"></von-header>
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
@@ -74,8 +74,11 @@
   }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
-
+  .page-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 
 </style>
