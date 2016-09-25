@@ -4,7 +4,7 @@
 
     <div class="page-content">
       <div class="padding">
-        <button class="button button-positive button-block" @click="showModal()">默认模态窗</button>
+        <button class="button button-positive button-block" @click="showModal()">显示模态窗</button>
         <button class="button button-positive button-block" @click="showMultiModal()">多个模态窗</button>
         <button class="button button-positive button-block button-outline" @click="showScrollModal()">内置Scroll组件</button>
       </div>

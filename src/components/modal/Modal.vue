@@ -23,10 +23,15 @@
         setTimeout(() => {
           this.$el.className += ' ng-enter ng-enter-active'
         }, 10)
+
+        document.querySelector('body').className += ' modal-open'
       },
 
       hide() {
         this.$el.className = 'modal slide-in-up ng-leave ng-leave-active'
+
+        let className = document.querySelector('body').className
+        document.querySelector('body').className = className.replace(' modal-open', '')
       }
     }
   }
