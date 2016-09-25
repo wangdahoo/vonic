@@ -2,14 +2,18 @@
   <div class="modal-backdrop"
        :class="{'active': active, 'hide': !active}">
     <div class="modal-backdrop-bg"></div>
-    <div class="modal-wrapper">
-      <div class="modal slide-in-up" id="{{modalId}}"></div>
+    <div class="modal-wrapper" von-modal-wrapper>
+      <!-- modal template here -->
     </div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
+
+  function getModalTemplate(modalId) {
+    return '<div class="modal slide-in-up" id="' + modalId + '"></div>'
+  }
 
   let ModalMixin = {
     methods: {
@@ -38,6 +42,8 @@
     methods: {
       fromComponent(component) {
         this.modalId = 'von-modal-' + Math.random().toString(36).substring(3, 8)
+        let wrapper = document.querySelector('[von-modal-wrapper]')
+        wrapper.innerHTML = getModalTemplate(this.modalId)
 
         Vue.nextTick(() => {
           let options = Object.assign({}, component, {mixins: [ModalMixin]})
@@ -48,7 +54,6 @@
               el: '#' + this.modalId
             })
           }
-          this.show()
         })
       },
 
@@ -70,13 +75,11 @@
 
       destroy() {
         if (this.instance) {
+          // reset dom
           this.instance.$destroy()
-          Vue.nextTick(() => {
-            let modal = document.getElementById(this.modalId)
-            modal.innerHTML = ''
-            modal.attributes.id = ''
-            this.modalId = ''
-          })
+          this.instance = undefined
+          let wrapper = document.querySelector('[von-modal-wrapper]')
+          wrapper.innerHTML = ''
         }
       }
     }

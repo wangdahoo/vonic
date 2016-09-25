@@ -27,9 +27,13 @@
       }
     },
 
+    ready() {
+      $vonicModal.fromComponent(MyModal)
+    },
+
     methods: {
       showModal() {
-        $vonicModal.fromComponent(MyModal)
+        $vonicModal.show()
       }
     }
   }
