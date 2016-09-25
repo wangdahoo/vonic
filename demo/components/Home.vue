@@ -54,13 +54,13 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
+      <!-- <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
         Scroll <span class="note">下拉刷新、无限加载</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </div> -->
 
       <div class="item item-icon-right" v-link="{ path: '/effects/vum-scroll' }">
-        VumScroll <span class="note">基于vum代码改写的scroll组件</span>
+        Scroll <span class="note">下拉刷新、无限加载</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
