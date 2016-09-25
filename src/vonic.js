@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import FastClick from 'fastclick'
 Vue.use(VueRouter)
 
 import VonApp from './components/app'
@@ -83,8 +84,10 @@ export default {
     window.$vonic = app
     window.$storage = Storage
 
-    // 类似的这种兼容性代码, 暂时放在这个位置
+    // FastClick
+    FastClick.attach(document.body)
 
+    // 类似的这种兼容性代码, 暂时放在这个位置
     // for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport.
     document.documentElement.addEventListener('touchstart', (e) => {
       if (e.touches.length > 1) {

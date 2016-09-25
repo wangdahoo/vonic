@@ -104,6 +104,11 @@
           items.push(this.getIcon(this.icons[i]))
         }
         return items
+      },
+      
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
       }
     }
   }

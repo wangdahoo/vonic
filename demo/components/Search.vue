@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="搜索框"></von-header>
+    <von-header title="搜索框" :on-back-button-click="back"></von-header>
 
     <div class="page-content">
 
@@ -36,7 +36,12 @@
     methods: {
       onSearch(keywords) {
         this.searching = true;
-      }
+      },
+
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      },
     }
   }
 </script>

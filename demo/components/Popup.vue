@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="Popup"></von-header>
+    <von-header title="Popup" :on-back-button-click="back"></von-header>
 
     <div class="page-content padding-top">
 
@@ -70,6 +70,11 @@
     },
 
     methods: {
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      },
+
       showAlert() {
         $alert.show({
           content: 'Hello!',

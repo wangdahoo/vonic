@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="开关按钮"></von-header>
+    <von-header title="开关按钮" :on-back-button-click="back"></von-header>
 
     <div class="page-content padding-top">
       <von-toggle :text="toggleText" :value.sync="pushNotification"></von-toggle>
@@ -35,6 +35,13 @@
         toggleText: "是否开启推送",
         pushNotification: true
       }
+    },
+
+    methods: {
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      },
     }
   }
 </script>

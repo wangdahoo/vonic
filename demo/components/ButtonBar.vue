@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="ButtonBar"></von-header>
+    <von-header title="ButtonBar" :on-back-button-click="back"></von-header>
 
     <div class="page-content">
 
@@ -64,7 +64,10 @@
     },
 
     methods: {
-
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      }
     }
   }
 </script>

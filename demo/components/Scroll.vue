@@ -1,7 +1,7 @@
 <template>
 
   <div class="page has-header">
-    <von-header title="Scroll"></von-header>
+    <von-header title="Scroll" :on-back-button-click="back"></von-header>
     <scroll class="page-content"
             :on-refresh="refresh"
             :on-infinite="loadMore"
@@ -88,7 +88,12 @@
 
       onItemClick(index, item) {
         console.log(index)
-      }
+      },
+
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      },
     }
 
   }

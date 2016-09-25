@@ -34,6 +34,13 @@
         chosenTopics: [],
         topics: ["娱乐", "电影", "减肥", "搞笑", "科技"]
       }
+    },
+    
+    methods: {
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      }
     }
   }
 </script>

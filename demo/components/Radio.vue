@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="单选框"></von-header>
+    <von-header title="单选框" :on-back-button-click="back"></von-header>
 
     <div class="page-content">
       <div class="item item-divider">
@@ -43,7 +43,10 @@
     },
 
     methods: {
-
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      },
     }
   }
 </script>

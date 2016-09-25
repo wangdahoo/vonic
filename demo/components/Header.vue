@@ -1,9 +1,9 @@
 <template>
   <div class="page has-header">
-    <von-header title="Header"></von-header>
+    <von-header title="Header" :on-back-button-click="back"></von-header>
 
     <div class="page-content">
-      
+
     </div>
   </div>
 </template>
@@ -25,7 +25,10 @@
     },
 
     methods: {
-
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      }
     }
   }
 </script>

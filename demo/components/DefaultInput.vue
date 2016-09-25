@@ -44,7 +44,10 @@
     },
 
     methods: {
-
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/widgets/input'})
+      }
     }
   }
 </script>

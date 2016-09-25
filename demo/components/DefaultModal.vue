@@ -36,6 +36,10 @@
     methods: {
       close() {
         $vonicModal.hide()
+      },
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/widgets/modal'})
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header page-floating-label">
-    <von-header title="Floating Label"></von-header>
+    <von-header title="Floating Label" :on-back-button-click="back"></von-header>
 
     <div class="page-content padding-top">
 
@@ -33,6 +33,13 @@
         username: '',
         email: '',
         phone: ''
+      }
+    },
+
+    methods: {
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/widgets/input'})
       }
     }
   }

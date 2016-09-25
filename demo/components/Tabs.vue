@@ -1,6 +1,6 @@
 <template>
   <div class="page has-header">
-    <von-header title="Tabs"></von-header>
+    <von-header title="Tabs" :on-back-button-click="back"></von-header>
 
     <tabs :tab-items="tabs" :active-index.sync="activeTabIndex"></tabs>
 
@@ -70,7 +70,12 @@
     methods: {
       onCategoryChanged(activeIndex) {
         console.log('category changed, current tab index is:', activeIndex);
-      }
+      },
+
+      back() {
+        $vonic.nextTransition('back')
+        $router.go({path: '/home'})
+      },
     }
   }
 </script>
