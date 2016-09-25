@@ -59,11 +59,11 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <!-- <div class="item item-icon-right" v-link="{ path: '/widgets/header' }">
-        Header <span class="note">导航栏、标题栏</span>
+      <div class="item item-icon-right" v-link="{ path: '/effects/vum-scroll' }">
+        VumScroll <span class="note">下拉刷新、无限加载</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div> -->
-
+      </div>
+      
       <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
         Loading <span class="note">加载提示</span>
         <i class="icon ion-ios-arrow-right"></i>
