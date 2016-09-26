@@ -1,17 +1,19 @@
 <template>
   <div von-app>
     <router-view transition="view" class="view"></router-view>
-
-    <div class="backdrop"></div>
-
-    <alert v-ref:alert></alert>
-    <alert-ios v-ref:alert_ios></alert-ios>
-    <confirm v-ref:confirm></confirm>
-    <confirm-ios v-ref:confirm_ios></confirm-ios>
-    <loading v-ref:loading></loading>
-
-    <modal v-ref:modal></modal>
   </div>
+
+  <div class="backdrop"></div>
+
+  <modal v-ref:modal></modal>
+
+  <alert v-ref:alert></alert>
+  <alert-ios v-ref:alert_ios></alert-ios>
+
+  <confirm v-ref:confirm></confirm>
+  <confirm-ios v-ref:confirm_ios></confirm-ios>
+
+  <loading v-ref:loading></loading>
 </template>
 
 <script>

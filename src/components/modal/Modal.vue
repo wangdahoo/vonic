@@ -1,4 +1,5 @@
 <template>
+  <div class="click-block" :class="{'click-block-hide': !inAnimation}"></div>
   <div class="modal-backdrop"
        :class="{'active': active, 'hide': !active}">
     <div class="modal-backdrop-bg"></div>
@@ -12,11 +13,15 @@
   import Vue from 'vue'
   import _ from 'lodash'
 
+  const show_modal_animate_dur = 400
+  const hide_modal_aniamte_dur = 250
+
   function getModalTemplate(modalId) {
     return '<div class="modal slide-in-up" id="' + modalId + '"></div>'
   }
 
   let ModalMixin = {
+
     methods: {
       show() {
         this.$el.className = 'modal slide-in-up active'
@@ -30,18 +35,21 @@
       hide() {
         this.$el.className = 'modal slide-in-up ng-leave ng-leave-active'
 
-        let className = document.querySelector('body').className
-        document.querySelector('body').className = className.replace(' modal-open', '')
+        let bodyClass = document.querySelector('body').className
+        document.querySelector('body').className = bodyClass.replace(' modal-open', '')
       }
     }
   }
+
+
 
   export default {
     data() {
       return {
         active: false,
         instances: {},
-        showed: []
+        showed: [],
+        inAnimation: false
       }
     },
 
@@ -63,6 +71,12 @@
 
       show(delegateId) {
         if (delegateId && this.instances[delegateId]) {
+          // display click block
+          this.inAnimation = true
+          setTimeout(() => {
+            this.inAnimation = false
+          }, show_modal_animate_dur)
+
           this.active = true
           this.instances[delegateId].show()
           this.showed.push(delegateId)
@@ -72,6 +86,12 @@
       },
 
       hide(delegateId) {
+        // display click block
+        this.inAnimation = true
+        setTimeout(() => {
+          this.inAnimation = false
+        }, hide_modal_aniamte_dur)
+
         if (delegateId && this.instances[delegateId]) {
           this.instances[delegateId].hide()
           setTimeout(() => {

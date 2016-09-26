@@ -6,59 +6,11 @@
                 menu-button-icon="icon ion-ios-close-empty positive"
                 :on-menu-button-click="close"
     >
-  </von-header>
+    </von-header>
     <div class="page-content">
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
-      <p>这是一个模态窗</p>
+      <p v-for="it in items">
+        {{it}}
+      </p>
     </div>
   </div>
 </template>
@@ -66,17 +18,23 @@
 
 </style>
 <script>
-  import {Page, VonHeader, Scroll} from 'vonic'
+  import {Page, VonHeader} from 'vonic'
 
   export default{
     components: {
       Page,
-      VonHeader,
-      Scroll
+      VonHeader
     },
 
     data(){
       return {
+        items: []
+      }
+    },
+
+    ready() {
+      for (let i = 0; i < 100; i++) {
+        this.items.push((1 + i) + '这是一个模态窗')
       }
     },
 

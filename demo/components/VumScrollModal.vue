@@ -1,7 +1,15 @@
 <template>
+  <div>
+    <von-header title="模态窗标题"
+                show-back-button="false"
+                show-menu-button="true"
+                menu-button-icon="icon ion-ios-close-empty light"
+                :on-menu-button-click="close"
+                header-class="bar-dark"
+    >
+    </von-header>
 
-  <div class="page has-header">
-    <von-header title="Scroll" :on-back-button-click="back"></von-header>
+    <!-- vum scroll -->
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
@@ -11,20 +19,23 @@
       </div>
     </scroll>
   </div>
-
 </template>
-
+<style lang="scss" scoped>
+  .scroll {
+    top: 0;
+  }
+</style>
 <script>
-  import {Page, VumScroll, VonHeader} from 'vonic'
+  import {Page, VonHeader, VumScroll} from 'vonic'
 
-  export default {
+  export default{
     components: {
       Page,
-      'scroll': VumScroll,
-      VonHeader
+      VonHeader,
+      'scroll': VumScroll
     },
 
-    data () {
+    data() {
       return {
         items: []
       }
@@ -39,6 +50,17 @@
     },
 
     methods: {
+      toggleModal() {
+        $vonicModal.hide()
+        setTimeout(() => {
+          $vonicModal.show('default_modal')
+        }, 400)
+      },
+
+      close() {
+        $vonicModal.hide()
+      },
+
       onRefresh(done) {
         setTimeout(() => {
           let start = this.top - 1
@@ -46,7 +68,6 @@
             this.items.splice(0, 0, i + ' - keep walking, be 2 with you.')
           }
           this.top = this.top - 10;
-
           done()
         }, 1500)
       },
@@ -58,24 +79,13 @@
             this.items.push(i + ' - keep walking, be 2 with you.')
           }
           this.bottom = this.bottom + 10;
-
           done()
         }, 1500)
       },
 
       onItemClick(index, item) {
         console.log(index)
-      },
-
-      back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
-      },
+      }
     }
-
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

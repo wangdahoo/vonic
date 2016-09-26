@@ -20,18 +20,16 @@
   </div>
 </template>
 <style lang="scss" scoped>
-  .page-content {
-    margin-top: 44px;
-  }
+
 </style>
 <script>
-  import {Page, VonHeader, VumScroll} from 'vonic'
+  import {Page, VonHeader, Scroll} from 'vonic'
 
   export default{
     components: {
       Page,
       VonHeader,
-      'scroll': VumScroll
+      Scroll
     },
 
     data() {
@@ -60,25 +58,29 @@
         $vonicModal.hide()
       },
 
-      onRefresh(done) {
+      onRefresh() {
         setTimeout(() => {
           let start = this.top - 1
           for (let i = start; i > start - 10; i--) {
             this.items.splice(0, 0, i + ' - keep walking, be 2 with you.')
           }
-          this.top = this.top - 10;
-          done()
+          this.top = this.top - 10
+
+          this.$broadcast('$finishPullToRefresh')
         }, 1500)
       },
 
-      onInfinite(done) {
+      onInfinite() {
         setTimeout(() => {
           let start = this.bottom + 1
           for (let i = start; i < start + 10; i++) {
             this.items.push(i + ' - keep walking, be 2 with you.')
           }
-          this.bottom = this.bottom + 10;
-          done()
+          this.bottom = this.bottom + 10
+
+          setTimeout(() => {
+            $scrollerDelegate.resize()
+          })
         }, 1500)
       },
 

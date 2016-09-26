@@ -25,7 +25,7 @@
   export default{
     components: {
       Page,
-      VonHeader,
+      VonHeader
     },
 
     methods: {
