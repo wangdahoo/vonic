@@ -34,27 +34,36 @@
     },
 
     ready() {
-      $vonicModal.fromComponent('default_modal', DefaultModal)
-      $vonicModal.fromComponent('multi_modal', MultiModal)
-      $vonicModal.fromComponent('scroll_modal', ScrollModal)
-      $vonicModal.fromComponent('vum_scroll_modal', VumScrollModal)
+
     },
 
     methods: {
       showModal() {
-        $vonicModal.show('default_modal')
+        $vonicModal.fromComponent('default_modal', DefaultModal)
+        setTimeout(() => {
+          $vonicModal.show('default_modal')
+        })
       },
 
       showMultiModal() {
-        $vonicModal.show('multi_modal')
+        $vonicModal.fromComponent('multi_modal', MultiModal)
+        setTimeout(() => {
+          $vonicModal.show('multi_modal')
+        })
       },
 
       showScrollModal() {
-        $vonicModal.show('scroll_modal')
+        $vonicModal.fromComponent('scroll_modal', ScrollModal)
+        setTimeout(() => {
+          $vonicModal.show('scroll_modal')
+        })
       },
 
       showVumScrollModal() {
-        $vonicModal.show('vum_scroll_modal')
+        $vonicModal.fromComponent('vum_scroll_modal', VumScrollModal)
+        setTimeout(() => {
+          $vonicModal.show('vum_scroll_modal')
+        })
       },
 
       back() {

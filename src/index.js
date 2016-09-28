@@ -1,5 +1,5 @@
 import Page from './components/page'
-import {Scroller} from 'vue-scroller'
+// import Scroller from 'vue-scroller'
 import VumScroll from './components/vum-scroll'
 import VonHeader from './components/header'
 import VonRadio from './components/radio'
@@ -8,19 +8,15 @@ import VonToggle from './components/toggle'
 import Tabs from './components/tabs'
 import {Cells} from './components/cells'
 import ButtonBar from './components/buttonbar'
-
 import {Input, Search} from './components/input'
-
 import {Loading} from './components/loading'
-
 import Vonic from './vonic'
 
-const Scroll = Scroller
-const VonInput = Input
+import Scroll from './components/scroll'
 
 module.exports = {
   Page,
-  Scroll,
+  // 'Scroll': Scroller,
   VumScroll,
   VonHeader,
   VonRadio,
@@ -30,10 +26,11 @@ module.exports = {
   Cells,
   ButtonBar,
 
-  VonInput,
+  'VonInput': Input,
   Search,
 
   Loading,
+  Scroll,
 
   Vonic
 }

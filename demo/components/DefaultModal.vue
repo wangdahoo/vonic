@@ -7,23 +7,27 @@
                 :on-menu-button-click="close"
     >
     </von-header>
-    <div class="page-content">
+
+    <scroll delegate-id="defaultModalScroller"
+            class="page-content"
+            v-ref:my_scroller>
       <p v-for="it in items">
         {{it}}
       </p>
-    </div>
+    </scroll>
   </div>
 </template>
 <style lang="scss" scoped>
 
 </style>
 <script>
-  import {Page, VonHeader} from 'vonic'
+  import {Page, VonHeader, Scroll} from 'vonic'
 
   export default{
     components: {
       Page,
-      VonHeader
+      VonHeader,
+      Scroll
     },
 
     data(){
@@ -36,6 +40,10 @@
       for (let i = 0; i < 100; i++) {
         this.items.push((1 + i) + '这是一个模态窗')
       }
+
+      setTimeout(() => {
+        this.$refs.my_scroller.resize()
+      })
     },
 
     methods: {
@@ -45,7 +53,7 @@
       back() {
         $vonic.nextTransition('back')
         $router.go({path: '/widgets/modal'})
-      }
+      },
     }
   }
 </script>

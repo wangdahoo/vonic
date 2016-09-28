@@ -9,9 +9,11 @@
     >
     </von-header>
 
-    <scroll class="page-content"
+    <scroll delegate-id="scrollModalScroller"
+            class="page-content"
             :on-refresh="onRefresh"
-            :on-infinite="onInfinite">
+            :on-infinite="onInfinite"
+            v-ref:my_scroller>
       <div v-for="(index, item) in items" @click="onItemClick(index, item)"
            class="item" :class="{'item-stable': index % 2 == 0}">
         {{ item }}
@@ -44,6 +46,10 @@
       }
       this.top = 1
       this.bottom = 20
+
+      setTimeout(() => {
+        this.$refs.my_scroller.resize()
+      })
     },
 
     methods: {
@@ -79,7 +85,7 @@
           this.bottom = this.bottom + 10
 
           setTimeout(() => {
-            $scrollerDelegate.resize()
+            this.$refs.my_scroller.resize()
           })
         }, 1500)
       },

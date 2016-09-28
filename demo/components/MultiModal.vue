@@ -9,30 +9,36 @@
     >
     </von-header>
 
-    <div class="page-content">
+    <scroll delegate-id="multiModalScroller"
+            class="page-content">
       <div class="padding">
         <button class="button button-assertive button-block" @click="toggleModal()">关闭，并打开另一个模态窗</button>
       </div>
-    </div>
+    </scroll>
   </div>
 </template>
 <style lang="scss" scoped>
 
 </style>
 <script>
-  import {Page, VonHeader} from 'vonic'
+  import {Page, VonHeader, Scroll} from 'vonic'
+  import DefaultModal from './DefaultModal'
 
   export default{
     components: {
       Page,
-      VonHeader
+      VonHeader,
+      Scroll
     },
 
     methods: {
       toggleModal() {
         $vonicModal.hide()
         setTimeout(() => {
-          $vonicModal.show('default_modal')
+          $vonicModal.fromComponent('default_modal', DefaultModal)
+          setTimeout(() => {
+            $vonicModal.show('default_modal')
+          })
         }, 400)
       },
 
