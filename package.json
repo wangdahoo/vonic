@@ -12,7 +12,7 @@
     "fastclick": "^1.0.6",
     "vue": "^1.0.0",
     "vue-router": "^0.7.13",
-    "vue-scroller": "^0.3.3"
+    "vue-scroller": "^0.3.6"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
