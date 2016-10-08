@@ -24,15 +24,25 @@ const routers = {
   },
 
   '/widgets/input': {
-    component: Input
+    component: Input,
+    navbar: {
+      title: '文本框',
+      showBackButton: false
+    }
   },
 
   '/widgets/defaultInput': {
-    component: DefaultInput
+    component: DefaultInput,
+    navbar: {
+      title: 'Default Input'
+    }
   },
 
   '/widgets/floatingLabel': {
-    component: FloatingLabel
+    component: FloatingLabel,
+    navbar: {
+      title: 'Floating Label'
+    }
   },
 
   '/widgets/search': {
@@ -77,11 +87,11 @@ const routers = {
 
   '/effects/vum-scroll': {
     component: VumScroll
-  }
+  },
 
 };
 
 Vue.use(Vonic, {
   routers: routers,
-  defaultRouterUrl: '/home'
+  defaultRouterUrl: '/widgets/input'
 })

@@ -5,9 +5,9 @@
         <img src="../assets/vonic.svg" width="80" height="80"/>
       </div>
 
-      <div class="code-name">vonic</div>
+      <div class="text-center code-name">Vonic</div>
 
-      <div class="item item-divider text-center" style="color: #999">
+      <div class="item item-divider text-center code-desc">
         UI Components
       </div>
       <div class="item item-icon-right" v-link="{ path: '/widgets/input' }">
@@ -74,17 +74,15 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
+      <div class="item item-icon-right" v-link="{ path: '/md/master' }">
+        Master & Detail <span class="note"></span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
-
-  @font-face {
-    font-family: 'Yatra One';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Yatra One'), url(../assets/YatraOne.woff) format('woff');
-  }
 
   .home {
     padding: 30px 0 40px 0;
@@ -97,13 +95,19 @@
       }
     }
 
+    .code-name, .code-desc {
+      font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    }
+
     .code-name {
-      font-size: 18px;
-      font-family: 'Yatra One', sans-serif;
+      font-size: 24px;
+      line-height: 24px;
       // -webkit-font-smoothing: subpixel-antialiased !important;
-      text-align: center;
       color: #47B584;
-      padding-left: 2px;
+    }
+
+    .code-desc {
+      color: #999;
     }
   }
 
@@ -129,11 +133,9 @@
 </style>
 <script>
   import Vue from 'vue'
-  import {Page} from 'vonic'
 
   export default{
     components: {
-      Page
     },
 
     methods: {

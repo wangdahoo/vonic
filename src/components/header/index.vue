@@ -1,16 +1,16 @@
 <template>
   <div class="{{ headerClass }}">
     <!-- backButton -->
-    <button class="button button-icon back-button" :style="{'color': backButtonColor}"
-            v-show="showBackButton == 'true'" @click="backButtonClicked()">
+    <button class="button back-button buttons button-clear" :style="{'color': backButtonColor}"
+            v-show="showBackButton" @click="backButtonClicked()">
         <i class="{{ backButtonIcon }}"></i>{{ backButtonText }}
     </button>
 
     <h1 class="title">{{ title }}</h1>
 
     <!-- menuButton -->
-    <button class="button button-icon" :style="{'color': menuButtonColor}"
-            v-show="showMenuButton == 'true'" @click="menuButtonClicked()">
+    <button class="button buttons button-clear" :style="{'color': menuButtonColor}"
+            v-show="showMenuButton" @click="menuButtonClicked()">
         <i v-if="!menuButtonText" class="{{ menuButtonIcon }}"></i>
         <span v-if="menuButtonText">{{ menuButtonText }}</span>
     </button>
@@ -65,8 +65,8 @@
 
       // back button
       showBackButton: {
-        type: String,
-        default: 'true'
+        type: Boolean,
+        default: true
       },
       backButtonColor: buttonColor,
       backButtonText: {
@@ -90,8 +90,8 @@
 
       // menu button
       showMenuButton: {
-        type: String,
-        default: 'false'
+        type: Boolean,
+        default: false
       },
       menuButtonColor: buttonColor,
       menuButtonText: {

@@ -1,5 +1,6 @@
 <template>
   <div von-app>
+    <navbar></navbar>
     <router-view transition="view" class="view"></router-view>
   </div>
 
@@ -21,6 +22,8 @@
   import { Modal } from './modal'
   import { Loading } from './loading'
 
+  import Navbar from './navbar'
+
   export default {
     components: {
       Alert,
@@ -28,7 +31,8 @@
       Confirm,
       'ConfirmIos': ConfirmIOS,
       Modal,
-      Loading
+      Loading,
+      Navbar
     },
 
     data() {

@@ -1,7 +1,5 @@
 <template>
   <div class="page has-header">
-    <von-header title="文本框" :on-back-button-click="back"></von-header>
-
     <div class="page-content padding-top">
 
       <div class="item item-icon-right" v-link="{ path: '/widgets/defaultInput' }">

@@ -1,6 +1,5 @@
 <template>
   <div class="page has-header">
-    <von-header title="Default Input"></von-header>
 
     <div class="page-content padding-top">
 

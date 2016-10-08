@@ -6,6 +6,8 @@ Vue.use(VueRouter)
 import VonApp from './components/app'
 import Storage from './services/storage'
 
+import nav from './components/navbar/nav'
+
 class VonicApp {
   constructor(routers, defaultRouterUrl) {
     this.routers = routers
@@ -19,7 +21,7 @@ class VonicApp {
     })
     router.map(this.routers)
 
-    router.beforeEach(() => {
+    router.beforeEach((t) => {
       // destroy modals
       $vonicModal.destroy()
 
@@ -28,6 +30,14 @@ class VonicApp {
       let scrollTop = content && content.scrollTop
       window.__last_page_position__ = Storage.get('von:last_page_position') || 0;
       Storage.set('von:last_page_position', scrollTop || 0)
+
+      // update navbar
+      nav.$emit('PageTransitionEvent', {
+        from: t.from,
+        to: t.to,
+      })
+
+      t.next()
     })
 
     router.afterEach(() => {

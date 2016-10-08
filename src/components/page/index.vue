@@ -1,7 +1,7 @@
 <style lang="scss">
   @import "../scss/vonic";
 
-  $view-box-shadow: -4px 0px 8px darken($default-page-bg, 6.5%);
+  $view-box-shadow: -4px 0 8px darken($default-page-bg, 6.5%);
 
   .page {
     box-sizing: border-box;
@@ -29,9 +29,12 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    /*-moz-box-shadow: none;*/
+    /*-webkit-box-shadow: none;*/
+    /*box-shadow: none;    */
+    -moz-box-shadow: $view-box-shadow;
+    -webkit-box-shadow: $view-box-shadow;
+    box-shadow: $view-box-shadow;
 
     // defualt ios transition
     @include transition-duration($ios-transition-duration);
@@ -185,9 +188,4 @@
       -webkit-transform: translate(100%, 0);
     }
   }
-
-  ._container {
-
-  }
-
 </style>
