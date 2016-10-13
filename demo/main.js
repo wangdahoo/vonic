@@ -26,22 +26,23 @@ const routers = {
   '/widgets/input': {
     component: Input,
     navbar: {
-      title: '文本框',
-      showBackButton: false
+      title: '文本框'
     }
   },
 
   '/widgets/defaultInput': {
     component: DefaultInput,
     navbar: {
-      title: 'Default Input'
+      title: 'Default Input',
+      showBackButton: true
     }
   },
 
   '/widgets/floatingLabel': {
     component: FloatingLabel,
     navbar: {
-      title: 'Floating Label'
+      title: 'Floating Label',
+      showBackButton: true
     }
   },
 
