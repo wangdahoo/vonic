@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Vonic'}">
+  <div class="page has-navbar" v-nav="{title: 'Vonic', showMenuButton: true, onMenuButtonClick: goRepo, menuButtonText: menuButtonText}">
     <div class="page-content home">
       <div class="logo">
         <img src="../assets/vonic.svg" width="80" height="80"/>
@@ -133,6 +133,12 @@
     components: {
     },
 
+    data() {
+      return {
+        menuButtonText: '<a class="button button-icon icon ion-social-github"></a>'
+      }
+    },
+
     methods: {
       showLoading(tips) {
         $loading.show(tips)
@@ -144,6 +150,10 @@
 
       showToast() {
         $loading.toast('发送成功')
+      },
+
+      goRepo() {
+        location.href = 'https://github.com/wangdahoo/vonic'
       }
     }
   }

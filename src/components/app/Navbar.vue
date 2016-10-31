@@ -1,10 +1,10 @@
 <template>
   <div class="navbar" :class="{'hide': hideNavbar}">
-    <div v-if="showBackButton" class="back-button" @click="backButtonClicked()" transition="fade">
+    <div v-if="showBackButton" class="back-button" @click="backButtonClicked($event)" transition="fade">
       {{{ backButtonText }}}
     </div>
 
-    <div v-if="showMenuButton" class="menu-button" @click="menuButtonClicked()" transition="fade">
+    <div v-if="showMenuButton" class="menu-button" @click="menuButtonClicked($event)" transition="fade">
       {{{ menuButtonText }}}
     </div>
   </div>
@@ -160,8 +160,22 @@
 
   function defaultBackButtonText() {
     return utils.is_ios_device() ?
-      '<a class="button button-icon icon ion-ios-arrow-back positive"></a>' :
-      '<a class="button button-icon icon ion-android-arrow-back positive"></a>'
+      '<a class="button button-icon icon ion-ios-arrow-back"></a>' :
+      '<a class="button button-icon icon ion-android-arrow-back"></a>'
+  }
+
+  let touchLock
+
+  function navTransitionStart() {
+    var navbar = document.querySelector('.navbar')
+    navbar.style.position = 'absolute'
+    touchLock = true
+  }
+
+  function navTransitionEnd() {
+    var navbar = document.querySelector('.navbar')
+    navbar.style.position = 'fixed'
+    touchLock = false
   }
 
   export default {
@@ -173,7 +187,7 @@
         showMenuButton: false,
         onMenuButtonClick: undefined,
         backButtonText: defaultBackButtonText(),
-        menuButtonText: '<i class="icon ion-navicon"></i>',
+        menuButtonText: '<a class="button button-icon icon ion-navicon"></a>',
         hideNavbar: false
       }
     },
@@ -183,6 +197,8 @@
       let cl;
 
       channel.$on('PageTransitionEvent', (data) => {
+        navTransitionStart()
+
         let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
         this.title = data.title ? data.title : ''
         this.hideNavbar = !!data.hideNavbar
@@ -198,6 +214,7 @@
           setTimeout(() => {
             if (cl) this.$el.removeChild(cl)
             cl = c
+            navTransitionEnd()
           }, 500)
         })
 
@@ -218,7 +235,12 @@
     },
 
     methods: {
-      backButtonClicked() {
+      backButtonClicked(e) {
+        if (touchLock) {
+          e.preventDefault()
+          return;
+        }
+
         if (this.onBackButtonClick) {
           this.onBackButtonClick()
           return
@@ -229,6 +251,11 @@
       },
 
       menuButtonClicked() {
+        if (touchLock) {
+          e.preventDefault()
+          return;
+        }
+
         if (this.onMenuButtonClick) {
           this.onMenuButtonClick()
         }
