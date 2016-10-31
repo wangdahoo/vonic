@@ -13,8 +13,6 @@
   @import "../scss/variables";
   @import '../scss/mixins';
   $themeColor: '#007aff';
-  $ios-transition-timing-function: ease;
-  $android-transition-timing-function: linear;
 
   .navbar {
     box-sizing: border-box;

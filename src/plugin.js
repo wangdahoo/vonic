@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-import FastClick from 'fastclick'
 import Storage from './services/storage'
 import VonApp from './components/app'
+
+import FastClick from 'fastclick'
 
 let VonicAppConfig = {
   beforeEach: undefined,
@@ -74,15 +75,15 @@ export default {
     // Local Storage Service
     window.$storage = Storage
 
-    // 类似的这种兼容性代码, 暂时放在这个位置
-    // for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport.
+    /* 类似的这种兼容性代码, 暂时放在这个位置 */
+    /* for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport. */
     document.documentElement.addEventListener('touchstart', (e) => {
       if (e.touches.length > 1) {
         e.preventDefault()
       }
     }, false)
 
-    // disable double click to zoom
+    /* Disable double click to zoom */
     let lastTouchEnd = 0;
     document.documentElement.addEventListener('touchend', (e) => {
       let now = (new Date()).getTime()

@@ -2,7 +2,7 @@
   <div class="list von-radio">
     <label class="item item-icon-left"
            v-for="(index, option) in options">
-      <input type="radio" name="{{ radioId }}" v-model="value" @click="onOptionClick(index)">
+      <input type="radio" name="{{ radioId }}" @click="onOptionClick(index)">
       <i class="icon"
          :class="{'ion-ios-circle-outline': value!=index, 'ion-ios-checkmark assertive': value==index}"></i>
       <span>{{ option }}</span>
@@ -45,7 +45,8 @@
       },
 
       value: {
-        type: [Number, String]
+        type: Number,
+        required: true
       },
     },
 
@@ -58,14 +59,6 @@
     methods: {
       onOptionClick($index) {
         this.value = $index
-      }
-    },
-
-    watch: {
-      value(newVal, oldVal) {
-        if (typeof newVal != 'number') {
-          this.value = oldVal
-        }
       }
     }
   }
