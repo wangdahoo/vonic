@@ -1,37 +1,41 @@
+import Vue from 'vue'
 import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 import FastClick from 'fastclick'
 import Storage from './services/storage'
-import app from './components/app'
+import VonApp from './components/app'
 
-let VonAppConfig = {
+let VonicAppConfig = {
   beforeEach: undefined,
   afterEach: undefined,
   useHistory: false
 }
 
-class VonApp {
+class VonicApp {
   constructor(routers, defaultRouterUrl) {
     this.routers = routers
     this.defaultRouterUrl = defaultRouterUrl
   }
 
   start() {
+    let app = Vue.extend(VonApp)
+
     let router = new VueRouter({
-      history: VonAppConfig.useHistory
+      history: VonicAppConfig.useHistory
     })
 
     router.map(this.routers)
 
-    if (typeof VonAppConfig.beforeEach == 'function')
-      router.beforeEach(VonAppConfig.beforeEach)
-    if (typeof VonAppConfig.afterEach == 'function')
-      router.afterEach(VonAppConfig.afterEach)
+    if (typeof VonicAppConfig.beforeEach == 'function')
+      router.beforeEach(VonicAppConfig.beforeEach)
+    if (typeof VonicAppConfig.afterEach == 'function')
+      router.afterEach(VonicAppConfig.afterEach)
 
     router.redirect({
       '*': this.defaultRouterUrl
     })
 
-    router.start(app, '[von-app]')
+    router.start(app, 'von-app')
 
     router.nextDirection = (direction) => {
       document.querySelector('[von-app]').setAttribute('transition-direction', direction);
@@ -60,14 +64,12 @@ export default {
     const routers = options.routers
     const defaultRouterUrl = options.defaultRouterUrl
 
-    let vonApp = new VonApp(routers, defaultRouterUrl)
-    vonApp.start()
+    let app = new VonicApp(routers, defaultRouterUrl)
+    app.start()
+    window.$app = app
 
     // FastClick
     FastClick.attach(document.body)
-
-    // App Instance
-    window.$app = vonApp
 
     // Local Storage Service
     window.$storage = Storage
@@ -94,11 +96,11 @@ export default {
 
   setConfig(name, value) {
     if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == 1) throw 'Unknown config name.'
-    VonAppConfig[name] = value
+    VonicAppConfig[name] = value
   },
 
   getConfig(name) {
     if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == 1) throw 'Unknown config name.'
-    return VonAppConfig[name]
+    return VonicAppConfig[name]
   }
 }

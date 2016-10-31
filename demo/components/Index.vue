@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page has-navbar" v-nav="{title: 'Vonic'}">
     <div class="page-content home">
       <div class="logo">
         <img src="../assets/vonic.svg" width="80" height="80"/>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
-        Cells <span class="note">九宫格、十六宫格布局</span>
+        Cells <span class="note">宫格布局</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
@@ -74,18 +74,13 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/md/master' }">
-        Master & Detail <span class="note"></span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 
   .home {
-    padding: 30px 0 40px 0;
+    padding: 74px 0 40px 0 !important;
 
     .logo {
       width: 100%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: 'Popup', showBackButton: true}">\
+  <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
 
     <div class="page-content padding-top">
 
@@ -68,8 +68,7 @@
 
     methods: {
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
+        $router.back({path: '/'})
       },
 
       showAlert() {

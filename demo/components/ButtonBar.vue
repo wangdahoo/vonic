@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-header" v-nav="{title: 'ButtonBar'}">
-    <div class="page-content">
+  <div class="page has-navbar" v-nav="{title: 'iOS风格Tabs', showBackButton: true}">
+    <div class="page-content padding-top">
 
       <div class="padding light-bg">
         <button-bar theme="assertive" :tab-items="tabs" :active-index="activeTabIndex[0]"></button-bar>
@@ -61,8 +61,7 @@
 
     methods: {
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
+        $router.back({path: '/'})
       }
     }
   }

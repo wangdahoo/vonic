@@ -1,7 +1,7 @@
 <template>
-  <div class="page has-header" v-nav="{title: 'Cells'}">
+  <div class="page has-navbar" v-nav="{title: '宫格布局', showBackButton: true}">
 
-    <div class="page-content page-cells">
+    <div class="page-content padding-top">
 
       <!-- 3 x 2 -->
       <cells :items="entrances" :on-cell-click="onCellClick" row="2"></cells>
@@ -104,8 +104,7 @@
       },
 
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
+        $router.back({path: '/'})
       }
     }
   }

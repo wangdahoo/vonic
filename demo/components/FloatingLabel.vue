@@ -1,8 +1,6 @@
 <template>
-  <div class="page has-header page-floating-label">
-
+  <div class="page has-navbar" v-nav="{title: '悬浮标签效果', showBackButton: true}">
     <div class="page-content padding-top">
-
       <div class="item item-divider">输入文字试试:</div>
 
       <von-input type="text" :value.sync="username" placeholder="Username" label="Username" floating-label="true"></von-input>
@@ -35,8 +33,7 @@
 
     methods: {
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/widgets/input'})
+        $router.back({path: '/'})
       }
     }
   }

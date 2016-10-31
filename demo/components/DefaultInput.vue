@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: '默认输入框'}">
+  <div class="page" v-nav="{title: '默认输入框', showBackButton: true}">
 
     <div class="page-content padding-top">
 
@@ -42,8 +42,7 @@
 
     methods: {
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/widgets/input'})
+        $router.back({path: '/'})
       }
     }
   }

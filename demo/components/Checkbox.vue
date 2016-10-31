@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: '复选框'}">
+  <div class="page has-navbar" v-nav="{title: '复选框', showBackButton: true}">
 
     <div class="page-content">
       <div class="item item-divider">
@@ -35,8 +35,7 @@
 
     methods: {
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
+        $router.back({path: '/'})
       }
     }
   }

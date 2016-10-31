@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: 'Tabs', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: 'Tabs', showBackButton: true}">
     <tabs :tab-items="tabs" :active-index.sync="activeTabIndex"></tabs>
 
     <div class="page-content">
@@ -71,9 +71,8 @@
       },
 
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
-      },
+        $router.back({path: '/'})
+      }
     }
   }
 </script>

@@ -16,16 +16,22 @@
 
   <loading v-ref:loading></loading>
 </template>
-
+<style lang='scss'>
+  @import "../scss/vonic";
+</style>
 <script>
   import Vue from 'vue'
-  import VueRouter from 'vue-router'
-  Vue.use(VueRouter)
-
-  import Navbar from './Navbar.vue'
+  import Navbar from './Navbar'
   import { Alert, AlertIOS, Confirm, ConfirmIOS } from '../popup'
   import { Modal } from '../modal'
   import { Loading } from '../loading'
+
+  import utils from './utils'
+  import channel from './channel'
+
+  Vue.directive('nav', (data) => {
+    channel.$emit('PageTransitionEvent', data)
+  })
 
   export default {
     components: {

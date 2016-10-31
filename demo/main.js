@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vonic  from 'vonic'
 
 // Demos
-import Home from './components/Home'
+import Index from './components/Index'
 import Input from './components/Input'
 import DefaultInput from './components/DefaultInput'
 import FloatingLabel from './components/FloatingLabel'
@@ -19,8 +19,8 @@ import Scroll from './components/Scroll'
 import VumScroll from './components/VumScroll'
 
 const routers = {
-  '/home': {
-    component: Home
+  '/': {
+    component: Index
   },
 
   '/widgets/input': {

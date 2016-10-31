@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: '搜索框', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '搜索框', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content">
 
       <search :value.sync="keywords" placeholder="输入关键字" :on-search="onSearch"></search>
@@ -35,9 +35,8 @@
       },
 
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
-      },
+        $router.back({path: '/'})
+      }
     }
   }
 </script>

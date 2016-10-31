@@ -46,9 +46,8 @@
         $vonicModal.hide()
       },
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/widgets/modal'})
-      },
+        $router.back({path: '/'})
+      }
     }
   }
 </script>

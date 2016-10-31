@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: '单选框', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '单选框', showBackButton: true}">
 
     <div class="page-content">
       <div class="item item-divider">
@@ -40,10 +40,6 @@
     },
 
     methods: {
-      back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
-      },
     }
   }
 </script>

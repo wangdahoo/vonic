@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" :class="{'hide': hideNavbar}">
     <div v-if="showBackButton" class="back-button" @click="backButtonClicked()" transition="fade">
       {{{ backButtonText }}}
     </div>
@@ -7,7 +7,6 @@
     <div v-if="showMenuButton" class="menu-button" @click="menuButtonClicked()" transition="fade">
       {{{ menuButtonText }}}
     </div>
-
   </div>
 </template>
 <style lang='scss'>
@@ -27,7 +26,10 @@
     height: 44px;
     z-index: 10;
     background-color: #fff;
-    @include hairline(bottom);
+
+    &:after {
+      @include hairline(bottom);
+    }
 
     .back-button, .menu-button {
       position: absolute;
@@ -37,13 +39,8 @@
       line-height: 44px;
       z-index: 12;
 
-      span {
-        font-size: 16px;
-        line-height: 20px;
-      }
-
-      i.icon {
-        line-height: 20px;
+      .button {
+        padding: 0;
       }
     }
 
@@ -102,6 +99,10 @@
     }
   }
 
+  .navbar .hide {
+    visibility: hidden;
+  }
+
 </style>
 <script>
   import channel from './channel'
@@ -154,6 +155,12 @@
     }
   }
 
+  function defaultBackButtonText() {
+    return utils.is_ios_device() ?
+      '<a class="button button-icon icon ion-ios-arrow-back positive"></a>' :
+      '<a class="button button-icon icon ion-android-arrow-back positive"></a>'
+  }
+
   export default {
     data() {
       return {
@@ -162,8 +169,9 @@
         onBackButtonClick: undefined,
         showMenuButton: false,
         onMenuButtonClick: undefined,
-        backButtonText: '<i class="icon icon-back"></i>',
-        menuButtonText: '<i class="icon icon-bars"></i>',
+        backButtonText: defaultBackButtonText(),
+        menuButtonText: '<i class="icon ion-navicon"></i>',
+        hideNavbar: false
       }
     },
 
@@ -173,7 +181,8 @@
 
       channel.$on('PageTransitionEvent', (data) => {
         let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
-        this.title = data.title
+        this.title = data.title ? data.title : ''
+        this.hideNavbar = !!data.hideNavbar
 
         let c = centerElement(this.$el, this.title, direction)
 

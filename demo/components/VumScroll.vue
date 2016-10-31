@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: 'Scroll', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: 'Scroll', showBackButton: true}">
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
@@ -64,9 +64,8 @@
       },
 
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
-      },
+        $router.back({path: '/'})
+      }
     }
 
   }

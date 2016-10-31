@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header" v-nav="{title: '开关按钮', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '开关按钮', showBackButton: true}">
     <div class="page-content padding-top">
       <von-toggle :text="toggleText" :value.sync="pushNotification"></von-toggle>
       <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
@@ -35,9 +35,8 @@
 
     methods: {
       back() {
-        $vonic.nextTransition('back')
-        $router.go({path: '/home'})
-      },
+        $router.back({path: '/'})
+      }
     }
   }
 </script>
