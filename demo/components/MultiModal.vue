@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="bar bar-header bar-dark">
-      <h1 class="title">默认模态框</h1>
-      <button class="button icon ion-ios-close-empty light" @click="close()"></button>
+      <h1 class="title">多个模态框</h1>
+      <button class="button button-icon icon ion-ios-close-empty light" @click="close()"></button>
     </div>
 
     <scroll delegate-id="multiModalScroller"

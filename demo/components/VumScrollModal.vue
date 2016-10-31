@@ -2,7 +2,7 @@
   <div>
     <div class="bar bar-header bar-dark">
       <h1 class="title">模态窗标题</h1>
-      <button class="button icon ion-ios-close-empty light" @click="close()"></button>
+      <button class="button button-icon icon ion-ios-close-empty light" @click="close()"></button>
     </div>
 
     <!-- vum scroll -->

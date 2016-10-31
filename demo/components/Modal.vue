@@ -1,6 +1,6 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '模态框', showBackButton: true}">
-    <div class="page-content">
+    <div class="page-content padding-top">
       <div class="padding">
         <button class="button button-positive button-block" @click="showModal()">显示模态窗</button>
         <button class="button button-positive button-block" @click="showMultiModal()">多个模态窗</button>

@@ -39,8 +39,11 @@
       line-height: 44px;
       z-index: 12;
 
-      .button {
+      .button-icon {
         padding: 0;
+        min-height: 44px;
+        height: 44px;
+        margin-top: -1px;
       }
     }
 
