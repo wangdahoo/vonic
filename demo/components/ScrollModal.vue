@@ -1,13 +1,9 @@
 <template>
   <div>
-    <von-header title="模态窗标题"
-                show-back-button="false"
-                show-menu-button="true"
-                menu-button-icon="icon ion-ios-close-empty light"
-                :on-menu-button-click="close"
-                header-class="bar-dark"
-    >
-    </von-header>
+    <div class="bar bar-header bar-dark">
+      <h1 class="title">模态窗标题</h1>
+      <button class="button icon ion-ios-close-empty light" @click="close()"></button>
+    </div>
 
     <scroll delegate-id="scrollModalScroller"
             class="page-content"
@@ -25,12 +21,10 @@
 
 </style>
 <script>
-  import {Page, VonHeader, Scroll} from 'vonic'
+  import {Scroll} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       Scroll
     },
 

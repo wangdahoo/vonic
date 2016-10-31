@@ -1,7 +1,5 @@
 <template>
-
-  <div class="page has-header">
-    <von-header title="Scroll" :on-back-button-click="back"></von-header>
+  <div class="page has-header" v-nav="{title: 'Scroll', showBackButton: true}">
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
@@ -19,9 +17,7 @@
 
   export default {
     components: {
-      Page,
-      'scroll': VumScroll,
-      VonHeader
+      'scroll': VumScroll
     },
 
     data () {

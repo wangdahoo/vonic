@@ -1,7 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="搜索框" :on-back-button-click="back"></von-header>
-
+  <div class="page has-header" v-nav="{title: '搜索框', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content">
 
       <search :value.sync="keywords" placeholder="输入关键字" :on-search="onSearch"></search>
@@ -17,12 +15,10 @@
 
 </style>
 <script>
-  import {Page, VonHeader, Search} from 'vonic'
+  import {Search} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       Search
     },
 

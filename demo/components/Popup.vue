@@ -1,6 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="Popup" :on-back-button-click="back"></von-header>
+  <div class="page has-header" v-nav="{title: 'Popup', showBackButton: true}">\
 
     <div class="page-content padding-top">
 
@@ -51,12 +50,10 @@
 
 </style>
 <script>
-  import {Page, VonHeader, Alert} from 'vonic'
+  import {Alert} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       Alert
     },
 

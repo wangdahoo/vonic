@@ -18,21 +18,24 @@
 </template>
 
 <script>
-  import { Alert, AlertIOS, Confirm, ConfirmIOS } from './popup'
-  import { Modal } from './modal'
-  import { Loading } from './loading'
+  import Vue from 'vue'
+  import VueRouter from 'vue-router'
+  Vue.use(VueRouter)
 
-  import Navbar from './navbar'
+  import Navbar from './Navbar.vue'
+  import { Alert, AlertIOS, Confirm, ConfirmIOS } from '../popup'
+  import { Modal } from '../modal'
+  import { Loading } from '../loading'
 
   export default {
     components: {
+      Navbar,
       Alert,
       'AlertIos': AlertIOS,
       Confirm,
       'ConfirmIos': ConfirmIOS,
       Modal,
-      Loading,
-      Navbar
+      Loading
     },
 
     data() {
@@ -42,23 +45,20 @@
     },
 
     ready() {
-      window.$alert = this.$refs.alert
-      window.$alert_ios = this.$refs.alert_ios
-      window.$confirm = this.$refs.confirm
-      window.$confirm_ios = this.$refs.confirm_ios
-      window.$loading = this.$refs.loading
-
-      window.$vonicModal = this.$refs.modal
-
-      // detect iOS device
-      let is_ios_device = /iPad|iPhone|iPod/.test(navigator.userAgent)
       // grade-a for ios, grade-b for android & other
-      if (is_ios_device) {
+      if (utils.is_ios_device()) {
         this.gradeClass = 'grade-a'
       } else {
         this.gradeClass = 'grade-b'
       }
       document.querySelector('body').className = this.gradeClass
+
+      window.$alert = this.$refs.alert
+      window.$alert_ios = this.$refs.alert_ios
+      window.$confirm = this.$refs.confirm
+      window.$confirm_ios = this.$refs.confirm_ios
+      window.$loading = this.$refs.loading
+      window.$vonicModal = this.$refs.modal
     }
   }
 </script>

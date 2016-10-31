@@ -1,7 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="ButtonBar" :on-back-button-click="back"></von-header>
-
+  <div class="page has-header" v-nav="{title: 'ButtonBar'}">
     <div class="page-content">
 
       <div class="padding light-bg">
@@ -38,12 +36,10 @@
 
 </style>
 <script>
-  import {Page, VonHeader, ButtonBar} from 'vonic'
+  import {ButtonBar} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       ButtonBar
     },
 

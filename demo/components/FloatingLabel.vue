@@ -18,12 +18,10 @@
 </template>
 
 <script>
-  import {Page, VonHeader, VonInput} from 'vonic'
+  import {VonInput} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       VonInput
     },
 

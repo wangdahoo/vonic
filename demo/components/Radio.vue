@@ -1,6 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="单选框" :on-back-button-click="back"></von-header>
+  <div class="page has-header" v-nav="{title: '单选框', showBackButton: true, onBackButtonClick: back}">
 
     <div class="page-content">
       <div class="item item-divider">
@@ -22,12 +21,10 @@
 
 </style>
 <script>
-  import {Page, VonHeader, VonRadio} from 'vonic'
+  import {VonRadio} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       VonRadio
     },
 

@@ -1,6 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="Cells"></von-header>
+  <div class="page has-header" v-nav="{title: 'Cells'}">
 
     <div class="page-content page-cells">
 
@@ -47,12 +46,10 @@
 
 </style>
 <script>
-  import {Page, VonHeader, Cells} from 'vonic'
+  import {Cells} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       Cells
     },
 
@@ -105,7 +102,7 @@
         }
         return items
       },
-      
+
       back() {
         $vonic.nextTransition('back')
         $router.go({path: '/home'})

@@ -1,4 +1,5 @@
 <script>
   import Vue from 'vue'
-  export default new Vue()
+  let vm = new Vue()
+  export default vm
 </script>

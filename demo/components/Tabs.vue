@@ -1,7 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="Tabs" :on-back-button-click="back"></von-header>
-
+  <div class="page has-header" v-nav="{title: 'Tabs', showBackButton: true}">
     <tabs :tab-items="tabs" :active-index.sync="activeTabIndex"></tabs>
 
     <div class="page-content">

@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-header">
+  <div class="page has-header" v-nav="{title: '默认输入框'}">
 
     <div class="page-content padding-top">
 
@@ -26,12 +26,10 @@
 
 </style>
 <script>
-  import {Page, VonHeader, VonInput} from 'vonic'
+  import {VonInput} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       VonInput
     },
 

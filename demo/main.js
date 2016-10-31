@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Vonic } from 'vonic'
+import Vonic  from 'vonic'
 
 // Demos
 import Home from './components/Home'
@@ -31,19 +31,11 @@ const routers = {
   },
 
   '/widgets/defaultInput': {
-    component: DefaultInput,
-    navbar: {
-      title: 'Default Input',
-      showBackButton: true
-    }
+    component: DefaultInput
   },
 
   '/widgets/floatingLabel': {
-    component: FloatingLabel,
-    navbar: {
-      title: 'Floating Label',
-      showBackButton: true
-    }
+    component: FloatingLabel
   },
 
   '/widgets/search': {
@@ -92,7 +84,7 @@ const routers = {
 
 };
 
-Vue.use(Vonic, {
+Vue.use(Vonic.app, {
   routers: routers,
-  defaultRouterUrl: '/widgets/input'
+  defaultRouterUrl: '/'
 })

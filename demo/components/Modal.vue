@@ -1,7 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="模态窗" :on-back-button-click="back"></von-header>
-
+  <div class="page has-header" v-nav="{title: '模态框', showBackButton: true}">
     <div class="page-content">
       <div class="padding">
         <button class="button button-positive button-block" @click="showModal()">显示模态窗</button>
@@ -16,7 +14,6 @@
 
 </style>
 <script>
-  import {Page, VonHeader} from 'vonic'
   import DefaultModal from './DefaultModal'
   import MultiModal from './MultiModal'
   import ScrollModal from './ScrollModal'
@@ -24,8 +21,7 @@
 
   export default{
     components: {
-      Page,
-      VonHeader,
+
     },
 
     data(){

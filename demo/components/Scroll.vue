@@ -1,7 +1,6 @@
 <template>
 
-  <div class="page has-header">
-    <von-header title="Scroll" :on-back-button-click="back"></von-header>
+  <div class="page has-header" v-nav="{title: 'Scroll', showBackButton: true, onBackButtonClick: back}">
     <scroll class="page-content"
             :on-refresh="refresh"
             :on-infinite="loadMore"
@@ -16,13 +15,11 @@
 </template>
 
 <script>
-  import {Page, Scroll, VonHeader} from 'vonic'
+  import {Scroll} from 'vonic'
 
   export default {
     components: {
-      Page,
-      Scroll,
-      VonHeader
+
     },
 
     data () {

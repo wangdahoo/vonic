@@ -1,7 +1,5 @@
 <template>
-  <div class="page has-header">
-    <von-header title="开关按钮" :on-back-button-click="back"></von-header>
-
+  <div class="page has-header" v-nav="{title: '开关按钮', showBackButton: true}">
     <div class="page-content padding-top">
       <von-toggle :text="toggleText" :value.sync="pushNotification"></von-toggle>
       <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
@@ -21,12 +19,10 @@
 </style>
 <script>
   import _ from 'lodash'
-  import {Page, VonHeader, VonToggle} from 'vonic'
+  import {VonToggle} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
       VonToggle
     },
 

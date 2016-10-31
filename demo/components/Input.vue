@@ -38,12 +38,9 @@
 
 </style>
 <script>
-  import {Page, VonHeader} from 'vonic'
 
   export default{
     components: {
-      Page,
-      VonHeader,
     },
 
     data(){
