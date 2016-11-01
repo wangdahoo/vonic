@@ -1,11 +1,11 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '弹出式提醒', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '弹出式提醒', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content padding">
 
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <button class="button button-positive button-block">上</button>
+          <button class="button button-positive button-block" id="btn-top">上</button>
         </div>
         <div class="col"></div>
       </div>
@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <button class="button button-assertive button-block">下</button>
+          <button class="button button-assertive button-block" id="btn-bottom">下</button>
         </div>
         <div class="col"></div>
       </div>
@@ -21,7 +21,7 @@
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <button class="button button-balanced button-block">左</button>
+          <button class="button button-balanced button-block" id="btn-left">左</button>
         </div>
         <div class="col"></div>
       </div>
@@ -29,15 +29,27 @@
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <button class="button button-energized button-block">右</button>
+          <button class="button button-energized button-block" id="btn-right">右</button>
         </div>
         <div class="col"></div>
       </div>
 
     </div>
 
-    <popover direction="right">
-      Hello!
+    <popover direction="top" target="#btn-top">
+      我在上面
+    </popover>
+
+    <popover direction="bottom" target="#btn-bottom">
+      我在下面
+    </popover>
+
+    <popover direction="left" target="#btn-left">
+      我在左边
+    </popover>
+
+    <popover direction="right" target="#btn-right">
+      我在右边
     </popover>
 
   </div>
@@ -70,7 +82,9 @@
     },
 
     methods: {
-
+      back() {
+        $router.back('/')
+      }
     }
   }
 </script>

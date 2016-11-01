@@ -1,5 +1,7 @@
 <template>
-  <div class="von-popover" :style="{top: top, left: left, marginTop: marginTop, marginLeft: marginLeft}">
+  <div class="von-popover"
+       :class="{'active': active}"
+       :style="{top: top, left: left, marginTop: marginTop, marginLeft: marginLeft}">
     <div class="von-popover-content">
       <slot></slot>
     </div>
@@ -14,13 +16,21 @@
     padding: 4px;
     min-width: 40px;
 
+    visibility: hidden;
+    &.active {
+      visibility: visible;
+    }
+
     .von-popover-content {
       background-color: rgba(0,0,0,0.8);
       color: #fff;
       font-size: 13px;
       line-height: 18px;
       padding: 12px;
-      border-radius: 4px;
+      border-radius: 2px;
+
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
   }
 
@@ -45,6 +55,10 @@
       left: {
         type: String,
         default: '50%'
+      },
+
+      target: {
+        type: String
       }
     },
 
@@ -52,7 +66,9 @@
       return {
         marginTop: 0,
         marginLeft: 0,
-        arrowPosition: 'bottom'
+        arrowPosition: 'bottom',
+
+        active: false
       }
     },
 
@@ -67,10 +83,53 @@
       if (this.direction == 'left') this.arrowPosition = 'right'
       if (this.direction == 'right') this.arrowPosition = 'left'
 
+      // target
+      if (this.target) {
+        let t = document.querySelector(this.target)
+        if (['BUTTON'].indexOf(t.nodeName) > -1) {
+          // console.log(t.offsetTop, t.offsetLeft, t.offsetWidth, t.offsetHeight)
+
+          if (this.direction == 'top') {
+            this.top = t.offsetTop - this.$el.offsetHeight / 2 + 'px'
+            this.left = t.offsetLeft + t.offsetWidth / 2 + 'px'
+          }
+
+          if (this.direction == 'bottom') {
+            this.top = t.offsetTop + t.offsetHeight + this.$el.offsetHeight / 2 + 'px'
+            this.left = t.offsetLeft + t.offsetWidth / 2 + 'px'
+          }
+
+          if (this.direction == 'left') {
+            this.top = t.offsetTop + t.offsetHeight / 2 + 'px'
+            this.left = t.offsetLeft - this.$el.offsetWidth / 2 + 'px'
+          }
+
+          if (this.direction == 'right') {
+            this.top = t.offsetTop + t.offsetHeight / 2 + 'px'
+            this.left = t.offsetLeft - this.$el.offsetWidth / 2 + t.offsetWidth + this.$el.offsetWidth + 'px'
+          }
+
+          // TODO: 可能会覆盖元素原本的onclick事件
+          t.onclick = (e) => {
+            this.active = true
+
+            setTimeout(() => {
+              this.active = false
+            }, 1500)
+          }
+        }
+      }
+
     },
 
     methods: {
+      show() {
+        this.active = true
+      },
 
+      hide() {
+        this.active = false
+      }
     }
   }
 
