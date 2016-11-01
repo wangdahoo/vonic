@@ -13,6 +13,7 @@ import Toggle from './components/Toggle'
 import Tabs from './components/Tabs'
 import ButtonBar from './components/ButtonBar'
 import Popup from './components/Popup'
+import Popover from './components/Popover'
 import Modal from './components/Modal'
 import Cells from './components/Cells'
 import Swiper from './components/Swiper'
@@ -65,6 +66,10 @@ const routers = {
 
   '/widgets/popup': {
     component: Popup
+  },
+
+  '/widgets/popover': {
+    component: Popover
   },
 
   '/widgets/modal': {

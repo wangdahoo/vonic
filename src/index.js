@@ -9,6 +9,8 @@ import {Swiper, SwiperItem} from './components/swiper'
 import ButtonBar from './components/buttonbar'
 import {Input, Search} from './components/input'
 import {Loading} from './components/loading'
+
+import Popover from './components/popover'
 import Plugin from './plugin'
 
 module.exports = {
@@ -25,5 +27,6 @@ module.exports = {
   'VonInput': Input,
   Search,
   Loading,
+  Popover,
   app: Plugin
 }
