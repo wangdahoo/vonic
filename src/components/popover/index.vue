@@ -109,13 +109,10 @@
             this.left = t.offsetLeft - this.$el.offsetWidth / 2 + t.offsetWidth + this.$el.offsetWidth + 'px'
           }
 
-          // TODO: 可能会覆盖元素原本的onclick事件
+          let _onclick = t.onclick
           t.onclick = (e) => {
             this.active = true
-
-            setTimeout(() => {
-              this.active = false
-            }, 1500)
+            if (_onclick) _onclick(e)
           }
         }
       }

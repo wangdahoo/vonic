@@ -54,10 +54,23 @@
 
   </div>
 </template>
-<style scoped>
+<style lang="scss" scoped>
   .row {
-    margin: 50px 0 0 0;
+    margin: 0 auto;
+
+    .col {
+      padding: 0;
+    }
+
+    &:nth-of-type(1) {
+      margin-top: 50px;
+    }
+
+    &:nth-of-type(2) {
+      margin-bottom: 100px;
+    }
   }
+
 </style>
 <script>
   import {Popover} from 'vonic'
