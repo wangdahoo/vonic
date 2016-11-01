@@ -15,6 +15,7 @@ import ButtonBar from './components/ButtonBar'
 import Popup from './components/Popup'
 import Modal from './components/Modal'
 import Cells from './components/Cells'
+import Swiper from './components/Swiper'
 import Scroll from './components/Scroll'
 import VumScroll from './components/VumScroll'
 
@@ -72,6 +73,10 @@ const routers = {
 
   '/widgets/cells': {
     component: Cells
+  },
+
+  '/widgets/swiper': {
+    component: Swiper
   },
 
   '/effects/scroll': {

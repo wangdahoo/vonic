@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import {Page, VumScroll, VonHeader} from 'vonic'
+  import {VumScroll} from 'vonic'
 
   export default {
     components: {

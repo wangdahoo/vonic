@@ -1,7 +1,7 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '宫格布局', showBackButton: true}">
 
-    <div class="page-content padding-top">
+    <div class="page-content">
 
       <!-- 3 x 2 -->
       <cells :items="entrances" :on-cell-click="onCellClick" row="2"></cells>

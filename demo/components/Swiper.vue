@@ -1,0 +1,73 @@
+<template>
+  <div class="page has-navbar" v-nav="{title: '轮播', showBackButton: true, onBackButtonClick: back}">
+    <div class="page-content">
+      <swiper direction="horizontal">
+        <swiper-item>
+          <h1>Item 1</h1>
+        </swiper-item>
+
+        <swiper-item>
+          <h1>Item 2</h1>
+        </swiper-item>
+
+        <swiper-item>
+          <h1>Item 2</h1>
+        </swiper-item>
+      </swiper>
+    </div>
+  </div>
+</template>
+<style lang='scss' scoped>
+
+  .swiper-item {
+    padding-top: 100px;
+
+    h1 {
+      color: #fff;
+      font-size: 32px;
+      text-align: center;
+      font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    }
+
+    &:nth-of-type(1) {
+      background-color: #ec4949;
+    }
+
+    &:nth-of-type(2) {
+      background-color: #44cc00;
+    }
+
+    &:nth-of-type(3) {
+      background-color: #0a9dc7;
+    }
+  }
+
+</style>
+<script>
+  import {Swiper, SwiperItem} from 'vonic'
+
+  export default{
+    components:{
+      Swiper,
+      SwiperItem
+    },
+
+    props: {
+
+    },
+
+    data(){
+      return{
+
+      }
+    },
+
+    ready() {
+
+    },
+
+    methods: {
+
+    }
+  }
+</script>

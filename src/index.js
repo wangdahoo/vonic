@@ -5,6 +5,7 @@ import VonCheckbox from './components/checkbox'
 import VonToggle from './components/toggle'
 import Tabs from './components/tabs'
 import {Cells} from './components/cells'
+import {Swiper, SwiperItem} from './components/swiper'
 import ButtonBar from './components/buttonbar'
 import {Input, Search} from './components/input'
 import {Loading} from './components/loading'
@@ -18,6 +19,8 @@ module.exports = {
   VonToggle,
   Tabs,
   Cells,
+  Swiper,
+  SwiperItem,
   ButtonBar,
   'VonInput': Input,
   Search,

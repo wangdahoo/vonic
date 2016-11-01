@@ -54,6 +54,11 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
+      <div class="item item-icon-right" v-link="{ path: '/widgets/swiper' }">
+        Swiper <span class="note">轮播</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
       <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
         Scroll <span class="note">下拉刷新、无限加载</span>
         <i class="icon ion-ios-arrow-right"></i>
