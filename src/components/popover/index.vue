@@ -2,8 +2,10 @@
   <div class="von-popover"
        :class="{'active': active}"
        :style="{top: top, left: left, marginTop: marginTop, marginLeft: marginLeft}">
-    <div class="von-popover-content">
+    <div class="von-popover-content" :class="{'has-close': showClose == 'true'}">
       <slot></slot>
+
+      <close v-if="showClose == 'true'" @click="hide()"></close>
     </div>
 
     <arrow :position="arrowPosition"></arrow>
@@ -31,16 +33,22 @@
 
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+      &.has-close {
+        padding-right: 25px + 12px;
+      }
     }
   }
 
 </style>
 <script>
   import Arrow from './arrow'
+  import Close from './close'
 
   export default {
     components: {
-      Arrow
+      Arrow,
+      Close
     },
 
     props: {
@@ -59,6 +67,11 @@
 
       target: {
         type: String
+      },
+
+      showClose: {
+        type: String,
+        default: 'false'
       }
     },
 
