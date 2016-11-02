@@ -1,5 +1,14 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Components', showMenuButton: true, onMenuButtonClick: goRepo, menuButtonText: menuButtonText}">
+  <div class="page has-navbar"
+       v-nav="{
+         title: 'Components',
+         showMenuButton: true,
+         onMenuButtonClick: goRepo,
+         menuButtonText: menuButtonText,
+         showBackButton: true,
+         onBackButtonClick: toggleSidebar,
+         backButtonText: backButtonText
+      }">
     <div class="page-content home">
       <div class="logo">
         <img src="../assets/vonic.svg" width="80" height="80"/>
@@ -84,10 +93,38 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
+      <div class="item item-icon-right" @click="openSidebar()">
+        Sidebar <span class="note">边栏</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
     </div>
+
+    <sidebar v-ref:sidebar class="home-sidebar">
+      <div class="padding">
+
+        边栏
+        <button class="button button-assertive button-small btn-close" @click="closeSidebar()">点击关闭</button>
+      </div>
+    </sidebar>
   </div>
 </template>
 <style lang="scss" scoped>
+
+  .home-sidebar {
+    .padding {
+      height: 100%;
+      position: relative;
+
+      .btn-close {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        width: 100px;
+        margin-left: -50px;
+      }
+    }
+  }
 
   .home {
     padding: 74px 0 40px 0 !important;
@@ -138,13 +175,16 @@
 </style>
 <script>
   import Vue from 'vue'
+  import {Sidebar} from 'vonic'
 
-  export default{
+  export default {
     components: {
+      Sidebar
     },
 
     data() {
       return {
+        backButtonText: '<a class="button button-icon icon ion-navicon"></a>',
         menuButtonText: '<a class="button button-icon icon ion-social-github"></a>'
       }
     },
@@ -164,6 +204,18 @@
 
       goRepo() {
         location.href = 'https://github.com/wangdahoo/vonic'
+      },
+
+      toggleSidebar() {
+        this.$refs.sidebar.toggle()
+      },
+
+      openSidebar() {
+        this.$refs.sidebar.open()
+      },
+
+      closeSidebar() {
+        this.$refs.sidebar.close()
       }
     }
   }

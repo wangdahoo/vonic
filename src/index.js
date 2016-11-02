@@ -11,6 +11,7 @@ import {Input, Search} from './components/input'
 import {Loading} from './components/loading'
 
 import Popover from './components/popover'
+import Sidebar from './components/sidebar'
 import Plugin from './plugin'
 
 module.exports = {
@@ -28,5 +29,6 @@ module.exports = {
   Search,
   Loading,
   Popover,
+  Sidebar,
   app: Plugin
 }
