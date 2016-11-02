@@ -23,6 +23,19 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
+      <div class="item item-divider">
+        Other Effects
+      </div>
+
+      <div class="item item-icon-right" @click="showAlert('scale')">
+        Scale
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
+      <div class="item item-icon-right" @click="showAlert('slide')">
+        Slide
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
 
     </div>
   </div>
@@ -71,10 +84,11 @@
         $router.back({path: '/'})
       },
 
-      showAlert() {
+      showAlert(effect) {
         $alert.show({
           content: 'Hello!',
-          okTheme: 'positive'
+          okTheme: 'positive',
+          effect: effect || 'default'
         }).then(() => {
           console.log('alert hide.');
         })

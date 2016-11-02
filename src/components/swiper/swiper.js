@@ -14,7 +14,7 @@
    * @constructor
    */
   function Swiper(options) {
-    this._default = {container: '.swiper', item: '.swiper-item', direction: 'vertical', activeClass: 'swiper-item-active', threshold: 50, duration: 300};
+    this._default = {container: '.swiper', item: '.swiper-item', direction: 'vertical', activeClass: 'swiper-item-active', threshold: 30, duration: 300};
     this._options = extend(this._default, options);
     this._start = {};
     this._move = {};
