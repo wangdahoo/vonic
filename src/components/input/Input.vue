@@ -1,8 +1,14 @@
 <template>
-  <label class="item item-input" :class="{'item-floating-label': floatingLabel == 'true'}">
-    <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}">{{label}}</span>
-    <input type="{{type}}" placeholder="{{ placeholder }}" v-model="value">
-  </label>
+  <div class="von-input-wrapper">
+    <label class="item item-input von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
+      <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}">{{label}}</span>
+      <input type="{{type}}" placeholder="{{ placeholder }}" v-model="value">
+
+    </label>
+
+    <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>
+  </div>
+
 </template>
 
 <script>
@@ -32,6 +38,26 @@ export default {
       type: String,
       default: 'false'
     }
+  },
+
+  data() {
+    return {
+      showClearButton: false
+    }
+  },
+
+  methods: {
+    clear() {
+      console.log(1);
+      this.value = ''
+      this.showClearButton = false
+    }
+  },
+
+  watch: {
+    value: function (newValue) {
+      this.showClearButton = !!newValue
+    }
   }
 }
 </script>
@@ -52,28 +78,53 @@ export default {
     }
   }
 
-  .item-input {
-    padding: 13px 15px;
+  .von-input-wrapper {
+    position: relative;
 
-    .input-label {
-      line-height: 20px;
+    .von-input {
+      padding: 13px 15px;
+      position: relative;
+
+      .input-label {
+        line-height: 20px;
+      }
+
+      input {
+        font-size: 16px;
+
+        &::-webkit-input-placeholder {
+          line-height: 22px;
+        }
+      }
+
     }
 
-    input {
-      font-size: 16px;
+    .input-clear {
+      position: absolute;
+      top: 24px;
+      right: 15px;
+      z-index: 3;
 
-      &::-webkit-input-placeholder {
-        line-height: 22px;
+      width: 12px;
+      height: 12px;
+      background-image: url(../../assets/clear@3x.png);
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+
+      visibility: hidden;
+      &.active {
+        visibility: visible;
       }
     }
-  }
 
-  .item-floating-label {
-    background: #FFF;
-    .input-label {
-      font-size: 16px;
-      line-height: 20px;
-      font-weight: 400;
+    .item-floating-label {
+      background: #FFF;
+      .input-label {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+      }
     }
   }
 </style>
