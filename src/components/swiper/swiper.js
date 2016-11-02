@@ -118,6 +118,9 @@
         me._current = me._current < (me.count - 1) ? ++me._current : me._current;
         me._show(me._current);
         e.preventDefault();
+      } else {
+        me._show(me._current);
+        e.preventDefault();
       }
     }, false);
 
