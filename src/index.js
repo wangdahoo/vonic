@@ -1,3 +1,4 @@
+import 'whatwg-fetch'
 import Scroller from 'vue-scroller'
 import VumScroll from './components/vum-scroll'
 import VonRadio from './components/radio'
@@ -11,8 +12,10 @@ import {Input, Search} from './components/input'
 import {Loading} from './components/loading'
 
 import Popover from './components/popover'
-import Sidebar from './components/sidebar'
 import Plugin from './plugin'
+
+import Sidebar from './services/sidebar'
+window.$sidebar = Sidebar
 
 module.exports = {
   'Scroll': Scroller,
@@ -29,6 +32,5 @@ module.exports = {
   Search,
   Loading,
   Popover,
-  Sidebar,
   app: Plugin
 }

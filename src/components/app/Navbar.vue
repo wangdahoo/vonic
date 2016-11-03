@@ -14,6 +14,10 @@
   @import '../scss/mixins';
   $themeColor: '#007aff';
 
+  $navbar-z-index: 10;
+  $navbar-title-z-index: 12;
+  $navbar-button-z-index: 13;
+
   .navbar {
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -22,7 +26,7 @@
     top: 0;
     width: 100%;
     height: 44px;
-    z-index: 10;
+    z-index: $navbar-z-index;
     background-color: #fff;
 
     &:after {
@@ -35,7 +39,7 @@
       width: 80px;
       height: 44px;
       line-height: 44px;
-      z-index: 12;
+      z-index: $navbar-button-z-index;
 
       .button-icon {
         padding: 0;
@@ -65,7 +69,7 @@
       height: 44px;
       padding: 0;
       text-align: center;
-      z-index: 11;
+      z-index: $navbar-title-z-index;
 
       .title {
         display: inline-block;
@@ -162,6 +166,10 @@
       '<a class="button button-icon icon ion-android-arrow-back"></a>'
   }
 
+  function defaultMenuButtonText() {
+    return '<a class="button button-icon icon ion-navicon"></a>'
+  }
+
   let touchLock
 
   function navTransitionStart() {
@@ -185,7 +193,7 @@
         showMenuButton: false,
         onMenuButtonClick: undefined,
         backButtonText: defaultBackButtonText(),
-        menuButtonText: '<a class="button button-icon icon ion-navicon"></a>',
+        menuButtonText: defaultMenuButtonText(),
         hideNavbar: false
       }
     },
@@ -221,11 +229,15 @@
         this.onBackButtonClick = data.onBackButtonClick
         if (data.backButtonText)
           this.backButtonText = data.backButtonText
+        else
+          this.backButtonText = defaultBackButtonText()
 
         this.showMenuButton = data.showMenuButton
         this.onMenuButtonClick = data.onMenuButtonClick
         if (data.menuButtonText)
           this.menuButtonText = data.menuButtonText
+        else
+          this.menuButtonText = defaultMenuButtonText()
       })
     },
 

@@ -26,10 +26,7 @@ const routers = {
   },
 
   '/widgets/input': {
-    component: Input,
-    navbar: {
-      title: '文本框'
-    }
+    component: Input
   },
 
   '/widgets/defaultInput': {

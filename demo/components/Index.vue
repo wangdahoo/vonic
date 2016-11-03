@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar"
-       v-nav="{
+    <div class="page has-navbar"
+         v-nav="{
          title: 'Components',
          showMenuButton: true,
          onMenuButtonClick: goRepo,
@@ -9,122 +9,99 @@
          onBackButtonClick: toggleSidebar,
          backButtonText: backButtonText
       }">
-    <div class="page-content home">
-      <div class="logo">
-        <img src="../assets/vonic.svg" width="80" height="80"/>
-      </div>
+      <div class="page-content home">
+        <div class="logo">
+          <img src="../assets/vonic.svg" width="80" height="80"/>
+        </div>
 
-      <div class="text-center code-name">Vonic</div>
+        <div class="text-center code-name">Vonic</div>
 
-      <div class="item item-divider text-center code-desc">
-        UI Components
-      </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/input' }">
-        Input <span class="note">文本框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/search' }">
-        Search <span class="note">搜索框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
-        Radio <span class="note">单选框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/checkbox' }">
-        Checkbox <span class="note">复选框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/toggle' }">
-        Toggle <span class="note">开关按钮</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/tabs' }">
-        Tabs
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right" v-link="{ path: '/widgets/buttonbar' }">
-        ButtonBar <span class="note">iOS 风格的 Tabs</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-divider text-center code-desc">
+          UI Components
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/input' }">
+          Input <span class="note">文本框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/search' }">
+          Search <span class="note">搜索框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
+          Radio <span class="note">单选框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/checkbox' }">
+          Checkbox <span class="note">复选框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/toggle' }">
+          Toggle <span class="note">开关按钮</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/tabs' }">
+          Tabs
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/buttonbar' }">
+          ButtonBar <span class="note">iOS 风格的 Tabs</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/popup' }">
-        Popup <span class="note">弹层</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/popup' }">
+          Popup <span class="note">弹层</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">
-        Popover <span class="note">弹出式提醒</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">
+          Popover <span class="note">弹出式提醒</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/modal' }">
-        Modal <span class="note">模态窗</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/modal' }">
+          Modal <span class="note">模态窗</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
-        Cells <span class="note">宫格布局</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
+          Cells <span class="note">宫格布局</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/swiper' }">
-        Swiper <span class="note">轮播</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/swiper' }">
+          Swiper <span class="note">轮播</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
-        Scroll <span class="note">下拉刷新、无限加载</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
+          Scroll <span class="note">下拉刷新、无限加载</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/effects/vum-scroll' }">
-        Vum Scroll <span class="note">基于vum代码的轻量Scroll组件</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" v-link="{ path: '/effects/vum-scroll' }">
+          Vum Scroll <span class="note">基于vum代码的轻量Scroll组件</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
-        Loading <span class="note">加载提示</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
+          Loading <span class="note">加载提示</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" @click="showToast()">
-        Toast <span class="note">文字提示</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" @click="showToast()">
+          Toast <span class="note">文字提示</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
-      <div class="item item-icon-right" @click="openSidebar()">
-        Sidebar <span class="note">边栏</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+        <div class="item item-icon-right" @click="openSidebar()">
+          Sidebar <span class="note">边栏</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
 
+      </div>
     </div>
-
-    <sidebar v-ref:sidebar class="home-sidebar">
-      <div class="padding">
-
-        边栏
-        <button class="button button-assertive button-small btn-close" @click="closeSidebar()">点击关闭</button>
-      </div>
-    </sidebar>
-  </div>
 </template>
 <style lang="scss" scoped>
-
-  .home-sidebar {
-    .padding {
-      height: 100%;
-      position: relative;
-
-      .btn-close {
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        width: 100px;
-        margin-left: -50px;
-      }
-    }
-  }
 
   .home {
     padding: 74px 0 40px 0 !important;
@@ -185,8 +162,14 @@
     data() {
       return {
         backButtonText: '<a class="button button-icon icon ion-navicon"></a>',
-        menuButtonText: '<a class="button button-icon icon ion-social-github"></a>'
+        menuButtonText: '<a class="button button-icon icon ion-social-github"></a>',
+
+        sidebar: undefined
       }
+    },
+
+    ready() {
+      $sidebar.fromTemplate('<p>this is the sidebar</p>', 'my_sidebar')
     },
 
     methods: {
@@ -207,15 +190,15 @@
       },
 
       toggleSidebar() {
-        this.$refs.sidebar.toggle()
+        $sidebar.delegate('my_sidebar').toggle()
       },
 
       openSidebar() {
-        this.$refs.sidebar.open()
+        $sidebar.delegate('my_sidebar').open()
       },
 
       closeSidebar() {
-        this.$refs.sidebar.close()
+        $sidebar.delegate('my_sidebar').close()
       }
     }
   }

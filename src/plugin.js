@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import Storage from './services/storage'
+import Sidebar from './services/sidebar'
 import VonApp from './components/app'
 
 import FastClick from 'fastclick'
@@ -74,6 +75,9 @@ export default {
 
     // Local Storage Service
     window.$storage = Storage
+
+    // Sidebar Service
+    window.$sidebar = Sidebar
 
     /* 类似的这种兼容性代码, 暂时放在这个位置 */
     /* for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport. */
