@@ -91,8 +91,6 @@ const routers = {
 
 };
 
-Vonic.app.setConfig('useHistory', true)
-
 Vue.use(Vonic.app, {
   routers: routers,
   defaultRouterUrl: '/'
