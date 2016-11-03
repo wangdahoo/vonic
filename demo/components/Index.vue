@@ -169,7 +169,25 @@
     },
 
     ready() {
-      $sidebar.fromTemplate('<p>this is the sidebar</p>', 'my_sidebar')
+      let template = `
+        <p style="font-size: 13px;">
+        No man is an island,<br>
+        entire of itself.<br>
+        Every man is a piece of the continent,<br>
+        a part of the main.<br>
+        If a clod be washed away by the sea,<br>
+        Europe is the less,<br>
+        as well as if a promontory were,<br>
+        as well as if a manor of thy friend's or of thine own were.<br>
+        Any man's death diminishes me.<br>
+        Because I am involved in mankind.<br>
+        And,<br>
+        therefore,<br>
+        never send to know for whom the bells tolls,<br>
+        it tolls for thee.<br>
+        </p>
+      `
+      $sidebar.fromTemplate(template, 'my_sidebar')
     },
 
     methods: {

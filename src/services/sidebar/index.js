@@ -4,7 +4,7 @@ import Sidebar from './components/sidebar'
 
 class VonicSidebar {
   fromTemplateUrl(url) {
-
+    // todo:
   }
 
   fromTemplate(template, delegateId) {

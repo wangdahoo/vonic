@@ -1,9 +1,12 @@
 <template>
   <div class="von-sidebar-wrapper" :class="{'left': position == 'left', 'right': position == 'right'}">
-    <div class="click-block click-block-sidebar" :class="{'click-block-hide': !opened}" @click="close()"></div>
-    <div class="von-sidebar" :class="{'open': opened}">
+    <div class="click-block click-block-sidebar"
+         :class="{'click-block-hide': !opened}"
+         @click="close()"
+    ></div>
+    <scroll width="260" class="von-sidebar" :class="{'open': opened}">
       <slot></slot>
-    </div>
+    </scroll>
   </div>
 </template>
 <style lang='scss'>
@@ -25,6 +28,10 @@
     &.active {
       z-index: $sidebars-z-index-active;
       display: block;
+    }
+
+    &.fixed {
+      position: fixed;
     }
   }
 
@@ -75,10 +82,17 @@
   }
 </style>
 <script>
+  import Vue from 'vue'
+  import Scroller from 'vue-scroller'
+
   let wrapper
   const transitionDuration = 400
 
   export default {
+    components: {
+      'scroll': Scroller
+    },
+
     props: {
       position: {
         type: String,
@@ -101,10 +115,16 @@
         wrapper.classList.add('active')
         setTimeout(() => {
           this.opened = true
+
+          Vue.nextTick(() => {
+            wrapper.classList.add('fixed')
+          })
         })
       },
 
       close() {
+        wrapper.classList.remove('fixed')
+
         this.opened = false
         setTimeout(() => {
           wrapper.classList.remove('active')
