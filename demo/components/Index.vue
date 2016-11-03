@@ -48,10 +48,10 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
-        <div class="item item-icon-right" v-link="{ path: '/widgets/popup' }">
+        <!-- <div class="item item-icon-right" v-link="{ path: '/widgets/popup' }">
           Popup <span class="note">弹层</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </div>
+        </div> -->
 
         <div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">
           Popover <span class="note">弹出式提醒</span>
