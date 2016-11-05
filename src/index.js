@@ -11,6 +11,8 @@ import ButtonBar from './components/buttonbar'
 import {Input, Search} from './components/input'
 import {Loading} from './components/loading'
 
+import {CustomPopup} from './components/popup'
+
 import Popover from './components/popover'
 import Plugin from './plugin'
 
@@ -32,5 +34,7 @@ module.exports = {
   Search,
   Loading,
   Popover,
+  'Popup': CustomPopup,
+
   app: Plugin
 }

@@ -1,6 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
-
+  <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content padding-top">
 
       <div class="item item-icon-right" @click="showAlert()">
@@ -23,6 +22,11 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
+      <div class="item item-icon-right" @click="showCustomPopup()">
+        Custom Popup
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
       <div class="item item-divider">
         Other Effects
       </div>
@@ -36,6 +40,12 @@
         Slide
         <i class="icon ion-ios-arrow-right"></i>
       </div>
+
+      <popup effect='scale' title="标题" :buttons="customPopupButtons" v-ref:custom_popup>
+        <p>
+          自定义内容
+        </p>
+      </popup>
 
     </div>
   </div>
@@ -63,15 +73,25 @@
 
 </style>
 <script>
-  import {Alert} from 'vonic'
+  import {Popup} from 'vonic'
 
   export default{
     components: {
-      Alert
+      Popup
     },
 
     data(){
       return {
+        customPopupButtons: [
+          {
+            text: '按钮 - 1',
+            theme: 'assertive'
+          },
+          {
+            text: '按钮 - 2',
+            theme: 'positive'
+          }
+        ]
       }
     },
 
@@ -90,7 +110,7 @@
           okTheme: 'positive',
           effect: effect || 'default'
         }).then(() => {
-          console.log('alert hide.');
+          console.log('alert hide.')
         })
       },
 
@@ -99,7 +119,7 @@
           content: '在"微信"中打开链接吗?',
           okText: '打开'
         }).then((res) => {
-          console.log('confirm result: ', res);
+          console.log('confirm result: ', res)
         })
       },
 
@@ -109,7 +129,7 @@
           content: 'Safari打不开网页，因为网址无效。',
           okText: '好'
         }).then(() => {
-          console.log('alert hide.');
+          console.log('alert hide.')
         })
       },
 
@@ -119,9 +139,13 @@
           cancelText: '取消',
           okText: '打开'
         }).then((res) => {
-          console.log('confirm result: ', res);
+          console.log('confirm result: ', res)
         })
       },
+
+      showCustomPopup() {
+        this.$refs.custom_popup.show()
+      }
     }
   }
 </script>
