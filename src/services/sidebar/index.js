@@ -3,17 +3,28 @@ import Vue from 'vue'
 import Sidebar from './components/sidebar'
 
 class VonicSidebar {
-  fromTemplateUrl(url) {
-    // todo:
+  fromTemplateUrl(url, options) {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+        .then((response) => {
+          return response.text()
+        })
+        .then((template) => {
+          resolve(this.fromTemplate(template, options))
+        })
+    })
   }
 
-  fromTemplate(template, delegateId) {
-    this._init(template, delegateId)
+  fromTemplate(template, options) {
+    return this._init(template, options)
   }
 
   _vm = undefined
 
-  _init(template, refId) {
+  _init(template, options) {
+    let refId = (options && options.refId) ? options.refId : Math.random().toString(32).substr(0, 6)
+    let position = (options && options.position) ? options.position : 'left'
+
     if (this._vm) {
       this._vm.$destroy()
       this._vm = undefined
@@ -26,7 +37,7 @@ class VonicSidebar {
       document.querySelector('[von-app]').appendChild(wrapper)
     }
 
-    wrapper.innerHTML = '<sidebar v-ref:' + refId + '>' + template + '</sidebar>'
+    wrapper.innerHTML = '<sidebar position="' + position + '" v-ref:' + refId + '>' + template + '</sidebar>'
 
     this._vm = new Vue({
       components: {
@@ -34,10 +45,22 @@ class VonicSidebar {
       },
       el: '[von-sidebars]'
     })
+
+    return this._vm.$refs[refId]
   }
 
   delegate(id) {
     return this._vm.$refs[id]
+  }
+
+  destroy() {
+    if (this._vm) {
+      this._vm.$destroy()
+      this._vm = undefined
+    }
+
+    let wrapper = document.querySelector('[von-sidebars]')
+    wrapper.innerHTML = ''
   }
 }
 

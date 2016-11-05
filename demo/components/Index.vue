@@ -187,7 +187,17 @@
         it tolls for thee.<br>
         </p>
       `
-      $sidebar.fromTemplate(template, 'my_sidebar')
+      this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
+      // $sidebar
+      //  .fromTemplateUrl('path/to/template', {position: 'right'}) // right bar
+      //  .then((sidebar) => {
+      //    this.sidebar = sidebar
+      //  })
+    },
+
+    destroyed() {
+      console.log('destroy sidebar')
+      $sidebar.destroy()
     },
 
     methods: {
@@ -208,15 +218,15 @@
       },
 
       toggleSidebar() {
-        $sidebar.delegate('my_sidebar').toggle()
+        this.sidebar.toggle()
       },
 
       openSidebar() {
-        $sidebar.delegate('my_sidebar').open()
+        this.sidebar.open()
       },
 
       closeSidebar() {
-        $sidebar.delegate('my_sidebar').close()
+        this.sidebar.close()
       }
     }
   }

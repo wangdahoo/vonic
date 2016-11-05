@@ -50,10 +50,15 @@
     }
 
     &.right .von-sidebar {
-      right: 0;
+      right: 0 !important;
       -webkit-transform: translate(280px, 0);
       transform: translate(280px, 0);
       margin-left: 20px;
+    }
+
+    // overwrite scroller style
+    &.right ._v-container {
+      left: auto;
     }
 
     .von-sidebar {
