@@ -14,6 +14,12 @@
 <script>
   const backdrop_fadein_duration = 100;
 
+  const pageContentScrollable = (scrollable) => {
+    document
+      .querySelector('[von-app] .page .page-content')
+      .classList[scrollable ? 'remove' : 'add']('non-scrollable')
+  }
+
   export default {
     data () {
       return {
@@ -30,16 +36,20 @@
           backdrop.className += ' active'
         }, backdrop_fadein_duration)
 
-        this.tips = tips || '正在加载';
+        this.tips = tips || '正在加载'
         this.state = 1
         setTimeout(() => {
           this.state = 2
         })
+
+        pageContentScrollable(false)
       },
 
       show(tips) {
         this.showSpinner = true
         this.showLoading(tips)
+
+        pageContentScrollable(false)
       },
 
       hide() {
@@ -52,6 +62,8 @@
         this.state = 1
         setTimeout(() => {
           this.state = 0
+
+          pageContentScrollable(true)
         }, 300)
       },
 
