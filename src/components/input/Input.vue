@@ -101,16 +101,16 @@ export default {
 
     .input-clear {
       position: absolute;
-      top: 24px;
-      right: 15px;
+      top: 18px;
+      right: 9px;
       z-index: 3;
 
-      width: 12px;
-      height: 12px;
+      width: 24px;
+      height: 24px;
       background-image: url(../../assets/clear@3x.png);
-      background-size: 12px 12px;
+      background-size: 14px 14px;
       background-repeat: no-repeat;
-      background-position: 0 0;
+      background-position: 5px 5px;
 
       visibility: hidden;
       &.active {
