@@ -29,9 +29,13 @@
     z-index: $navbar-z-index;
     background-color: #fff;
 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+    /*
     &:after {
       @include hairline(bottom);
     }
+    */
 
     .back-button, .menu-button {
       position: absolute;

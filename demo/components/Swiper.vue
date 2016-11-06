@@ -65,10 +65,8 @@
         font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
       }
 
-      background-color: #ccc;
-
-/*      &:nth-of-type(1) {
-        background-color: #ec4949;
+      &:nth-of-type(1) {
+        background-color: #0a9dc7;
       }
 
       &:nth-of-type(2) {
@@ -76,14 +74,20 @@
       }
 
       &:nth-of-type(3) {
-        background-color: #0a9dc7;
-      }*/
+        background-color: #ffc900;
+      }
+
     }
   }
 
   .swiper-popup {
     .popup-body {
-      padding: 10px 0;
+      padding: 0;
+
+      .swiper-item {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
     }
   }
 

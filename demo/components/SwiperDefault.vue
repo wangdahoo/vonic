@@ -30,7 +30,17 @@
       font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
     }
 
-    background-color: #ccc;
+    &:nth-of-type(1) {
+      background-color: #0a9dc7;
+    }
+
+    &:nth-of-type(2) {
+      background-color: #44cc00;
+    }
+
+    &:nth-of-type(3) {
+      background-color: #ffc900;
+    }
   }
 
 </style>

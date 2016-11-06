@@ -16,11 +16,11 @@
 
     .circle {
       display: inline-block;
-      width: 6px;
-      height: 6px;
-      border: 1px solid $assertive;
+      width: 8px;
+      height: 8px;
+      border: 1px solid rgba(#000, .75);
       border-radius: 50%;
-      background-color: $light;
+      background-color: transparent;
 
       margin-right: 4px;
       &:last-of-type {
@@ -28,7 +28,7 @@
       }
 
       &.active {
-        background-color: $assertive;
+        background-color: rgba(#000, .75);
       }
     }
   }
