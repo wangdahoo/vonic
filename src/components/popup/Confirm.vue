@@ -88,11 +88,11 @@
       },
 
       onOk() {
-        this.$dispatch('ConfirmOkEvent')
+        this.$emit('ConfirmOkEvent')
       },
 
       onCancel() {
-        this.$dispatch('ConfirmCancelEvent')
+        this.$emit('ConfirmCancelEvent')
       }
     }
   }

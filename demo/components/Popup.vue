@@ -144,7 +144,10 @@
       },
 
       showCustomPopup() {
-        this.$refs.custom_popup.show()
+        let popup = this.$refs.custom_popup
+        popup.show().then((buttonIndex) => {
+          console.log('buttonIndex =>', buttonIndex)
+        })
       }
     }
   }

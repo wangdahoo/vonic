@@ -48,7 +48,7 @@ export default {
     },
 
     onOk() {
-      this.$dispatch('AlertOkEvent')
+      this.$emit('AlertOkEvent')
     }
   }
 }

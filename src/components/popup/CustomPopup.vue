@@ -1,21 +1,24 @@
 <template>
-  <div class="popup-container" :effect="effect"
-       :class="{'popup-showing active': state == 1, 'popup-showing popup-hidden': state == 2}">
-    <div class="popup">
-      <div v-if="title" class="popup-head">
-        <div class="popup-title">
-          {{{ title }}}
+  <div class="von-popup-wrapper">
+    <div class="backdrop"></div>
+    <div class="popup-container" :effect="effect"
+         :class="{'popup-showing active': state == 1, 'popup-showing popup-hidden': state == 2}">
+      <div class="popup">
+        <div v-if="title" class="popup-head">
+          <div class="popup-title">
+            {{{ title }}}
+          </div>
         </div>
-      </div>
 
-      <div class="popup-body">
-        <slot></slot>
-      </div>
+        <div class="popup-body">
+          <slot></slot>
+        </div>
 
-      <div v-if="buttons.length > 0" class="popup-buttons">
-        <button v-for="($index, b) in buttons" class="{{ 'button button-' + b.theme + ' button-block' }}" @click="hide($index)">
-          {{{ b.text }}}
-        </button>
+        <div v-if="buttons.length > 0" class="popup-buttons">
+          <button v-for="($index, b) in buttons" class="{{ 'button button-' + b.theme + ' button-block' }}" @click="hide($index)">
+            {{{ b.text }}}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -23,6 +26,16 @@
 
 <style lang="scss" scoped>
   @import "./popup";
+
+  .von-popup-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+  }
 </style>
 
 <script>
@@ -54,7 +67,7 @@
 
     methods: {
       show() {
-        let backdrop = document.querySelector('.backdrop')
+        let backdrop = document.querySelector('.von-popup-wrapper .backdrop')
         backdrop.classList.add('visible')
         setTimeout(() => {
           backdrop.classList.add('active')
@@ -71,8 +84,8 @@
         return this.promise
       },
 
-      hide() {
-        let backdrop = document.querySelector('.backdrop')
+      hide(buttonIndex) {
+        let backdrop = document.querySelector('.von-popup-wrapper .backdrop')
         backdrop.classList.remove('active')
         setTimeout(() => {
           backdrop.classList.remove('visible')
