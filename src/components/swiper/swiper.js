@@ -210,6 +210,7 @@
     }
     this._prev = this._current;
     this._show(++this._current);
+
     return this;
   };
 
@@ -222,7 +223,15 @@
     }
     this._prev = this._current;
     this._show(--this._current);
+
     return this;
+  };
+
+  /**
+   * active page index
+   */
+  Swiper.prototype.activeIndex = function () {
+    return this._current
   };
 
   /**

@@ -1,7 +1,7 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '默认', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content">
-      <swiper direction="horizontal" width="100%" height="150px">
+      <swiper direction="horizontal" width="100%" height="150">
         <swiper-item>
           <h1>Item 1</h1>
         </swiper-item>
@@ -30,17 +30,7 @@
       font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
     }
 
-    &:nth-of-type(1) {
-      background-color: #ec4949;
-    }
-
-    &:nth-of-type(2) {
-      background-color: #44cc00;
-    }
-
-    &:nth-of-type(3) {
-      background-color: #0a9dc7;
-    }
+    background-color: #ccc;
   }
 
 </style>

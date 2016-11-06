@@ -1,6 +1,10 @@
 <template>
-  <div class="swiper">
-    <slot></slot>
+  <div>
+    <div class="swiper">
+      <slot></slot>
+    </div>
+
+    <pagination :size="itemCount" v-ref:pagination></pagination>
   </div>
 </template>
 <style lang='scss'>
@@ -36,12 +40,22 @@
 
 </style>
 <script>
+  import Vue from 'vue'
   import Swiper from './swiper.js'
-  import SwiperItem from './SwiperItem'
+  import SwiperPagination from './SwiperPagination'
 
-  export default{
-    components:{
+  const widthAndHeightCoerce = (v) => {
+    if (v[v.length - 1] != '%') return v + 'px'
+    return v
+  }
 
+  const widthAndHeightValidator = (v) => {
+    return /^[\d]+(\%|px)$/.test(v)
+  }
+
+  export default {
+    components: {
+      'pagination': SwiperPagination
     },
 
     props: {
@@ -51,17 +65,22 @@
       },
       width: {
         type: String,
-        default: '100%'
+        default: '100%',
+        validator: widthAndHeightValidator,
+        coerce: widthAndHeightCoerce
       },
       height: {
         type: String,
-        default: '100%'
+        default: '100%',
+        validator: widthAndHeightValidator,
+        coerce: widthAndHeightCoerce
       }
     },
 
     data(){
       return {
-        swiper: undefined
+        swiper: undefined,
+        itemCount: 0
       }
     },
 
@@ -73,9 +92,22 @@
       this.$el.style.width = this.width
       this.$el.style.height = this.height
 
-      this.swiper = new Swiper({
+      let swiper = new Swiper({
         direction: this.direction
       })
+
+      swiper.on('swiped', (fromIndex, toIndex) => {
+        this.$refs.pagination.activate(toIndex)
+      })
+
+      this.swiper = swiper
+
+      this.itemCount = this.swiper.count
+
+      Vue.nextTick(() => {
+        this.$refs.pagination.init()
+      })
+
     },
 
     methods: {
@@ -85,10 +117,12 @@
 
       next() {
         this.swiper.next()
+        this.$refs.pagination.activate(this.swiper.activeIndex())
       },
 
       prev() {
         this.swiper.prev()
+        this.$refs.pagination.activate(this.swiper.activeIndex())
       }
 
     }

@@ -15,7 +15,7 @@
     </div>
 
     <popup effect='slide' :buttons="swiperPopupButtons" v-ref:swiper_popup class="swiper-popup">
-      <swiper direction="horizontal" width="100%" height="150px" v-if="popupShowed">
+      <swiper direction="horizontal" width="100%" height="150" v-if="popupShowed">
         <swiper-item>
           <h1>Item 1</h1>
         </swiper-item>
@@ -65,7 +65,9 @@
         font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
       }
 
-      &:nth-of-type(1) {
+      background-color: #ccc;
+
+/*      &:nth-of-type(1) {
         background-color: #ec4949;
       }
 
@@ -75,7 +77,7 @@
 
       &:nth-of-type(3) {
         background-color: #0a9dc7;
-      }
+      }*/
     }
   }
 
