@@ -41,13 +41,13 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <popup effect='scale' title="标题" :buttons="customPopupButtons" v-ref:custom_popup>
-        <p>
-          自定义内容
-        </p>
-      </popup>
-
     </div>
+
+    <popup effect='scale' title="标题" :buttons="customPopupButtons" v-ref:custom_popup>
+      <p>
+        自定义内容
+      </p>
+    </popup>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -89,7 +89,7 @@
           },
           {
             text: '按钮 - 2',
-            theme: 'positive'
+            theme: 'light'
           }
         ]
       }

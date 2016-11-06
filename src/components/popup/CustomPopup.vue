@@ -15,7 +15,7 @@
         </div>
 
         <div v-if="buttons.length > 0" class="popup-buttons">
-          <button v-for="($index, b) in buttons" class="{{ 'button button-' + b.theme + ' button-block' }}" @click="hide($index)">
+          <button v-for="($index, b) in buttons" class="{{ 'button button-' + (b.theme || default_button_theme) + ' button-block' }}" @click="hide($index)">
             {{{ b.text }}}
           </button>
         </div>
@@ -62,6 +62,7 @@
     data() {
       return {
         state: 0, // 0: hidden, 1: showing, 2: active
+        default_button_theme: 'positive'
       }
     },
 

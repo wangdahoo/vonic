@@ -1,5 +1,5 @@
 <template>
-  <div class="page" v-nav="{title: '默认输入框', showBackButton: true}">
+  <div class="page" v-nav="{title: '默认输入框', showBackButton: true, onBackButtonClick: back}">
 
     <div class="page-content padding-top">
 
@@ -42,7 +42,7 @@
 
     methods: {
       back() {
-        $router.back({path: '/'})
+        $router.back({path: '/widgets/input'})
       }
     }
   }

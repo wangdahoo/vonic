@@ -2,12 +2,12 @@
   <div class="page has-navbar" v-nav="{title: '输入框', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content padding-top">
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/defaultInput' }">
+      <div class="item item-icon-right" v-link="{ path: '/widgets/inputDefault' }">
         Default<span class="note">默认</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/floatingLabel' }">
+      <div class="item item-icon-right" v-link="{ path: '/widgets/inputFloatingLabel' }">
         Floating Label<span class="note">悬浮标签效果</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>

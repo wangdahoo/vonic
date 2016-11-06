@@ -4,8 +4,8 @@ import Vonic  from 'vonic'
 // Demos
 import Index from './components/Index'
 import Input from './components/Input'
-import DefaultInput from './components/DefaultInput'
-import FloatingLabel from './components/FloatingLabel'
+import InputDefault from './components/InputDefault'
+import InputFloatingLabel from './components/InputFloatingLabel'
 import Search from './components/Search'
 import Radio from './components/Radio'
 import Checkbox from './components/Checkbox'
@@ -17,6 +17,7 @@ import Popover from './components/Popover'
 import Modal from './components/Modal'
 import Cells from './components/Cells'
 import Swiper from './components/Swiper'
+import SwiperDefault from './components/SwiperDefault'
 import Scroll from './components/Scroll'
 import VumScroll from './components/VumScroll'
 
@@ -29,12 +30,12 @@ const routers = {
     component: Input
   },
 
-  '/widgets/defaultInput': {
-    component: DefaultInput
+  '/widgets/inputDefault': {
+    component: InputDefault
   },
 
-  '/widgets/floatingLabel': {
-    component: FloatingLabel
+  '/widgets/inputFloatingLabel': {
+    component: InputFloatingLabel
   },
 
   '/widgets/search': {
@@ -79,6 +80,10 @@ const routers = {
 
   '/widgets/swiper': {
     component: Swiper
+  },
+
+  '/widgets/swiperDefault': {
+    component: SwiperDefault
   },
 
   '/effects/scroll': {

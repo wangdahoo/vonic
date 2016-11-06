@@ -14,10 +14,10 @@
 
 </style>
 <script>
-  import DefaultModal from './DefaultModal'
-  import MultiModal from './MultiModal'
-  import ScrollModal from './ScrollModal'
-  import VumScrollModal from './VumScrollModal'
+  import DefaultModal from './modals/DefaultModal'
+  import MultiModal from './modals/MultiModal'
+  import ScrollModal from './modals/ScrollModal'
+  import VumScrollModal from './modals/VumScrollModal'
 
   export default{
     components: {
