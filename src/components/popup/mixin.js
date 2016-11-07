@@ -15,10 +15,10 @@ export default {
     show(options) {
       extend(this, options)
 
-      let backdrop = document.querySelector('.backdrop')
-      backdrop.className += ' visible'
+      let backdrop = document.querySelector('[backdrop]')
+      backdrop.classList.add('visible')
       setTimeout(() => {
-        backdrop.className += ' active'
+        backdrop.classList.add('active')
       }, backdrop_fadein_duration)
 
       this.state = 1
@@ -35,10 +35,10 @@ export default {
     },
 
     hide() {
-      let backdrop = document.querySelector('.backdrop')
-      backdrop.className += 'backdrop visible'
+      let backdrop = document.querySelector('[backdrop]')
+      backdrop.classList.remove('active')
       setTimeout(() => {
-        backdrop.className = 'backdrop'
+        backdrop.classList.remove('visible')
       }, backdrop_fadein_duration)
 
       this.state = 2

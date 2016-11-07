@@ -93,6 +93,12 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
+        <div class="item item-icon-right" @click="showActionSheet()">
+          ActionSheet <span class="note">Actions</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+
+
         <div class="item item-icon-right" @click="openSidebar()">
           Sidebar <span class="note">边栏</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -211,6 +217,21 @@
 
       showToast() {
         $loading.toast('发送成功')
+      },
+
+      showActionSheet() {
+        $actionSheet.show({
+          title: '标题',
+          buttons: {
+            'Action - 1': () => {
+              console.log('action 1 called.')
+            },
+
+            'Action - 2': () => {
+              console.log('action 2 called.')
+            }
+          }
+        })
       },
 
       goRepo() {

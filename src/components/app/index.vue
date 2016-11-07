@@ -4,9 +4,11 @@
     <router-view transition="view" class="view"></router-view>
   </div>
 
-  <div class="backdrop"></div>
+  <div backdrop class="backdrop"></div>
 
   <modal v-ref:modal></modal>
+
+  <action-sheet v-ref:action_sheet></action-sheet>
 
   <alert v-ref:alert></alert>
   <alert-ios v-ref:alert_ios></alert-ios>
@@ -22,6 +24,7 @@
 <script>
   import Vue from 'vue'
   import Navbar from './Navbar'
+  import ActionSheet from '../actionsheet'
   import { Alert, AlertIOS, Confirm, ConfirmIOS } from '../popup'
   import { Modal } from '../modal'
   import { Loading } from '../loading'
@@ -36,6 +39,7 @@
   export default {
     components: {
       Navbar,
+      ActionSheet,
       Alert,
       'AlertIos': AlertIOS,
       Confirm,
@@ -59,6 +63,7 @@
       }
       document.querySelector('body').className = this.gradeClass
 
+      window.$actionSheet = this.$refs.action_sheet
       window.$alert = this.$refs.alert
       window.$alert_ios = this.$refs.alert_ios
       window.$confirm = this.$refs.confirm

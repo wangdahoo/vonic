@@ -16,19 +16,21 @@
 
     .circle {
       display: inline-block;
-      width: 8px;
-      height: 8px;
-      border: 1px solid rgba(#000, .75);
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background-color: transparent;
+      background-color: rgba(0,0,0,.2);
 
       margin-right: 4px;
       &:last-of-type {
         margin-right: 0;
       }
 
+/*      transition: all .1s ease;
+      -webkit-transition: all .1s ease;*/
+
       &.active {
-        background-color: rgba(#000, .75);
+        background-color: rgba(0,0,0,.8);
       }
     }
   }
