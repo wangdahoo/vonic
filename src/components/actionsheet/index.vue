@@ -27,7 +27,6 @@
     padding: 0;
     background-color: #f5f5f5;
     z-index: 12;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 
     transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
@@ -39,6 +38,8 @@
     &.active {
       transform: translate3d(0, 0, 0);
       -webkit-transform: translate3d(0, 0, 0);
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .title {
@@ -128,8 +129,9 @@
         backdrop.classList.remove('active')
         setTimeout(() => {
           backdrop.classList.remove('visible')
-          this.state = 0
         }, backdrop_fadein_duration)
+
+        this.state = 0
 
         if (buttonIndex > -1) {
           this.buttons[buttonIndex].callback()

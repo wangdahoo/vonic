@@ -20,6 +20,7 @@ import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import Scroll from './components/Scroll'
 import VumScroll from './components/VumScroll'
+import Scalable from './components/Scalable'
 
 const routers = {
   '/': {
@@ -92,6 +93,10 @@ const routers = {
 
   '/effects/vum-scroll': {
     component: VumScroll
+  },
+
+  '/effects/scalable': {
+    component: Scalable
   }
 
 };

@@ -83,6 +83,11 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
+        <div class="item item-icon-right" v-link="{ path: '/effects/scalable' }">
+          Scalable <span class="note">缩放</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+
         <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
           Loading <span class="note">加载提示</span>
           <i class="icon ion-ios-arrow-right"></i>

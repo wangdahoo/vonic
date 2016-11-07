@@ -14,6 +14,9 @@ import {Loading} from './components/loading'
 import {CustomPopup} from './components/popup'
 
 import Popover from './components/popover'
+
+import Scalable from './components/scalable'
+
 import Plugin from './plugin'
 
 import Sidebar from './services/sidebar'
@@ -35,6 +38,8 @@ module.exports = {
   Loading,
   Popover,
   'Popup': CustomPopup,
+
+  Scalable,
 
   app: Plugin
 }
