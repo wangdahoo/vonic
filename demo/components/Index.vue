@@ -94,10 +94,9 @@
         </div>
 
         <div class="item item-icon-right" @click="showActionSheet()">
-          ActionSheet <span class="note">Actions</span>
+          ActionSheet <span class="note"></span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
-
 
         <div class="item item-icon-right" @click="openSidebar()">
           Sidebar <span class="note">边栏</span>

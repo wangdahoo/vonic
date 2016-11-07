@@ -18,3 +18,29 @@ label > * {
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
 }
+
+// PingFang 字体
+body {
+  &[font="pingfang"] {
+    color: #484746;
+    font-family: ".PingFang SC", sans-serif;
+  }
+}
+
+//@font-face {
+//  font-family: ".PingFang SC";
+//  font-weight: 500;
+//  src: local(".PingFang-SC-Medium");
+//}
+//
+//@font-face {
+//  font-family: ".PingFang SC";
+//  font-weight: 400;
+//  src: local(".PingFang-SC-Regular");
+//}
+
+@font-face {
+  font-family: ".PingFang SC";
+  font-weight: 300;
+  src: local(".PingFang-SC-Light");
+}

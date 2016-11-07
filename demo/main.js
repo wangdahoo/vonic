@@ -92,7 +92,7 @@ const routers = {
 
   '/effects/vum-scroll': {
     component: VumScroll
-  },
+  }
 
 };
 
