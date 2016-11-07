@@ -62,18 +62,8 @@
       }
     },
 
-    data() {
-      return {
-
-      }
-    },
-
     ready() {
       scaleContent(this.$el, this.scale)
-    },
-
-    methods: {
-
     }
   }
 </script>

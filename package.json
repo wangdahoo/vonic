@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/vonic.js",
   "description": "SPA Framework based on Vue.js, be cool with ionic UI.",
   "author": "wangdahoo <157195705@qq.com>",
