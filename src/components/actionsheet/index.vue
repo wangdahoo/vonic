@@ -5,7 +5,7 @@
     </div>
 
     <div v-if="buttons && buttons.length > 0" class="buttons">
-      <label class="item" v-for="($index, b) in buttons" @click="hide($index)">
+      <label class="item" v-for="($index, b) in buttons" @touchend="hide($index)">
         {{ b.text }}
       </label>
 
@@ -23,14 +23,15 @@
     left: 0;
     bottom: 0;
     width: 100%;
+    min-height: 94px;
     padding: 0;
     background-color: #f5f5f5;
     z-index: 12;
-    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1);
-    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0, 1);
+    transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-transition: -webkit-transform .3s cubic-bezier(0.4, 0, 0, 1);
 
     transform: translate3d(0, 100%, 0);
     -webkit-transform: translate3d(0, 100%, 0);
@@ -42,7 +43,7 @@
 
     .title {
       font-size: 14px;
-      line-height: 40px;
+      line-height: 30px;
       text-align: center;
     }
 
@@ -52,8 +53,12 @@
         padding: 12px;
         text-align: center;
 
+        &:active {
+          background-color: #eee;
+        }
+
         &.item-cancel {
-          margin-top: 10px;
+          margin-top: 6px;
         }
       }
     }
@@ -123,9 +128,8 @@
         backdrop.classList.remove('active')
         setTimeout(() => {
           backdrop.classList.remove('visible')
+          this.state = 0
         }, backdrop_fadein_duration)
-
-        this.state = 0
 
         if (buttonIndex > -1) {
           this.buttons[buttonIndex].callback()
