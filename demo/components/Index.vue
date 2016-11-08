@@ -63,6 +63,11 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
+        <div class="item item-icon-right" v-link="{ path: '/widgets/list' }">
+          List <span class="note">列表布局</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+
         <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
           Cells <span class="note">宫格布局</span>
           <i class="icon ion-ios-arrow-right"></i>

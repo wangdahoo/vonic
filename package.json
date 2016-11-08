@@ -1,12 +1,11 @@
 {
   "name": "vonic",
-  "version": "0.1.2",
-  "main": "dist/vonic.js",
+  "version": "0.1.4",
+  "main": "src/index.js",
   "description": "SPA Framework based on Vue.js, be cool with ionic UI.",
   "author": "wangdahoo <157195705@qq.com>",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --host=0.0.0.0",
-    "doc": "cross-env NODE_ENV=doc webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {

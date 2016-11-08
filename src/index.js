@@ -16,13 +16,14 @@ import {CustomPopup} from './components/popup'
 import Popover from './components/popover'
 
 import Scalable from './components/scalable'
+import {List, Item} from './components/list'
 
 import Plugin from './plugin'
 
 import Sidebar from './services/sidebar'
 window.$sidebar = Sidebar
 
-module.exports = {
+const Vonic = {
   'Scroll': Scroller,
   VumScroll,
   VonRadio,
@@ -40,6 +41,10 @@ module.exports = {
   'Popup': CustomPopup,
 
   Scalable,
+  'VonList': List,
+  'VonItem': Item,
 
   app: Plugin
 }
+
+export default Vonic

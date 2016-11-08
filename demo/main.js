@@ -16,6 +16,7 @@ import Popup from './components/Popup'
 import Popover from './components/Popover'
 import Modal from './components/Modal'
 import Cells from './components/Cells'
+import List from './components/List'
 import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import Scroll from './components/Scroll'
@@ -77,6 +78,10 @@ const routers = {
 
   '/widgets/cells': {
     component: Cells
+  },
+
+  '/widgets/list': {
+    component: List
   },
 
   '/widgets/swiper': {

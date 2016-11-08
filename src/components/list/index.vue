@@ -1,10 +1,9 @@
-<template>
-  <div class="list von-list">
-    <slot></slot>
-  </div>
-</template>
-<style lang='scss'>
-  .von-list {
+<script>
+  import List from './list'
+  import Item from './item'
 
+  export default {
+    List,
+    Item
   }
-</style>
+</script>
