@@ -27,6 +27,11 @@
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
+      <div class="item item-icon-right" @click="showCustomPopup2()">
+        Custom Popup 2
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
       <div class="item item-divider">
         Other Effects
       </div>
@@ -42,12 +47,6 @@
       </div>
 
     </div>
-
-    <popup effect='scale' title="标题" :buttons="customPopupButtons" v-ref:custom_popup>
-      <p>
-        自定义内容
-      </p>
-    </popup>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -73,12 +72,7 @@
 
 </style>
 <script>
-  import {Popup} from 'vonic'
-
-  export default{
-    components: {
-      Popup
-    },
+  export default {
 
     data(){
       return {
@@ -144,10 +138,34 @@
       },
 
       showCustomPopup() {
-        let popup = this.$refs.custom_popup
+        let options = {
+          effect: 'scale',
+          title: '',
+          buttons: [
+            {text: '确定', theme: 'default'},
+            {text: '取消', theme: 'default'},
+          ]
+        }
+
+        let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
+
         popup.show().then((buttonIndex) => {
-          console.log('buttonIndex =>', buttonIndex)
+          console.log(buttonIndex)
         })
+      },
+
+      showCustomPopup2() {
+        let options = {
+          effect: 'scale',
+          title: '',
+          buttons: [
+            {text: '确定', theme: 'assertive'}
+          ]
+        }
+
+        let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
+
+        popup.show()
       }
     }
   }

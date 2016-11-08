@@ -11,8 +11,6 @@ import ButtonBar from './components/buttonbar'
 import {Input, Search} from './components/input'
 import {Loading} from './components/loading'
 
-import {CustomPopup} from './components/popup'
-
 import Popover from './components/popover'
 
 import Scalable from './components/scalable'
@@ -22,6 +20,9 @@ import Plugin from './plugin'
 
 import Sidebar from './services/sidebar'
 window.$sidebar = Sidebar
+
+import Popup from './services/popup'
+window.$popup = Popup
 
 module.exports = {
   'Scroll': Scroller,
@@ -38,7 +39,6 @@ module.exports = {
   Search,
   Loading,
   Popover,
-  'Popup': CustomPopup,
 
   Scalable,
   List,
