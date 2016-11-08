@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "src/index.js",
   "description": "SPA Framework based on Vue.js, be cool with ionic UI.",
   "author": "wangdahoo <157195705@qq.com>",
