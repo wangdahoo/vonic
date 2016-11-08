@@ -23,7 +23,7 @@ import Plugin from './plugin'
 import Sidebar from './services/sidebar'
 window.$sidebar = Sidebar
 
-const Vonic = {
+module.exports = {
   'Scroll': Scroller,
   VumScroll,
   VonRadio,
@@ -41,10 +41,8 @@ const Vonic = {
   'Popup': CustomPopup,
 
   Scalable,
-  'VonList': List,
-  'VonItem': Item,
+  List,
+  Item,
 
   app: Plugin
 }
-
-export default Vonic

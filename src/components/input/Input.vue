@@ -8,7 +8,6 @@
 
     <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>
   </div>
-
 </template>
 
 <script>
@@ -48,7 +47,6 @@ export default {
 
   methods: {
     clear() {
-      console.log(1);
       this.value = ''
       this.showClearButton = false
     }

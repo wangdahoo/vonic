@@ -211,7 +211,6 @@
     },
 
     destroyed() {
-      console.log('destroy sidebar')
       $sidebar.destroy()
     },
 
