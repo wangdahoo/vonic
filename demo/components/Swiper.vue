@@ -13,23 +13,6 @@
       </div>
 
     </div>
-
-    <popup effect='slide' :buttons="swiperPopupButtons" v-ref:swiper_popup class="swiper-popup">
-      <swiper direction="horizontal" width="100%" height="150" v-if="popupShowed">
-        <swiper-item>
-          <h1>Item 1</h1>
-        </swiper-item>
-
-        <swiper-item>
-          <h1>Item 2</h1>
-        </swiper-item>
-
-        <swiper-item>
-          <h1>Item 3</h1>
-        </swiper-item>
-      </swiper>
-    </popup>
-
   </div>
 </template>
 <style lang="scss">
@@ -53,40 +36,43 @@
         margin-right: 15px;
       }
     }
-
-    .swiper-item {
-      padding-top: 50px;
-
-      h1 {
-        color: #fff;
-        font-size: 32px;
-        line-height: 50px;
-        text-align: center;
-        font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
-      }
-
-      &:nth-of-type(1) {
-        background-color: #0a9dc7;
-      }
-
-      &:nth-of-type(2) {
-        background-color: #44cc00;
-      }
-
-      &:nth-of-type(3) {
-        background-color: #ffc900;
-      }
-
-    }
   }
 
-  .swiper-popup {
+  .popup.swiper-popup {
     .popup-body {
       padding: 0;
+      p {
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        margin-bottom: 0;
+      }
 
-      .swiper-item {
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+      .swiper {
+
+        .swiper-item {
+          padding-top: 50px;
+
+          h1 {
+            color: #fff;
+            font-size: 32px;
+            line-height: 50px;
+            text-align: center;
+            font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+          }
+
+          &:nth-of-type(1) {
+            background-color: #0a9dc7;
+          }
+
+          &:nth-of-type(2) {
+            background-color: #44cc00;
+          }
+
+          &:nth-of-type(3) {
+            background-color: #ffc900;
+          }
+        }
       }
     }
   }
@@ -116,11 +102,37 @@
 
     methods: {
       swiperInPopup() {
-        this.popupShowed = true
-        let popup = this.$refs.swiper_popup
-        popup.show().then(() => {
-          this.popupShowed = false
+        const template = `
+          <p>弹层内轮播</p>
+          <swiper direction="horizontal" width="100%" height="150">
+            <swiper-item>
+              <h1>Item 1</h1>
+            </swiper-item>
+
+            <swiper-item>
+              <h1>Item 2</h1>
+            </swiper-item>
+
+            <swiper-item>
+              <h1>Item 3</h1>
+            </swiper-item>
+          </swiper>
+        `
+
+        let popup = $popup.fromTemplate(template, {
+          cssClass: 'swiper-popup',
+          components: {
+            Swiper,
+            SwiperItem
+          },
+          buttons: [
+            {
+              text: '确定'
+            }
+          ]
         })
+
+        popup.show()
       },
 
       back() {

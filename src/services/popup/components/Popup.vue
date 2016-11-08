@@ -1,14 +1,14 @@
 <template>
-  <div class="popup-container von-popup" :effect="effect"
+  <div class="popup-container" :effect="effect"
        :class="{'popup-showing active': state == 1, 'popup-showing popup-hidden': state == 2}">
-    <div class="popup">
+    <div class="popup von-popup" :class="cssClass">
       <div v-if="title" class="popup-head">
         <div class="popup-title">
           {{{ title }}}
         </div>
       </div>
 
-      <div class="popup-body">
+      <div class="popup-body" :class="{'no-content': state == 0}">
         <slot></slot>
       </div>
 
@@ -23,15 +23,24 @@
 
 <style lang="scss">
   @import "../../../components/popup/popup";
+  @import "../../../components/scss/variables";
   @import "../../../components/scss/mixins";
 
-  .popup-container.von-popup {
+  .popup-container .von-popup {
     .popup-head {
       border-bottom: none;
     }
 
     .popup-body {
       padding: 22px 19px;
+      p {
+        font-weight: 100 !important;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+
+      &.no-content * {
+        opacity: 0;
+      }
     }
 
     .popup-buttons {
@@ -56,6 +65,21 @@
           border-right: none;
         }
 
+        background-color: transparent;
+
+        &.button-light {
+          &:active {
+            background-color: rgba(0,0,0,0.1);
+          }
+        }
+
+        &.button-assertive {
+          background-color: $assertive;
+          &:active {
+            background-color: darken($assertive, 6.5%);
+          }
+        }
+
       }
     }
   }
@@ -74,6 +98,10 @@
         default: 'default'
       },
       title: {
+        type: String,
+        default: ''
+      },
+      cssClass: {
         type: String,
         default: ''
       }

@@ -29,17 +29,19 @@
     z-index: 12;
     box-sizing: border-box;
 
-    transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
-    -webkit-transition: -webkit-transform .3s cubic-bezier(0.4, 0, 0, 1);
+    transition: transform .2s ease-in-out;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
 
-    transform: translate3d(0, 100%, 0);
-    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate(0, 100%);
+    -webkit-transform: translate(0, 100%);
 
     &.active {
-      transform: translate3d(0, 0, 0);
-      -webkit-transform: translate3d(0, 0, 0);
-
+      transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+      transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
+      -webkit-transition: -webkit-transform .3s cubic-bezier(0.4, 0, 0, 1);
     }
 
     .title {
@@ -59,7 +61,7 @@
         }
 
         &.item-cancel {
-          margin-top: 6px;
+          margin-top: 8px;
         }
       }
     }
@@ -129,9 +131,8 @@
         backdrop.classList.remove('active')
         setTimeout(() => {
           backdrop.classList.remove('visible')
+          this.state = 0
         }, backdrop_fadein_duration)
-
-        this.state = 0
 
         if (buttonIndex > -1) {
           this.buttons[buttonIndex].callback()

@@ -2,6 +2,14 @@ import 'whatwg-fetch'
 import Vue from 'vue'
 import Popup from './components/Popup'
 
+const extend = (target, source) => {
+  for (let key in source) {
+    target[key] = source[key]
+  }
+
+  return target
+}
+
 class VonicPopup {
   fromTemplate(template, options) {
     return this._init(template, options)
@@ -18,6 +26,9 @@ class VonicPopup {
     let effect = (options && options.effect) ? options.effect : 'scale'
     let title = (options && options.title) ? options.title : ''
     let buttons = (options && options.buttons) ? options.buttons : []
+    let cssClass = (options && options.cssClass) ? options.cssClass : ''
+
+    let components = (options && options.components) ? options.components : {}
 
     if (this._vm) {
       this._vm.$destroy()
@@ -31,12 +42,10 @@ class VonicPopup {
       document.querySelector('[backdrop]').after(wrapper)
     }
 
-    wrapper.innerHTML = '<popup effect="' + effect + '" title="' + title + '" v-ref:' + refId + '>' + template + '</popup>'
+    wrapper.innerHTML = '<popup css-class="' + cssClass + '" effect="' + effect + '" title="' + title + '" v-ref:' + refId + '>' + template + '</popup>'
 
     this._vm = new Vue({
-      components: {
-        Popup
-      },
+      components: extend({ Popup }, components),
       el: '[von-popups]'
     })
 

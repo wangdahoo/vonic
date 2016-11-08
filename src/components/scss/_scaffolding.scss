@@ -24,6 +24,7 @@ body {
   &[font="pingfang"] {
     color: #484746;
     font-family: ".PingFang SC", sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
   }
 }
 

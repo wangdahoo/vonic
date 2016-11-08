@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Scroll', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: 'Vum Scroll', showBackButton: true}">
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
