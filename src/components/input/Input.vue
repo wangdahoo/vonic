@@ -80,15 +80,17 @@ export default {
     position: relative;
 
     .von-input {
+      height: 50px;
       padding: 13px 15px;
       position: relative;
 
       .input-label {
+        font-size: 14px;
         line-height: 20px;
       }
 
       input {
-        font-size: 16px;
+        font-size: 14px;
 
         &::-webkit-input-placeholder {
           line-height: 22px;
@@ -99,14 +101,14 @@ export default {
 
     .input-clear {
       position: absolute;
-      top: 18px;
+      top: 14px;
       right: 9px;
       z-index: 3;
 
       width: 24px;
       height: 24px;
       background-image: url(../../assets/clear@3x.png);
-      background-size: 14px 14px;
+      background-size: 12px 12px;
       background-repeat: no-repeat;
       background-position: 5px 5px;
 
@@ -117,6 +119,7 @@ export default {
     }
 
     .item-floating-label {
+      height: auto;
       background: #FFF;
       .input-label {
         font-size: 16px;

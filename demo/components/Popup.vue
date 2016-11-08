@@ -142,8 +142,8 @@
           effect: 'scale',
           title: '',
           buttons: [
-            {text: '确定', theme: 'default'},
-            {text: '取消', theme: 'default'},
+            {text: '确定'},
+            {text: '取消'},
           ]
         }
 

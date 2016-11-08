@@ -27,6 +27,8 @@
   @import "../../../components/scss/mixins";
 
   .popup-container .von-popup {
+    background-color: #fff;
+
     .popup-head {
       border-bottom: none;
     }
@@ -52,28 +54,36 @@
         font-size: 14px;
         line-height: 20px;
 
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-
-        margin-right: 0;
+        // border & border-radius
         border-top: 1px solid #eee;
         border-right: 1px solid #eee;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+
+        &:first-of-type {
+          border-bottom-left-radius: 4px;
+        }
 
         &:last-of-type {
           border-right: none;
+          border-bottom-right-radius: 4px;
         }
 
+        margin-right: 0;
         background-color: transparent;
 
         &.button-light {
+          background-color: #fff;
           &:active {
             background-color: rgba(0,0,0,0.1);
           }
         }
 
         &.button-assertive {
+          border-top: none;
           background-color: $assertive;
           &:active {
             background-color: darken($assertive, 6.5%);
