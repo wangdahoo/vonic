@@ -54,7 +54,7 @@
       }
 
       .num {
-        font-family: "Helvetica Neue";
+        // font-family: "Helvetica Neue";
       }
     }
   }
