@@ -65,6 +65,7 @@ export default {
 
     const routers = options.routers
     const defaultRouterUrl = options.defaultRouterUrl
+    const defaultNavTheme = options.defaultNavTheme
 
     let app = new VonicApp(routers, defaultRouterUrl)
     app.start()
@@ -78,6 +79,11 @@ export default {
 
     // Sidebar Service
     window.$sidebar = Sidebar
+
+    // Nav Theme
+    if (defaultNavTheme) {
+      document.querySelector('[von-nav]').setAttribute('theme', defaultNavTheme)
+    }
 
     /* 类似的这种兼容性代码, 暂时放在这个位置 */
     /* for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport. */

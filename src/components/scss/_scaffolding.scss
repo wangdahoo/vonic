@@ -19,12 +19,17 @@ label > * {
   -webkit-transition-duration: 0.2s;
 }
 
-// PingFang 字体
+// iOS 系统字体
 body {
   &[font="pingfang"] {
     color: #484746;
     font-family: ".PingFang SC", sans-serif;
+  }
+
+  &[font="helvetica"] {
+    font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: 100;
   }
 }
 
@@ -44,4 +49,9 @@ body {
   font-family: ".PingFang SC";
   font-weight: 300;
   src: local(".PingFang-SC-Light");
+}
+
+@font-face {
+  font-family: ".Helvetica";
+  src: local("Helvetica");
 }

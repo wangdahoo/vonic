@@ -108,5 +108,6 @@ const routers = {
 
 Vue.use(Vonic.app, {
   routers: routers,
-  defaultRouterUrl: '/'
+  defaultRouterUrl: '/',
+  defaultNavTheme: 'dark'
 })

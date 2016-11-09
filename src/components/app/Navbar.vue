@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar" :class="{'hide': hideNavbar}">
+  <div von-nav class="navbar" :class="{'hide': hideNavbar}">
     <div v-if="showBackButton" class="back-button" @click="backButtonClicked($event)" transition="fade">
       {{{ backButtonText }}}
     </div>
@@ -28,14 +28,24 @@
     height: 44px;
     z-index: $navbar-z-index;
     background-color: #fff;
-
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
+    // 用阴影替代
     /*
     &:after {
       @include hairline(bottom);
     }
     */
+    &[theme="dark"] {
+      background-color: #000;
+      .button {
+        color: #fff;
+      }
+
+      .center {
+        color: #fff;
+      }
+    }
 
     .back-button, .menu-button {
       position: absolute;
