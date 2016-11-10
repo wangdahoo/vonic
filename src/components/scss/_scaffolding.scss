@@ -58,4 +58,7 @@ body {
 // button
 .button {
   min-height: 44px;
+  &.button-small {
+    min-height: 30px;
+  }
 }

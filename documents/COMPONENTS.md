@@ -1,7 +1,7 @@
 # Vonic Components
 - [字体](#字体)
 - [单页应用实例及导航条](#单页应用实例及导航条)
-- [MD风格按钮](MD风格按钮)
+- [Material Design 风格按钮](#Material Design 风格按钮)
 
 ## 字体
 默认全局字体栈:
@@ -24,7 +24,7 @@ body {
   <von-app></von-app>
 </body>
 ```
-2. 主js文件main.js的结构
+2. js主文件main.js的结构
 ```js
 // 引入依赖
 import Vue from 'vue'
@@ -53,8 +53,7 @@ Vue.use(Vonic.app, {
 })
 ```
 
-## MD风格按钮
->  带有 Material Design Ripple 效果的按钮
+## Material Design 风格按钮
 
 使用范例：
 ```vue

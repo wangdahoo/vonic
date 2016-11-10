@@ -1,5 +1,5 @@
 <template>
-  <div class="von-input-wrapper">
+  <div class="von-input-wrapper" :class="{'has-floating-label': floatingLabel == 'true'}">
     <label class="item item-input von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
       <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}">{{label}}</span>
       <input type="{{type}}" placeholder="{{ placeholder }}" v-model="value">
@@ -79,6 +79,12 @@ export default {
   .von-input-wrapper {
     position: relative;
 
+    &.has-floating-label {
+      .input-clear {
+        top: 14px + 28px;
+      }
+    }
+
     .von-input {
       height: 50px;
       padding: 13px 15px;
@@ -119,13 +125,15 @@ export default {
     }
 
     .item-floating-label {
-      height: auto;
+      height: 75px;
       background: #FFF;
       .input-label {
+        padding-top: 2px;
         font-size: 16px;
         line-height: 20px;
         font-weight: 400;
       }
     }
+
   }
 </style>
