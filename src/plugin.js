@@ -82,7 +82,9 @@ export default {
 
     // Nav Theme
     if (defaultNavTheme) {
-      document.querySelector('[von-nav]').setAttribute('theme', defaultNavTheme)
+      setTimeout(() => {
+        document.querySelector('[von-nav]').setAttribute('theme', defaultNavTheme)
+      })
     }
 
     /* 类似的这种兼容性代码, 暂时放在这个位置 */
