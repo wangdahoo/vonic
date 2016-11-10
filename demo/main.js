@@ -22,6 +22,7 @@ import SwiperDefault from './components/SwiperDefault'
 import Scroll from './components/Scroll'
 import VumScroll from './components/VumScroll'
 import Scalable from './components/Scalable'
+import RippleButton from './components/RippleButton'
 
 const routers = {
   '/': {
@@ -92,6 +93,10 @@ const routers = {
     component: SwiperDefault
   },
 
+  '/widgets/rippleButton': {
+    component: RippleButton
+  },
+
   '/effects/scroll': {
     component: Scroll
   },
@@ -109,5 +114,5 @@ const routers = {
 Vue.use(Vonic.app, {
   routers: routers,
   defaultRouterUrl: '/',
-  defaultNavTheme: 'dark'
+  defaultNavTheme: 'light'
 })

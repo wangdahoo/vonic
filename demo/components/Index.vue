@@ -19,6 +19,10 @@
         <div class="item item-divider text-center code-desc">
           UI Components
         </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/rippleButton' }">
+          Button <span class="note">Ripple effect by material design</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
         <div class="item item-icon-right" v-link="{ path: '/widgets/input' }">
           Input <span class="note">文本框</span>
           <i class="icon ion-ios-arrow-right"></i>
