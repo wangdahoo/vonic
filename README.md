@@ -1,4 +1,4 @@
-# vonic ![version](https://img.shields.io/badge/version-%200.1.6%20-green.svg) ![status](https://img.shields.io/badge/status-%20in%20development%20-green.svg)
+# Vonic ![version](https://img.shields.io/badge/version-%200.1.6%20-green.svg) ![status](https://img.shields.io/badge/status-%20in%20development%20-green.svg)
 > UI Framework for SPA, based on Vue.js and ionic css components.
 
 ![logo](logo.png)
@@ -54,7 +54,7 @@ $ npm run dev
 That's it.
 
 ## Thanks to
-- [Ionic](ionicframework.com)
+- [Ionic](http://ionicframework.com/)
 - [Framework7](http://framework7.io/)
 - [WeUI](https://weui.io/)
 - [vum](http://getvum.com/)
@@ -65,5 +65,6 @@ That's it.
 - [Vue Scroller](https://wangdahoo.github.io/vue-scroller/)
 - [von-app](https://github.com/wangdahoo/von-app)
 
-## Document
-- To be continued.
+## Documents
+- [Components](documents/COMPONENTS.md)
+
