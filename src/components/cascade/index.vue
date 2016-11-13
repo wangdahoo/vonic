@@ -1,5 +1,5 @@
 <template>
-  <div class="list von-cascade" :class="{'transition-reversed': transitionReversed}">
+  <div class="von-cascade" :class="{'transition-reversed': transitionReversed}">
     <label class="item item-icon-left" @click="pop()">
       <div v-if="filters.length == 0" class="text-center">请选择</div>
       <span v-if="filters.length > 0" class="icon ion-ios-arrow-thin-left"></span>
@@ -8,9 +8,11 @@
       </span>
     </label>
 
-    <label class="item" v-if="options.length > 0" v-for="op in options" @click="push(op)" transition="item-slide">
-      {{ op }}
-    </label>
+    <div class="list">
+      <label class="item" v-for="op in options" @click="push(op)" transition="item-slide">
+        {{ op }}
+      </label>
+    </div>
   </div>
 </template>
 <style lang='scss'>
@@ -21,9 +23,8 @@
   }
 
   .item-slide-transition {
-    transition: all .3s;
-    -webkit-transition: all .3s;
-
+    transition: transform .3s ease-out;
+    -webkit-transition: -webkit-transform .3s ease-out;
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
   }
@@ -32,8 +33,7 @@
     -webkit-transform: translate3d(100%,0,0);
   }
   .item-slide-leave {
-    transform: translate3d(-100%,0,0);
-    -webkit-transform: translate3d(-100,0,0);
+    opacity: 0;
   }
 
   .von-cascade.transition-reversed {
@@ -42,8 +42,7 @@
       -webkit-transform: translate3d(-100%,0,0);
     }
     .item-slide-leave {
-      transform: translate3d(100%,0,0);
-      -webkit-transform: translate3d(100,0,0);
+      opacity: 0;
     }
   }
 
