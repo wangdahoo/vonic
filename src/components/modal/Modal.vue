@@ -11,7 +11,6 @@
 
 <script>
   import Vue from 'vue'
-  import _ from 'lodash'
 
   const show_modal_animate_dur = 400
   const hide_modal_animate_dur = 250
@@ -40,8 +39,6 @@
       }
     }
   }
-
-
 
   export default {
     data() {
@@ -97,7 +94,8 @@
           setTimeout(() => {
             this.active = false
           }, 300)
-          this.showed = _.filter(this.showed, (d) => { return delegateId != d })
+
+          this.showed = this.showed.filter((d) => { return delegateId != d })
         } else if (this.showed.length > 0) {
           let _delegateId = this.showed.pop()
           this.instances[_delegateId].hide()
@@ -110,16 +108,17 @@
       },
 
       destroy() {
-        _.each(this.instances, (instance) => {
+        this.instances.forEach((instance) => {
           instance.$destroy()
         })
+
         this.instances = []
         let wrapper = document.querySelector('[von-modal-wrapper]')
         wrapper.innerHTML = ''
       },
 
       getDelegate(delegateId) {
-        return _.find(this.instances, (v, k) => { return k == delegateId })
+        return this.instances.find((v, k) => { return k == delegateId })
       }
     }
   }

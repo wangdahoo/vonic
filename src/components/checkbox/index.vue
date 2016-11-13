@@ -29,7 +29,6 @@
   }
 </style>
 <script>
-  import _ from 'lodash'
 
   export default{
     props: {
@@ -46,7 +45,7 @@
 
     methods: {
       onOptionClick(index) {
-        let vIndex = _.indexOf(this.value, index)
+        let vIndex = this.value.indexOf(index)
 
         if (vIndex == -1) {
           this.value.push(index);
@@ -58,7 +57,7 @@
       },
 
       isChecked(index) {
-        return _.indexOf(this.value, index) > -1;
+        return this.value.indexOf(index) > -1
       }
     },
 

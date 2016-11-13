@@ -48,7 +48,11 @@
   }
 </style>
 <script>
-  import _ from 'lodash'
+  const range = (n) => {
+    let l = []
+    for (let i = 0; i < n; i++) l.push(i)
+    return l
+  }
 
   export default {
     props: {
@@ -69,8 +73,8 @@
 
     data() {
       return {
-        rows: _.range(parseInt(this.row)),
-        cols: _.range(parseInt(this.col))
+        rows: range(parseInt(this.row)),
+        cols: range(parseInt(this.col))
       }
     },
 
