@@ -1,4 +1,4 @@
-# Vonic ![version](https://img.shields.io/badge/version-%200.1.6%20-green.svg) ![status](https://img.shields.io/badge/status-%20in%20development%20-green.svg)
+# Vonic ![version](https://img.shields.io/badge/version-%200.1.6%20-green.svg)
 > UI Framework for SPA, based on Vue.js and ionic css components.
 
 ![logo](logo.png)
