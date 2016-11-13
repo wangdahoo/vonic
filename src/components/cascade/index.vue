@@ -9,7 +9,7 @@
     </label>
 
     <div class="list">
-      <label class="item" v-for="op in options" @click="push(op)" transition="item-slide">
+      <label class="item item-cascade" v-for="op in options" @click="push(op)">
         {{ op }}
       </label>
     </div>
@@ -17,8 +17,8 @@
 </template>
 <style lang='scss'>
   .von-cascade {
-    label:active {
-      /*background-color: rgba(0,0,0,0.1);*/
+    .item-cascade:active {
+      background-color: rgba(0,0,0,0.1);
     }
   }
 
