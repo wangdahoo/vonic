@@ -39,7 +39,7 @@ class VonicPopup {
     if (!wrapper) {
       wrapper = document.createElement('div')
       wrapper.setAttribute('von-popups', '')
-      document.querySelector('[backdrop]').after(wrapper)
+      document.querySelector('[von-app]').appendChild(wrapper)
     }
 
     wrapper.innerHTML = '<popup css-class="' + cssClass + '" effect="' + effect + '" title="' + title + '" v-ref:' + refId + '>' + template + '</popup>'
