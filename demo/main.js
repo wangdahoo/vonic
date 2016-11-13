@@ -9,6 +9,7 @@ import InputFloatingLabel from './components/InputFloatingLabel'
 import Search from './components/Search'
 import Radio from './components/Radio'
 import Checkbox from './components/Checkbox'
+import Cascade from './components/Cascade'
 import Toggle from './components/Toggle'
 import Tabs from './components/Tabs'
 import ButtonBar from './components/ButtonBar'
@@ -51,6 +52,10 @@ const routers = {
 
   '/widgets/checkbox': {
     component: Checkbox
+  },
+
+  '/widgets/cascade': {
+    component: Cascade
   },
 
   '/widgets/toggle': {

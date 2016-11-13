@@ -62,3 +62,8 @@ body {
     min-height: 30px;
   }
 }
+
+// bar box-shadow
+.bar, .bar.bar-header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}

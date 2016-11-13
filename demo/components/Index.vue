@@ -39,6 +39,10 @@
           Checkbox <span class="note">复选框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/cascade' }">
+          Cascade <span class="note">级联</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
         <div class="item item-icon-right" v-link="{ path: '/widgets/toggle' }">
           Toggle <span class="note">开关按钮</span>
           <i class="icon ion-ios-arrow-right"></i>

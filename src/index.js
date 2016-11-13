@@ -16,6 +16,7 @@ import Popover from './components/popover'
 import Scalable from './components/scalable'
 import {List, Item} from './components/list'
 import MdButton from './components/md-button'
+import Cascade from './components/cascade'
 
 import Plugin from './plugin'
 
@@ -46,6 +47,7 @@ module.exports = {
   Item,
 
   MdButton,
+  Cascade,
 
   app: Plugin
 }
