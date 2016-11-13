@@ -58,8 +58,11 @@
   }
 
   const onScroll = (e) => {
+    // console.log('onPageContentScroll', e.target.scrollTop)
     pageContent().setAttribute('scrollTop', e.target.scrollTop)
   }
+
+  const nope = () => {}
 
   export default {
     components: {
@@ -72,10 +75,12 @@
         type: String,
         default: 'top'
       },
+
       top: {
         type: String,
         default: '50%'
       },
+
       left: {
         type: String,
         default: '50%'
@@ -83,6 +88,19 @@
 
       target: {
         type: String
+      },
+
+      toggle: {
+        type: String,
+        default: 'false'
+      },
+
+      duration: {
+        type: String,
+        default: '3000',
+        validator(v) {
+          return typeof v + 0
+        }
       },
 
       showClose: {
@@ -103,15 +121,20 @@
     ready() {
       if (this.target) {
         let t = document.querySelector(this.target)
-
         let _onclick = t.onclick
+
         t.onclick = (e) => {
-          this.show()
-          if (_onclick) _onclick(e)
+          if (this.state == 0) {
+            this.show()
+            Vue.nextTick(() => {
+              if (_onclick) _onclick(e)
+            })
+          }
         }
 
-        if (pageContent().getAttribute('scrollTop')) return
-        pageContent().addEventListener('scroll', onScroll)
+        setTimeout(() => {
+          pageContent().addEventListener('scroll', onScroll)
+        }, 500)
       }
     },
 
@@ -120,7 +143,7 @@
     },
 
     methods: {
-      show(duration) {
+      show() {
         let width = this.$el.offsetWidth
         let height = this.$el.offsetHeight
         this.marginTop = '-' + (height / 2) + 'px'
@@ -132,7 +155,8 @@
         if (this.direction == 'right') this.arrowPosition = 'left'
 
         let t = document.querySelector(this.target)
-        if (['BUTTON'].indexOf(t.nodeName) > -1) {
+        // console.log(t.nodeName)
+        if (['BUTTON', 'DIV'].indexOf(t.nodeName) > -1) {
           // console.log(t.offsetTop, t.offsetLeft, t.offsetWidth, t.offsetHeight)
 
           if (this.direction == 'top') {
@@ -170,11 +194,9 @@
 
           pageContent().addEventListener('touchstart', this.pageContentTouchStart)
 
-          if (duration && typeof duration == 'number') {
-            setTimeout(() => {
-              this.hide()
-            }, duration)
-          }
+          setTimeout(() => {
+            this.hide()
+          }, parseInt(this.duration))
         }
       },
 

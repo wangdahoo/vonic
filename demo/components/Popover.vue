@@ -1,6 +1,6 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '弹出式提醒', showBackButton: true, onBackButtonClick: back}">
-    <div class="page-content padding">
+    <div class="page-content">
 
       <div class="row">
         <div class="col"></div>
@@ -75,20 +75,21 @@
 
 </style>
 <script>
-  import {Popover} from 'vonic'
+  import {Popover, VonInput} from 'vonic'
 
   export default{
     components:{
-      Popover
+      Popover,
+      VonInput
     },
 
     props: {
 
     },
 
-    data(){
-      return{
-
+    data() {
+      return {
+        username: ''
       }
     },
 
