@@ -76,7 +76,7 @@
         ripple.style.left = x - (btn.offsetHeight / 2) + 'px'
         ripple.style.top = y - (btn.offsetHeight / 2) + 'px'
 
-        console.log(x, y)
+        // console.log(x, y)
 
         btn.appendChild(ripple)
 

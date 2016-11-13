@@ -34,13 +34,7 @@
         <div class="col"></div>
       </div>
 
-      <div class="row">
-        <div class="col"></div>
-        <div class="col">
-          <button class="button button-assertive button-block" id="btn-with-close">关闭按钮</button>
-        </div>
-        <div class="col"></div>
-      </div>
+      <div style="height: 1000px;"></div>
 
     </div>
 
@@ -58,10 +52,6 @@
 
     <popover direction="right" target="#btn-right">
       我在右边
-    </popover>
-
-    <popover direction="right" target="#btn-with-close" show-close="true">
-      提示文字
     </popover>
 
   </div>

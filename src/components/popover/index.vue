@@ -1,6 +1,6 @@
 <template>
   <div class="von-popover"
-       :class="{'active': active}"
+       :class="{'visible': state == 1, 'visible active': state == 2}"
        :style="{top: top, left: left, marginTop: marginTop, marginLeft: marginLeft}">
     <div class="von-popover-content" :class="{'has-close': showClose == 'true'}">
       <slot></slot>
@@ -17,10 +17,18 @@
     z-index: 10;
     padding: 4px;
     min-width: 40px;
-
     visibility: hidden;
-    &.active {
+
+    &.visible {
       visibility: visible;
+    }
+
+    transition: opacity .3s ease-out;
+    -webkit-transition: opacity .3s ease-out;
+
+    opacity: 0;
+    &.active {
+      opacity: 1;
     }
 
     .von-popover-content {
@@ -39,11 +47,19 @@
       }
     }
   }
-
 </style>
 <script>
+  import Vue from 'vue'
   import Arrow from './arrow'
   import Close from './close'
+
+  const pageContent = () => {
+    return document.querySelector('.page .page-content')
+  }
+
+  const onScroll = (e) => {
+    pageContent().setAttribute('scrollTop', e.target.scrollTop)
+  }
 
   export default {
     components: {
@@ -80,65 +96,100 @@
         marginTop: 0,
         marginLeft: 0,
         arrowPosition: 'bottom',
-
-        active: false
+        state: 0
       }
     },
 
     ready() {
-      let width = this.$el.offsetWidth
-      let height = this.$el.offsetHeight
-      this.marginTop = '-' + (height / 2) + 'px'
-      this.marginLeft = '-' + (width / 2) + 'px'
-
-      if (this.direction == 'top') this.arrowPosition = 'bottom'
-      if (this.direction == 'bottom') this.arrowPosition = 'top'
-      if (this.direction == 'left') this.arrowPosition = 'right'
-      if (this.direction == 'right') this.arrowPosition = 'left'
-
-      // target
       if (this.target) {
+        let t = document.querySelector(this.target)
+
+        let _onclick = t.onclick
+        t.onclick = (e) => {
+          this.show()
+          if (_onclick) _onclick(e)
+        }
+
+        if (pageContent().getAttribute('scrollTop')) return
+        pageContent().addEventListener('scroll', onScroll)
+      }
+    },
+
+    destroyed() {
+      pageContent().removeEventListener('scroll', onScroll)
+    },
+
+    methods: {
+      show(duration) {
+        let width = this.$el.offsetWidth
+        let height = this.$el.offsetHeight
+        this.marginTop = '-' + (height / 2) + 'px'
+        this.marginLeft = '-' + (width / 2) + 'px'
+
+        if (this.direction == 'top') this.arrowPosition = 'bottom'
+        if (this.direction == 'bottom') this.arrowPosition = 'top'
+        if (this.direction == 'left') this.arrowPosition = 'right'
+        if (this.direction == 'right') this.arrowPosition = 'left'
+
         let t = document.querySelector(this.target)
         if (['BUTTON'].indexOf(t.nodeName) > -1) {
           // console.log(t.offsetTop, t.offsetLeft, t.offsetWidth, t.offsetHeight)
 
           if (this.direction == 'top') {
-            this.top = t.offsetTop - this.$el.offsetHeight / 2 + 'px'
+            this.top = t.offsetTop - this.$el.offsetHeight / 2
             this.left = t.offsetLeft + t.offsetWidth / 2 + 'px'
           }
 
           if (this.direction == 'bottom') {
-            this.top = t.offsetTop + t.offsetHeight + this.$el.offsetHeight / 2 + 'px'
+            this.top = t.offsetTop + t.offsetHeight + this.$el.offsetHeight / 2
             this.left = t.offsetLeft + t.offsetWidth / 2 + 'px'
           }
 
           if (this.direction == 'left') {
-            this.top = t.offsetTop + t.offsetHeight / 2 + 'px'
+            this.top = t.offsetTop + t.offsetHeight / 2
             this.left = t.offsetLeft - this.$el.offsetWidth / 2 + 'px'
           }
 
           if (this.direction == 'right') {
-            this.top = t.offsetTop + t.offsetHeight / 2 + 'px'
+            this.top = t.offsetTop + t.offsetHeight / 2
             this.left = t.offsetLeft - this.$el.offsetWidth / 2 + t.offsetWidth + this.$el.offsetWidth + 'px'
           }
 
-          let _onclick = t.onclick
-          t.onclick = (e) => {
-            this.active = true
-            if (_onclick) _onclick(e)
+          let pageScrollTop = pageContent().getAttribute('scrollTop')
+
+          if (pageScrollTop) {
+            this.top -= parseInt(pageScrollTop)
+          }
+
+          this.top += 'px'
+
+          this.state = 1
+          Vue.nextTick(() => {
+            this.state = 2
+          })
+
+          pageContent().addEventListener('touchstart', this.pageContentTouchStart)
+
+          if (duration && typeof duration == 'number') {
+            setTimeout(() => {
+              this.hide()
+            }, duration)
           }
         }
-      }
-
-    },
-
-    methods: {
-      show() {
-        this.active = true
       },
 
       hide() {
-        this.active = false
+        this.state = 1
+        setTimeout(() => {
+          this.state = 0
+        }, 300)
+
+        pageContent().removeEventListener('touchstart', this.pageContentTouchStart)
+      },
+
+      pageContentTouchStart(e) {
+        // e.preventDefault()
+        this.hide()
       }
     }
   }

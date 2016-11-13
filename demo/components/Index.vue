@@ -57,10 +57,10 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
-        <!--<div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">
+        <div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">
           Popover <span class="note">弹出式提醒</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </div>-->
+        </div>
 
         <div class="item item-icon-right" v-link="{ path: '/widgets/modal' }">
           Modal <span class="note">模态窗</span>

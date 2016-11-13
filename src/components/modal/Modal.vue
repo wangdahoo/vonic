@@ -14,7 +14,7 @@
   import _ from 'lodash'
 
   const show_modal_animate_dur = 400
-  const hide_modal_aniamte_dur = 250
+  const hide_modal_animate_dur = 250
 
   function getModalTemplate(modalId) {
     return '<div class="modal slide-in-up" id="' + modalId + '"></div>'
@@ -90,7 +90,7 @@
         this.inAnimation = true
         setTimeout(() => {
           this.inAnimation = false
-        }, hide_modal_aniamte_dur)
+        }, hide_modal_animate_dur)
 
         if (delegateId && this.instances[delegateId]) {
           this.instances[delegateId].hide()
