@@ -1,7 +1,7 @@
 # Vonic ![version](https://img.shields.io/badge/ver-%200.2.1%20-green.svg)
 > UI Framework for SPA, based on Vue.js and ionic css components.
 
-![logo](logo.png)
+![logo](https://github.com/wangdahoo/vonic/raw/master/logo.png)
 
 Check out [DEMO](https://wangdahoo.github.io/vonic/docs/).
 
@@ -66,5 +66,5 @@ That's it.
 - [von-app](https://github.com/wangdahoo/von-app)
 
 ## Documents
-- [Components](documents/COMPONENTS.md)
+- [Components](https://github.com/wangdahoo/vonic/blob/master/COMPONENTS.md)
 

@@ -1,20 +1,20 @@
-# Vonic Components
+# Components
 - [字体](#字体)
 - [单页应用实例及导航条](#单页应用实例及导航条)
-- [Material Design 风格按钮](#Material-Design-风格按钮)
-- [Input 文本输入框](#Input-文本输入框)
-- [Radio 单选框](#Radio-单选框)
-- [Checkbox 复选框](#Checkbox-复选框)
-- [Cascade 级联](#Cascade-级联)
-- [Toggle 开关按钮](#Toggle-开关按钮)
-- [List 列表布局](#List-列表布局)
-- [Cells 宫格布局](#Cells-宫格布局)
-- [Tabs 布局](#Tabs-布局)
-- [ButtonBar iOS风格Tabs](#ButtonBar-iOS风格Tabs)
-- [Swiper 轮播](#Swiper-轮播)
-- [Scalable 缩放](#Scalable-缩放)
-- [Popover 弹出式提醒](#Popover-弹出式提醒)
-- [Popup 弹层](#Popup-弹层)
+- [Material Design 风格按钮](#material-design-风格按钮)
+- [Input 文本输入框](#input-文本输入框)
+- [Radio 单选框](#radio-单选框)
+- [Checkbox 复选框](#checkbox-复选框)
+- [Cascade 级联](#cascade-级联)
+- [Toggle 开关按钮](#toggle-开关按钮)
+- [List 列表布局](#list-列表布局)
+- [Cells 宫格布局](#cells-宫格布局)
+- [Tabs 布局](#tabs-布局)
+- [ButtonBar iOS风格Tabs](#buttonbar-ios风格tabs)
+- [Swiper 轮播](#swiper-轮播)
+- [Scalable 缩放](#scalable-缩放)
+- [Popover 弹出式提醒](#popover-弹出式提醒)
+- [Popup 弹层](#popup-弹层)
 
 ## 字体
 默认全局字体栈:
@@ -785,8 +785,6 @@ Vue.use(Vonic.app, {
 > $alert_ios和$confirm_ios服务分别对应AlertIOS、ConfirmIOS组件，调用方式同上。
 
 #### Popup 属性：
-| 属性名 | 描述 | 类型 | 是否必选 | 取值范围 | 默认值 |
-|-----|-----|-----|-----|-----|-----|
 | 属性名 | 描述 | 类型 | 是否必选 | 取值范围 | 默认值 |
 |-----|-----|-----|-----|-----|-----|
 | effect | 弹层动画效果 | Enum | default/scale/slide | - | default |
