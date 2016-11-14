@@ -14,11 +14,7 @@
 
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
-  import _ from 'lodash'
   import {VonToggle} from 'vonic'
 
   export default{

@@ -1,4 +1,4 @@
-# Vonic ![version](https://img.shields.io/badge/ver-%200.2.0%20-green.svg)
+# Vonic ![version](https://img.shields.io/badge/ver-%200.2.1%20-green.svg)
 > UI Framework for SPA, based on Vue.js and ionic css components.
 
 ![logo](logo.png)
@@ -26,15 +26,14 @@ Check out [DEMO](https://wangdahoo.github.io/vonic/docs/).
 - [x] Cells
 - [x] Tabs
 - [x] ButtonBar
+- [x] Swiper
+- [x] Scalable
 - [x] Popover
 - [x] Popup
-- [x] Modal
 - [x] Loading & Toast
-- [x] Scroller
-- [x] Swiper
 - [x] ActionSheet
-- [x] Sidebar
-- [x] Scalable
+- [x] Scroller
+- [x] Modal
 - [ ] Uploader
 - [ ] TabBar
 

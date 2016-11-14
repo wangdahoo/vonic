@@ -122,10 +122,10 @@
         </div>
 
         <div class="item item-divider">
-          项目地址
+          <i class="icon ion-social-github"></i> 项目地址
         </div>
         <div class="item item-icon-right" onclick="location.href = 'https://github.com/wangdahoo/vonic'">
-          <span><i class="ion-social-github"></i> Star me on GitHub</span>
+          Star me on GitHub
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 

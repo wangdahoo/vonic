@@ -18,7 +18,6 @@
 
 </style>
 <script>
-  import _ from 'lodash'
   import {VonCheckbox} from 'vonic'
 
   export default{

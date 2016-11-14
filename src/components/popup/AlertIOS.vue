@@ -28,7 +28,7 @@
     content: '';
     position: absolute;
     left: 0;
-    top: atuo;
+    top: auto;
     bottom: 0;
     right: auto;
     height: 1px;

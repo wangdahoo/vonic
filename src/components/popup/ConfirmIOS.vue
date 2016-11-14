@@ -85,7 +85,7 @@
       .button-ok, .button-cancel {
         -webkit-font-smoothing: subpixel-antialiased !important;
 
-        background-color: none;
+        background-color: transparent;
         border: none;
         margin-top: 0;
         font-size: 17px;

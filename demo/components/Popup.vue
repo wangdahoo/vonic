@@ -76,16 +76,6 @@
 
     data(){
       return {
-        customPopupButtons: [
-          {
-            text: '按钮 - 1',
-            theme: 'assertive'
-          },
-          {
-            text: '按钮 - 2',
-            theme: 'light'
-          }
-        ]
       }
     },
 
