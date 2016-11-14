@@ -2,6 +2,8 @@
 - [字体](#字体)
 - [单页应用实例及导航条](#单页应用实例及导航条)
 - [Material Design 风格按钮](#Material Design 风格按钮)
+- [Input 文本输入框](#Input 文本输入框)
+- [Radio 单选框](#Radio 单选框)
 
 ## 字体
 默认全局字体栈:
@@ -45,6 +47,12 @@ const routers = {
   }
 };
 
+// 可选：配置vue-router beforeEach/afterEach hook函数
+Vonic.app.setConfig('beforeEach', (t) => {
+  console.log('Custom beforeEach executed.')
+  t.next()
+})
+
 // 以Vue插件形式载入并运行VonicApp实例
 Vue.use(Vonic.app, {
   routers: routers,
@@ -55,7 +63,9 @@ Vue.use(Vonic.app, {
 
 ## Material Design 风格按钮
 
-使用范例：
+#### 组件：MdButton
+
+#### 范例：
 ```vue
 <template>
   <md-button @click="onButtonClick()">{{ bntText }}</md-button>
@@ -76,5 +86,67 @@ Vue.use(Vonic.app, {
     }
   }
 </script>
+```
 
+## Input 文本输入框
+#### 组件：VonInput
+
+#### 属性：
+| 属性名 | 描述 | 类型 | 是否必选 | 取值范围 | 默认值 |
+|-----|-----|-----|-----|-----|-----|
+| type  | 文本框类型 | String | No | text/password/email/tel | text |
+| value | 文本框值 | String / Number | Yes | - | 无 |
+| placeholder | 默认占位符提示文字 | String | No | - | 无 |
+| label | 文本框label文字 | String | No | - | 无 |
+| floatingLabel | 是否开启悬浮标签效果 | String | No | true/false | false |
+
+#### 范例：
+```vue
+<template>
+  <von-input type="text" :value.sync="username" placeholder="用户名/手机/邮箱" label="用户名"></von-input>
+  <von-input type="password" :value.sync="password" placeholder="密码" label="密码"></von-input>
+  
+  <von-input type="email" :value.sync="email" placeholder="Email" label="Email" floating-label="true"></von-input>
+</template>
+<script>
+  import {VonInput} from 'vonic'
+  
+  export default {
+    data() {
+      return {
+        username: '',
+        email: '',
+        phone: ''
+      }
+    }
+  }
+</script>
+```
+
+## Radio 单选框
+#### 组件：VonRadio
+
+#### 属性：
+| 属性名 | 描述 | 类型 | 是否必选 | 取值范围 | 默认值 |
+|-----|-----|-----|-----|-----|-----|
+| options  | 单选框选项列表 | Array | Yes | - | 无 |
+| value | 单选框值 |  Number | Yes | - | 无 |
+
+#### 范例：
+```vue
+<template>
+  <von-radio :options="genderOptions" :value.sync="gender"></von-radio>
+</template>
+<script>
+  import {VonRadio} from 'vonic'
+  
+  export default {
+    data() {
+      return {
+        gender: 0,
+        genderOptions: ["男", "女"]
+      }
+    }
+  }
+</script>
 ```
