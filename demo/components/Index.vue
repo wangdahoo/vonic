@@ -121,6 +121,14 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
+        <div class="item item-divider">
+          项目地址
+        </div>
+        <div class="item item-icon-right" onclick="location.href = 'https://github.com/wangdahoo/vonic'">
+          <span><i class="ion-social-github"></i> Star me on GitHub</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+
       </div>
     </div>
 </template>

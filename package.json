@@ -1,8 +1,19 @@
 {
   "name": "vonic",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "main": "src/index.js",
   "description": "SPA Framework based on Vue.js, be cool with ionic UI.",
+  "keywords": [
+    "vonic",
+    "vonic framework",
+    "vue",
+    "ionic",
+    "app",
+    "mobile",
+    "components",
+    "ui components",
+    "spa"
+  ],
   "author": "wangdahoo <157195705@qq.com>",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --host=0.0.0.0",

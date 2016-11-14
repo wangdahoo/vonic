@@ -108,12 +108,12 @@ export default {
   },
 
   setConfig(name, value) {
-    if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == 1) throw 'Unknown config name.'
+    if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == -1) throw 'Unknown config name.'
     VonicAppConfig[name] = value
   },
 
   getConfig(name) {
-    if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == 1) throw 'Unknown config name.'
+    if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == -1) throw 'Unknown config name.'
     return VonicAppConfig[name]
   }
 }
