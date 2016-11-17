@@ -23,7 +23,7 @@
     "fastclick": "^1.0.6",
     "vue": "^1.0.12",
     "vue-router": "^0.7.13",
-    "vue-scroller": "^0.3.8",
+    "vue-scroller": "^0.3.9",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {

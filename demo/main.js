@@ -116,6 +116,25 @@ const routers = {
 
 };
 
+const PAGE_TRANSITION_DURATION = 500
+
+Vonic.app.setConfig('beforeEach', function (t) {
+  if (t.from && t.from.path == '/') {
+    let pos = components_list.getPosition()
+    $storage.set('last_pos', pos)
+  }
+  t.next()
+})
+
+Vonic.app.setConfig('afterEach', function () {
+  if (window.components_list) {
+    setTimeout(() => {
+      let pos = $storage.get('last_pos')
+      components_list.scrollTo(0, pos.top, false)
+    }, PAGE_TRANSITION_DURATION)
+  }
+})
+
 Vue.use(Vonic.app, {
   routers: routers,
   defaultRouterUrl: '/',

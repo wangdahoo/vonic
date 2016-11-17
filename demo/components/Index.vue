@@ -9,7 +9,10 @@
          onBackButtonClick: toggleSidebar,
          backButtonText: backButtonText
       }">
-      <div class="page-content home">
+      <scroll class="page-content components"
+              v-ref:components_list>
+        <div style="height: 30px;"></div>
+
         <div class="logo">
           <img src="../assets/vonic.svg" width="80" height="80"/>
         </div>
@@ -129,13 +132,14 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
-      </div>
+        <div style="height: 100px;"></div>
+
+      </scroll>
     </div>
 </template>
 <style lang="scss" scoped>
 
-  .home {
-    padding: 74px 0 40px 0 !important;
+  .components {
 
     .logo {
       width: 100%;
@@ -183,10 +187,11 @@
 </style>
 <script>
   import Vue from 'vue'
-  import {Sidebar} from 'vonic'
+  import {Scroll, Sidebar} from 'vonic'
 
   export default {
     components: {
+      Scroll,
       Sidebar
     },
 
@@ -224,6 +229,12 @@
       //  .then((sidebar) => {
       //    this.sidebar = sidebar
       //  })
+
+      setTimeout(() => {
+        window.components_list = this.$refs.components_list
+        components_list.resize()
+      })
+
     },
 
     destroyed() {
