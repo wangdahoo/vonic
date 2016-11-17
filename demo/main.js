@@ -130,7 +130,7 @@ Vonic.app.setConfig('afterEach', function () {
   if (window.components_list) {
     setTimeout(() => {
       let pos = $storage.get('last_pos')
-      components_list.scrollTo(0, pos.top, false)
+      components_list.scrollTo(0, pos.top, true)
     }, PAGE_TRANSITION_DURATION)
   }
 })

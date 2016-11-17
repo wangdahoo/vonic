@@ -63,7 +63,9 @@
         margin-top: -1px;
 
         &.ion-android-arrow-back {
-          font-size: 24px;
+          &:before {
+            font-size: 28px;
+          }
         }
       }
     }
