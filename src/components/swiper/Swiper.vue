@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
 
-    <pagination :size="itemCount" v-ref:pagination></pagination>
+    <pagination :size="itemCount" :pager-color="pagerColor" v-ref:pagination></pagination>
   </div>
 </template>
 <style lang='scss'>
@@ -76,6 +76,10 @@
         default: '100%',
         validator: widthAndHeightValidator,
         coerce: widthAndHeightCoerce
+      },
+      pagerColor: {
+        type: String,
+        default: '#333'
       }
     },
 

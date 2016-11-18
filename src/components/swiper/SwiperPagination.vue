@@ -1,6 +1,11 @@
 <template>
   <div v-if="circles.length > 0" class="swiper-pagination">
-    <span v-for="($index, c) in circles" class="circle" :class="{'active': activeIndex == $index}"></span>
+    <span v-for="($index, c) in circles"
+          class="circle"
+          :style="{
+            'backgroundColor': pagerColor,
+            'opacity': activeIndex == $index ? 1 : 0.4
+          }"></span>
   </div>
 </template>
 <style lang='scss'>
@@ -19,28 +24,29 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background-color: rgba(0,0,0,.2);
-
       margin-right: 4px;
       &:last-of-type {
         margin-right: 0;
-      }
-
-/*      transition: all .1s ease;
-      -webkit-transition: all .1s ease;*/
-
-      &.active {
-        background-color: rgba(0,0,0,.8);
       }
     }
   }
 </style>
 <script>
+  const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
+
   export default {
     props: {
       size: {
         type: Number,
         default: 0
+      },
+
+      pagerColor: {
+        type: String,
+        default: '#333',
+        validator(v) {
+          return re_color.test(v)
+        }
       }
     },
 
