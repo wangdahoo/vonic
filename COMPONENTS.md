@@ -562,6 +562,7 @@ Vue.use(Vonic.app, {
 | direction  | 轮播方向 | Enum | No | - | vertical |
 | width  | 轮播容器宽度 | String | Yes | - | 100% |
 | height  | 轮播容器高度 | String | Yes | - | 100% |
+| pagerColor  | 分页颜色 | String | No | - | #333 |
 
 > width 和 height 直接写数字文本不带%时，自动取px为单位。
 

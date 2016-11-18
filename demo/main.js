@@ -20,6 +20,7 @@ import Cells from './components/Cells'
 import List from './components/List'
 import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
+import SwiperVertical from './components/SwiperVertical'
 import Scroll from './components/Scroll'
 import VumScroll from './components/VumScroll'
 import Scalable from './components/Scalable'
@@ -96,6 +97,10 @@ const routers = {
 
   '/widgets/swiperDefault': {
     component: SwiperDefault
+  },
+
+  '/widgets/swiperVertical': {
+    component: SwiperVertical
   },
 
   '/widgets/rippleButton': {

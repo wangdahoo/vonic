@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
 
-    <pagination :size="itemCount" :pager-color="pagerColor" v-ref:pagination></pagination>
+    <pagination v-if="direction == 'horizontal'" :size="itemCount" :pager-color="pagerColor" v-ref:pagination></pagination>
   </div>
 </template>
 <style lang='scss'>
@@ -103,7 +103,8 @@
       })
 
       swiper.on('swiped', (fromIndex, toIndex) => {
-        this.$refs.pagination.activate(toIndex)
+        if (this.$refs.pagination)
+          this.$refs.pagination.activate(toIndex)
       })
 
       this.swiper = swiper
@@ -111,7 +112,8 @@
       this.itemCount = this.swiper.count
 
       Vue.nextTick(() => {
-        this.$refs.pagination.init()
+        if (this.$refs.pagination)
+          this.$refs.pagination.init()
       })
 
     },
@@ -123,12 +125,14 @@
 
       next() {
         this.swiper.next()
-        this.$refs.pagination.activate(this.swiper.activeIndex())
+        if (this.$refs.pagination)
+          this.$refs.pagination.activate(this.swiper.activeIndex())
       },
 
       prev() {
         this.swiper.prev()
-        this.$refs.pagination.activate(this.swiper.activeIndex())
+        if (this.$refs.pagination)
+          this.$refs.pagination.activate(this.swiper.activeIndex())
       }
 
     }

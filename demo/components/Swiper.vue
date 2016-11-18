@@ -3,7 +3,12 @@
     <div class="page-content padding-top">
 
       <div class="item item-icon-right" v-link="{ path: '/widgets/swiperDefault' }">
-        Default<span class="note">默认</span>
+        Horizontal (default)<span class="note">水平 (默认)</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+
+      <div class="item item-icon-right" v-link="{ path: '/widgets/swiperVertical' }">
+        Vertical <span class="note">垂直</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
