@@ -9,8 +9,7 @@
          onBackButtonClick: toggleSidebar,
          backButtonText: backButtonText
       }">
-      <scroll class="page-content components"
-              v-ref:components_list>
+      <div class="page-content components">
         <div style="height: 30px;"></div>
 
         <div class="logo">
@@ -134,7 +133,7 @@
 
         <div style="height: 100px;"></div>
 
-      </scroll>
+      </div>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -187,11 +186,10 @@
 </style>
 <script>
   import Vue from 'vue'
-  import {Scroll, Sidebar} from 'vonic'
+  import {Sidebar} from 'vonic'
 
   export default {
     components: {
-      Scroll,
       Sidebar
     },
 
@@ -229,11 +227,6 @@
       //  .then((sidebar) => {
       //    this.sidebar = sidebar
       //  })
-
-      setTimeout(() => {
-        window.components_list = this.$refs.components_list
-        components_list.resize()
-      })
 
     },
 
