@@ -22,6 +22,11 @@
           UI Components
         </div>
 
+        <div class="item item-icon-right" v-link="{ path: '/widgets/tabbar/home' }">
+          TabBar <span class="note"></span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+
         <!-- Form Related -->
         <div class="item item-icon-right" v-link="{ path: '/widgets/rippleButton' }">
           Button <span class="note">Ripple effect by material design</span>

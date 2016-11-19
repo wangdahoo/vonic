@@ -20,6 +20,7 @@ import Scroller from 'vue-scroller'
 import VumScroll from './components/vum-scroll'
 
 import Popover from './components/popover'
+import TabBar from './components/tabbar'
 
 import Plugin from './plugin'
 
@@ -46,6 +47,7 @@ module.exports = {
   VumScroll,
 
   Popover,
+  TabBar,
 
   app: Plugin
 }

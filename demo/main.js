@@ -30,6 +30,12 @@ import Popover from './components/Popover'
 import Popup from './components/Popup'
 import Modal from './components/Modal'
 
+import TabBar from './components/TabBar'
+import TabBarHome from './components/tabbar/Home'
+import TabBarDiscount from './components/tabbar/Discount'
+import TabBarCart from './components/tabbar/Cart'
+import TabBarUser from './components/tabbar/User'
+
 const routers = {
   '/': {
     component: Index
@@ -107,6 +113,25 @@ const routers = {
   },
   '/widgets/modal': {
     component: Modal
+  },
+
+  // TabBar
+  '/widgets/tabbar': {
+    component: TabBar,
+    subRoutes: {
+      '/home': {
+        component: TabBarHome
+      },
+      '/discount': {
+        component: TabBarDiscount
+      },
+      '/cart': {
+        component: TabBarCart
+      },
+      '/user': {
+        component: TabBarUser
+      }
+    }
   }
 };
 
