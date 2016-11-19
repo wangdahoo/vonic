@@ -1,9 +1,22 @@
-# Vonic ![version](https://img.shields.io/badge/ver-%200.2.1%20-green.svg)
-> UI Framework for SPA, based on Vue.js and ionic css components.
+<p align="center">
+  <a href="https://wangdahoo.github.io/vonic/docs/">
+    <img src="https://github.com/wangdahoo/vonic/raw/master/logo.png">
+  </a>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/version-%200.3.0%20-green.svg">
+  <img src="https://img.shields.io/badge/vue-%201.0.28%20-green.svg">
+</p>
 
-![logo](https://github.com/wangdahoo/vonic/raw/master/logo.png)
+<p align="center">Mobile UI Components, based on Vue.js and ionic CSS.</p>
 
-Check out [DEMO](https://wangdahoo.github.io/vonic/docs/).
+## Demo
+<p align="center">
+  <a href="https://wangdahoo.github.io/vonic/docs/">https://wangdahoo.github.io/vonic/docs/</a>
+</p>
+<p align="center">
+  <img src="https://github.com/wangdahoo/vonic/raw/master/qrcode.png">
+</p>
 
 ## Features
 - Equip with Vue.js, Vue-Router, ES6 & Babel 6
@@ -20,22 +33,24 @@ Check out [DEMO](https://wangdahoo.github.io/vonic/docs/).
 - [ ] InputNumber
 - [x] Radio
 - [x] Checkbox
-- [x] Cascade
 - [x] Toggle
+- [x] Cascade
 - [x] List
 - [x] Cells
 - [x] Tabs
 - [x] ButtonBar
-- [x] Swiper
 - [x] Scalable
+- [x] Swiper
+- [x] Scroller
 - [x] Popover
 - [x] Popup
-- [x] Loading & Toast
-- [x] ActionSheet
-- [x] Scroller
 - [x] Modal
+- [x] ActionSheet
+- [x] Sidebar
+- [x] TabBar
+- [x] Toast
+- [x] Loading (Preloader)
 - [ ] Uploader
-- [ ] TabBar
 
 ## Getting started
 Create project with on-line webpack template.
@@ -67,4 +82,3 @@ That's it.
 
 ## Documents
 - [Components](https://github.com/wangdahoo/vonic/blob/master/COMPONENTS.md)
-

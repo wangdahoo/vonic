@@ -1,8 +1,8 @@
 {
   "name": "vonic",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "src/index.js",
-  "description": "SPA Framework based on Vue.js, be cool with ionic UI.",
+  "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
     "vonic",
     "vonic framework",

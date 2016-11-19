@@ -22,13 +22,13 @@
   $tabbar-z-index: 10;
 
   .tabbar {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 44px;
     z-index: $tabbar-z-index;
-    background-color: #f5f5f5;
+    background-color: #fff;
     @include display-flex();
     @include flex-wrap(wrap);
     margin: 0;
