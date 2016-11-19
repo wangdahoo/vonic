@@ -22,11 +22,6 @@
           UI Components
         </div>
 
-        <div class="item item-icon-right" v-link="{ path: '/widgets/tabbar/home' }">
-          TabBar <span class="note"></span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-
         <!-- Form Related -->
         <div class="item item-icon-right" v-link="{ path: '/widgets/rippleButton' }">
           Button <span class="note">Ripple effect by material design</span>
@@ -112,6 +107,10 @@
         </div>
         <div class="item item-icon-right" @click="openSidebar()">
           Sidebar <span class="note">边栏</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/tabbar/home' }">
+          TabBar <span class="note">支持嵌套路由</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 

@@ -1,9 +1,11 @@
 <template>
-  <tab-bar
-    :menus="menus"
-  ></tab-bar>
+  <div>
+    <tab-bar
+      :menus="menus"
+    ></tab-bar>
 
-  <router-view></router-view>
+    <router-view></router-view>
+  </div>
 </template>
 <style>
 
