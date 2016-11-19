@@ -45,7 +45,6 @@
 
     methods: {
       toggleClass() {
-        console.log('toggle toggle-' + this.theme)
         return 'toggle toggle-' + this.theme
       },
 

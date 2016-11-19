@@ -1,53 +1,51 @@
 import 'whatwg-fetch'
-import Scroller from 'vue-scroller'
-import VumScroll from './components/vum-scroll'
+
+import MdButton from './components/md-button'
+import {Input, Search} from './components/input'
 import VonRadio from './components/radio'
 import VonCheckbox from './components/checkbox'
 import VonToggle from './components/toggle'
-import Tabs from './components/tabs'
+import Cascade from './components/cascade'
+
+// Layout
+import {List, Item} from './components/list'
 import {Cells} from './components/cells'
-import {Swiper, SwiperItem} from './components/swiper'
+import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
-import {Input, Search} from './components/input'
-import {Loading} from './components/loading'
+import Scalable from './components/scalable'
+
+// Swiper & Scroll
+import {Swiper, SwiperItem} from './components/swiper'
+import Scroller from 'vue-scroller'
+import VumScroll from './components/vum-scroll'
 
 import Popover from './components/popover'
 
-import Scalable from './components/scalable'
-import {List, Item} from './components/list'
-import MdButton from './components/md-button'
-import Cascade from './components/cascade'
-
 import Plugin from './plugin'
 
-import Sidebar from './services/sidebar'
-window.$sidebar = Sidebar
-
-import Popup from './services/popup'
-window.$popup = Popup
-
 module.exports = {
-  'Scroll': Scroller,
-  VumScroll,
+  MdButton,
+  'VonInput': Input,
+  Search,
   VonRadio,
   VonCheckbox,
   VonToggle,
-  Tabs,
-  Cells,
-  Swiper,
-  SwiperItem,
-  ButtonBar,
-  'VonInput': Input,
-  Search,
-  Loading,
-  Popover,
+  Cascade,
 
-  Scalable,
   List,
   Item,
+  Cells,
+  Tabs,
+  ButtonBar,
+  Scalable,
 
-  MdButton,
-  Cascade,
+  Swiper,
+  SwiperItem,
+
+  'Scroll': Scroller,
+  VumScroll,
+
+  Popover,
 
   app: Plugin
 }

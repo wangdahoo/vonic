@@ -1,8 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+
+// Local Storage Service
 import Storage from './services/storage'
+window.$storage = Storage
+
+// Sidebar Service
 import Sidebar from './services/sidebar'
+window.$sidebar = Sidebar
+
+import Popup from './services/popup'
+window.$popup = Popup
+
 import VonApp from './components/app'
 
 import FastClick from 'fastclick'
@@ -73,12 +83,6 @@ export default {
 
     // FastClick
     FastClick.attach(document.body)
-
-    // Local Storage Service
-    window.$storage = Storage
-
-    // Sidebar Service
-    window.$sidebar = Sidebar
 
     // Nav Theme
     if (defaultNavTheme) {

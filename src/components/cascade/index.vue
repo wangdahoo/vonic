@@ -48,7 +48,7 @@
 
 </style>
 <script>
-  import Vue from 'Vue'
+  import Vue from 'vue'
 
   const filter = (filters, data) => {
     let options = []
