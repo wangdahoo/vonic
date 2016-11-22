@@ -1,7 +1,7 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '级联', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content padding-top">
-      <cascade :data="cities" :value.sync="value"></cascade>
+      <cascade title="请选择城市" :data="cities" :value.sync="value"></cascade>
     </div>
   </div>
 </template>

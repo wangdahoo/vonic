@@ -1,10 +1,11 @@
 <template>
   <div class="von-cascade" :class="{'transition-reversed': transitionReversed}">
-    <label class="item item-icon-left" @click="pop()">
-      <div v-if="filters.length == 0" class="text-center">请选择</div>
+    <label class="item item-icon-left"
+           :class="{'text-center': filters.length == 0}"
+           @click="pop()">
       <span v-if="filters.length > 0" class="icon ion-ios-arrow-thin-left"></span>
-      <span v-if="filters.length > 0" class="item-note">
-        {{ filterStr }}
+      <span :class="{'item-note': filters.length > 0}">
+        {{ filterStr || title }}
       </span>
     </label>
 
@@ -19,6 +20,12 @@
   .von-cascade {
     .item-cascade:active {
       background-color: rgba(0,0,0,0.1);
+    }
+
+    .item-nav {
+      .text-center {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -72,6 +79,11 @@
 
   export default {
     props: {
+      title: {
+        type: String,
+        default: '请选择'
+      },
+
       data: {
         type: Array,
         required: true
