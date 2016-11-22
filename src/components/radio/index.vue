@@ -1,26 +1,41 @@
 <template>
   <div class="list von-radio">
-    <label class="item item-icon-left"
+    <label class="item item-icon-left von-item"
            v-for="(index, option) in options">
       <input type="radio" name="{{ radioId }}" @click="onOptionClick(index)">
-      <i class="icon"
-         :class="{'ion-ios-circle-outline': value!=index, 'ion-ios-checkmark assertive': value==index}"></i>
+      <i class="icon ion-ios-checkmark"
+         :class="{'grey': value!=index, 'assertive': value==index}"></i>
       <span>{{ option }}</span>
     </label>
   </div>
 </template>
 <style lang="scss" scoped>
+  @import "../scss/variables";
+  @import "../scss/mixins";
+
   .von-radio {
+    padding-left: 16px;
+    background-color: #fff;
+    @include thin-border($default-border-color, 0);
+
     .item {
-      padding: 15px 15px 15px 50px;
+      padding: 15px 15px 15px 30px;
       font-size: 14px;
       line-height: 20px;
+
+      &:first-of-type, &:last-of-type {
+        border: none;
+      }
     }
 
     .item-icon-left {
       .icon {
         font-size: 28px;
-        left: 10px;
+        left: -6px;
+
+        &.grey {
+          color: #BBB;
+        }
       }
     }
 
