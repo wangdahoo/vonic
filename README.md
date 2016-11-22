@@ -18,6 +18,9 @@
   <img src="https://github.com/wangdahoo/vonic/raw/master/qrcode.png">
 </p>
 
+## Notice
+- The first production version will be released this November.
+
 ## Features
 - Equip with Vue.js, Vue-Router, ES6 & Babel 6
 - Build with Webpack & Vue Loader

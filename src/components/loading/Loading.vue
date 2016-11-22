@@ -14,11 +14,14 @@
 <script>
   const backdrop_fadein_duration = 100;
 
+  // TODO: 该方案在Safari全屏模式下会抖动
+  /*
   const pageContentScrollable = (scrollable) => {
     document
       .querySelector('[von-app] .page .page-content')
       .classList[scrollable ? 'remove' : 'add']('non-scrollable')
   }
+  */
 
   export default {
     data () {
@@ -30,10 +33,10 @@
     },
     methods: {
       showLoading(tips) {
-        let backdrop = document.querySelector('.backdrop')
-        backdrop.className += ' visible'
+        let backdrop = document.querySelector('[backdrop]')
+        backdrop.classList.add('visible')
         setTimeout(() => {
-          backdrop.className += ' active'
+          backdrop.classList.add('active')
         }, backdrop_fadein_duration)
 
         this.tips = tips || '正在加载'
@@ -42,28 +45,28 @@
           this.state = 2
         })
 
-        pageContentScrollable(false)
+        // pageContentScrollable(false)
       },
 
       show(tips) {
         this.showSpinner = true
         this.showLoading(tips)
 
-        pageContentScrollable(false)
+        // pageContentScrollable(false)
       },
 
       hide() {
-        let backdrop = document.querySelector('.backdrop')
-        backdrop.className += 'backdrop visible'
+        let backdrop = document.querySelector('[backdrop]')
+        backdrop.classList.remove('active')
         setTimeout(() => {
-          backdrop.className = 'backdrop'
+          backdrop.classList.remove('visible')
         }, backdrop_fadein_duration)
 
         this.state = 1
         setTimeout(() => {
           this.state = 0
 
-          pageContentScrollable(true)
+          // pageContentScrollable(true)
         }, 300)
       },
 
@@ -81,16 +84,18 @@
 
 <style lang="scss" scoped>
 
-  .spinner svg {
-    width: 28px;
-    height: 28px;
-    stroke: #FFF;
-    fill: #FFF;
-  }
+  .loading-container {
+    .spinner svg {
+      width: 28px;
+      height: 28px;
+      stroke: #FFF;
+      fill: #FFF;
+    }
 
-  .tips {
-    font-size: 14px;
-    line-height: 14px;
+    .tips {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
 </style>

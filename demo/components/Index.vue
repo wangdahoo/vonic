@@ -132,7 +132,7 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
-        <div style="height: 100px;"></div>
+        <div style="height: 40px;"></div>
 
       </div>
     </div>
