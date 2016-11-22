@@ -74,9 +74,6 @@
   const backdrop_fadein_duration = 100
 
   export default {
-    props: {
-
-    },
 
     data() {
       return {
@@ -92,10 +89,6 @@
 
         state: 0, // 0: hide, 1: show
       }
-    },
-
-    ready() {
-
     },
 
     methods: {
@@ -137,6 +130,10 @@
         if (buttonIndex > -1) {
           this.buttons[buttonIndex].callback()
         }
+      },
+
+      getState() {
+        return this.state
       }
     }
   }

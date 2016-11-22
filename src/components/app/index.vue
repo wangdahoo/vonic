@@ -70,6 +70,10 @@
       window.$confirm_ios = this.$refs.confirm_ios
       window.$loading = this.$refs.loading
       window.$vonicModal = this.$refs.modal
+
+      document.querySelector('[backdrop]').addEventListener('click', () => {
+        if ($actionSheet.getState()) $actionSheet.hide(-1)
+      })
     }
   }
 </script>
