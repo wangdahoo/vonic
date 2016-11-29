@@ -9,18 +9,36 @@
   line-height: 20px;
   color: #444;
 
-  @include thin-border($default-border-color, 0);
-
-  &:after {
+  @include thin-border-before($default-border-color, 0);
+  &:before {
     border-left: 0;
+  }
+
+  @include thin-border-after($default-border-color, 0);
+  &:after {
     border-right: 0;
   }
 
   &.item-divider {
     margin-top: 1px;
-    &:after {
+    &:before, &:after {
       border: none;
     }
   }
-
 }
+
+.list {
+  border: none; // clear border
+
+  @include thin-border-before($default-border-color, 0);
+  &:before {
+    border-left: none;
+  }
+
+  @include thin-border-after($default-border-color, 0);
+  &:after {
+    border-right: none;
+  }
+}
+
+    

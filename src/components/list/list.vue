@@ -10,8 +10,7 @@
   .von-list {
     padding-left: 16px;
     background-color: #fff;
-    @include thin-border($default-border-color, 0);
-
+    
     .item.von-item {
       &:first-of-type, &:last-of-type {
         border: none;

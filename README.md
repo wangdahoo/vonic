@@ -53,7 +53,6 @@
 - TabBar
 - Toast
 - Loading (Preloader)
-- Uploader
 
 ## Getting started
 Create project with on-line webpack template.

@@ -1,12 +1,12 @@
 <template>
-  <div class="{{'von-counter border-' + this.theme + ' bg-' + this.theme}}">
+  <div class="von-counter">
     <button class="button button-small button-clear counter-left" @click="dec()">
       <i class="icon ion-minus"></i>
     </button>
 
     <label class="counter-center bg-light">
       {{value}}
-      <select :id="selectId" v-model="value" >
+      <select :id="selectId" v-model="value">
         <option v-for="option in options" :value="option">
           {{ option }}
         </option>
@@ -23,13 +23,13 @@
   @import "../scss/mixins";
   @import "../scss/utils";
 
-  $counter-margin: 10px 0;
   $counter-height: 30px;
   $counter-border-radius: 4px;
 
   .von-counter {
+    z-index: 1;
     @include display-flex();
-    margin: $counter-margin;
+    
     height: $counter-height;
     border-radius: $counter-border-radius;
     
@@ -45,7 +45,7 @@
         line-height: $counter-height - 2px;
       }
 
-      &:active {
+      &:active, &.actived {
         background-color: rgba(0,0,0,0.2);
       }
     }
@@ -65,6 +65,7 @@
       font-size: 12px;
       line-height: $counter-height - 2px;
       text-align: center;
+      box-shadow: 0px 0px 5px #ddd inset;
     
       select {
         position: absolute;
@@ -107,6 +108,9 @@ export default {
     for (let i=this.min; i<=this.max; i++) {
       this.options.push(i);
     }
+
+    this.$el.classList.add('border-' + this.theme)
+    this.$el.classList.add('bg-' + this.theme)
   },
 
   methods: {

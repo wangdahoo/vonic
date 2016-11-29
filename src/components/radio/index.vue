@@ -16,7 +16,6 @@
   .von-radio {
     padding-left: 16px;
     background-color: #fff;
-    @include thin-border($default-border-color, 0);
 
     .item {
       padding: 15px 15px 15px 30px;

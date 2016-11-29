@@ -99,16 +99,16 @@ export default {
       }
     }, false)
 
+    // 暂时取消限制
     /* Disable double click to zoom */
-    let lastTouchEnd = 0;
-    document.documentElement.addEventListener('touchend', (e) => {
-      let now = (new Date()).getTime()
-      if (now - lastTouchEnd < 300) {
-        e.preventDefault()
-      }
-
-      lastTouchEnd = now
-    }, false)
+    // let lastTouchEnd = 0;
+    // document.documentElement.addEventListener('touchend', (e) => {
+    //   let now = (new Date()).getTime()
+    //   if (now - lastTouchEnd < 300) {
+    //     e.preventDefault()
+    //   }
+    //   lastTouchEnd = now
+    // }, false)
   },
 
   setConfig(name, value) {

@@ -137,8 +137,42 @@
   -webkit-box-ordinal-group: $n;
 }
 
-@mixin thin-border($color, $radius) {
+@mixin thin-border-before($color, $radius) {
   position: relative;
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid $color;
+    border-left: 1px solid $color;
+    border-radius: $radius;
+    transform-origin: 0 0;
+    z-index: 0;
+    box-sizing: border-box;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      height: 200%;
+      width: 200%;
+      transform: scale(0.5);
+      border-radius: ($radius * 2);
+    }
+  }
+
+  &:after {
+    border-top: none;
+    border-left: none;
+  }
+}
+
+@mixin thin-border-after($color, $radius) {
+  position: relative;
+  &:before {
+    border-bottom: none;
+    border-right: none;
+  }
+
   &:after {
     content: " ";
     position: absolute;
@@ -146,7 +180,8 @@
     left: 0;
     height: 100%;
     width: 100%;
-    border: 1px solid $color;
+    border-bottom: 1px solid $color;
+    border-right: 1px solid $color;
     border-radius: $radius;
     transform-origin: 0 0;
     z-index: 0;
