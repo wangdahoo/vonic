@@ -14,7 +14,7 @@
       <list>
         <item>
           购买数量：{{ qty }} 件
-          <counter class="item-counter" :value.sync="qty"></counter>
+          <counter class="item-counter" theme="energized" :value.sync="qty"></counter>
         </item>
       </list>
     </div>

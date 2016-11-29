@@ -1,72 +1,62 @@
 <template>
-  <div class="von-cascade" :class="{'transition-reversed': transitionReversed}">
-    <label class="item item-icon-left"
-           :class="{'text-center': filters.length == 0}"
-           @click="pop()">
-      <span v-if="filters.length > 0" class="icon ion-ios-arrow-thin-left"></span>
-      <span :class="{'item-note': filters.length > 0}">
-        {{ filterStr || title }}
-      </span>
+  <div class="list von-cascade">
+    <label v-for="($index, f) in fields" class="item item-icon-right cascade-field" @click="showSelect($index)">
+      {{ f }}
+      <i class="icon ion-ios-arrow-right grey"></i>
+      <span class="item-note">{{ value[$index] }}</span>
     </label>
-
-    <div class="list">
-      <label class="item item-cascade" v-for="op in options" @click="push(op)">
-        {{ op }}
-      </label>
-    </div>
   </div>
 </template>
 <style lang='scss'>
   .von-cascade {
-    .item-cascade:active {
-      background-color: rgba(0,0,0,0.1);
+    padding-left: 16px;
+    background: #FFF;
+
+    .item {
+      padding-left: 0px;
     }
 
-    .item-nav {
-      .text-center {
-        margin: 0 auto;
+    .item-icon-right .icon {
+      color: #ccc;
+      font-size: 24px;
+      right: 0;
+    }
+
+    .cascade-field {
+      select {
+        position: absolute;
+        top: -50000px;
+        left: -50000px;
       }
     }
   }
-
-  .item-slide-transition {
-    transition: transform .3s ease-out;
-    -webkit-transition: -webkit-transform .3s ease-out;
-    transform: translate3d(0,0,0);
-    -webkit-transform: translate3d(0,0,0);
-  }
-  .item-slide-enter {
-    transform: translate3d(100%,0,0);
-    -webkit-transform: translate3d(100%,0,0);
-  }
-  .item-slide-leave {
-    opacity: 0;
-  }
-
-  .von-cascade.transition-reversed {
-    .item-slide-enter {
-      transform: translate3d(-100%,0,0);
-      -webkit-transform: translate3d(-100%,0,0);
-    }
-    .item-slide-leave {
-      opacity: 0;
-    }
-  }
-
 </style>
 <script>
   import Vue from 'vue'
 
+  const initVal = (len) => {
+    let v = []
+    for (let i=0; i<len; i++) v.push('')
+    return v
+  }
+
+  const getFilters = (value) => {
+    let seperator = " | ";
+    let filters = value.reduce((v, memo) => {
+      return !!v ? memo += seperator + v : memo
+    }, "").split(seperator);
+
+    console.log(filters)
+    return filters
+  }
+
   const filter = (filters, data) => {
     let options = []
-
     data.forEach((d) => {
       let r = true
-
       filters.forEach((f, i) => {
         r = r && f == d[i]
       })
-
       if (r) {
         let option = d[filters.length]
         if (!!option && options.findIndex((o) => { return o == option }) == -1) {
@@ -79,9 +69,9 @@
 
   export default {
     props: {
-      title: {
-        type: String,
-        default: '请选择'
+      fields: {
+        type: Array,
+        required: true
       },
 
       data: {
@@ -90,62 +80,24 @@
       },
 
       value: {
-        type: String,
+        type: Array,
         required: true
-      },
-
-      separator: {
-        type: String,
-        default: ' '
       }
     },
 
     data() {
       return {
-        filters: [],
-        options: [],
-        filterStr: '',
-        transitionReversed: false
+        
       }
     },
 
-    ready() {
-      this.doFilter()
+    created() {
+      this.value = initVal(this.fields.length)
     },
-
+    
     methods: {
-      push(filter) {
-        this.filters.push(filter)
-        this.transitionReversed = false
-        Vue.nextTick(() => {
-          this.doFilter()
-        })
-      },
-
-      pop() {
-        if (this.filters.length == 0) return
-        this.filters.pop()
-        this.transitionReversed = true
-        Vue.nextTick(() => {
-          this.doFilter()
-        })
-      },
-
-      doFilter() {
-        this.options = filter(this.filters, this.data)
-        if (this.filters.length == this.data[0].length) {
-          this.value = this.getValue()
-        } else {
-          this.value = ''
-        }
-
-        this.filterStr = this.getValue()
-      },
-
-      getValue() {
-        return this.filters.reduce((memo, f) => {
-          return memo + this.separator + f
-        }, '')
+      showSelect(index) {
+        
       }
     }
   }

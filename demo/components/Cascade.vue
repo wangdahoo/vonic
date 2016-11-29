@@ -1,15 +1,11 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '级联', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content padding-top">
-      <cascade title="请选择城市" :data="cities" :value.sync="value"></cascade>
+      <cascade :fields="fields" :data="cities" :value.sync="value"></cascade>
     </div>
   </div>
 </template>
-<style lang='scss'>
-
-</style>
 <script>
-
   import {Cascade} from 'vonic'
 
   export default {
@@ -19,6 +15,10 @@
 
     data() {
       return {
+        fields: [
+          "省", "市", "区"
+        ],
+
         cities: [
           ['北京市', '市辖区', '东城区'],
           ['北京市', '市辖区', '西城区'],
@@ -145,7 +145,7 @@
           ['浙江省', '丽水市', '景宁畲族自治县'],
           ['浙江省', '丽水市', '龙泉市']
         ],
-        value: ''
+        value: []
       }
     },
 
