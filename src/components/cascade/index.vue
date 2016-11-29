@@ -1,9 +1,14 @@
 <template>
   <div class="list von-cascade">
-    <label v-for="($index, f) in fields" class="item item-icon-right cascade-field" @click="showSelect($index)">
+    <label v-for="($index, f) in fields" class="item item-icon-right cascade-field">
       {{ f }}
       <i class="icon ion-ios-arrow-right grey"></i>
       <span class="item-note">{{ value[$index] }}</span>
+
+      <select :id="selectIdPrefix + '-' + $index" v-model="value[$index]" @change="">
+        <option value=""></option>
+        <option v-for="($index, option) in options[$index]" :value="option">{{ option }}</option>
+      </select>
     </label>
   </div>
 </template>
@@ -23,6 +28,10 @@
     }
 
     .cascade-field {
+      .item-note {
+        padding-right: 15px;
+      }
+
       select {
         position: absolute;
         top: -50000px;
@@ -42,16 +51,16 @@
 
   const getFilters = (value) => {
     let seperator = " | ";
-    let filters = value.reduce((v, memo) => {
-      return !!v ? memo += seperator + v : memo
+    let filters = value.reduce((pre, cur) => {
+      return !!pre ? (!!cur ? pre + seperator + cur : pre) : (cur || "")
     }, "").split(seperator);
-
-    console.log(filters)
     return filters
   }
 
   const filter = (filters, data) => {
+    console.log(filters)
     let options = []
+
     data.forEach((d) => {
       let r = true
       filters.forEach((f, i) => {
@@ -64,6 +73,8 @@
         }
       }
     })
+
+    console.log(options);
     return options
   }
 
@@ -87,17 +98,33 @@
 
     data() {
       return {
-        
+        selectIdPrefix: Math.random().toString(32).substr(3,8),
+        options: []
       }
     },
 
     created() {
       this.value = initVal(this.fields.length)
     },
+
+    ready() {
+      let options = [filter([], this.data)]
+      for (let i=1; i<this.fields.length; i++) {
+        options.push([])
+      }
+
+      this.options = options
+    },
     
     methods: {
-      showSelect(index) {
-        
+     
+    },
+
+    watch: {
+      value: function (newVal) {
+        let index = newVal.indexOf("")
+        this.options[index] = filter(getFilters(newVal), this.data)
+        console.log(this.options)
       }
     }
   }
