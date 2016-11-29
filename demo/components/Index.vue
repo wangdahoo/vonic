@@ -35,6 +35,10 @@
           Search <span class="note">搜索框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
+        <div class="item item-icon-right" v-link="{ path: '/widgets/counter' }">
+          Counter <span class="note">计数器</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
         <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
           Radio <span class="note">单选框</span>
           <i class="icon ion-ios-arrow-right"></i>

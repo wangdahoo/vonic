@@ -15,8 +15,6 @@
   }
 </style>
 <script>
-  import uuid from 'node-uuid'
-
   export default{
     props: {
       text: {
@@ -35,7 +33,7 @@
 
     data() {
       return {
-        toggleId: 'toggle-' + uuid.v4().substr(0, 8)
+        toggleId: 'von-toggle-' + Math.random().toString(36).substring(3, 8)
       }
     },
 

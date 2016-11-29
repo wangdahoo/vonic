@@ -29,35 +29,35 @@
 - [Starter Project](https://github.com/wangdahoo/vonic-template) for Development Quick Start
 
 ## Components
-- [x] Typography
-- [x] App (Application Instance & Navigation Bar)
-- [x] MD-Buttons (Material Design Ripple Button)
-- [x] Input
-- [ ] InputNumber
-- [x] Radio
-- [x] Checkbox
-- [x] Toggle
-- [x] Cascade
-- [x] List
-- [x] Cells
-- [x] Tabs
-- [x] ButtonBar
-- [x] Scalable
-- [x] Swiper
-- [x] Scroller
-- [x] Popover
-- [x] Popup
-- [x] Modal
-- [x] ActionSheet
-- [x] Sidebar
-- [x] TabBar
-- [x] Toast
-- [x] Loading (Preloader)
-- [ ] Uploader
+- Typography
+- App (Application Instance & Navigation Bar)
+- MD-Buttons (Material Design Ripple Button)
+- Input
+- Counter
+- Radio
+- Checkbox
+- Toggle
+- Cascade
+- List
+- Cells
+- Tabs
+- ButtonBar
+- Scalable
+- Swiper
+- Scroller
+- Popover
+- Popup
+- Modal
+- ActionSheet
+- Sidebar
+- TabBar
+- Toast
+- Loading (Preloader)
+- Uploader
 
 ## Getting started
 Create project with on-line webpack template.
-```bash
+```
 $ vue init wangdahoo/vonic-template my-project
 $ cd my-project
 $ npm install
@@ -80,7 +80,7 @@ That's it.
 - [Angular Material](https://material.angularjs.org/)
 
 ## Standalone components
-- [Vue Scroller](https://wangdahoo.github.io/vue-scroller/)
+- [vue-scroller](https://wangdahoo.github.io/vue-scroller/)
 - [von-app](https://github.com/wangdahoo/von-app)
 
 ## Documents

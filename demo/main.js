@@ -7,6 +7,7 @@ import RippleButton from './components/RippleButton'
 import Input from './components/Input'
 import InputDefault from './components/InputDefault'
 import InputFloatingLabel from './components/InputFloatingLabel'
+import Counter from './components/Counter'
 import Search from './components/Search'
 import Radio from './components/Radio'
 import Checkbox from './components/Checkbox'
@@ -53,6 +54,9 @@ const routers = {
   },
   '/widgets/inputFloatingLabel': {
     component: InputFloatingLabel
+  },
+  '/widgets/counter': {
+    component: Counter
   },
   '/widgets/search': {
     component: Search

@@ -2,6 +2,7 @@ import 'whatwg-fetch'
 
 import MdButton from './components/md-button'
 import {Input, Search} from './components/input'
+import Counter from './components/counter'
 import VonRadio from './components/radio'
 import VonCheckbox from './components/checkbox'
 import VonToggle from './components/toggle'
@@ -27,6 +28,7 @@ import Plugin from './plugin'
 module.exports = {
   MdButton,
   'VonInput': Input,
+  Counter,
   Search,
   VonRadio,
   VonCheckbox,

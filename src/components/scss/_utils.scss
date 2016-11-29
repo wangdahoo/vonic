@@ -1,0 +1,20 @@
+@import "./variables";
+.border-positive { border: 1px solid $positive; }
+.border-assertive { border: 1px solid $assertive; }
+.border-balanced { border: 1px solid $balanced; }
+.border-calm { border: 1px solid $calm; }
+.border-energized { border: 1px solid $energized; }
+.border-royal { border: 1px solid $royal; }
+.border-dark { border: 1px solid $dark; }
+.border-stable { border: 1px solid $stable; }
+.border-light { border: 1px solid $light; }
+
+.bg-positive { background-color: $positive; }
+.bg-assertive { background-color: $assertive; }
+.bg-balanced { background-color: $balanced; }
+.bg-calm { background-color: $calm; }
+.bg-energized { background-color: $energized; }
+.bg-royal { background-color: $royal; }
+.bg-dark { background-color: $dark; }
+.bg-stable { background-color: $stable; }
+.bg-light { background-color: $light; }
