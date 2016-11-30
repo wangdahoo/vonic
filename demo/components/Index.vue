@@ -226,14 +226,14 @@
         it tolls for thee.<br>
         </p>
       `
-      // this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
+      this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
 
-      let path_to_template = 'http://127.0.0.1:3000/sidebar.html'
-      $sidebar
-       .fromTemplateUrl(path_to_template, {position: 'right'}) // right bar
-       .then((sidebar) => {
-         this.sidebar = sidebar
-       })
+      // let path_to_template = ''
+      // $sidebar
+      //  .fromTemplateUrl(path_to_template, {position: 'right'}) // right bar
+      //  .then((sidebar) => {
+      //    this.sidebar = sidebar
+      //  })
 
     },
 
