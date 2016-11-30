@@ -92,14 +92,14 @@
         let options = this.filter(index)
         // console.log('show cascade panel =>', title, options)
 
-        Vue.nextTick(() => {
-          _cascadePanel
-            .show(title, options)
-            .then((optionIndex) => {
-              this.value.splice(index, 1, options[optionIndex])
-              this.resetDown(index)
-            })
-        })
+        _cascadePanel
+          .show(title, options)
+          .then((optionIndex) => {
+            if (optionIndex == -1) return
+
+            this.value.splice(index, 1, options[optionIndex])
+            this.resetDown(index)
+          })
       },
 
       filter(index) {

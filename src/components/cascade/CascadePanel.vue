@@ -110,14 +110,14 @@
         }, backdrop_fadein_duration)
 
         return new Promise((resolve) => {
-          bus.$on('optionnClickedEvent', (data) => {
-            resolve(data.optionIndex)
-            this.hide()
+          bus.$on('optionClickedEvent', (data) => {
+            resolve(data.optionIndex) 
+            this._hide()
           })
         })
       },
 
-      hide() {
+      _hide() {
         this.state = 0
 
         // backdrop hide
@@ -129,8 +129,12 @@
         }, backdrop_fadein_duration)
       },
 
+      hide() {
+        bus.$emit('optionClickedEvent', {optionIndex: -1})
+      },
+
       optionClicked(index) {
-        bus.$emit('optionnClickedEvent', {optionIndex: index})
+        bus.$emit('optionClickedEvent', {optionIndex: index})
       },
 
       getState() {
