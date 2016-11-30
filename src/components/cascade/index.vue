@@ -1,14 +1,11 @@
 <template>
   <div class="list von-cascade">
-    <label v-for="($index, f) in fields" class="item item-icon-right cascade-field">
+    <label v-for="($index, f) in fields" 
+           class="item item-icon-right" 
+           @click="showCascadePanel($index)">
       {{ f }}
       <i class="icon ion-ios-arrow-right grey"></i>
       <span class="item-note">{{ value[$index] }}</span>
-
-      <select :id="selectIdPrefix + '-' + $index" v-model="value[$index]" @change="">
-        <option value=""></option>
-        <option v-for="($index, option) in options[$index]" :value="option">{{ option }}</option>
-      </select>
     </label>
   </div>
 </template>
@@ -19,23 +16,14 @@
 
     .item {
       padding-left: 0px;
-    }
-
-    .item-icon-right .icon {
-      color: #ccc;
-      font-size: 24px;
-      right: 0;
-    }
-
-    .cascade-field {
       .item-note {
         padding-right: 15px;
       }
 
-      select {
-        position: absolute;
-        top: -50000px;
-        left: -50000px;
+      &.item-icon-right .icon {
+        color: #ccc;
+        font-size: 24px;
+        right: 0;
       }
     }
   }
@@ -43,22 +31,7 @@
 <script>
   import Vue from 'vue'
 
-  const initVal = (len) => {
-    let v = []
-    for (let i=0; i<len; i++) v.push('')
-    return v
-  }
-
-  const getFilters = (value) => {
-    let seperator = " | ";
-    let filters = value.reduce((pre, cur) => {
-      return !!pre ? (!!cur ? pre + seperator + cur : pre) : (cur || "")
-    }, "").split(seperator);
-    return filters
-  }
-
   const filter = (filters, data) => {
-    console.log(filters)
     let options = []
 
     data.forEach((d) => {
@@ -74,7 +47,6 @@
       }
     })
 
-    console.log(options);
     return options
   }
 
@@ -98,33 +70,47 @@
 
     data() {
       return {
-        selectIdPrefix: Math.random().toString(32).substr(3,8),
         options: []
       }
     },
 
-    created() {
-      this.value = initVal(this.fields.length)
-    },
-
     ready() {
-      let options = [filter([], this.data)]
-      for (let i=1; i<this.fields.length; i++) {
-        options.push([])
-      }
-
-      this.options = options
+      this.options = this.filter()
     },
     
     methods: {
-     
-    },
+      showCascadePanel(index) {
+        let v = this.value, f = this.fields
 
-    watch: {
-      value: function (newVal) {
-        let index = newVal.indexOf("")
-        this.options[index] = filter(getFilters(newVal), this.data)
-        console.log(this.options)
+        if (index > v.length) {
+          // $toast('请先选择' + f[index]);
+          alert('请先选择' + f[index - 1])
+          return
+        }
+
+        let title = f[index]
+        let options = this.filter(index)
+        // console.log('show cascade panel =>', title, options)
+
+        Vue.nextTick(() => {
+          _cascadePanel
+            .show(title, options)
+            .then((optionIndex) => {
+              this.value.splice(index, 1, options[optionIndex])
+              this.resetDown(index)
+            })
+        })
+      },
+
+      filter(index) {
+        let filters = [];
+        for (let i = 0; i < index; i++) filters.push(this.value[i])
+        return filter(filters, this.data)
+      },
+
+      resetDown(index) {
+        let len = index + 1
+        this.value.splice(len, this.value.length - len)
       }
     }
   }
