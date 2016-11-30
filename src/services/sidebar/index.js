@@ -1,13 +1,13 @@
-import 'whatwg-fetch'
+import axios from 'axios'
 import Vue from 'vue'
 import Sidebar from './components/sidebar'
 
 class VonicSidebar {
   fromTemplateUrl(url, options) {
     return new Promise((resolve, reject) => {
-      fetch(url)
+      axios.get(url)
         .then((response) => {
-          return response.text()
+          return response.data
         })
         .then((template) => {
           resolve(this.fromTemplate(template, options))

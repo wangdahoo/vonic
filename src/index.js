@@ -1,4 +1,4 @@
-import 'whatwg-fetch'
+import 'axios'
 
 import MdButton from './components/md-button'
 import {Input, Search} from './components/input'

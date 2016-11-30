@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "src/index.js",
   "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
@@ -20,11 +20,11 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "fastclick": "^1.0.6",
     "vue": "^1.0.12",
     "vue-router": "^0.7.13",
-    "vue-scroller": "^0.3.9",
-    "whatwg-fetch": "^1.0.0"
+    "vue-scroller": "^0.3.9"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
