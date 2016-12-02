@@ -17,12 +17,9 @@
   import DefaultModal from './modals/DefaultModal'
   import MultiModal from './modals/MultiModal'
   import ScrollModal from './modals/ScrollModal'
-  import VumScrollModal from './modals/VumScrollModal'
+  import NativeScrollModal from './modals/NativeScrollModal'
 
   export default{
-    components: {
-
-    },
 
     data(){
       return {
@@ -56,9 +53,9 @@
       },
 
       showVumScrollModal() {
-        $vonicModal.fromComponent('vum_scroll_modal', VumScrollModal)
+        $vonicModal.fromComponent('native_scroll_modal', NativeScrollModal)
         setTimeout(() => {
-          $vonicModal.show('vum_scroll_modal')
+          $vonicModal.show('native_scroll_modal')
         })
       },
 

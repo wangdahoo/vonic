@@ -5,7 +5,7 @@
       <button class="button button-icon icon ion-ios-close-empty light" @click="close()"></button>
     </div>
 
-    <!-- vum scroll -->
+    <!-- native scroll -->
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
@@ -22,11 +22,11 @@
   }
 </style>
 <script>
-  import {VumScroll} from 'vonic'
+  import {NativeScroll} from 'vonic'
 
   export default{
     components: {
-      'scroll': VumScroll
+      'scroll': NativeScroll
     },
 
     data() {

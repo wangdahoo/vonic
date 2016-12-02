@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Vum Scroll', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: 'Native Scroll', showBackButton: true}">
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-  import {VumScroll} from 'vonic'
+  import {NativeScroll} from 'vonic'
 
   export default {
     components: {
-      'scroll': VumScroll
+      'scroll': NativeScroll
     },
 
     data () {

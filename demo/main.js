@@ -25,7 +25,7 @@ import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
 import Scroll from './components/Scroll'
-import VumScroll from './components/VumScroll'
+import NativeScroll from './components/NativeScroll'
 
 import Popover from './components/Popover'
 import Popup from './components/Popup'
@@ -104,8 +104,8 @@ const routers = {
   '/effects/scroll': {
     component: Scroll
   },
-  '/effects/vum-scroll': {
-    component: VumScroll
+  '/effects/native-scroll': {
+    component: NativeScroll
   },
 
   // Popover/Popup/Modal

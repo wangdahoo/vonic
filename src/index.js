@@ -17,8 +17,8 @@ import Scalable from './components/scalable'
 
 // Swiper & Scroll
 import {Swiper, SwiperItem} from './components/swiper'
-import Scroller from 'vue-scroller'
-import VumScroll from './components/vum-scroll'
+import Scroll from 'vue-scroller'
+import NativeScroll from './components/scroll'
 
 import Popover from './components/popover'
 import TabBar from './components/tabbar'
@@ -45,8 +45,8 @@ module.exports = {
   Swiper,
   SwiperItem,
 
-  'Scroll': Scroller,
-  VumScroll,
+  Scroll,
+  NativeScroll,
 
   Popover,
   TabBar,

@@ -87,8 +87,8 @@
           Scroll <span class="note">下拉刷新、无限加载</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
-        <div class="item item-icon-right" v-link="{ path: '/effects/vum-scroll' }">
-          Vum Scroll <span class="note">基于vum代码的轻量Scroll组件</span>
+        <div class="item item-icon-right" v-link="{ path: '/effects/native-scroll' }">
+          Native Scroll <span class="note">原生JS Scroll组件</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
