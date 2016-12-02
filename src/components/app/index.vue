@@ -81,6 +81,10 @@
         if ($actionSheet.getState()) $actionSheet.hide(-1)
         if (_cascadePanel.getState()) _cascadePanel.hide()
       })
+
+      channel.$on('VonicNotification', (data) => {
+        this.$refs.loading.toast(data.message);
+      })
     }
   }
 </script>

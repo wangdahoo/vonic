@@ -30,7 +30,8 @@
 </style>
 <script>
   import Vue from 'vue'
-
+  import channel from '../app/channel'
+  
   const filter = (filters, data) => {
     let options = []
 
@@ -83,8 +84,10 @@
         let v = this.value, f = this.fields
 
         if (index > v.length) {
-          // $toast('请先选择' + f[index]);
-          alert('请先选择' + f[index - 1])
+          channel.$emit('VonicNotification', {
+            message: '请先选择' + f[index - 1]
+          })
+
           return
         }
 
