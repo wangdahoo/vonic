@@ -72,12 +72,19 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.entry = './src/vonic.js'
     module.exports.output = {
       path: path.resolve(__dirname, './dist'),
-      filename: 'vonic.min.js'
+      filename: 'vonic.min.js',
+      libraryTarget: 'var',
+      library: 'Vonic'
     }
+    module.exports.externals = {
+      'vue': 'Vue',
+      'vue-router': 'VueRouter',
+      'axios': 'axios'
+    } 
   } else { // docs
     module.exports.entry = [
       './demo/main.js'
-    ];
+    ]
     module.exports.output = {
       path: path.resolve(__dirname, './docs'),
       filename: 'build.js'
@@ -101,6 +108,9 @@ if (process.env.NODE_ENV === 'production') {
   ])
 
   if (process.env.BUILD == 'publish') {
+
+
+    // Banner
     var banner = 'Vonic\nversion: ' + pkg.version + ' \nrepo: https://github.com/wangdahoo/vonic \nbuild: ' + moment().format('YYYY-MM-DD HH:mm:ss')
     module.exports.plugins.push(
       new webpack.BannerPlugin(banner, { entryOnly: true })

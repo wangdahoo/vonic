@@ -1,4 +1,5 @@
 import 'axios'
+window.$http = axios
 
 import MdButton from './components/md-button'
 import {Input, Search} from './components/input'
