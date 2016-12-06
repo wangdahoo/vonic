@@ -78,10 +78,20 @@
 
         // console.log(x, y)
 
-        btn.appendChild(ripple)
+        // ensure there is no ripple before add
+        if (this.ripple) {
+          btn.removeChild(this.ripple)
+          this.ripple = null
+        }
+
+        this.ripple = ripple
+        btn.appendChild(this.ripple)
 
         setTimeout(() => {
-          btn.removeChild(ripple)
+          if (this.ripple && btn.contains(this.ripple)) {
+            btn.removeChild(this.ripple)
+            this.ripple = null
+          }
         }, 2000)
       }
     }
