@@ -19,7 +19,7 @@
 </p>
 
 ## Notice
-- The first production version will be released this Nov.. ah.. maybe December.
+- The first production version will be released this December.
 
 ## Features
 - Equip with Vue.js, Vue-Router, ES6 & Babel 6
@@ -77,10 +77,6 @@ That's it.
 - [vum](http://getvum.com/)
 - [vux](https://github.com/airyland/vux)
 - [Angular Material](https://material.angularjs.org/)
-
-## Standalone components
-- [vue-scroller](https://wangdahoo.github.io/vue-scroller/)
-- [von-app](https://github.com/wangdahoo/von-app)
 
 ## Documents
 - [Components](https://github.com/wangdahoo/vonic/blob/master/COMPONENTS.md)
