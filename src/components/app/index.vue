@@ -8,7 +8,9 @@
 
   <modal v-ref:modal></modal>
 
-  <action-sheet v-ref:action_sheet></action-sheet>
+  <!-- <action-sheet v-ref:action_sheet></action-sheet> -->
+  <action-sheet-weixin v-ref:action_sheet></action-sheet-weixin>
+
   <cascade-panel v-ref:cascade_panel></cascade-panel>
 
   <alert v-ref:alert></alert>
@@ -25,7 +27,7 @@
 <script>
   import Vue from 'vue'
   import Navbar from './Navbar'
-  import ActionSheet from '../actionsheet'
+  import { ActionSheet, ActionSheetWeixin } from '../actionsheet'
   import CascadePanel from '../cascade/CascadePanel.vue'
 
   import { Alert, AlertIOS, Confirm, ConfirmIOS } from '../popup'
@@ -43,6 +45,7 @@
     components: {
       Navbar,
       ActionSheet,
+      ActionSheetWeixin,
       CascadePanel,
       Alert,
       'AlertIos': AlertIOS,

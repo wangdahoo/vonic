@@ -50,7 +50,8 @@ class VonicApp {
     router.start(app, 'von-app')
 
     router.nextDirection = (direction) => {
-      document.querySelector('[von-app]').setAttribute('transition-direction', direction);
+      let target = document.querySelector('[von-app]')
+      if (target) target.setAttribute('transition-direction', direction);
     }
 
     router._go = router.go
