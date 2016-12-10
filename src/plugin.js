@@ -13,6 +13,9 @@ window.$sidebar = Sidebar
 import Popup from './services/popup'
 window.$popup = Popup
 
+import ActionSheet from './services/actionsheet'
+window.$actionSheet = ActionSheet
+
 import VonApp from './components/app'
 
 import FastClick from 'fastclick'

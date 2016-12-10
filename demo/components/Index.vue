@@ -256,6 +256,7 @@
 
       showActionSheet() {
         $actionSheet.show({
+          theme: 'weixin',
           title: '标题',
           buttons: {
             'Action - 1': () => {
