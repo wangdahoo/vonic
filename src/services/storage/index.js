@@ -69,4 +69,4 @@ Accessor.clear = clear
 Accessor.on = tracking.on
 Accessor.off = tracking.off
 
-export default Accessor
+window.$storage = Accessor

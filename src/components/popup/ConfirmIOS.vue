@@ -121,8 +121,6 @@
 <script>
   import mixin from './mixin'
 
-  const backdrop_fadein_duration = 100
-
   const extend = (target, source) => {
     for (let key in source) {
       target[key] = source[key]
@@ -149,12 +147,7 @@
       show(options) {
         extend(this, options)
 
-        let backdrop = document.querySelector('[backdrop]')
-        backdrop.classList.add('visible')
-        setTimeout(() => {
-          backdrop.classList.add('active')
-        }, backdrop_fadein_duration)
-
+        window.$backdrop.show()
         this.state = 1
 
         this.promise = new Promise((resolve, reject) => {

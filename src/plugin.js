@@ -2,19 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-// Local Storage Service
-import Storage from './services/storage'
-window.$storage = Storage
-
-// Sidebar Service
-import Sidebar from './services/sidebar'
-window.$sidebar = Sidebar
-
-import Popup from './services/popup'
-window.$popup = Popup
-
-import ActionSheet from './services/actionsheet'
-window.$actionSheet = ActionSheet
+import './services/storage'
+import './services/backdrop'
+import './services/sidebar'
+import './services/popup'
+import './services/actionsheet'
 
 import VonApp from './components/app'
 

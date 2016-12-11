@@ -73,8 +73,6 @@
 </style>
 <script>
   import Vue from 'vue'
-
-  const backdrop_fadein_duration = 100
   let bus = new Vue();
   
   export default {
@@ -102,12 +100,13 @@
           this.state = 1
         })
 
-        // backdrop show
-        let backdrop = document.querySelector('[backdrop]')
-        backdrop.classList.add('visible')
-        setTimeout(() => {
-          backdrop.classList.add('active')
-        }, backdrop_fadein_duration)
+        window.$backdrop.show().then(() => {
+          let backdrop = document.querySelector('[von-backdrop]')
+          backdrop.onclick = () => {
+            bus.$emit('optionClickedEvent', {optionIndex: -1})
+            backdrop.onclick = null
+          }
+        })
 
         return new Promise((resolve) => {
           bus.$on('optionClickedEvent', (data) => {
@@ -119,14 +118,7 @@
 
       _hide() {
         this.state = 0
-
-        // backdrop hide
-        let backdrop = document.querySelector('[backdrop]')
-        backdrop.classList.remove('active')
-        setTimeout(() => {
-          backdrop.classList.remove('visible')
-          this.state = 0
-        }, backdrop_fadein_duration)
+        window.$backdrop.hide()
       },
 
       hide() {

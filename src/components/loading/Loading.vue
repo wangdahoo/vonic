@@ -10,19 +10,7 @@
     </div>
   </div>
 </template>
-
 <script>
-  const backdrop_fadein_duration = 100;
-
-  // TODO: 该方案在Safari全屏模式下会抖动
-  /*
-  const pageContentScrollable = (scrollable) => {
-    document
-      .querySelector('[von-app] .page .page-content')
-      .classList[scrollable ? 'remove' : 'add']('non-scrollable')
-  }
-  */
-
   export default {
     data () {
       return {
@@ -33,40 +21,26 @@
     },
     methods: {
       showLoading(tips) {
-        let backdrop = document.querySelector('[backdrop]')
-        backdrop.classList.add('visible')
-        setTimeout(() => {
-          backdrop.classList.add('active')
-        }, backdrop_fadein_duration)
+        window.$backdrop.show()
 
         this.tips = tips || '正在加载'
         this.state = 1
         setTimeout(() => {
           this.state = 2
         })
-
-        // pageContentScrollable(false)
       },
 
       show(tips) {
         this.showSpinner = true
         this.showLoading(tips)
-
-        // pageContentScrollable(false)
       },
 
       hide() {
-        let backdrop = document.querySelector('[backdrop]')
-        backdrop.classList.remove('active')
-        setTimeout(() => {
-          backdrop.classList.remove('visible')
-        }, backdrop_fadein_duration)
+        window.$backdrop.hide()
 
         this.state = 1
         setTimeout(() => {
           this.state = 0
-
-          // pageContentScrollable(true)
         }, 300)
       },
 

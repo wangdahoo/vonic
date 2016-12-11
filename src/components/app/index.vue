@@ -4,8 +4,6 @@
     <router-view transition="view" class="view"></router-view>
   </div>
 
-  <div backdrop class="backdrop"></div>
-
   <modal v-ref:modal></modal>
 
   <cascade-panel v-ref:cascade_panel></cascade-panel>
@@ -72,11 +70,6 @@
       window.$confirm_ios = this.$refs.confirm_ios
       window.$loading = this.$refs.loading
       window.$vonicModal = this.$refs.modal
-
-      document.querySelector('[backdrop]').addEventListener('click', () => {
-        if ($actionSheet.getState()) $actionSheet.hide(-1)
-        if (_cascadePanel.getState()) _cascadePanel.hide()
-      })
 
       channel.$on('VonicNotification', (data) => {
         this.$refs.loading.toast(data.message);
