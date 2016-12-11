@@ -1,14 +1,11 @@
 import Vue from 'vue'
 import ActionSheet from './components/ActionSheet'
-import ActionSheetWeixin from './components/ActionSheetWeixin'
 
 class VonicActionSheet {
   _vm = undefined
-  _component = ActionSheet
 
   show(option) {
-    // this._component = option.theme == 'weixin' ? ActionSheetWeixin : ActionSheet
-    this._vm = new Vue(this._component)
+    this._vm = new Vue(ActionSheet)
     setTimeout(() => {
       this._vm.show(option)
     })
