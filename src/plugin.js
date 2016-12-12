@@ -2,11 +2,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-import './services/storage'
-import './services/backdrop'
-import './services/sidebar'
-import './services/popup'
 import './services/actionsheet'
+import './services/backdrop'
+import './services/popup'
+import './services/sidebar'
+import './services/storage'
+import './services/tabbar'
 
 import VonApp from './components/app'
 

@@ -1,11 +1,28 @@
 <template>
-  <div class="page" v-nav="{hideNavbar: true}">
-    <div class="bar bar-header">
-      <h1 class="title">折扣</h1>
-    </div>
-
-    <div class="page-content padding padding-top">
+  <div class="page" v-nav="{title: '折扣'}" v-tabbar-menu-index="1">
+    <div class="page-content padding-top">
       <p class="text-center">Discount</p>
+
+      <div class="item" v-for="($index, item) in items">
+        discount item
+      </div>
+
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        items: []
+      }
+    },
+
+    created() {
+      for (let i = 0; i < 100; i++) {
+        this.items.push(i)
+      }
+    }
+  }
+</script>

@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <tab-bar
-      :menus="menus"
-    ></tab-bar>
-
+  <div v-tabbar="{'menus': menus}">
     <router-view></router-view>
   </div>
 </template>
@@ -11,13 +7,7 @@
 
 </style>
 <script>
-  import {TabBar} from 'vonic'
-
   export default {
-    components: {
-      TabBar
-    },
-
     data() {
       return {
         menus: [
@@ -53,6 +43,10 @@
       back() {
         $router.back({ path: '/' })
       }
+    },
+
+    beforeDestroy() {
+      $tabbar.$emit('hideTabbar')
     }
   }
 </script>

@@ -17,8 +17,8 @@
   </div>
 </template>
 <style lang='scss'>
-  @import "../../../components/scss/variables";
-  @import "../../../components/scss/mixins";
+  @import "../../components/scss/variables";
+  @import "../../components/scss/mixins";
 
   .action-sheet-wrapper .action-sheet {
     .action-sheet-group {

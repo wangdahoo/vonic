@@ -17,12 +17,12 @@
   </div>
 </template>
 <style lang='scss'>
-  @import "../scss/mixins";
+  @import "../../components/scss/mixins";
 
   $tabbar-z-index: 10;
 
   .tabbar {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -62,21 +62,18 @@
   }
 </style>
 <script>
-  import Scalable from '../scalable'
+  import Scalable from '../../components/scalable'
 
   const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
   export default {
+    el: '[von-tabbar]',
+
     components: {
       Scalable
     },
 
     props: {
-      menus: {
-        type: Array,
-        required: true
-      },
-
       menuColor: {
         type: String,
         default: '#888',
@@ -100,19 +97,30 @@
 
     data() {
       return {
+        menus: [],
         menuIndex: 0
       }
     },
 
     methods: {
       menuClicked(menuIndex) {
+        window.__disable_nav_title_transition__ = true
+
         this.menuIndex = menuIndex
         $router.forward({ path: this.menus[menuIndex].path })
 
         if (this.onMenuClick) {
           this.onMenuClick(menuIndex)
         }
+      },
+
+      activate(index) {
+        this.menuIndex = index
       }
+    },
+
+    beforeDestroy() {
+      window.__disable_nav_title_transition__ = false
     }
   }
 </script>

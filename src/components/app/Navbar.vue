@@ -96,10 +96,13 @@
         display: inline-block;
         font-size: 18px;
         line-height: 44px;
-        @include transition-duration($ios-transition-duration);
-        @include transition-timing-function($ios-transition-timing-function);
-        -webkit-transition-property: opacity, -webkit-transform, box-shadow;
-        transition-property: opacity, transform, box-shadow;
+
+        &.title-transition {
+          @include transition-duration($ios-transition-duration);
+          @include transition-timing-function($ios-transition-timing-function);
+          -webkit-transition-property: opacity, -webkit-transform, box-shadow;
+          transition-property: opacity, transform, box-shadow;
+        }
       }
     }
 
@@ -144,13 +147,19 @@
     c.id = centerId
     c.className = 'center'
     let t = document.createElement('span')
-    t.className = 'title'
+
+    if (!window.__disable_nav_title_transition__) {
+      t.className = 'title title-transition'
+    } else {
+      t.className = 'title'
+    }
+    
     t.innerHTML = title
 
     let reverse = direction == 'back'
     t.style.opacity = 0
 
-    if (utils.is_ios_device()) {
+    if (!window.__disable_nav_title_transition__ && utils.is_ios_device()) {
       t.style.transform = 'translate3d(' + (reverse ? '-' : '') + getTitleTransitionDistance(t) + 'px,0,0)'
       t.style.webkitTransform = 'translate3d(' + (reverse ? '-' : '') + getTitleTransitionDistance(t) + 'px,0,0)'
     }
@@ -175,7 +184,7 @@
   function titleOut(t, direction) {
     let reverse = direction == 'back'
     t.style.opacity = 0
-    if (utils.is_ios_device()) {
+    if (!window.__disable_nav_title_transition__ && utils.is_ios_device()) {
       t.style.transform = 'translate3d(' + (reverse ? '' : '-') + getTitleTransitionDistance(t) + 'px,0,0)'
       t.style.webkitTransform = 'translate3d(' + (reverse ? '' : '-') + getTitleTransitionDistance(t) + 'px,0,0)'
     }
@@ -242,7 +251,7 @@
             if (cl) this.$el.removeChild(cl)
             cl = c
             navTransitionEnd()
-          }, 500)
+          }, window.__disable_nav_title_transition__ ? 0 : 500)
         })
 
         // nav item & click event handler

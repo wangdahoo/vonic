@@ -36,6 +36,7 @@ import TabBarHome from './components/tabbar/Home'
 import TabBarDiscount from './components/tabbar/Discount'
 import TabBarCart from './components/tabbar/Cart'
 import TabBarUser from './components/tabbar/User'
+import PageFromTabbar from './components/tabbar/PageFromTabbar'
 
 const routers = {
   '/': {
@@ -136,7 +137,12 @@ const routers = {
         component: TabBarUser
       }
     }
+  },
+
+  '/pageFromTabbar': {
+    component: PageFromTabbar
   }
+
 };
 
 

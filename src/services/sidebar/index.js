@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Vue from 'vue'
-import Sidebar from './components/sidebar'
+import Sidebar from './Sidebar'
 
 class VonicSidebar {
   fromTemplateUrl(url, options) {

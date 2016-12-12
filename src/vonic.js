@@ -21,7 +21,6 @@ import Scroll from 'vue-scroller'
 import NativeScroll from './components/scroll'
 
 import Popover from './components/popover'
-import TabBar from './components/tabbar'
 
 import Plugin from './plugin'
 
@@ -49,7 +48,6 @@ module.exports = {
   NativeScroll,
 
   Popover,
-  TabBar,
 
   app: Plugin
 }

@@ -1,10 +1,6 @@
 <template>
-  <div class="page" v-nav="{hideNavbar: true}">
-    <div class="bar bar-header">
-      <h1 class="title">购物车</h1>
-    </div>
-
-    <div class="page-content padding padding-top">
+  <div class="page" v-nav="{title: '购物车'}" v-tabbar-menu-index="2">
+    <div class="page-content padding-top">
       <p class="text-center">Cart</p>
     </div>
   </div>

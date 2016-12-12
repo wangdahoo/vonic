@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ActionSheet from './components/ActionSheet'
+import ActionSheet from './ActionSheet'
 
 class VonicActionSheet {
   _vm = undefined
