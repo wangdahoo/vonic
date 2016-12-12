@@ -84,11 +84,7 @@
           <i class="icon ion-ios-arrow-right"></i>
         </div>
         <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
-          Scroll <span class="note">下拉刷新、无限加载</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/effects/native-scroll' }">
-          Native Scroll <span class="note">原生JS Scroll组件</span>
+          Scroll <span class="note">Scroll组件</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 

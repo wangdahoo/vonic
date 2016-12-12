@@ -14,7 +14,6 @@ import Checkbox from './components/Checkbox'
 import Toggle from './components/Toggle'
 import Cascade from './components/Cascade'
 
-
 import List from './components/List'
 import Cells from './components/Cells'
 import Tabs from './components/Tabs'
@@ -25,7 +24,6 @@ import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
 import Scroll from './components/Scroll'
-import NativeScroll from './components/NativeScroll'
 
 import Popover from './components/Popover'
 import Popup from './components/Popup'
@@ -104,9 +102,6 @@ const routers = {
   },
   '/effects/scroll': {
     component: Scroll
-  },
-  '/effects/native-scroll': {
-    component: NativeScroll
   },
 
   // Popover/Popup/Modal

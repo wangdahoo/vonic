@@ -54,7 +54,6 @@
         font-size: 14px;
         line-height: 20px;
 
-        // border & border-radius
         border-top: 1px solid #eee;
         border-right: 1px solid #eee;
         border-top-left-radius: 0;
@@ -99,7 +98,6 @@
 <script>
   const popup_enter_duration = 200
   const popup_leave_duration = 300
-  const backdrop_fadein_duration = 100
 
   export default {
     props: {
@@ -128,13 +126,8 @@
 
     methods: {
       show() {
-        let backdrop = document.querySelector('[backdrop]')
-        backdrop.classList.add('visible')
-        setTimeout(() => {
-          backdrop.classList.add('active')
-        }, backdrop_fadein_duration)
-
         this.state = 1
+        window.$backdrop.show()
 
         return new Promise((resolve, reject) => {
           this.$on('PopupButtonClickEvent', (data) => {
@@ -144,13 +137,8 @@
       },
 
       hide(buttonIndex) {
-        let backdrop = document.querySelector('[backdrop]')
-        backdrop.classList.remove('active')
-        setTimeout(() => {
-          backdrop.classList.remove('visible')
-        }, backdrop_fadein_duration)
-
         this.state = 2
+        window.$backdrop.hide()
 
         setTimeout(() => {
           this.state = 0

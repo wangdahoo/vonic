@@ -9,6 +9,9 @@
       @touchstart="onRefresh ? touchStart($event) : undefined"
       @touchmove="onRefresh ? touchMove($event) : undefined"
       @touchend="onRefresh ? touchEnd($event) : undefined"
+      @mousedown="onRefresh ? mouseDown($event) : undefined"
+      @mousemove="onRefresh ? mouseMove($event) : undefined"
+      @mouseup="onRefresh ? mouseUp($event) : undefined"
       @scroll="(onInfinite || infiniteLoading) ? onScroll($event) : undefined"
        >
     <div class="scroll-inner"
@@ -58,7 +61,6 @@ export default {
       state: 0, // 0:down, 1: up, 2: refreshing
       startY: 0,
       touching: false,
-
       infiniteLoading: false
     }
   },
@@ -67,11 +69,32 @@ export default {
       this.startY = e.targetTouches[0].pageY
       this.touching = true
     },
+    mouseDown (e) {
+      this.startY = e.pageY
+      this.touching = true
+    },
     touchMove (e) {
       if (this.$el.scrollTop > 0 || !this.touching) {
         return
       }
       let diff = e.targetTouches[0].pageY - this.startY
+      if (diff > 0) e.preventDefault()
+      this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
+
+      if (this.state === 2) { // in refreshing
+        return
+      }
+      if (this.top >= this.offset) {
+        this.state = 1
+      } else {
+        this.state = 0
+      }
+    },
+    mouseMove(e) {
+      if (this.$el.scrollTop > 0 || !this.touching) {
+        return
+      }
+      let diff = e.pageY - this.startY
       if (diff > 0) e.preventDefault()
       this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
 
@@ -98,6 +121,20 @@ export default {
         this.top = 0
       }
     },
+    mouseUp (e) {
+      this.touching = false
+      if (this.state === 2) { // in refreshing
+        this.state = 2
+        this.top = this.offset
+        return
+      }
+      if (this.top >= this.offset) { // do refresh
+        this.refresh()
+      } else {  // cancel refresh
+        this.state = 0
+        this.top = 0
+      }
+    },
     refresh () {
       this.state = 2
       this.top = this.offset
@@ -107,16 +144,13 @@ export default {
       this.state = 0
       this.top = 0
     },
-
     infinite () {
       this.infiniteLoading = true
       this.onInfinite(this.infiniteDone)
     },
-
     infiniteDone () {
       this.infiniteLoading = false
     },
-
     onScroll (e) {
       if (this.infiniteLoading) {
         return
@@ -218,7 +252,6 @@ export default {
         transform: rotate(180deg) translate3d(0, 0, 0);
       }
     }
-
   }
 
   .scroll-inner {
@@ -264,5 +297,4 @@ export default {
     width: 5.5em;
     text-align: center;
   }
-
 </style>

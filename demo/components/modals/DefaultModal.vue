@@ -5,24 +5,24 @@
       <button class="button button-icon icon ion-ios-close-empty positive" @click="close()"></button>
     </div>
 
-    <scroll delegate-id="defaultModalScroller"
-            class="page-content"
-            v-ref:my_scroller>
-      <p v-for="it in items">
-        {{it}}
-      </p>
-    </scroll>
+    <div class="page has-navbar">
+      <scroller class="page-content" v-ref:scroller>
+        <p v-for="it in items">
+          {{it}}
+        </p>
+      </scroller>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 
 </style>
 <script>
-  import {Scroll} from 'vonic'
+  import {VueScroller} from 'vonic'
 
   export default{
     components: {
-      Scroll
+      'scroller': VueScroller
     },
 
     data(){
@@ -37,7 +37,7 @@
       }
 
       setTimeout(() => {
-        this.$refs.my_scroller.resize()
+        this.$refs.scroller.resize()
       })
     },
 

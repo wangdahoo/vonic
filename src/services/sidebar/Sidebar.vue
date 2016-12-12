@@ -4,9 +4,9 @@
          :class="{'click-block-hide': !opened}"
          @click="close()"
     ></div>
-    <scroll width="260" class="von-sidebar" :class="{'open': opened}">
+    <scroller width="260" class="von-sidebar" :class="{'open': opened}">
       <slot></slot>
-    </scroll>
+    </scroller>
   </div>
 </template>
 <style lang='scss'>
@@ -56,11 +56,6 @@
       margin-left: 20px;
     }
 
-    // overwrite scroller style
-    &.right ._v-container {
-      left: auto;
-    }
-
     .von-sidebar {
       position: fixed;
       background-color: #f5f5f5;
@@ -95,9 +90,8 @@
 
   export default {
     components: {
-      'scroll': Scroller
+      Scroller
     },
-
     props: {
       position: {
         type: String,

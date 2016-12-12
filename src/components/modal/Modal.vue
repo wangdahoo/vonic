@@ -1,10 +1,12 @@
 <template>
-  <div class="click-block" :class="{'click-block-hide': !inAnimation}"></div>
-  <div class="modal-backdrop"
-       :class="{'active': active, 'hide': !active}">
-    <div class="modal-backdrop-bg"></div>
-    <div class="modal-wrapper" von-modal-wrapper>
-      <!-- modal template here -->
+  <div>
+    <div class="click-block" :class="{'click-block-hide': !inAnimation}"></div>
+    <div class="modal-backdrop"
+        :class="{'active': active, 'hide': !active}">
+      <div class="modal-backdrop-bg" style="position: fixed"></div>
+      <div class="modal-wrapper" von-modal-wrapper>
+        <!-- modal template here -->
+      </div>
     </div>
   </div>
 </template>
@@ -26,7 +28,7 @@
         this.$el.className = 'modal slide-in-up active'
         setTimeout(() => {
           this.$el.className += ' ng-enter ng-enter-active'
-        }, 10)
+        }, 50)
 
         document.querySelector('body').className += ' modal-open'
       },
