@@ -1,5 +1,5 @@
 <template>
-  <div class="tabbar">
+  <div class="tabbar" :class="{'visible': state == 1}">
     <div v-for="($index, menu) in menus"
          class="tabbar-item"
          :style="{'color': menuIndex == $index ? activeMenuColor : menuColor}"
@@ -18,7 +18,6 @@
 </template>
 <style lang='scss'>
   @import "../../components/scss/mixins";
-
   $tabbar-z-index: 10;
 
   .tabbar {
@@ -33,9 +32,22 @@
     @include flex-wrap(wrap);
     margin: 0;
     padding: 0;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    /* 
     &:before {
       @include hairline(top);
+    }
+    */
+
+    opacity: 0;
+    transition: opacity .2s;
+    -webkit-transition: opacity .2s;
+    &.visible {
+      opacity: 1;
+    }
+
+    &.fixed {
+      position: fixed;
     }
 
     .tabbar-item {
@@ -98,8 +110,16 @@
     data() {
       return {
         menus: [],
-        menuIndex: 0
+        menuIndex: 0,
+        state: 0
       }
+    },
+
+    ready() {
+      this.show()
+      setTimeout(() => {
+        this.$el.classList.add('fixed')
+      }, 500)
     },
 
     methods: {
@@ -116,6 +136,10 @@
 
       activate(index) {
         this.menuIndex = index
+      },
+
+      show() {
+        this.state = 1
       }
     },
 

@@ -9,9 +9,10 @@ Vue.directive('tabbar', (data) => {
   let el = document.createElement('div')
   el.setAttribute('von-tabbar', '')
   document.body.appendChild(el)
+
   setTimeout(() => {
     _vm = new Vue(Object.assign({}, Tabbar, {
-      data: { menus: data.menus, menuIndex: 0 }
+      data: { menus: data.menus, menuIndex: 0, state: 0 }
     }))
   })
 })
