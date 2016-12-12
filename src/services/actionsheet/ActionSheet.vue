@@ -128,6 +128,13 @@
     }
   }
 
+  [theme='weixin'] .action-sheet-wrapper,
+  [theme='android'] .action-sheet-wrapper,
+  {
+    @include transition-duration(.3s);
+    @include transition-timing-function(cubic-bezier(0.4, 0.6, 0.2, 1));
+  } 
+
 </style>
 <script>
   export default {

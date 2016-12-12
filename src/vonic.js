@@ -45,6 +45,7 @@ module.exports = {
   SwiperItem,
 
   Scroll,
+  /* https://github.com/wangdahoo/vue-scroller 谨慎使用，将来可能会移除该组件 */
   VueScroller,
 
   Popover,

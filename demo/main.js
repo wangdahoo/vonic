@@ -28,6 +28,7 @@ import Scroll from './components/Scroll'
 import Popover from './components/Popover'
 import Popup from './components/Popup'
 import Modal from './components/Modal'
+import ActionSheet from './components/ActionSheet'
 
 import TabBar from './components/TabBar'
 import TabBarHome from './components/tabbar/Home'
@@ -113,6 +114,9 @@ const routers = {
   },
   '/widgets/modal': {
     component: Modal
+  },
+  '/widgets/actionsheet': {
+    component: ActionSheet
   },
 
   // TabBar

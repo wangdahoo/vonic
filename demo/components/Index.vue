@@ -101,7 +101,7 @@
           Modal <span class="note">模态窗</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
-        <div class="item item-icon-right" @click="showActionSheet()">
+        <div class="item item-icon-right" v-link="{ path: '/widgets/actionsheet' }">
           ActionSheet <span class="note"></span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
@@ -248,22 +248,6 @@
 
       showToast() {
         $loading.toast('发送成功')
-      },
-
-      showActionSheet() {
-        $actionSheet.show({
-          theme: 'weixin',
-          title: '标题',
-          buttons: {
-            'Action - 1': () => {
-              console.log('action 1 called.')
-            },
-
-            'Action - 2': () => {
-              console.log('action 2 called.')
-            }
-          }
-        })
       },
 
       goRepo() {
