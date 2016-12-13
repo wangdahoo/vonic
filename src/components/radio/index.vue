@@ -1,6 +1,6 @@
 <template>
-  <div class="list von-radio">
-    <label class="item item-icon-left von-item"
+  <div class="list von-radio" thin-border>
+    <label class="item item-icon-left"
            v-for="(index, option) in options">
       <input type="radio" name="{{ radioId }}" @click="onOptionClick(index)">
       <i class="icon ion-ios-checkmark"
@@ -29,7 +29,7 @@
 
     .item-icon-left {
       .icon {
-        font-size: 28px;
+        font-size: 24px;
         left: -6px;
 
         &.grey {

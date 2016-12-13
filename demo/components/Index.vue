@@ -22,125 +22,130 @@
           UI Components
         </div>
 
-        <!-- Form Related -->
-        <div class="item item-icon-right" v-link="{ path: '/widgets/rippleButton' }">
-          Button <span class="note">Ripple effect by material design</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/input' }">
-          Input <span class="note">文本框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/search' }">
-          Search <span class="note">搜索框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/counter' }">
-          Counter <span class="note">计数器</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
-          Radio <span class="note">单选框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/checkbox' }">
-          Checkbox <span class="note">复选框</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/toggle' }">
-          Toggle <span class="note">开关按钮</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/cascade' }">
-          Cascade <span class="note">级联</span>
-          <i class="icon ion-ios-arrow-right"></i>
+        <div class="list list-components" thin-border>    
+          <!-- Form Related -->
+          <div class="item item-icon-right" v-link="{ path: '/widgets/rippleButton' }">
+            Button <span class="item-note">Ripple effect by material design</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/input' }">
+            Input <span class="item-note">文本框</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/search' }">
+            Search <span class="item-note">搜索框</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/counter' }">
+            Counter <span class="item-note">计数器</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/radio' }">
+            Radio <span class="item-note">单选框</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/checkbox' }">
+            Checkbox <span class="item-note">复选框</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/toggle' }">
+            Toggle <span class="item-note">开关按钮</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/cascade' }">
+            Cascade <span class="item-note">级联</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+
+          <!-- Layout -->
+          <div class="item item-icon-right" v-link="{ path: '/widgets/list' }">
+            List <span class="item-note">列表布局</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
+            Cells <span class="item-note">宫格布局</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/tabs' }">
+            Tabs <span class="item-note">选项卡</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/buttonbar' }">
+            ButtonBar <span class="item-note">iOS 风格选项卡</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/effects/scalable' }">
+            Scalable <span class="item-note">缩放布局</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+
+          <!-- Swiper & Scroll -->
+          <div class="item item-icon-right" v-link="{ path: '/widgets/swiper' }">
+            Swiper <span class="item-note">轮播</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
+            Scroll <span class="item-note">Scroll组件</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+
+          <!-- Popover/Popup/Modal/ActionSheet/Sidebar-->
+          <div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">
+            Popover <span class="item-note">弹出式提醒</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/popup' }">
+            Popup <span class="item-note">弹层</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/modal' }">
+            Modal <span class="item-note">模态窗</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/actionsheet' }">
+            ActionSheet <span class="item-note"></span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" @click="openSidebar()">
+            Sidebar <span class="item-note">边栏</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/tabbar/home' }">
+            TabBar <span class="item-note">支持嵌套路由</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+
+          <!-- Loading & Toast -->
+          <div class="item item-icon-right" @click="showToast()">
+            Toast <span class="item-note">文字提示</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
+            Loading <span class="item-note">加载提示</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
         </div>
 
-        <!-- Layout -->
-        <div class="item item-icon-right" v-link="{ path: '/widgets/list' }">
-          List <span class="note">列表布局</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/cells' }">
-          Cells <span class="note">宫格布局</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/tabs' }">
-          Tabs <span class="note">选项卡</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/buttonbar' }">
-          ButtonBar <span class="note">iOS 风格选项卡</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/effects/scalable' }">
-          Scalable <span class="note">缩放布局</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
 
-        <!-- Swiper & Scroll -->
-        <div class="item item-icon-right" v-link="{ path: '/widgets/swiper' }">
-          Swiper <span class="note">轮播</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/effects/scroll' }">
-          Scroll <span class="note">Scroll组件</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
+        <div class="list thin-border">
+          <div class="item thin">
+            GitHub
+          </div>
 
-        <!-- Popover/Popup/Modal/ActionSheet/Sidebar-->
-        <div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">
-          Popover <span class="note">弹出式提醒</span>
-          <i class="icon ion-ios-arrow-right"></i>
+          <div class="item item-icon-left item-icon-right" onclick="location.href = 'https://github.com/wangdahoo/vonic'">
+            <i class="icon ion-social-github"></i>
+            <span class="item-note">star me</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
         </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/popup' }">
-          Popup <span class="note">弹层</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/modal' }">
-          Modal <span class="note">模态窗</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/actionsheet' }">
-          ActionSheet <span class="note"></span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" @click="openSidebar()">
-          Sidebar <span class="note">边栏</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" v-link="{ path: '/widgets/tabbar/home' }">
-          TabBar <span class="note">支持嵌套路由</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-
-        <!-- Loading & Toast -->
-        <div class="item item-icon-right" @click="showToast()">
-          Toast <span class="note">文字提示</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-        <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
-          Loading <span class="note">加载提示</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-
-        <div class="item item-divider">
-          <i class="icon ion-social-github"></i> 项目地址
-        </div>
-        <div class="item item-icon-right" onclick="location.href = 'https://github.com/wangdahoo/vonic'">
-          Star me on GitHub
-          <i class="icon ion-ios-arrow-right"></i>
-        </div>
-
+        
         <div style="height: 40px;"></div>
 
       </div>
     </div>
 </template>
-<style lang="scss" scoped>
-
+<style lang="scss">
   .components {
-
     .logo {
       width: 100%;
       text-align: center;
@@ -156,7 +161,6 @@
     .code-name {
       font-size: 24px;
       line-height: 24px;
-      // -webkit-font-smoothing: subpixel-antialiased !important;
       color: #47B584;
     }
 
@@ -165,25 +169,11 @@
     }
   }
 
-  .item-divider:first-of-type {
-    border-top: none;
-  }
-
-  .item-icon-right {
-    .icon {
-      right: 0;
-      color: #ccc;
-      font-size: 24px;
-    }
-
-    span.note {
-      color: #aaa;
-      font-size: 13px;
-      float: right;
-      margin-right: 15px;
+  .list-components {
+    .ion-ios-arrow-right {
+      color: #DDD;
     }
   }
-
 </style>
 <script>
   import Vue from 'vue'

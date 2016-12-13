@@ -1,5 +1,5 @@
 <template>
-  <div class="item von-item">
+  <div class="item" thin-border>
     <slot></slot>
   </div>
 </template>

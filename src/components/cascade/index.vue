@@ -1,29 +1,24 @@
 <template>
-  <div class="list von-cascade">
+  <div class="list list-ios thin-border von-cascade">
     <label v-for="($index, f) in fields" 
-           class="item item-icon-right" 
+           class="item item-ios item-icon-right" 
            @click="showCascadePanel($index)">
       {{ f }}
-      <i class="icon ion-ios-arrow-right grey"></i>
+      <i class="icon ion-ios-arrow-right"></i>
       <span class="item-note">{{ value[$index] }}</span>
     </label>
   </div>
 </template>
-<style lang='scss'>
+<style lang='scss' scoped>
+  @import "../scss/item";
+
   .von-cascade {
     padding-left: 16px;
     background: #FFF;
 
-    .item {
-      padding-left: 0px;
-      .item-note {
-        padding-right: 15px;
-      }
-
-      &.item-icon-right .icon {
-        color: #ccc;
-        font-size: 24px;
-        right: 0;
+    .item-icon-right {
+      .icon {
+        color: #DDD;
       }
     }
   }

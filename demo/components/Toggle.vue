@@ -4,7 +4,7 @@
       <von-toggle :text="toggleText" :value.sync="pushNotification"></von-toggle>
       <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
 
-      <div class="item">其他主题色</div>
+      <div class="item item-divider">其他主题色</div>
       <von-toggle text="assertive" theme="assertive" :value="true"></von-toggle>
       <von-toggle text="positive" theme="positive" :value="true"></von-toggle>
       <von-toggle text="energized" theme="energized" :value="true"></von-toggle>

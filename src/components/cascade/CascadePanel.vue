@@ -4,7 +4,7 @@
       {{ title }}
     </div>
 
-    <div class="list options">
+    <div class="list options" thin-border>
       <div class="item" v-for="($index, option) in options" @click="optionClicked($index)">
         {{ option }}
       </div>

@@ -24,7 +24,7 @@
       <div class="padding light-bg">
         <button-bar theme="assertive" :tab-items="promotions" :active-index.sync="promotionIndex"></button-bar>
       </div>
-      <div class="item">
+      <div class="item thin-border">
         选中: {{ promotions[promotionIndex] }}
       </div>
 

@@ -7,7 +7,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-  @import "../scss/variables";
+  @import "../scss/vonic";
 
   $border-radius: 5px;
 

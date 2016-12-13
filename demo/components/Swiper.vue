@@ -2,17 +2,17 @@
   <div class="page has-navbar page-swiper" v-nav="{title: '轮播', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content padding-top">
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/swiperDefault' }">
+      <div thin-border class="item item-icon-right" v-link="{ path: '/widgets/swiperDefault' }">
         Horizontal (default)<span class="note">水平 (默认)</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" v-link="{ path: '/widgets/swiperVertical' }">
+      <div thin-border class="item item-icon-right" v-link="{ path: '/widgets/swiperVertical' }">
         Vertical <span class="note">垂直</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" @click="swiperInPopup()">
+      <div thin-border class="item item-icon-right" @click="swiperInPopup()">
         Swiper in Popup<span class="note">弹层内轮播</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>

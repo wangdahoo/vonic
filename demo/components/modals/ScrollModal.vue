@@ -10,7 +10,7 @@
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
       <div v-for="(index, item) in items" @click="onItemClick(index, item)"
-           class="item" :class="{'item-stable': index % 2 == 0}">
+           class="item thin-border" :class="{'item-stable': index % 2 == 0}">
         {{ item }}
       </div>
     </scroll>

@@ -11,48 +11,41 @@
     </button>
   </div>
 </template>
-
 <script>
-
-export default {
-  props: {
-    value: {
-      type: String,
-      required: true
+  export default {
+    props: {
+      value: {
+        type: String,
+        required: true
+      },
+      placeholder: {
+        type: String,
+        default: 'Search'
+      },
+      cancelText: {
+        type: String,
+        default: '取消'
+      },
+      onSearch: Function
     },
-    placeholder: {
-      type: String,
-      default: 'Search'
+
+    data() {
+      return {
+        formId: 'von-search-' + Math.random().toString(36).substring(3, 8)
+      }
     },
-    cancelText: {
-      type: String,
-      default: '取消'
+
+    ready() {
+      document.getElementById(this.formId).onsubmit = this.search
     },
-    onSearch: Function
-  },
 
-  data() {
-    return {
-      formId: 'von-search-' + Math.random().toString(36).substring(3, 8)
-    }
-  },
-
-  ready() {
-    document.getElementById(this.formId).onsubmit = this.search
-  },
-
-  methods: {
-    search(e) {
-      e.preventDefault()
-      let search = document.querySelector('#' + this.formId + ' > [type=search]')
-      search.blur()
-      if (this.onSearch) this.onSearch()
+    methods: {
+      search(e) {
+        e.preventDefault()
+        let search = document.querySelector('#' + this.formId + ' > [type=search]')
+        search.blur()
+        if (this.onSearch) this.onSearch()
+      }
     }
   }
-}
 </script>
-
-<style lang="scss" scoped>
-
-
-</style>

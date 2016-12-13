@@ -1,44 +1,70 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '列表布局', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content" style="padding-top: 54px;">
-      <list>
-        <item>
+
+      <div class="item item-divider">
+        Thin Border
+      </div>
+
+      <div class="item thin-border">
+        normal
+      </div>
+
+      <div class="item item-icon-left thin-border">
+        icon left
+        <i class="icon ion-social-github dark"></i>
+      </div>
+
+      <div class="item item-icon-right thin-border">
+        icon right
+        <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
+      </div>
+
+      <div class="item item-icon-right" thin-border>
+        Item Title
+        <span class="item-note">item note</span>
+        <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
+      </div>
+
+      <div class="item item-divider">
+        iOS style
+      </div>
+
+      <div class="list list-ios" thin-border>
+        <div class="item item-ios">
           Item - 1
-        </item>
-        <item>
-          Item - 2
-        </item>
-        <item>
-          Item - 3
-        </item>
-      </list>
+          <span class="item-note"></span>  
+        </div>
+        <div class="item item-ios">Item - 2</div>
+        <div class="item item-ios">Item - 3</div>
+      </div>
 
-      <list>
-        <item thin>
-          <span style="color: #888">小标题</span>
-        </item>
-        <item>
-          正文文字
-          <div class="item-note">
-            备注文字
-          </div>
-        </item>
-      </list>
+      <div class="list list-ios" thin-border>
+        <div class="item item-ios" thin>
+          <span style="color: #888;">小标题</span>
+        </div>
+        <div class="item item-ios">
+          正文
+          <span class="item-note">
+            备注
+          </span>
+        </div>
+      </div>
 
-      <list>
-        <item thin>
-          <span style="color: #888">Framework</span>
-        </item>
-        <item class="item-avatar">
-          <img src="../assets/vonic.svg">
+      <div class="list list-ios" thin-border>
+        <div class="item item-ios" thin>
+          <span style="color: #888;">Framework</span>
+        </div>
+        <div class="item item-avatar item-ios">
+          <img src="../assets/vonic.svg" style="border-radius: 0;">
           <div class="title">
             Vonic
           </div>
           <div class="item-note">
-            Be cool with vue.js and ionic UI.
+            Mobile UI Components
           </div>
-        </item>
-      </list>
+        </div>
+      </div>
 
       <list>
         <item class="item-icon-right">
@@ -54,11 +80,6 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-  .ion-ios-arrow-right {
-    color: #ddd;
-  }
-</style>
 <script>
   import {List,Item} from 'vonic'
 

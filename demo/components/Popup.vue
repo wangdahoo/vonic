@@ -2,32 +2,32 @@
   <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true, onBackButtonClick: back}">
     <div class="page-content padding-top">
 
-      <div class="item item-icon-right" @click="showAlert()">
+      <div class="item item-icon-right thin-border" @click="showAlert()">
         Alert <span class="note">提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" @click="showConfirm()">
+      <div class="item item-icon-right thin-border" @click="showConfirm()">
         Confirm <span class="note">确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" @click="showAlertIOS()">
+      <div class="item item-icon-right thin-border" @click="showAlertIOS()">
         iOS Alert <span class="note">iOS 风格提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" @click="showConfirmIOS()">
+      <div class="item item-icon-right thin-border" @click="showConfirmIOS()">
         iOS Confirm <span class="note">iOS 风格确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" @click="showCustomPopup()">
+      <div class="item item-icon-right thin-border" @click="showCustomPopup()">
         Custom Popup
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" @click="showCustomPopup2()">
+      <div class="item item-icon-right thin-border" @click="showCustomPopup2()">
         Custom Popup 2
         <i class="icon ion-ios-arrow-right"></i>
       </div>
@@ -36,12 +36,12 @@
         Other Effects
       </div>
 
-      <div class="item item-icon-right" @click="showAlert('scale')">
+      <div class="item item-icon-right thin-border" @click="showAlert('scale')">
         Scale
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right" @click="showAlert('slide')">
+      <div class="item item-icon-right thin-border" @click="showAlert('slide')">
         Slide
         <i class="icon ion-ios-arrow-right"></i>
       </div>

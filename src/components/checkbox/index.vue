@@ -1,5 +1,5 @@
 <template>
-  <div class="list von-checkbox">
+  <div class="list von-checkbox" thin-border>
     <label class="item item-icon-right"
            v-for="(index, option) in options">
       <input type="checkbox" name="{{ checkboxName }}" id="{{ checkboxName + '-' + index }}" @click="onOptionClick(index)">

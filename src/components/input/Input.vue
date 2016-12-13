@@ -1,9 +1,8 @@
 <template>
   <div class="von-input-wrapper" :class="{'has-floating-label': floatingLabel == 'true'}">
-    <label class="item item-input von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
+    <label class="item item-input thin-border von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
       <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}">{{label}}</span>
       <input type="{{type}}" placeholder="{{ placeholder }}" v-model="value">
-
     </label>
 
     <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>
@@ -11,57 +10,56 @@
 </template>
 
 <script>
-export default {
-  props: {
-    type: {
-      type: String,
-      validator(val) {
-        return val == 'text' || val == 'password' || val == 'email' || val == 'tel'
+  export default {
+    props: {
+      type: {
+        type: String,
+        validator(val) {
+          return val == 'text' || val == 'password' || val == 'email' || val == 'tel'
+        },
+        default: 'text'
       },
-      default: 'text'
-    },
-    label: {
-      type: String,
-      default: ''
-    },
-    placeholder: {
-      type: String,
-      default: ''
-    },
-    value:{
-      type: [String, Number],
-      required: true
+      label: {
+        type: String,
+        default: ''
+      },
+      placeholder: {
+        type: String,
+        default: ''
+      },
+      value:{
+        type: [String, Number],
+        required: true
+      },
+
+      floatingLabel: {
+        type: String,
+        default: 'false'
+      }
     },
 
-    floatingLabel: {
-      type: String,
-      default: 'false'
-    }
-  },
+    data() {
+      return {
+        showClearButton: false
+      }
+    },
 
-  data() {
-    return {
-      showClearButton: false
-    }
-  },
+    methods: {
+      clear() {
+        this.value = ''
+        this.showClearButton = false
+      }
+    },
 
-  methods: {
-    clear() {
-      this.value = ''
-      this.showClearButton = false
-    }
-  },
-
-  watch: {
-    value: function (newValue) {
-      this.showClearButton = !!newValue
+    watch: {
+      value: function (newValue) {
+        this.showClearButton = !!newValue
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>
-
   @mixin placeholder($color: $input-color-placeholder, $text-indent: 0) {
     &::-moz-placeholder { // Firefox 19+
       color: $color;

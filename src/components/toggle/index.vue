@@ -1,5 +1,5 @@
 <template>
-  <div class="item item-toggle von-toggle">
+  <div class="item item-toggle von-toggle" thin-border>
     {{ text }}
     <label class="{{ toggleClass() }}" @click="onToggle()">
       <input type="checkbox" id="{{ toggleId }}">
