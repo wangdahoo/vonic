@@ -76,17 +76,29 @@
         </item>
       </list>
 
+      <div class="item item-divider">
+        Hairline Item
+      </div>
+      <hl-item class="item-icon-right">
+        文字
+        <div class="item-note">
+          备注
+        </div>
+        <span class="icon ion-ios-arrow-right"></span>
+      </hl-item>
+
       <div style="height: 100px"></div>
     </div>
   </div>
 </template>
 <script>
-  import {List,Item} from 'vonic'
+  import {List,Item,HairlineItem} from 'vonic'
 
   export default {
     components: {
       List,
-      Item
+      Item,
+      'hl-item': HairlineItem
     },
 
     data(){

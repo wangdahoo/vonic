@@ -9,7 +9,7 @@ import VonToggle from './components/toggle'
 import Cascade from './components/cascade'
 
 // Layout
-import {List, Item} from './components/list'
+import {List, Item, HairlineItem} from './components/list'
 import {Cells} from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
@@ -36,6 +36,7 @@ module.exports = {
 
   List,
   Item,
+  HairlineItem,
   Cells,
   Tabs,
   ButtonBar,
