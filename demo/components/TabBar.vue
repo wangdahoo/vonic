@@ -1,5 +1,5 @@
 <template>
-  <div v-tabbar="{'menus': menus}">
+  <div v-tabbar="{'menus': menus, menuColor: '#888', activeMenuColor: '#FF4400', onMenuClick: menuClicked}">
     <router-view></router-view>
   </div>
 </template>
@@ -42,6 +42,10 @@
     methods: {
       back() {
         $router.back({ path: '/' })
+      },
+
+      menuClicked(menuIndex) {
+        console.log(menuIndex)
       }
     },
 

@@ -2,7 +2,7 @@
   <div class="page has-navbar has-tabbar" v-nav="{title: '折扣'}" v-tabbar-menu-index="1">
     <div class="page-content padding-top">
       <p class="text-center">Discount</p>
-      <div class="item" v-for="($index, item) in items">
+      <div class="item thin-border" v-for="($index, item) in items">
         discount item
       </div>
     </div>

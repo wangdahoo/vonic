@@ -11,8 +11,18 @@ Vue.directive('tabbar', (data) => {
   document.body.appendChild(el)
 
   setTimeout(() => {
+    let props = {}
+    if (data.menuColor) props.menuColor = data.menuColor
+    if (data.activeMenuColor) props.activeMenuColor = data.activeMenuColor
+    if (data.onMenuClick) props.onMenuClick = data.onMenuClick
+
     _vm = new Vue(Object.assign({}, Tabbar, {
-      data: { menus: data.menus, menuIndex: 0, state: 0 }
+      data: { 
+        menus: data.menus, 
+        menuIndex: 0, 
+        state: 0 
+      },
+      propsData: props
     }))
   })
 })

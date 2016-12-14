@@ -240,8 +240,8 @@
     right: auto;
     height: 1px;
     width: 100%;
-    transform-origin: 50% 50%;
-    -webkit-transform-origin: 50% 50%;
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
     transform: scaleY(0.5);
     -webkit-transform: scaleY(0.5);
   }
