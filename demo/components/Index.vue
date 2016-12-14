@@ -120,7 +120,7 @@
             Toast <span class="item-note">文字提示</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
-          <div class="item item-icon-right" @click="showLoading('玩命加载中..')">
+          <div class="item item-icon-right" @click="showLoading('正在加载..')">
             Loading <span class="item-note">加载提示</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
@@ -232,12 +232,16 @@
         $loading.show(tips)
 
         setTimeout(() => {
+          $loading.show('正在跳转..')
+        }, 2000)
+
+        setTimeout(() => {
           $loading.hide()
-        }, 3000)
+        }, 4000)
       },
 
       showToast() {
-        $loading.toast('发送成功')
+        $toast.show('发送成功')
       },
 
       goRepo() {

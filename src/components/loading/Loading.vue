@@ -10,8 +10,28 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+  .loading-container {
+    .loading {
+      padding: 15px;
+    }
+
+    .spinner svg {
+      width: 28px;
+      height: 28px;
+      stroke: #FFF;
+      fill: #FFF;
+    }
+
+    .tips {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+</style>
 <script>
   export default {
+    el: '[von-loading]',
     data () {
       return {
         showSpinner: true,
@@ -31,6 +51,11 @@
       },
 
       show(tips) {
+        if (this.state == 2) {
+          this.tips = tips || '正在加载'
+          return
+        }
+
         this.showSpinner = true
         this.showLoading(tips)
       },
@@ -41,6 +66,9 @@
         this.state = 1
         setTimeout(() => {
           this.state = 0
+          setTimeout(() => {
+            this.$destroy(true)
+          }, 300)
         }, 300)
       },
 
@@ -55,21 +83,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-  .loading-container {
-    .spinner svg {
-      width: 28px;
-      height: 28px;
-      stroke: #FFF;
-      fill: #FFF;
-    }
-
-    .tips {
-      font-size: 14px;
-      line-height: 14px;
-    }
-  }
-
-</style>
