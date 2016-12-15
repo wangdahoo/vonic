@@ -71,7 +71,7 @@
       window.$vonicModal = this.$refs.modal
 
       channel.$on('VonicNotification', (data) => {
-        this.$refs.loading.toast(data.message);
+        $toast.show(data.message);
       })
     }
   }
