@@ -88,6 +88,10 @@
             Scroll <span class="item-note">Scroll组件</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
+          <div class="item item-icon-right" v-link="{ path: '/effects/scroller' }">
+            Vue Scroll <span class="item-note">v0.4.0</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
 
           <!-- Popover/Popup/Modal/ActionSheet/Sidebar-->
           <div class="item item-icon-right" v-link="{ path: '/widgets/popover' }">

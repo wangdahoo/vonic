@@ -24,6 +24,7 @@ import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
 import Scroll from './components/Scroll'
+import VueScroller from './components/VueScroller'
 
 import Popover from './components/Popover'
 import Popup from './components/Popup'
@@ -103,6 +104,9 @@ const routers = {
   },
   '/effects/scroll': {
     component: Scroll
+  },
+  '/effects/scroller': {
+    component: VueScroller
   },
 
   // Popover/Popup/Modal
