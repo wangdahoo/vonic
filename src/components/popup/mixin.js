@@ -29,7 +29,8 @@ export default {
     },
 
     hide() {
-      window.$backdrop.hide()
+      if (document.querySelectorAll('[von-dialog]').length == 1) // 只剩最后一个dialog实例的时候，backdrop才隐藏
+        window.$backdrop.hide()
       this.state = 2
 
       setTimeout(() => {

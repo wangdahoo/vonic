@@ -6,19 +6,20 @@
         Alert <span class="item-note">提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
-
       <div class="item item-icon-right thin-border" @click="showConfirm()">
         Confirm <span class="item-note">确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
-
       <div class="item item-icon-right thin-border" @click="showAlertIOS()">
         iOS Alert <span class="item-note">iOS 风格提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
-
       <div class="item item-icon-right thin-border" @click="showConfirmIOS()">
         iOS Confirm <span class="item-note">iOS 风格确认框</span>
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+      <div class="item item-icon-right thin-border" @click="multiMode()">
+        Multi Mode <span class="item-note">多个同时出现</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
@@ -26,25 +27,21 @@
         Custom Popup
         <i class="icon ion-ios-arrow-right"></i>
       </div>
-
       <div class="item item-icon-right thin-border" @click="showCustomPopup2()">
         Custom Popup 2
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-divider">
-        Other Effects
-      </div>
-
       <div class="item item-icon-right thin-border" @click="showAlert('scale')">
-        Scale
+        Scale Effect
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
+      <div class="item item-icon-right thin-border" @click="showAlert('slide')">
+        Slide Effect
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div class="item item-icon-right thin-border" @click="showAlert('slide')">
-        Slide
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      <div style="height: 50px;"></div>
 
     </div>
   </div>
@@ -132,6 +129,21 @@
         let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
 
         popup.show()
+      },
+
+      multiMode() {
+        let options = {
+          theme: 'ios',
+          title: '测试',
+          okText: '好'
+        }
+
+        for (let i = 0; i < 3; i++) {
+          setTimeout(() => {
+            options.content = `第${i+1}条消息`
+            $dialog.alert(options)
+          }, 500 * i)
+        }
       }
     }
   }
