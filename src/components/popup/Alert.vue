@@ -41,10 +41,6 @@
         okTheme: 'assertive',
         state: 0 // 0: hidden, 1: showing, 2: active
       }
-    },
-
-    methods: {
-
     }
   }
 </script>

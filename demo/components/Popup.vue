@@ -3,22 +3,22 @@
     <div class="page-content padding-top">
 
       <div class="item item-icon-right thin-border" @click="showAlert()">
-        Alert <span class="note">提示框</span>
+        Alert <span class="item-note">提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
       <div class="item item-icon-right thin-border" @click="showConfirm()">
-        Confirm <span class="note">确认框</span>
+        Confirm <span class="item-note">确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
       <div class="item item-icon-right thin-border" @click="showAlertIOS()">
-        iOS Alert <span class="note">iOS 风格提示框</span>
+        iOS Alert <span class="item-note">iOS 风格提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
       <div class="item item-icon-right thin-border" @click="showConfirmIOS()">
-        iOS Confirm <span class="note">iOS 风格确认框</span>
+        iOS Confirm <span class="item-note">iOS 风格确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
@@ -49,28 +49,6 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-
-  .item-divider:first-of-type {
-    border-top: none;
-  }
-
-  .item-icon-right {
-    .icon {
-      right: 0;
-      color: #ccc;
-      font-size: 24px;
-    }
-
-    span.note {
-      color: #aaa;
-      font-size: 13px;
-      float: right;
-      margin-right: 15px;
-    }
-  }
-
-</style>
 <script>
   export default {
 
@@ -79,17 +57,13 @@
       }
     },
 
-    ready() {
-
-    },
-
     methods: {
       back() {
         $router.back({path: '/'})
       },
 
       showAlert(effect) {
-        $alert.show({
+        $dialog.alert({
           content: 'Hello!',
           okTheme: 'positive',
           effect: effect || 'default'
@@ -99,7 +73,7 @@
       },
 
       showConfirm() {
-        $confirm.show({
+        $dialog.confirm({
           content: '在"微信"中打开链接吗?',
           okText: '打开'
         }).then((res) => {
@@ -108,7 +82,8 @@
       },
 
       showAlertIOS() {
-        $alert_ios.show({
+        $dialog.alert({
+          theme: 'ios',
           title: '无法打开网页',
           content: 'Safari打不开网页，因为网址无效。',
           okText: '好'
@@ -118,7 +93,8 @@
       },
 
       showConfirmIOS() {
-        $confirm_ios.show({
+        $dialog.confirm({
+          theme: 'ios',
           title: '在"微信"中打开链接吗?',
           cancelText: '取消',
           okText: '打开'

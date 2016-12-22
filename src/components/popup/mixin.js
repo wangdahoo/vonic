@@ -34,6 +34,7 @@ export default {
 
       setTimeout(() => {
         this.state = 0
+        this.$destroy(true)
       }, popup_leave_duration)
     },
 
