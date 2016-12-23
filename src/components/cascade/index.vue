@@ -90,7 +90,7 @@
         let options = this.filter(index)
         // console.log('show cascade panel =>', title, options)
 
-        _cascadePanel
+        $cascadePanel
           .show(title, options)
           .then((optionIndex) => {
             if (optionIndex == -1) return

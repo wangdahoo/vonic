@@ -8,7 +8,14 @@ const createElement = (marker, tag) => {
   document.body.appendChild(el)
 }
 
-export default {
+const timeout = (duration = 0) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, duration);
+  })
+}
+
+module.exports = {
   is_ios_device: is_ios_device,
-  createElement: createElement
+  createElement: createElement,
+  timeout: timeout
 }

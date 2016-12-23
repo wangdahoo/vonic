@@ -73,6 +73,8 @@
 </style>
 <script>
   import Vue from 'vue'
+  
+  const animation_duration = 300
   let bus = new Vue();
   
   export default {
@@ -119,6 +121,9 @@
       _hide() {
         this.state = 0
         window.$backdrop.hide()
+        setTimeout(() => {
+          this.$destroy(true)
+        }, animation_duration)
       },
 
       hide() {

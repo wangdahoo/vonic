@@ -5,8 +5,6 @@
   </div>
 
   <modal v-ref:modal></modal>
-
-  <cascade-panel v-ref:cascade_panel></cascade-panel>
 </template>
 <style lang='scss'>
   @import "../scss/vonic";
@@ -14,7 +12,6 @@
 <script>
   import Vue from 'vue'
   import Navbar from './Navbar'
-  import CascadePanel from '../cascade/CascadePanel.vue'
   import { Modal } from '../modal'
 
   import utils from './utils'
@@ -27,11 +24,11 @@
   // mini services
   import './services/loading'
   import './services/dialog'
+  import './services/cascadepanel'
 
   export default {
     components: {
       Navbar,
-      CascadePanel,
       Modal
     },
 
@@ -50,7 +47,7 @@
       }
       document.querySelector('body').className = this.gradeClass
 
-      window._cascadePanel = this.$refs.cascade_panel
+      // Model Service
       window.$vonicModal = this.$refs.modal
 
       channel.$on('VonicNotification', (data) => {
