@@ -22,7 +22,7 @@ class VonicPopup {
   _vm = undefined
 
   _init(template, options) {
-    let refId = (options && options.refId) ? options.refId : Math.random().toString(32).substr(0, 6)
+    let refId = (options && options.refId) ? options.refId : Math.random().toString(36).substr(0, 6)
     let effect = (options && options.effect) ? options.effect : 'scale'
     let title = (options && options.title) ? options.title : ''
     let buttons = (options && options.buttons) ? options.buttons : []

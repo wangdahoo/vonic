@@ -13,7 +13,7 @@
   $sidebars-z-index-default: 1;
   $sidebars-z-index-active: 11;
 
-  [von-sidebars] {
+  [von-sidebar-container] {
     position: absolute;
     left: 0;
     top: 0;
@@ -50,7 +50,8 @@
     }
 
     &.right .von-sidebar {
-      right: 0 !important;
+      left: auto;
+      right: 0;
       -webkit-transform: translate(280px, 0);
       transform: translate(280px, 0);
       margin-left: 20px;
@@ -85,7 +86,6 @@
   import Vue from 'vue'
   import Scroller from 'vue-scroller'
 
-  let wrapper
   const transitionDuration = 400
 
   export default {
@@ -105,16 +105,12 @@
       }
     },
 
-    ready() {
-      wrapper = document.querySelector('[von-sidebars]')
-    },
-
     methods: {
       open() {
+        let wrapper = this.wrapper()
         wrapper.classList.add('active')
         setTimeout(() => {
           this.opened = true
-
           Vue.nextTick(() => {
             wrapper.classList.add('fixed')
           })
@@ -122,8 +118,8 @@
       },
 
       close() {
+        let wrapper = this.wrapper()
         wrapper.classList.remove('fixed')
-
         this.opened = false
         setTimeout(() => {
           wrapper.classList.remove('active')
@@ -136,6 +132,16 @@
         } else {
           this.open()
         }
+      },
+
+      setWrapperSelector(selector) {
+        this.wrapperSelector = selector
+      },
+
+      wrapper() {
+        console.log(this.wrapperSelector ? this.wrapperSelector : '[von-sidebar-container]')
+        return document.querySelector(this.wrapperSelector ? 
+          this.wrapperSelector : '[von-sidebar-container]')
       }
     }
   }

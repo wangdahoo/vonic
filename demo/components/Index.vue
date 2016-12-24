@@ -110,7 +110,7 @@
             ActionSheet <span class="item-note"></span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
-          <div class="item item-icon-right" @click="openSidebar()">
+          <div class="item item-icon-right" @click="toggleSidebarRight()">
             Sidebar <span class="item-note">边栏</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
@@ -217,6 +217,7 @@
         </p>
       `
       this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
+      this.sidebarRight = $sidebar.fromTemplate('<h5>右边栏</h5>', {position: 'right'})
 
       // let path_to_template = ''
       // $sidebar
@@ -236,12 +237,8 @@
         $loading.show(tips)
 
         setTimeout(() => {
-          $loading.show('正在跳转..')
-        }, 2000)
-
-        setTimeout(() => {
           $loading.hide()
-        }, 4000)
+        }, 3000)
       },
 
       showToast() {
@@ -262,7 +259,11 @@
 
       closeSidebar() {
         this.sidebar.close()
-      }
+      },
+
+      toggleSidebarRight() {
+        this.sidebarRight.toggle()
+      },
     }
   }
 </script>
