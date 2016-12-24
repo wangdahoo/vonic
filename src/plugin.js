@@ -11,10 +11,21 @@ import './services/tabbar'
 
 import VonApp from './components/app'
 
+const defaultRouterOptions = {
+  hashbang: true,
+  history: false,
+  abstract: false,
+  root: null,
+  linkActiveClass: 'v-link-active',
+  saveScrollPosition: false,
+  transitionOnLoad: false,
+  suppressTransitionError: false
+}
+
 let VonicAppConfig = {
   beforeEach: undefined,
   afterEach: undefined,
-  useHistory: false
+  routerOptions: {}
 }
 
 class VonicApp {
@@ -26,9 +37,8 @@ class VonicApp {
   start() {
     let app = Vue.extend(VonApp)
 
-    let router = new VueRouter({
-      history: VonicAppConfig.useHistory
-    })
+    let router = new VueRouter(Object.assign({}, 
+      defaultRouterOptions, VonicAppConfig.routerOptions))
 
     router.map(this.routers)
 
@@ -105,12 +115,12 @@ export default {
   },
 
   setConfig(name, value) {
-    if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == -1) throw 'Unknown config name.'
+    if (['beforeEach', 'afterEach', 'routerOptions'].indexOf(name) == -1) throw 'Unknown config name.'
     VonicAppConfig[name] = value
   },
 
   getConfig(name) {
-    if (['beforeEach', 'afterEach', 'useHistory'].indexOf(name) == -1) throw 'Unknown config name.'
+    if (['beforeEach', 'afterEach', 'routerOptions'].indexOf(name) == -1) throw 'Unknown config name.'
     return VonicAppConfig[name]
   }
 }
