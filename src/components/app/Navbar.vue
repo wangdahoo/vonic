@@ -30,7 +30,7 @@
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
-    // 用阴影替代
+    /* 用阴影替代 */
     /*
     &:after {
       @include hairline(bottom);
@@ -117,7 +117,7 @@
     }
   }
 
-  // android or other
+  /* android or other */
   .grade-b .navbar {
     .center .title,
     .fade-transition
@@ -200,18 +200,18 @@
     return '<a class="button button-icon icon ion-navicon"></a>'
   }
 
-  let touchLock
+  window.__block_touch__ = false
 
   function navTransitionStart() {
     var navbar = document.querySelector('.navbar')
     navbar.style.position = 'absolute'
-    touchLock = true
+    window.__block_touch__ = true
   }
 
   function navTransitionEnd() {
     var navbar = document.querySelector('.navbar')
     navbar.style.position = 'fixed'
-    touchLock = false
+    window.__block_touch__ = false
   }
 
   export default {
@@ -251,7 +251,7 @@
             if (cl) this.$el.removeChild(cl)
             cl = c
             navTransitionEnd()
-          }, window.__disable_nav_title_transition__ ? 0 : 500)
+          }, window.__disable_nav_title_transition__ ? 0 : 600)
         })
 
         // nav item & click event handler
@@ -276,7 +276,7 @@
 
     methods: {
       backButtonClicked(e) {
-        if (touchLock) {
+        if (window.__block_touch__) {
           e.preventDefault()
           return;
         }
@@ -291,7 +291,7 @@
       },
 
       menuButtonClicked() {
-        if (touchLock) {
+        if (window.__block_touch__) {
           e.preventDefault()
           return;
         }

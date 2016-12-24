@@ -119,7 +119,7 @@
       this.show()
       setTimeout(() => {
         this.$el.classList.add('fixed')
-      }, 500)
+      }, 600)
     },
 
     methods: {

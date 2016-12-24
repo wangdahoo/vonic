@@ -11,8 +11,6 @@ import './services/tabbar'
 
 import VonApp from './components/app'
 
-import FastClick from 'fastclick'
-
 let VonicAppConfig = {
   beforeEach: undefined,
   afterEach: undefined,
@@ -53,12 +51,14 @@ class VonicApp {
     router._go = router.go
 
     router.forward = router.go = (target) => {
-      router.nextDirection('forward');
+      if (window.__block_touch__) return
+      router.nextDirection('forward')
       setTimeout(() => { router._go(target) })
     }
 
     router.back = (target) => {
-      router.nextDirection('back');
+      if (window.__block_touch__) return
+      router.nextDirection('back')
       setTimeout(() => { router._go(target) })
     }
 
@@ -78,9 +78,6 @@ export default {
     app.start()
     window.$app = app
 
-    // FastClick
-    FastClick.attach(document.body)
-
     // Nav Theme
     if (defaultNavTheme) {
       setTimeout(() => {
@@ -96,16 +93,15 @@ export default {
       }
     }, false)
 
-    // 暂时取消限制
     /* Disable double click to zoom */
-    // let lastTouchEnd = 0;
-    // document.documentElement.addEventListener('touchend', (e) => {
-    //   let now = (new Date()).getTime()
-    //   if (now - lastTouchEnd < 300) {
-    //     e.preventDefault()
-    //   }
-    //   lastTouchEnd = now
-    // }, false)
+    let lastTouchEnd = 0;
+    document.documentElement.addEventListener('touchend', (e) => {
+      let now = (new Date()).getTime()
+      if (now - lastTouchEnd < 300) {
+        e.preventDefault()
+      }
+      lastTouchEnd = now
+    }, false)
   },
 
   setConfig(name, value) {
