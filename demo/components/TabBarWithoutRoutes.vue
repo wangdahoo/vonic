@@ -1,8 +1,17 @@
 <template>
-  <div v-tabbar="{'menus': menus, menuColor: '#888', activeMenuColor: '#FF4400', onMenuClick: menuClicked}">
-    <router-view></router-view>
+  <div class="page has-navbar page-swiper" v-nav="{title: 'Tabbar 单独使用', showBackButton: true, onBackButtonClick: back}"
+    v-tabbar="{'menus': menus, menuColor: '#888', activeMenuColor: '#FF4400', onMenuClick: menuClicked}">
+      <div class="page-content padding-top">
+        <p class="text-center" v-if="show == 0">Home</p>
+        <p class="text-center" v-if="show == 1">Discount</p>
+        <p class="text-center" v-if="show == 2">Cart</p>
+        <p class="text-center" v-if="show == 3">User</p>
+      </div>
   </div>
 </template>
+<style>
+
+</style>
 <script>
   export default {
     data() {
@@ -12,27 +21,24 @@
             iconOn: 'ion-ios-home',
             iconOff: 'ion-ios-home-outline',
             text: '首页',
-            path: '/widgets/tabbar/home'
           },
           {
             iconOn: 'ion-ios-pricetags',
             iconOff: 'ion-ios-pricetags-outline',
             text: '折扣',
-            path: '/widgets/tabbar/discount'
           },
           {
             iconOn: 'ion-ios-cart',
             iconOff: 'ion-ios-cart-outline',
             text: '购物车',
-            path: '/widgets/tabbar/cart'
           },
           {
             iconOn: 'ion-ios-person',
             iconOff: 'ion-ios-person-outline',
             text: '我的',
-            path: '/widgets/tabbar/user'
           }
-        ]
+        ],
+        show: 0
       }
     },
 
@@ -42,7 +48,7 @@
       },
 
       menuClicked(menuIndex) {
-        console.log(menuIndex)
+        this.show = menuIndex
       }
     },
 

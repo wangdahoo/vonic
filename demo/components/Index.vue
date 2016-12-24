@@ -115,7 +115,11 @@
             <i class="icon ion-ios-arrow-right"></i>
           </div>
           <div class="item item-icon-right" v-link="{ path: '/widgets/tabbar/home' }">
-            TabBar <span class="item-note">支持嵌套路由</span>
+            TabBar <span class="item-note">配合路由使用</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>
+          <div class="item item-icon-right" v-link="{ path: '/widgets/tabbarWithoutRoutes' }">
+            TabBar Standalone <span class="item-note">单独使用</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
 

@@ -127,7 +127,8 @@
         window.__disable_nav_title_transition__ = true
 
         this.menuIndex = menuIndex
-        $router.forward({ path: this.menus[menuIndex].path })
+        if (this.menus[menuIndex].path)
+          $router.forward({ path: this.menus[menuIndex].path })
 
         if (this.onMenuClick) {
           this.onMenuClick(menuIndex)
