@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%200.6.0-beta%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%200.6.0%20alpha%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%201.0.28%20-green.svg">
 </p>
 
