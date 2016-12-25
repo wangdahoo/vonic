@@ -95,7 +95,7 @@
             <i class="icon ion-ios-arrow-right"></i>
           </div>
           <div class="item item-icon-right" v-link="{ path: '/advanced/scroller' }">
-            Vue Scroll <span class="item-note">v0.4.0</span>
+            Vue Scroller <span class="item-note">v0.4.0</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
           <div class="item item-icon-right" v-link="{ path: '/advanced/cascade' }">

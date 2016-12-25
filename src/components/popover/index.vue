@@ -134,7 +134,7 @@
 
         setTimeout(() => {
           pageContent().addEventListener('scroll', onScroll)
-        }, 500)
+        }, 600)
       }
     },
 

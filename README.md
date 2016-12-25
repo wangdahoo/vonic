@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%200.5.8%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%200.6.0-beta%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%201.0.28%20-green.svg">
 </p>
 
@@ -31,28 +31,31 @@
 ## Components
 - Typography
 - App (Application Instance & Navigation Bar)
-- MD-Buttons (Material Design Ripple Button)
+- Button
+- MdButtons (Material Design Button)
 - Input
-- Counter
+- Search
 - Radio
 - Checkbox
 - Toggle
-- Cascade
+- Popover
+- Counter
+- Toast
+- Loading (Preloader)
 - List
 - Cells
 - Tabs
 - ButtonBar
 - Scalable
 - Swiper
-- Scroller
-- Popover
+- Scroll
+- [VueScroller](https://github.com/wangdahoo/vue-scroller)
+- Cascade
 - Popup
 - Modal
 - ActionSheet
 - Sidebar
 - TabBar
-- Toast
-- Loading (Preloader)
 
 ## Getting started
 Create project with on-line webpack template.
@@ -77,6 +80,3 @@ That's it.
 - [vum](http://getvum.com/)
 - [vux](https://github.com/airyland/vux)
 - [Angular Material](https://material.angularjs.org/)
-
-## Documents
-- [Components](https://github.com/wangdahoo/vonic/blob/master/COMPONENTS.md)
