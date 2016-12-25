@@ -35,8 +35,13 @@
     "babel-runtime": "^6.0.0",
     "cross-env": "^1.0.6",
     "css-loader": "^0.23.0",
+    "fastclick": "^1.0.6",
     "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-replace": "^0.5.4",
     "json-loader": "^0.5.4",
+    "moment": "^2.17.0",
     "node-sass": "^3.9.3",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
@@ -46,10 +51,6 @@
     "vue-loader": "^8.2.1",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-replace": "^0.5.4",
-    "moment": "^2.17.0"
+    "webpack-dev-server": "^1.12.0"
   }
 }

@@ -202,3 +202,6 @@ Vue.use(Vonic.app, {
   defaultRouterUrl: '/',
   defaultNavTheme: 'light'
 })
+
+import FastClick from 'fastclick'
+FastClick.attach(document.body)
