@@ -29,16 +29,6 @@
         email: '',
         phone: ''
       }
-    },
-
-    methods: {
-      back() {
-        $router.back({path: '/widgets/input'})
-      }
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '列表布局', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '列表', showBackButton: true}">
     <div class="page-content" style="padding-top: 54px;">
 
       <div class="item item-divider">
@@ -104,12 +104,6 @@
     data(){
       return {
 
-      }
-    },
-
-    methods: {
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

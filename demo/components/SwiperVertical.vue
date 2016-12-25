@@ -51,23 +51,6 @@
     components:{
       Swiper,
       SwiperItem
-    },
-
-    props: {
-
-    },
-
-    data() {
-      return {
-      }
-    },
-
-    ready() {
-
-    },
-
-    methods: {
-
     }
   }
 </script>

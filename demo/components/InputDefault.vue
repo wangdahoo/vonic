@@ -38,12 +38,6 @@
         username: '',
         password: ''
       }
-    },
-
-    methods: {
-      back() {
-        $router.back({path: '/widgets/input'})
-      }
     }
   }
 </script>

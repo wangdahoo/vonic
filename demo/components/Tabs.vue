@@ -10,7 +10,6 @@
       <p>
         active category index: {{ categories[activeCategoryIndex] }}
       </p>
-
     </div>
 
     <tabs :tab-items="categories"
@@ -65,10 +64,6 @@
     methods: {
       onCategoryChanged(activeIndex) {
         console.log('category changed, current tab index is:', activeIndex);
-      },
-
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

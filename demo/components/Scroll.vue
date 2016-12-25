@@ -61,16 +61,8 @@
 
       onItemClick(index, item) {
         console.log(index)
-      },
-
-      back() {
-        $router.back({path: '/'})
       }
     }
 
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

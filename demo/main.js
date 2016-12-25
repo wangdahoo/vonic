@@ -3,7 +3,9 @@ import Vonic  from 'vonic'
 
 // Demos
 import Index from './components/Index'
-import RippleButton from './components/RippleButton'
+import Home from './components/Home'
+import Button from './components/Button'
+import MdButton from './components/MdButton'
 import Input from './components/Input'
 import InputDefault from './components/InputDefault'
 import InputFloatingLabel from './components/InputFloatingLabel'
@@ -44,88 +46,91 @@ const routers = {
     component: Index
   },
 
-  // Form Related
-  '/widgets/rippleButton': {
-    component: RippleButton
+  '/home': {
+    component: Home
   },
-  '/widgets/input': {
+
+  // Basic
+  '/basic/button': {
+    component: Button
+  },
+  '/basic/mdButton': {
+    component: MdButton
+  },
+  '/basic/input': {
     component: Input
   },
-  '/widgets/inputDefault': {
+  '/basic/inputDefault': {
     component: InputDefault
   },
-  '/widgets/inputFloatingLabel': {
+  '/basic/inputFloatingLabel': {
     component: InputFloatingLabel
   },
-  '/widgets/counter': {
-    component: Counter
-  },
-  '/widgets/search': {
+  '/basic/search': {
     component: Search
   },
-  '/widgets/radio': {
+  '/basic/radio': {
     component: Radio
   },
-  '/widgets/checkbox': {
+  '/basic/checkbox': {
     component: Checkbox
   },
-  '/widgets/toggle': {
+  '/basic/toggle': {
     component: Toggle
   },
-  '/widgets/cascade': {
-    component: Cascade
+  '/basic/popover': {
+    component: Popover
+  },
+  '/basic/counter': {
+    component: Counter
   },
 
   // Layout
-  '/widgets/list': {
+  '/layout/list': {
     component: List
   },
-  '/widgets/cells': {
+  '/layout/cells': {
     component: Cells
   },
-  '/widgets/tabs': {
+  '/layout/tabs': {
     component: Tabs
   },
-  '/widgets/buttonbar': {
+  '/layout/buttonbar': {
     component: ButtonBar
   },
-  '/effects/scalable': {
+  '/layout/scalable': {
     component: Scalable
   },
 
-  // Swiper & Scroll
-  '/widgets/swiper': {
+  // Advanced
+  '/advanced/swiper': {
     component: Swiper
   },
-  '/widgets/swiperDefault': {
+  '/advanced/swiperDefault': {
     component: SwiperDefault
   },
-  '/widgets/swiperVertical': {
+  '/advanced/swiperVertical': {
     component: SwiperVertical
   },
-  '/effects/scroll': {
+  '/advanced/scroll': {
     component: Scroll
   },
-  '/effects/scroller': {
+  '/advanced/scroller': {
     component: VueScroller
   },
-
-  // Popover/Popup/Modal
-  '/widgets/popover': {
-    component: Popover
+  '/advanced/cascade': {
+    component: Cascade
   },
-  '/widgets/popup': {
-    component: Popup
-  },
-  '/widgets/modal': {
-    component: Modal
-  },
-  '/widgets/actionsheet': {
+  '/advanced/actionsheet': {
     component: ActionSheet
   },
-
-  // TabBar
-  '/widgets/tabbar': {
+  '/advanced/popup': {
+    component: Popup
+  },
+  '/advanced/modal': {
+    component: Modal
+  },
+  '/advanced/tabbar': {
     component: TabBar,
     subRoutes: {
       '/home': {
@@ -142,15 +147,12 @@ const routers = {
       }
     }
   },
-
   '/pageFromTabbar': {
     component: PageFromTabbar
   },
-
-  '/widgets/tabbarWithoutRoutes': {
+  '/advanced/tabbarWithoutRoutes': {
     component: TabbarWithoutRoutes
-  },
-
+  }
 }
 
 /**

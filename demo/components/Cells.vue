@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '宫格布局', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '宫格', showBackButton: true}">
 
     <div class="page-content">
 
@@ -101,10 +101,6 @@
           items.push(this.getIcon(this.icons[i]))
         }
         return items
-      },
-
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

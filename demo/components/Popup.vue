@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
     <div class="page-content padding-top">
 
       <div class="item item-icon-right thin-border" @click="showAlert()">
@@ -55,10 +55,6 @@
     },
 
     methods: {
-      back() {
-        $router.back({path: '/'})
-      },
-
       showAlert(effect) {
         $dialog.alert({
           content: 'Hello!',

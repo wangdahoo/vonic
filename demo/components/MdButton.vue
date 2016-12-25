@@ -1,9 +1,9 @@
 <template>
-  <div class="page has-navbar page-ripple-button"
-       v-nav="{title: 'Ripple Button', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar"
+       v-nav="{title: 'Material Design 风格', showBackButton: true}">
     <div class="page-content padding padding-top">
       <md-button class="button button-assertive button-block" @click="onButtonClicked()">
-        按钮文字
+        Click Me
       </md-button>
     </div>
   </div>
@@ -16,20 +16,10 @@
       MdButton
     },
 
-    data() {
-      return {
-      }
-    },
-
     methods: {
-      back() {
-        $router.back({ path: '/' })
-      },
-
       onButtonClicked() {
         console.log('button clicked!')
       }
     }
   }
-
 </script>

@@ -48,10 +48,6 @@
         setTimeout(() => {
           $vonicModal.show('scroll_modal')
         })
-      },
-
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

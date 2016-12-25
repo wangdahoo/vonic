@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '计数器', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '计数器', showBackButton: true}">
     <div class="page-content">
       <div class="item item-divider">
         单独使用：
@@ -42,12 +42,6 @@
       return {
         cnt: 0,
         qty: 0
-      }
-    },
-
-    methods: {
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

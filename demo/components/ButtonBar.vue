@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'iOS风格Tabs', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: 'iOS 风格选项卡', showBackButton: true}">
     <div class="page-content padding-top">
 
       <div class="padding light-bg">
@@ -29,12 +29,8 @@
       </div>
 
     </div>
-
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
   import {ButtonBar} from 'vonic'
 
@@ -50,18 +46,9 @@
           "tab 2",
           "tab 3"
         ],
-
         activeTabIndex: [0, 1, 2, 1, 0, 1, 2, 1],
-
         promotions: ["往期热卖", "抢购进行中"],
-
         promotionIndex: 0
-      }
-    },
-
-    methods: {
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

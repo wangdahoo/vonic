@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '级联', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '级联', showBackButton: true}">
     <div class="page-content padding-top">
       <div class="item item-divider">
         选择您所属的行政区划：
@@ -149,16 +149,6 @@
           ['浙江省', '丽水市', '龙泉市']
         ],
         value: []
-      }
-    },
-
-    ready() {
-
-    },
-
-    methods: {
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

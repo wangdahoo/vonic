@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar page-swiper" v-nav="{title: 'Tabbar 单独使用', showBackButton: true, onBackButtonClick: back}"
+  <div class="page has-navbar page-swiper" v-nav="{title: 'Tabbar 单独使用', showBackButton: true}"
     v-tabbar="{'menus': menus, menuColor: '#888', activeMenuColor: '#FF4400', onMenuClick: menuClicked}">
       <div class="page-content padding-top">
         <p class="text-center" v-if="show == 0">Home</p>
@@ -43,10 +43,6 @@
     },
 
     methods: {
-      back() {
-        $router.back({ path: '/' })
-      },
-
       menuClicked(menuIndex) {
         this.show = menuIndex
       }

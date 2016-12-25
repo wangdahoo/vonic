@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '弹出式提醒', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '弹出', showBackButton: true}">
     <div class="page-content">
 
       <div class="row">
@@ -90,16 +90,6 @@
     data() {
       return {
         username: ''
-      }
-    },
-
-    ready() {
-
-    },
-
-    methods: {
-      back() {
-        $router.back('/')
       }
     }
   }

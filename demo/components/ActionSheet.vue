@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'ActionSheet', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: 'ActionSheet', showBackButton: true}">
     <div class="page-content padding-top">
       <div class="item item-icon-right thin-border" @click="showActionSheet()">
         iOS<span class="item-note">默认</span>
@@ -35,10 +35,6 @@
             }
           }
         })
-      },
-
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

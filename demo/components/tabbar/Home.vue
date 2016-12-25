@@ -21,7 +21,7 @@
 
     methods: {
       back() {
-        $router.back({ path: '/' })
+        $router.back({ path: '/home' })
       }
     }
   }

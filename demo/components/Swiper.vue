@@ -1,13 +1,13 @@
 <template>
-  <div class="page has-navbar page-swiper" v-nav="{title: '轮播', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar page-swiper" v-nav="{title: '轮播', showBackButton: true}">
     <div class="page-content padding-top">
 
-      <div thin-border class="item item-icon-right" v-link="{ path: '/widgets/swiperDefault' }">
+      <div thin-border class="item item-icon-right" v-link="{ path: '/advanced/swiperDefault' }">
         Horizontal (default)<span class="item-note">水平 (默认)</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
 
-      <div thin-border class="item item-icon-right" v-link="{ path: '/widgets/swiperVertical' }">
+      <div thin-border class="item item-icon-right" v-link="{ path: '/advanced/swiperVertical' }">
         Vertical <span class="item-note">垂直</span>
         <i class="icon ion-ios-arrow-right"></i>
       </div>
@@ -63,7 +63,6 @@
 
 </style>
 <script>
-
   import {Swiper, SwiperItem, Popup} from 'vonic'
 
   export default{
@@ -117,10 +116,6 @@
         })
 
         popup.show()
-      },
-
-      back() {
-        $router.back({path: '/'})
       }
     }
   }

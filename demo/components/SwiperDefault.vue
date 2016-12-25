@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '水平 (默认)', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '水平 (默认)', showBackButton: true}">
     <div class="page-content">
       <swiper direction="horizontal" width="100%" height="150">
         <swiper-item>
@@ -51,23 +51,6 @@
     components:{
       Swiper,
       SwiperItem
-    },
-
-    props: {
-
-    },
-
-    data() {
-      return {
-      }
-    },
-
-    ready() {
-
-    },
-
-    methods: {
-
     }
   }
 </script>

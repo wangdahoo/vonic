@@ -12,35 +12,31 @@
             iconOn: 'ion-ios-home',
             iconOff: 'ion-ios-home-outline',
             text: '首页',
-            path: '/widgets/tabbar/home'
+            path: '/advanced/tabbar/home'
           },
           {
             iconOn: 'ion-ios-pricetags',
             iconOff: 'ion-ios-pricetags-outline',
             text: '折扣',
-            path: '/widgets/tabbar/discount'
+            path: '/advanced/tabbar/discount'
           },
           {
             iconOn: 'ion-ios-cart',
             iconOff: 'ion-ios-cart-outline',
             text: '购物车',
-            path: '/widgets/tabbar/cart'
+            path: '/advanced/tabbar/cart'
           },
           {
             iconOn: 'ion-ios-person',
             iconOff: 'ion-ios-person-outline',
             text: '我的',
-            path: '/widgets/tabbar/user'
+            path: '/advanced/tabbar/user'
           }
         ]
       }
     },
 
     methods: {
-      back() {
-        $router.back({ path: '/' })
-      },
-
       menuClicked(menuIndex) {
         console.log(menuIndex)
       }

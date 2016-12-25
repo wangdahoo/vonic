@@ -33,13 +33,6 @@
         gender: 0,
         genderOptions: ["男", "女"]
       }
-    },
-
-    ready() {
-
-    },
-
-    methods: {
     }
   }
 </script>

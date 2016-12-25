@@ -27,12 +27,6 @@
         toggleText: "是否开启推送",
         pushNotification: true
       }
-    },
-
-    methods: {
-      back() {
-        $router.back({path: '/'})
-      }
     }
   }
 </script>
