@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '悬浮标签效果', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '悬浮标签效果', showBackButton: true}">
     <div class="page-content padding-top">
       <div class="item item-divider">输入文字试试:</div>
 

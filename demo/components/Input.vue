@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '输入框', showBackButton: true, onBackButtonClick: back}">
+  <div class="page has-navbar" v-nav="{title: '输入框', showBackButton: true}">
     <div class="page-content padding-top">
 
       <div class="item item-icon-right thin-border" v-link="{ path: '/widgets/inputDefault' }">

@@ -139,7 +139,6 @@
       },
 
       wrapper() {
-        console.log(this.wrapperSelector ? this.wrapperSelector : '[von-sidebar-container]')
         return document.querySelector(this.wrapperSelector ? 
           this.wrapperSelector : '[von-sidebar-container]')
       }

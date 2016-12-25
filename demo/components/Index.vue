@@ -230,6 +230,10 @@
       //    this.sidebar = sidebar
       //  })
 
+      // setInterval(() => {
+      //   console.log(document.querySelector('.components').scrollTop)
+      // }, 100)
+
     },
 
     destroyed() {

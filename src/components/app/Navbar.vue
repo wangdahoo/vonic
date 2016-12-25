@@ -286,7 +286,7 @@
           return
         }
 
-        $router.nextDirection('back')
+        document.querySelector('[von-app]').setAttribute('transition-direction', 'back')
         history.go(-1)
       },
 

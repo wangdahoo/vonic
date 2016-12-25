@@ -28,6 +28,11 @@ let VonicAppConfig = {
   routerOptions: {}
 }
 
+const nextDirection = (direction) => {
+  let el = document.querySelector('[von-app]')
+  if (el) el.setAttribute('transition-direction', direction);
+}
+
 class VonicApp {
   constructor(routers, defaultRouterUrl) {
     this.routers = routers
@@ -53,22 +58,17 @@ class VonicApp {
 
     router.start(app, 'von-app')
 
-    router.nextDirection = (direction) => {
-      let target = document.querySelector('[von-app]')
-      if (target) target.setAttribute('transition-direction', direction);
-    }
-
     router._go = router.go
 
     router.forward = router.go = (target) => {
       if (window.__block_touch__) return
-      router.nextDirection('forward')
+      nextDirection('forward')
       setTimeout(() => { router._go(target) })
     }
 
     router.back = (target) => {
       if (window.__block_touch__) return
-      router.nextDirection('back')
+      nextDirection('back')
       setTimeout(() => { router._go(target) })
     }
 
@@ -122,5 +122,25 @@ export default {
   getConfig(name) {
     if (['beforeEach', 'afterEach', 'routerOptions'].indexOf(name) == -1) throw 'Unknown config name.'
     return VonicAppConfig[name]
+  },
+
+  nextDirection: nextDirection,
+
+  root() {
+    return document.querySelector('[von-app]')
+  },
+
+  pageContentScrollTop(scrollTop) {
+    const root = document.querySelector('[von-app]')
+    if (typeof scrollTop == 'number') {
+      const content = root && root.querySelectorAll('.page .page-content')[1]
+      if (content) {
+        content.scrollTop = scrollTop
+      }
+    } else {
+      return root && root.querySelector('.page .page-content')
+        ? root.querySelector('.page .page-content').scrollTop
+        : 0
+    }
   }
 }
