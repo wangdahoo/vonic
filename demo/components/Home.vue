@@ -215,6 +215,10 @@
       toggleSidebarRight() {
         this.sidebarRight.toggle()
       },
+
+      back() {
+        $router.back({path: '/'})
+      }
     }
   }
 </script>
