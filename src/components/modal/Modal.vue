@@ -110,17 +110,17 @@
       },
 
       destroy() {
-        this.instances.forEach((instance) => {
-          instance.$destroy()
-        })
+        for (let delegateId in this.instances) {
+          this.instances[delegateId].$destroy()
+        }
 
-        this.instances = []
+        this.instances = {}
         let wrapper = document.querySelector('[von-modal-wrapper]')
         wrapper.innerHTML = ''
       },
 
       getDelegate(delegateId) {
-        return this.instances.find((v, k) => { return k == delegateId })
+        return this.instances[delegateId]
       }
     }
   }

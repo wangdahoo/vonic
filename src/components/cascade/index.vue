@@ -26,13 +26,13 @@
 <script>
   import Vue from 'vue'
   import channel from '../app/channel'
-  
+
   const filter = (filters, data) => {
     let options = []
 
-    data.forEach((d) => {
+    Array.prototype.forEach.call(data, (d) => {
       let r = true
-      filters.forEach((f, i) => {
+      Array.prototype.forEach.call(filters, (f, i) => {
         r = r && f == d[i]
       })
       if (r) {
