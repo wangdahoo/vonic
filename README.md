@@ -19,7 +19,7 @@
 </p>
 
 ## Notice
-- The first production version will be released this December.
+- v0.6.0-beta released.
 
 ## Features
 - Equip with Vue.js, Vue-Router, ES6 & Babel 6
