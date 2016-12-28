@@ -229,17 +229,23 @@
     },
 
     created() {
-      // center leave
-      let cl;
+      // center & center leave
+      let c, cl;
 
       channel.$on('PageTransitionEvent', (data) => {
-        navTransitionStart()
-
         let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
         this.title = data.title ? data.title : ''
         this.hideNavbar = !!data.hideNavbar
 
-        let c = centerElement(this.$el, this.title, direction)
+        // 浏览器前进、后退按钮被连续点击
+        if (document.querySelectorAll('[von-nav] .center').length > 1) {
+          c.querySelector('.title').innerHTML = this.title
+          return
+        }
+
+        navTransitionStart()
+
+        c = centerElement(this.$el, this.title, direction)
 
         setTimeout(() => {
           titleIn(c.querySelector('.title'))
