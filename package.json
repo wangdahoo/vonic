@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "0.6.0-alpha",
+  "version": "0.6.0-beta",
   "main": "dist/vonic.min.js",
   "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
