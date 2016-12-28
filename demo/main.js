@@ -185,6 +185,11 @@ const beforeEach = (t) => {
 }
 
 const afterEach = (t) => {
+  const to = t.to.path
+  const from = t.from.path
+  // [Custom Business] Never use history scrollTop when '/' => '/home'
+  if (from == '/' && to == '/home') return
+
   const h = sess.get(t.to.path)
   if (h && h.scrollTop) {
     Vue.nextTick(() => {
