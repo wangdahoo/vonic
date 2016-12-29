@@ -59,6 +59,7 @@
       -webkit-overflow-scrolling: touch;
     
       .item {
+        min-height: 44px;
         height: 44px;
         padding: 12px;
         text-align: center;

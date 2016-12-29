@@ -277,9 +277,6 @@
       })
     },
 
-    ready() {
-    },
-
     methods: {
       backButtonClicked(e) {
         if (window.__block_touch__) {

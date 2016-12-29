@@ -90,10 +90,6 @@
       }
     },
 
-    created() {
-
-    },
-
     ready() {
       this.$el.style.width = this.width
       this.$el.style.height = this.height

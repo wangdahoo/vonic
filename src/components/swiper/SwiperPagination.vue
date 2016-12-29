@@ -57,10 +57,6 @@
       }
     },
 
-    ready() {
-
-    },
-
     methods: {
       init() {
         let circles = []

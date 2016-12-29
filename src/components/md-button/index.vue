@@ -56,10 +56,6 @@
       }
     },
 
-    ready() {
-
-    },
-
     methods: {
       onClick(e) {
         e.preventDefault()
