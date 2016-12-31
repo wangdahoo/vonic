@@ -6,7 +6,7 @@
         选择感兴趣的板块:
       </div>
 
-      <von-checkbox :options="topics" :value.sync="chosenTopics"></von-checkbox>
+      <von-checkbox :options="topics" :value.sync="chosenTopics" theme="positive"></von-checkbox>
 
       <p class="padding">
         chosen topics: {{ chosenTopics }}

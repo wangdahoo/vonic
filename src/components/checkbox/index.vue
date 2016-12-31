@@ -4,8 +4,7 @@
            v-for="(index, option) in options">
       <input type="checkbox" name="{{ checkboxName }}" id="{{ checkboxName + '-' + index }}" @click="onOptionClick(index)">
       <span>{{ option }}</span>
-      <i class="icon"
-         :class="{'ion-ios-checkmark-empty assertive': isChecked(index)}"></i>
+      <i class="{{ isChecked(index) ? ('icon ion-ios-checkmark-empty ' + theme) : '' }}"></i>
     </label>
   </div>
 </template>
@@ -41,6 +40,11 @@
         type: Array,
         required: true
       },
+
+      theme: {
+        type: String,
+        default: 'assertive'
+      }
     },
 
     methods: {

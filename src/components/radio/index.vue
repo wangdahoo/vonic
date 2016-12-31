@@ -3,8 +3,7 @@
     <label class="item item-icon-left"
            v-for="(index, option) in options">
       <input type="radio" name="{{ radioId }}" @click="onOptionClick(index)">
-      <i class="icon ion-ios-checkmark"
-         :class="{'grey': value!=index, 'assertive': value==index}"></i>
+      <i class="{{ 'icon ion-ios-checkmark ' + (value == index ? theme : 'grey') }}"></i>
       <span>{{ option }}</span>
     </label>
   </div>
@@ -62,6 +61,11 @@
         type: Number,
         required: true
       },
+
+      theme: {
+        type: String,
+        default: 'assertive'
+      }
     },
 
     data() {
