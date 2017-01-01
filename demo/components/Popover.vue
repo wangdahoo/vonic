@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <button class="button button-positive button-block" id="btn-top">上</button>
+          <button class="button button-positive button-block" id="btn-top" @click="onClicked()">上</button>
         </div>
         <div class="col"></div>
       </div>
@@ -83,13 +83,15 @@
       VonInput
     },
 
-    props: {
-
-    },
-
     data() {
       return {
         username: ''
+      }
+    },
+
+    methods: {
+      onClicked() {
+        console.log('button clicked')
       }
     }
   }

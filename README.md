@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%200.6.0%20beta%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%200.6.0%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%201.0.28%20-green.svg">
 </p>
 
@@ -19,7 +19,7 @@
 </p>
 
 ## Notice
-- v0.6.0-beta released.
+- v0.6.0 released.
 
 ## Features
 - Equip with Vue.js, Vue-Router, ES6 & Babel 6

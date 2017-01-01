@@ -41,7 +41,7 @@ import TabBarUser from './components/tabbar/User'
 import PageFromTabbar from './components/tabbar/PageFromTabbar'
 import TabbarWithoutRoutes from './components/TabbarWithoutRoutes'
 
-const routers = {
+const routes = {
   '/': {
     component: Index
   },
@@ -203,8 +203,8 @@ Vonic.app.setConfig('beforeEach', beforeEach)
 Vonic.app.setConfig('afterEach', afterEach)
 
 Vue.use(Vonic.app, {
-  routers: routers,
-  defaultRouterUrl: '/',
+  routes: routes,
+  defaultRouteUrl: '/',
   defaultNavTheme: 'light'
 })
 

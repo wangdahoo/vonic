@@ -58,11 +58,8 @@
   }
 
   const onScroll = (e) => {
-    // console.log('onPageContentScroll', e.target.scrollTop)
     pageContent().setAttribute('scrollTop', e.target.scrollTop)
   }
-
-  const nope = () => {}
 
   export default {
     components: {
@@ -109,7 +106,7 @@
       }
     },
 
-    data(){
+    data() {
       return {
         marginTop: 0,
         marginLeft: 0,
@@ -129,6 +126,8 @@
             Vue.nextTick(() => {
               if (_onclick) _onclick(e)
             })
+          } else {
+            if (_onclick) _onclick(e)
           }
         }
 
@@ -144,6 +143,8 @@
 
     methods: {
       show() {
+        console.log('show!')
+
         let width = this.$el.offsetWidth
         let height = this.$el.offsetHeight
         this.marginTop = '-' + (height / 2) + 'px'
@@ -192,7 +193,7 @@
             this.state = 2
           })
 
-          pageContent().addEventListener('touchstart', this.pageContentTouchStart)
+          pageContent().addEventListener('touchmove', this.pageContentTouchMove)
 
           setTimeout(() => {
             this.hide()
@@ -206,11 +207,10 @@
           this.state = 0
         }, 300)
 
-        pageContent().removeEventListener('touchstart', this.pageContentTouchStart)
+        pageContent().removeEventListener('touchmove', this.pageContentTouchMove)
       },
 
-      pageContentTouchStart(e) {
-        // e.preventDefault()
+      pageContentTouchMove() {
         this.hide()
       }
     }

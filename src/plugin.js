@@ -34,9 +34,9 @@ const nextDirection = (direction) => {
 }
 
 class VonicApp {
-  constructor(routers, defaultRouterUrl) {
-    this.routers = routers
-    this.defaultRouterUrl = defaultRouterUrl
+  constructor(routes, defaultRouteUrl) {
+    this.routes = routes
+    this.defaultRouteUrl = defaultRouteUrl
   }
 
   start() {
@@ -45,7 +45,7 @@ class VonicApp {
     let router = new VueRouter(Object.assign({}, 
       defaultRouterOptions, VonicAppConfig.routerOptions))
 
-    router.map(this.routers)
+    router.map(this.routes)
 
     if (typeof VonicAppConfig.beforeEach == 'function')
       router.beforeEach(VonicAppConfig.beforeEach)
@@ -53,7 +53,7 @@ class VonicApp {
       router.afterEach(VonicAppConfig.afterEach)
 
     router.redirect({
-      '*': this.defaultRouterUrl
+      '*': this.defaultRouteUrl
     })
 
     router.start(app, 'von-app')
@@ -80,11 +80,11 @@ export default {
   install(Vue, options) {
     Vue.transition('view', {enterClass: 'view-enter', leaveClass: 'view-leave'})
 
-    const routers = options.routers
-    const defaultRouterUrl = options.defaultRouterUrl
+    const routes = options.routes
+    const defaultRouteUrl = options.defaultRouteUrl
     const defaultNavTheme = options.defaultNavTheme
 
-    let app = new VonicApp(routers, defaultRouterUrl)
+    let app = new VonicApp(routes, defaultRouteUrl)
     app.start()
     window.$app = app
 

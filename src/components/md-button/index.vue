@@ -67,12 +67,10 @@
 
         btn.appendChild(ripple)
         
+        ripple.classList.add('md-ripple-effect')
         setTimeout(() => {
-          ripple.classList.add('md-ripple-effect')
-          setTimeout(() => {
-            btn.removeChild(ripple)
-          }, 2000)
-        })
+          btn.removeChild(ripple)
+        }, 2000)
       }
     }
   }

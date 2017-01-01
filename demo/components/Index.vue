@@ -15,7 +15,7 @@
         <div class="list" thin-border>    
           <div class="item item-icon-left item-icon-right" @click="toDemo()">
             <i class="icon ion-heart assertive"></i>
-            <span class="item-note">Demos</span>
+            <span class="item-note">Demo</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
 
