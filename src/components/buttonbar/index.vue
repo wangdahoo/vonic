@@ -17,10 +17,6 @@
     .button-small {
       font-size: 12px;
       line-height: 28px;
-
-      &.button-outline {
-        // background-color: #FFF;
-      }
     }
 
     >.button:first-child {
