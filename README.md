@@ -29,10 +29,7 @@
 - [Starter Project](https://github.com/wangdahoo/vonic-template) for Development Quick Start
 
 ## Components
-- Typography
-- App (Application Instance & Navigation Bar)
-- Button
-- MdButtons (Material Design Button)
+- Material Design Button
 - Input
 - Search
 - Radio
@@ -41,7 +38,7 @@
 - Popover
 - Counter
 - Toast
-- Loading (Preloader)
+- Loading
 - List
 - Cells
 - Tabs
@@ -51,6 +48,7 @@
 - Scroll
 - [VueScroller](https://github.com/wangdahoo/vue-scroller)
 - Cascade
+- Dialog
 - Popup
 - Modal
 - ActionSheet
@@ -58,13 +56,14 @@
 - TabBar
 
 ## Getting started
-Create project with on-line webpack template.
+
+quick start with vue-cli.
 ```
-$ vue init wangdahoo/vonic-template my-project
-$ cd my-project
-$ npm install
+$ npm i vue-cli -g
+$ vue init wangdahoo/vonic-template my-vonic-app
+$ cd my-vonic-app
+$ yarn install
 ```
-> please make sure that you have vue-cli installed.
 
 Run project
 ```bash
@@ -72,6 +71,9 @@ $ npm run dev
 ```
 
 That's it.
+
+## Documents
+- [中文文档](https://wangdahoo.gitbooks.io/vonic/content/zh-CN/)
 
 ## Thanks to
 - [Ionic](http://ionicframework.com/)

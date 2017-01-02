@@ -24,6 +24,12 @@
             <span class="item-note">GitHub</span>
             <i class="icon ion-ios-arrow-right"></i>
           </div>
+
+          <div class="item item-icon-left item-icon-right" @click="toDoc()">
+            <i class="icon ion-ios-book positive"></i>
+            <span class="item-note">Doc</span>
+            <i class="icon ion-ios-arrow-right"></i>
+          </div>          
         </div>
       </div>
     </div>
@@ -33,7 +39,7 @@
     width: 100%;
     text-align: center;
     img {
-      margin: 40px auto 0 auto;
+      margin: 30px auto 0 auto;
     }
   }
 
@@ -66,6 +72,10 @@
 
       toGitHub() {
         location.href = 'https://github.com/wangdahoo/vonic'
+      },
+
+      toDoc() {
+        location.href = 'https://wangdahoo.gitbooks.io/vonic/content/zh-CN/'
       }
     }
   }
