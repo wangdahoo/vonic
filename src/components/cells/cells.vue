@@ -1,13 +1,13 @@
 <template>
   <div class="cells">
-    <div class="row" v-for="r in rows">
-      <div class="hairline-top"></div>
+    <div class="row" v-for="(index, r) in rows">
+      <div v-if="index != 0 || (outerBorder == true || outerBorder == 'true')" class="hairline-top"></div>
       <div class="col" v-for="c in cols" @click="cellClicked(r*cols.length + c)">
         <div v-if="c" class="hairline-left"></div>
         {{{ items[r*cols.length + c] }}}
       </div>
     </div>
-    <div class="hairline-bottom"></div>
+    <div v-if="outerBorder == true || outerBorder == 'true'" class="hairline-bottom"></div>
   </div>
 </template>
 
@@ -68,7 +68,11 @@
         type: Array,
         required: true
       },
-      onCellClick: Function
+      onCellClick: Function,
+      outerBorder: {
+        type: [String, Boolean],
+        default: true
+      }
     },
 
     data() {

@@ -11,6 +11,13 @@
 
       <!-- 4 x 3 -->
       <cells class="cells-44" :items="getItems(16)" :on-cell-click="onCellClick" row="4" col="4"></cells>
+
+      <!-- no outer border -->
+      <div class="item item-divider">
+        无外边框：
+      </div>
+      <cells outer-border="false" class="cells-22" :items="getItems(3)" :on-cell-click="onCellClick" row="2" col="2"></cells>
+
     </div>
   </div>
 </template>
@@ -37,11 +44,15 @@
   }
 
   .cells.cells-44 > .row > .col {
-    padding: 30px;
+    padding: 30px 0;
   }
 
   .cells-33 > .row > .col {
-    padding: 50px;
+    padding: 50px 0;
+  }
+
+  .cells-22 > .row > .col {
+    padding: 30px 0;
   }
 
 </style>
