@@ -177,10 +177,21 @@
       //    this.sidebar = sidebar
       //  })
 
+      /* $storage sample */
+      this.handler = (e) => {
+        console.log('time flies.', e)
+      }
+      $storage.on('now', this.handler)
+      this.tid = setInterval(() => {
+        $storage.set('now', new Date())
+      }, 1000)
+
     },
 
     destroyed() {
       $sidebar.destroy()
+      $storage.off('now', this.handler)
+      if (this.tid) clearInterval(this.tid)
     },
 
     methods: {

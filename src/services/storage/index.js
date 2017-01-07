@@ -26,6 +26,13 @@ function isStorageSupported(localStorage) {
 
 let ls = 'localStorage' in global && global.localStorage ? global.localStorage : stub
 
+let se = document.createEvent("StorageEvent")
+
+function dispatch(key, value) {
+  se.initStorageEvent('storage', false, false, key, ls.getItem(key) || null, JSON.stringify(value) || null, '', '')
+  global.dispatchEvent(se);
+}
+
 if (!isStorageSupported(ls)) {
   ls = stub
 }
@@ -47,6 +54,7 @@ function get(key) {
 
 function set(key, value) {
   try {
+    dispatch(key, value)
     ls.setItem(key, JSON.stringify(value))
     return true
   } catch (e) {
@@ -55,6 +63,7 @@ function set(key, value) {
 }
 
 function remove(key) {
+  dispatch(key, value)
   return ls.removeItem(key)
 }
 
