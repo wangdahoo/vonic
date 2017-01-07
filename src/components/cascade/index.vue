@@ -1,7 +1,7 @@
 <template>
   <div class="list list-ios thin-border von-cascade">
-    <label v-for="($index, f) in fields" 
-           class="item item-ios item-icon-right" 
+    <label v-for="($index, f) in fields"
+           class="item item-ios item-icon-right"
            @click="showCascadePanel($index)">
       {{ f }}
       <i class="icon ion-ios-arrow-right"></i>
@@ -30,14 +30,15 @@
   const filter = (filters, data) => {
     let options = []
 
-    Array.prototype.forEach.call(data, (d) => {
+    data.forEach((d) => {
       let r = true
-      Array.prototype.forEach.call(filters, (f, i) => {
+      filters.forEach((f, i) => {
         r = r && f == d[i]
       })
       if (r) {
         let option = d[filters.length]
-        if (!!option && options.findIndex((o) => { return o == option }) == -1) {
+
+        if (!!option && options.indexOf(option) == -1) {
           options.push(option)
         }
       }
@@ -73,7 +74,7 @@
     ready() {
       this.options = this.filter()
     },
-    
+
     methods: {
       showCascadePanel(index) {
         let v = this.value, f = this.fields
