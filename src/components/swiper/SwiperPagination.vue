@@ -3,8 +3,8 @@
     <span v-for="($index, c) in circles"
           class="circle"
           :style="{
-            'backgroundColor': pagerColor,
-            'opacity': activeIndex == $index ? 1 : 0.4
+            'backgroundColor': activeIndex == $index ? pagerColor : pagerBgColor,
+            'opacity': (pagerColor == pagerBgColor) ? (activeIndex == $index ? '1' : '0.4') : '1'
           }"></span>
   </div>
 </template>
@@ -43,10 +43,18 @@
 
       pagerColor: {
         type: String,
-        default: '#333',
         validator(v) {
           return re_color.test(v)
-        }
+        },
+        required: true
+      },
+
+      pagerBgColor: {
+        type: String,
+        validator(v) {
+          return re_color.test(v)
+        },
+        required: true
       }
     },
 

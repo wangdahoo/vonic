@@ -4,7 +4,11 @@
       <slot></slot>
     </div>
 
-    <pagination v-if="direction == 'horizontal'" :size="itemCount" :pager-color="pagerColor" v-ref:pagination></pagination>
+    <pagination v-if="direction == 'horizontal'"
+      :size="itemCount"
+      :pager-color="pagerColor"
+      :pager-bg-color="pagerBgColor"
+      v-ref:pagination></pagination>
   </div>
 </template>
 <style lang='scss'>
@@ -13,8 +17,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
 
     .swiper-item {
       height: 100%;
@@ -78,6 +80,10 @@
         coerce: widthAndHeightCoerce
       },
       pagerColor: {
+        type: String,
+        default: '#333'
+      },
+      pagerBgColor: {
         type: String,
         default: '#333'
       }
