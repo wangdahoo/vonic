@@ -1,4 +1,3 @@
-import axios from 'axios'
 import Vue from 'vue'
 import Sidebar from './Sidebar'
 
@@ -53,7 +52,7 @@ class VonicSidebar {
         _sidebars[refId].$destroy()
         _sidebars[refId] = undefined
       }
-      
+
       let wrapper = document.querySelector(`[von-sidebar-container-${refId}]`)
       wrapper.innerHTML = ''
       document.querySelector('[von-app]').removeChild(wrapper)

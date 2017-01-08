@@ -1,5 +1,7 @@
-import 'axios'
+import axios from 'axios'
+window.axios = axios
 
+// Basic
 import MdButton from './components/md-button'
 import {Input, Search} from './components/input'
 import Counter from './components/counter'

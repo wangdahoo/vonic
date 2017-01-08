@@ -54,9 +54,18 @@
         required: true
       },
 
+      ajaxUrl: {
+        type: String,
+        default: undefined
+      },
+
+      ajaxData: {
+        type: String,
+        default: undefined
+      },
+
       data: {
-        type: Array,
-        required: true
+        type: Array
       },
 
       value: {
@@ -72,7 +81,16 @@
     },
 
     ready() {
-      this.options = this.filter()
+      if (this.ajaxUrl) {
+        axios.get(this.ajaxUrl)
+          .then(response => response.data)
+          .then((data) => {
+            this.data = this.ajaxData ? data[this.ajaxData] : data
+            this.options = this.filter()
+          })
+      } else {
+        this.options = this.filter()
+      }
     },
 
     methods: {

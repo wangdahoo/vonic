@@ -1,4 +1,3 @@
-import axios from 'axios'
 import Vue from 'vue'
 import Popup from './components/Popup'
 
@@ -11,12 +10,20 @@ const extend = (target, source) => {
 }
 
 class VonicPopup {
-  fromTemplate(template, options) {
-    return this._init(template, options)
+  fromTemplateUrl(url, options) {
+    return new Promise((resolve, reject) => {
+      axios.get(url)
+        .then((response) => {
+          return response.data
+        })
+        .then((template) => {
+          resolve(this.fromTemplate(template, options))
+        })
+    })
   }
 
-  fromTemplateUrl(url, options) {
-
+  fromTemplate(template, options) {
+    return this._init(template, options)
   }
 
   _vm = undefined

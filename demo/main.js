@@ -157,9 +157,9 @@ const routes = {
 
 /**
  * !! Head up
- * Using sessionStorage, Vonic.app.pageContentScrollTop, Vonic.app.nextDirection 
+ * Using sessionStorage, Vonic.app.pageContentScrollTop, Vonic.app.nextDirection
  * to handle history view transition and preview page position
- * 
+ *
  */
 
 import sess from './sess'
@@ -168,7 +168,7 @@ const beforeEach = (t) => {
   const to = t.to.path
   const from = t.from.path
   const scrollTop = Vonic.app.pageContentScrollTop()
-  
+
   const h = sess.get(to)
   if (h && h.history || (from && from.indexOf(to) === 0)) {
     Vonic.app.nextDirection('back')

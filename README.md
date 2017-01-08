@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%201.0.1%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%201.0.2%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%201.0.28%20-green.svg">
 </p>
 
@@ -19,7 +19,7 @@
 </p>
 
 ## Notice
-- v1.0.0 released.
+- v1.0.2 released.
 
 ## [Change logs](https://github.com/wangdahoo/vonic/blob/master/CHANGELOG.md)
 

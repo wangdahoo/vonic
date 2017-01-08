@@ -5,6 +5,16 @@
         选择您所属的行政区划：
       </div>
       <cascade :fields="fields" :data="cities" :value.sync="value"></cascade>
+
+      <!-- 使用远程数据 -->
+      <!--
+      <cascade
+        :fields="fields"
+        ajax-url="path/to/data"
+        :value.sync="value"
+      ></cascade>
+      -->
+
     </div>
   </div>
 </template>

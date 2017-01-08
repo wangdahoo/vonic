@@ -125,6 +125,16 @@
         let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
 
         popup.show()
+
+        /* fromTemplateUrl sample */
+
+        // let path_to_template = ''
+        // $popup
+        //   .fromTemplateUrl(path_to_template, options)
+        //   .then((popup) => {
+        //     popup.show()
+        //   })
+
       },
 
       multiMode() {

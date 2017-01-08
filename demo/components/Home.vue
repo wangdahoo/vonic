@@ -168,18 +168,21 @@
         </p>
       `
       this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
+
       this.sidebarRight = $sidebar.fromTemplate('<h5>右边栏</h5>', {position: 'right'})
+
+      /* fromTemplateUrl sample */
 
       // let path_to_template = ''
       // $sidebar
-      //  .fromTemplateUrl(path_to_template, {position: 'right'}) // right bar
-      //  .then((sidebar) => {
-      //    this.sidebar = sidebar
-      //  })
+      //   .fromTemplateUrl(path_to_template, {position: 'right'}) // right bar
+      //   .then((sidebar) => {
+      //     this.sidebarRight = sidebar
+      //   })
 
       /* $storage sample */
       this.handler = (e) => {
-        console.log('time flies.', e)
+        // console.log('time flies.', e)
       }
       $storage.on('now', this.handler)
       this.tid = setInterval(() => {
