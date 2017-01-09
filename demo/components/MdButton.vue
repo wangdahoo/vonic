@@ -72,13 +72,7 @@
   </div>
 </template>
 <script>
-  import {MdButton} from 'vonic'
-
   export default {
-    components: {
-      MdButton
-    },
-
     methods: {
       onButtonClicked() {
         console.log('button clicked!')

@@ -57,13 +57,7 @@
 
 </style>
 <script>
-  import {Cells} from 'vonic'
-
   export default{
-    components: {
-      Cells
-    },
-
     data(){
       return {
         icons: [

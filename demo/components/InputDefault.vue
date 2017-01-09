@@ -22,17 +22,8 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
-  import {VonInput} from 'vonic'
-
   export default{
-    components: {
-      VonInput
-    },
-
     data(){
       return {
         username: '',

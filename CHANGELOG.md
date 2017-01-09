@@ -9,3 +9,6 @@
 - Add **ajaxUrl** and **ajaxData** options for **Cascade**, in purpose of loading data by Ajax.
 - Add **fromTemplateUrl** method for **$popup**, in purpose of loading popup template by Ajax.
 - Fix **$storage.on** bug.
+
+### 2017-01-10 v1.1.0
+- Register vonic components when `Vue.use(Vonic.app, ...)`.

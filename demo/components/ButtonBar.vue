@@ -29,17 +29,11 @@
       </div>
 
     </div>
-    
+
   </div>
 </template>
 <script>
-  import {ButtonBar} from 'vonic'
-
   export default{
-    components: {
-      ButtonBar
-    },
-
     data(){
       return {
         tabs: [

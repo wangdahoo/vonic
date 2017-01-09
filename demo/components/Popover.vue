@@ -75,14 +75,7 @@
 
 </style>
 <script>
-  import {Popover, VonInput} from 'vonic'
-
   export default{
-    components:{
-      Popover,
-      VonInput
-    },
-
     data() {
       return {
         username: ''

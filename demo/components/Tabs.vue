@@ -31,13 +31,7 @@
   }
 </style>
 <script>
-  import {Tabs} from 'vonic'
-
   export default{
-    components: {
-      Tabs
-    },
-
     data(){
       return {
         tabs: [

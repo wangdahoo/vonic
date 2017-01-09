@@ -29,15 +29,7 @@
   }
 </style>
 <script>
-  import {Counter, List, Item} from 'vonic'
-
   export default{
-    components: {
-      Counter,
-      List,
-      Item
-    },
-
     data(){
       return {
         cnt: 0,

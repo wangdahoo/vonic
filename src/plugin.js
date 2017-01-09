@@ -42,7 +42,7 @@ class VonicApp {
   start() {
     let app = Vue.extend(VonApp)
 
-    let router = new VueRouter(Object.assign({}, 
+    let router = new VueRouter(Object.assign({},
       defaultRouterOptions, VonicAppConfig.routerOptions))
 
     router.map(this.routes)

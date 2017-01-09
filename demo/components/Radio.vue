@@ -16,18 +16,8 @@
 
   </div>
 </template>
-<style lang="scss" scoped>
-
-
-</style>
 <script>
-  import {VonRadio} from 'vonic'
-
   export default{
-    components: {
-      VonRadio
-    },
-
     data(){
       return {
         gender: 0,

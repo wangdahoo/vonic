@@ -15,13 +15,7 @@
   </div>
 </template>
 <script>
-  import {VonToggle} from 'vonic'
-
   export default{
-    components: {
-      VonToggle
-    },
-
     data(){
       return {
         toggleText: "是否开启推送",

@@ -22,13 +22,7 @@
   }
 </style>
 <script>
-  import {Scroll} from 'vonic'
-
   export default{
-    components: {
-      Scroll
-    },
-
     data() {
       return {
         items: []

@@ -138,7 +138,8 @@
   import utils from './utils'
 
   function getTitleTransitionDistance(t) {
-    return (document.body.offsetWidth - t.offsetWidth) / 2 - 10
+    // return (document.body.offsetWidth - t.offsetWidth) / 2 - 10
+    return (document.body.offsetWidth - t.offsetWidth) / 2
   }
 
   function centerElement(navbar, title, direction) {
@@ -153,7 +154,7 @@
     } else {
       t.className = 'title'
     }
-    
+
     t.innerHTML = title
 
     let reverse = direction == 'back'

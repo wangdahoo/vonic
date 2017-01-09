@@ -1,6 +1,6 @@
 <template>
   <div class="page has-navbar" v-nav="{title: 'Vue Scroller', showBackButton: true}">
-    <scroll class="page-content"
+    <scroller class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite"
             v-ref:scroller>
@@ -8,19 +8,13 @@
            class="item thin-border" :class="{'item-stable': index % 2 == 0}">
         {{ item }}
       </div>
-    </scroll>
+    </scroller>
   </div>
 
 </template>
 
 <script>
-  import {VueScroller} from 'vonic'
-
   export default {
-    components: {
-      'scroll': VueScroller
-    },
-
     data () {
       return {
         items: []

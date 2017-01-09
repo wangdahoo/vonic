@@ -18,13 +18,7 @@
 
 </style>
 <script>
-  import {VonCheckbox} from 'vonic'
-
   export default{
-    components: {
-      VonCheckbox
-    },
-
     data(){
       return {
         chosenTopics: [],

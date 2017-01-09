@@ -33,7 +33,7 @@
       <div class="list list-ios" thin-border>
         <div class="item item-ios">
           Item - 1
-          <span class="item-note"></span>  
+          <span class="item-note"></span>
         </div>
         <div class="item item-ios">Item - 2</div>
         <div class="item item-ios">Item - 3</div>
@@ -92,15 +92,7 @@
   </div>
 </template>
 <script>
-  import {List,Item,HairlineItem} from 'vonic'
-
   export default {
-    components: {
-      List,
-      Item,
-      'hl-item': HairlineItem
-    },
-
     data(){
       return {
 

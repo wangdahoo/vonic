@@ -19,13 +19,7 @@
   </div>
 </template>
 <script>
-  import {Cascade} from 'vonic'
-
   export default {
-    components: {
-      Cascade
-    },
-
     data() {
       return {
         fields: [

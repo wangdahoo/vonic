@@ -44,13 +44,3 @@
   }
 
 </style>
-<script>
-  import {Swiper, SwiperItem} from 'vonic'
-
-  export default{
-    components:{
-      Swiper,
-      SwiperItem
-    }
-  }
-</script>

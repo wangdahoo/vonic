@@ -18,13 +18,7 @@
 
 </style>
 <script>
-  import {VueScroller} from 'vonic'
-
   export default{
-    components: {
-      'scroller': VueScroller
-    },
-
     data(){
       return {
         items: []

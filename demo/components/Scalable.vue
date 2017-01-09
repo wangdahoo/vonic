@@ -61,13 +61,7 @@
 
 </style>
 <script>
-  import { Scalable } from 'vonic'
-
   export default {
-    components: {
-      Scalable
-    },
-
     data(){
       return {
 

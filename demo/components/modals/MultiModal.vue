@@ -18,14 +18,9 @@
 
 </style>
 <script>
-  import {VueScroller} from 'vonic'
   import DefaultModal from './DefaultModal'
 
   export default{
-    components: {
-      'scroller': VueScroller
-    },
-
     methods: {
       toggleModal() {
         $vonicModal.hide()

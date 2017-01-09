@@ -14,15 +14,8 @@
     </div>
   </div>
 </template>
-
 <script>
-  import {VonInput} from 'vonic'
-
   export default{
-    components: {
-      VonInput
-    },
-
     data(){
       return {
         username: '',

@@ -63,15 +63,7 @@
 
 </style>
 <script>
-  import {Swiper, SwiperItem, Popup} from 'vonic'
-
   export default{
-    components: {
-      Swiper,
-      SwiperItem,
-      Popup
-    },
-
     data() {
       return {
         popupShowed: false,
@@ -104,10 +96,6 @@
 
         let popup = $popup.fromTemplate(template, {
           cssClass: 'swiper-popup',
-          components: {
-            Swiper,
-            SwiperItem
-          },
           buttons: [
             {
               text: '确定'

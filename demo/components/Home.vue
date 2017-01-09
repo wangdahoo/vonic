@@ -133,14 +133,7 @@
     </div>
 </template>
 <script>
-  import Vue from 'vue'
-  import {Sidebar} from 'vonic'
-
   export default {
-    components: {
-      Sidebar
-    },
-
     data() {
       return {
         menuButtonText: '<a class="button button-icon icon ion-navicon"></a>',

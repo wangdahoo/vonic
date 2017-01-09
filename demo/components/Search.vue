@@ -11,17 +11,8 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
-  import {Search} from 'vonic'
-
   export default{
-    components: {
-      Search
-    },
-
     data(){
       return {
         keywords: '',
