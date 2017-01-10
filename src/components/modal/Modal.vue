@@ -17,27 +17,30 @@
   const show_modal_animate_dur = 400
   const hide_modal_animate_dur = 250
 
-  function getModalTemplate(modalId) {
+  const getModalTemplate = (modalId) => {
     return '<div class="modal slide-in-up" id="' + modalId + '"></div>'
   }
 
-  let ModalMixin = {
+  let blueprints = {}
+  let showed = undefined
 
+  const ModalMixin = {
     methods: {
       show() {
-        this.$el.className = 'modal slide-in-up active'
+        this.$el.classList.add('active')
         setTimeout(() => {
-          this.$el.className += ' ng-enter ng-enter-active'
+          this.$el.classList.add('ng-enter', 'ng-enter-active')
         }, 50)
-
-        document.querySelector('body').className += ' modal-open'
+        document.querySelector('body').classList.add('modal-open')
       },
 
       hide() {
-        this.$el.className = 'modal slide-in-up ng-leave ng-leave-active'
-
-        let bodyClass = document.querySelector('body').className
-        document.querySelector('body').className = bodyClass.replace(' modal-open', '')
+        this.$el.classList.remove('ng-enter-active', 'ng-enter', 'active')
+        this.$el.classList.add('ng-leave', 'ng-leave-active')
+        setTimeout(() => {
+          this.$el.className = 'modal slide-in-up'
+        }, hide_modal_animate_dur)
+        document.querySelector('body').classList.remove('modal-open')
       }
     }
   }
@@ -46,30 +49,49 @@
     data() {
       return {
         active: false,
-        instances: {},
-        showed: [],
         inAnimation: false
       }
     },
 
     methods: {
-      fromComponent(delegateId, component) {
-        let modalId = 'von-modal-' + Math.random().toString(36).substring(3, 8)
-        let wrapper = document.querySelector('[von-modal-wrapper]')
-        wrapper.innerHTML += getModalTemplate(modalId)
+      fromComponent(id, component) {
+        if (!(typeof id == 'string' && typeof component == 'object')) {
+          throw '[Vonic] Illegal parameters.'
+        }
 
-        Vue.nextTick(() => {
+        if (blueprints[id]) {
+          throw `[Vonic] modal id "${id}" exists.`
+        }
+
+        blueprints[id] = component
+      },
+
+      _createModal(id) {
+        if (id && blueprints[id]) {
+          let component = blueprints[id]
+          let modalId = 'von-modal-' + Math.random().toString(36).substring(3, 8)
+          let wrapper = document.querySelector('[von-modal-wrapper]')
+          wrapper.innerHTML += getModalTemplate(modalId)
+
           let options = Object.assign({}, component, {mixins: [ModalMixin]})
           let ModalComponent = Vue.extend(options)
 
-          this.instances[delegateId] = new ModalComponent({
-            el: '#' + modalId
+          return new Promise((resolve) => {
+            Vue.nextTick(() => {
+              resolve(
+                new ModalComponent({
+                  el: '#' + modalId
+                })
+              )
+            })
           })
-        })
+        } else {
+          throw `[Vonic] modal component not found by id "${id}".`
+        }
       },
 
-      show(delegateId) {
-        if (delegateId && this.instances[delegateId]) {
+      _show(id) {
+        this._createModal(id).then((modal) => {
           // display click block
           this.inAnimation = true
           setTimeout(() => {
@@ -77,59 +99,48 @@
           }, show_modal_animate_dur)
 
           this.active = true
-          this.instances[delegateId].show()
-          this.showed.push(delegateId)
-        } else {
-          // do nothing..
-        }
+          modal.show()
+          showed = modal
+        })
       },
 
-      hide(delegateId) {
+      show(id) {
+        setTimeout(() => {
+          this._show(id)
+        })
+      },
+
+      hide(id) {
         // display click block
         this.inAnimation = true
         setTimeout(() => {
           this.inAnimation = false
         }, hide_modal_animate_dur)
 
-        if (delegateId && this.instances[delegateId]) {
-          this.instances[delegateId].hide()
+        if (showed) {
+          showed.hide()
           setTimeout(() => {
             this.active = false
+            showed.$destroy(true)
+            showed = undefined
           }, 300)
-
-          this.showed = this.showed.filter((d) => { return delegateId != d })
-        } else if (this.showed.length > 0) {
-          let _delegateId = this.showed.pop()
-          this.instances[_delegateId].hide()
-          setTimeout(() => {
-            this.active = false
-          }, 300)
-        } else {
-          // do nothing..
         }
       },
 
       destroy() {
-        for (let delegateId in this.instances) {
-          this.instances[delegateId].$destroy()
-        }
+        showed && showed.$destroy(true)
+        showed = undefined
 
-        this.instances = {}
         let wrapper = document.querySelector('[von-modal-wrapper]')
         wrapper.innerHTML = ''
-      },
 
-      getDelegate(delegateId) {
-        return this.instances[delegateId]
+        blueprints = []
       }
     }
   }
 </script>
-
 <style lang="scss">
-
   .modal {
     padding-top: 44px;
   }
-
 </style>

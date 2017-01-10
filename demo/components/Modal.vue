@@ -15,36 +15,23 @@
   import ScrollModal from './modals/ScrollModal'
 
   export default {
-    methods: {
-      showModal() { // 只创建一个模态窗实例
-        if ($vonicModal.getDelegate('default_modal')) {
-          $vonicModal.show('default_modal')
-          return
-        }
+    created() {
+      $vonicModal.fromComponent('default_modal', DefaultModal)
+      $vonicModal.fromComponent('multi_modal', MultiModal)
+      $vonicModal.fromComponent('scroll_modal', ScrollModal)
+    },
 
-        $vonicModal.fromComponent('default_modal', DefaultModal)
-        setTimeout(() => {
-          $vonicModal.show('default_modal')
-        })
+    methods: {
+      showModal() {
+        $vonicModal.show('default_modal')
       },
 
-      showMultiModal() { // 每次点击都创建一个模态窗实例
-        $vonicModal.fromComponent('multi_modal', MultiModal)
-        setTimeout(() => {
-          $vonicModal.show('multi_modal')
-        })
+      showMultiModal() {
+        $vonicModal.show('multi_modal')
       },
 
       showScrollModal() {
-        if ($vonicModal.getDelegate('scroll_modal')) {
-          $vonicModal.show('scroll_modal')
-          return
-        }
-
-        $vonicModal.fromComponent('scroll_modal', ScrollModal)
-        setTimeout(() => {
-          $vonicModal.show('scroll_modal')
-        })
+        $vonicModal.show('scroll_modal')
       }
     },
 

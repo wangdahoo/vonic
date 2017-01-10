@@ -14,21 +14,15 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
   import DefaultModal from './DefaultModal'
 
-  export default{
+  export default {
     methods: {
       toggleModal() {
         $vonicModal.hide()
         setTimeout(() => {
-          $vonicModal.fromComponent('default_modal', DefaultModal)
-          setTimeout(() => {
-            $vonicModal.show('default_modal')
-          })
+          $vonicModal.show('default_modal')
         }, 400)
       },
 

@@ -14,12 +14,9 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
 <script>
-  export default{
-    data(){
+  export default {
+    data() {
       return {
         items: []
       }
