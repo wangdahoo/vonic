@@ -44,3 +44,8 @@ And now, forget boring registration in your own components.
   </div>
 </template>
 ```
+
+> $vonicModal sucks, dont use.
+
+### 2017-01-11 v1.1.1
+- Fix $vonicModal bug & optimize code.
