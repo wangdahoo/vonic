@@ -1,0 +1,93 @@
+@import "variables";
+@import "mixins";
+
+// reset item style
+.item {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444;
+  min-height: 50px;
+  
+  &.item-divider {
+    padding: 14px 16px 15px 16px;
+    border: none;
+    margin-top: 1px;
+  }
+
+  &.item-icon-left, &.item-icon-right {
+    .icon {
+      font-size: 24px;
+    }
+  }
+
+  &.item-icon-right {
+    .item-note {
+      margin-right: -16px;
+    }
+
+    .icon.ion-ios-arrow-right {
+      color: #DDD;
+      right: 5px;
+      height: 48px;
+    }
+  }
+}
+
+// thin border list & item
+.list[thin-border], 
+.item[thin-border], 
+.list.thin-border,
+.item.thin-border,
+.list[thin-border] .item, .list.thin-border .item
+{
+  border: none; // clear border
+
+  @include thin-border-before($default-border-color, 0);
+  &:before {
+    border-left: 0;
+  }
+
+  @include thin-border-after($default-border-color, 0);
+  &:after {
+    border-right: 0;
+  }
+}
+
+.list-ios {
+  padding-left: 16px;
+  background: #FFF;
+}
+
+.item-ios, .list-ios > .item {
+  padding-left: 0;
+
+  &.item-avatar {
+    min-height: 80px;
+    padding: 16px 16px 16px 58px;
+
+    img:first-of-type {
+      top: 16px;
+      left: 0;
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    .title {
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 6px;
+    }
+
+    .item-note {
+      float: left;
+    }
+  }
+}
+
+.item.thin, .item[thin] {
+  min-height: 36px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

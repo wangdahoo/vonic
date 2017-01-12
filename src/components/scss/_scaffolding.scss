@@ -1,0 +1,69 @@
+html, body {
+  height: 100%;
+  background-color: $default-page-bg;
+}
+
+app {
+  height: 100%;
+}
+
+// fix fastclick bug: https://github.com/ftlabs/fastclick/issues/60
+label > * {
+  pointer-events: none;
+}
+
+.backdrop {
+  background-color: rgba(0,0,0,0.3);
+
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
+
+// iOS 系统字体
+body {
+  //&[font="pingfang"] {
+  //  color: #484746;
+  //  font-family: ".PingFang SC", sans-serif;
+  //}
+
+  &[font="pingfang"] {
+    font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: 100;
+  }
+}
+
+//@font-face {
+//  font-family: ".PingFang SC";
+//  font-weight: 500;
+//  src: local(".PingFang-SC-Medium");
+//}
+//
+//@font-face {
+//  font-family: ".PingFang SC";
+//  font-weight: 400;
+//  src: local(".PingFang-SC-Regular");
+//}
+//@font-face {
+//  font-family: ".PingFang SC";
+//  font-weight: 300;
+//  src: local(".PingFang-SC-Light");
+//}
+
+@font-face {
+  font-family: ".Helvetica";
+  src: local("Helvetica");
+}
+
+// button
+.button {
+  min-height: 44px;
+  &.button-small {
+    min-height: 30px;
+  }
+}
+
+// bar box-shadow
+.bar, .bar.bar-header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}

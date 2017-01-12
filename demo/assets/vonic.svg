@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: none;">
+  <defs>
+    <circle id="a" cx="256" cy="256" r="256"/>
+    <mask id="b" width="512" height="512" x="0" y="0" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <polygon id="c" points="115.569 .017 149.984 56.399 188.108 .017 299.967 .017 149.984 229.773 0 .017"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use stroke="#47B584" stroke-width="12" mask="url(#b)" stroke-linecap="round" xlink:href="#a"/>
+    <circle cx="435.5" cy="78.5" r="26.5" fill="#47B584"/>
+    <g transform="translate(106 171)">
+      <mask id="d" fill="white">
+        <use xlink:href="#c"/>
+      </mask>
+      <use fill="#47B584" xlink:href="#c"/>
+      <polygon fill="#32584F" points="299.967 -89.448 149.984 140.308 0 -89.448" mask="url(#d)"/>
+    </g>
+  </g>
+</svg>
