@@ -1,0 +1,232 @@
+.popup-container .popup {
+  color: #484746;
+  width: 275px;
+  border-radius: 4px;
+
+  .popup-head {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.popup-buttons > .button {
+  margin-bottom: 0;
+
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &.button-block {
+    margin-top: 0;
+  }
+}
+
+// Default Effect
+
+// Scale Out
+// Scale from hero (1 in this case) to zero
+// -------------------------------
+
+@-webkit-keyframes scaleOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+// Super Scale In
+// Scale from super (1.x) to duper (1 in this case)
+// -------------------------------
+
+@-webkit-keyframes superScaleIn {
+  from {
+    -webkit-transform: scale(1.3);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1
+  }
+}
+
+@keyframes superScaleIn {
+  from {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-container.popup-hidden .popup {
+  -webkit-animation-duration: 0.1s;
+  animation-duration: 0.1s;
+}
+
+.popup-container.active .popup {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+}
+
+// Scale Effect
+
+// Scale In
+// -------------------------------
+@-webkit-keyframes customScaleIn {
+  from {
+    -webkit-transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes customScaleIn {
+  from {
+    -webkit-transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Scale Out
+// -------------------------------
+@-webkit-keyframes customScaleOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes customScaleOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+}
+
+// Slide
+
+// Slide Down In
+// -------------------------------
+@-webkit-keyframes slideDownIn {
+  from {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownIn {
+  from {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Slide Up Out
+// -------------------------------
+@-webkit-keyframes slideUpOut {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideUpOut {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+}
+
+.popup-container[effect='scale'] {
+  &.popup-hidden .popup {
+    -webkit-animation-name: customScaleOut;
+    animation-name: customScaleOut;
+
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s;
+  }
+
+  &.active .popup {
+    -webkit-animation-name: customScaleIn;
+    animation-name: customScaleIn;
+
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s;
+  }
+}
+
+.popup-container[effect='slide'] {
+  &.popup-hidden .popup {
+    -webkit-animation-name: slideUpOut;
+    animation-name: slideUpOut;
+    -webkit-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
+
+  &.active .popup {
+    -webkit-animation-name: slideDownIn;
+    animation-name: slideDownIn;
+    -webkit-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
+}

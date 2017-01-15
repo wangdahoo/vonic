@@ -16,12 +16,12 @@
   ],
   "author": "wangdahoo <157195705@qq.com>",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --port 8080",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --port 8081",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "axios": "^0.15.3",
-    "vue": "^2.1.0",
+    "vue": "^2.1.8",
     "vue-router": "^2.1.0"
   },
   "devDependencies": {

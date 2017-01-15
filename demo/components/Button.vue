@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar">
+  <div class="page has-navbar" v-nav="{title: '按钮', showBackButton: true}">
     <div class="page-content padding padding-top">
 
       <p>Ionic Theme</p>

@@ -1,7 +1,9 @@
 <template>
   <div von-app>
     <navbar></navbar>
-    <router-view transition="view" class="view"></router-view>
+    <transition name="page">
+      <router-view></router-view>
+    </transition>
   </div>
 
   <!-- <modal v-ref:modal></modal> -->
@@ -14,11 +16,13 @@
   import Navbar from './Navbar'
   // import { Modal } from '../modal'
 
-  import utils from './utils'
   import channel from './channel'
 
-  Vue.directive('nav', (data) => {
-    channel.$emit('PageTransitionEvent', data)
+  Vue.directive('nav', {
+    inserted: function (el, binding) {
+      let data = binding.value
+      channel.$emit('PageTransitionEvent', data)
+    }
   })
 
   // mini services
@@ -40,7 +44,7 @@
 
     created() {
       // grade-a for ios, grade-b for android & other
-      if (utils.is_ios_device()) {
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
         this.gradeClass = 'grade-a'
       } else {
         this.gradeClass = 'grade-b'

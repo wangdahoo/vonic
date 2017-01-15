@@ -1,21 +1,26 @@
 import Vue from 'vue'
-import utils from '../utils'
-import { Loading } from '../../loading'
+import Loading from './Loading'
+
+import {createElement} from '../utils'
 
 class VonicLoading {
-  _vm = undefined
+  constructor() {
+    this._vm = undefined
+  }
 
   show(tips) {
-    utils.createElement('von-loading')
+    createElement('von-loading')
     this._vm = new Vue(Loading)
+    this._vm.$mount('[von-loading]')
     setTimeout(() => {
       this._vm.show(tips)
     })
   }
 
   toast(tips, millsecs) {
-    utils.createElement('von-loading')
+    createElement('von-loading')
     this._vm = new Vue(Loading)
+    this._vm.$mount('[von-loading]')
     setTimeout(() => {
       this._vm.toast(tips, millsecs)
     })

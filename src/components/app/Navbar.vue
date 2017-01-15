@@ -143,7 +143,10 @@
 </style>
 <script>
   import channel from './channel'
-  import utils from './utils'
+
+  const is_ios_device = () => {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent)
+  }
 
   function getTitleTransitionDistance(t) {
     // return (document.body.offsetWidth - t.offsetWidth) / 2 - 10
@@ -168,7 +171,7 @@
     let reverse = direction == 'back'
     t.style.opacity = 0
 
-    if (!window.__disable_nav_title_transition__ && utils.is_ios_device()) {
+    if (!window.__disable_nav_title_transition__ && is_ios_device()) {
       t.style.transform = 'translate3d(' + (reverse ? '-' : '') + getTitleTransitionDistance(t) + 'px,0,0)'
       t.style.webkitTransform = 'translate3d(' + (reverse ? '-' : '') + getTitleTransitionDistance(t) + 'px,0,0)'
     }
@@ -193,14 +196,14 @@
   function titleOut(t, direction) {
     let reverse = direction == 'back'
     t.style.opacity = 0
-    if (!window.__disable_nav_title_transition__ && utils.is_ios_device()) {
+    if (!window.__disable_nav_title_transition__ && is_ios_device()) {
       t.style.transform = 'translate3d(' + (reverse ? '' : '-') + getTitleTransitionDistance(t) + 'px,0,0)'
       t.style.webkitTransform = 'translate3d(' + (reverse ? '' : '-') + getTitleTransitionDistance(t) + 'px,0,0)'
     }
   }
 
   function defaultBackButtonText() {
-    return utils.is_ios_device() ?
+    return is_ios_device() ?
       '<a class="button button-icon icon ion-ios-arrow-back"></a>' :
       '<a class="button button-icon icon ion-android-arrow-back"></a>'
   }

@@ -8,6 +8,8 @@ import Home from './components/Home.vue'
 import Button from './components/Button.vue'
 import MdButton from './components/MdButton.vue'
 
+
+
 const routes = [
   { path: '/', component: Index },
   { path: '/home', component: Home },
