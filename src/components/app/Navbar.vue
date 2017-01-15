@@ -1,20 +1,24 @@
 <template>
   <div von-nav class="navbar" :class="{'hide': hideNavbar}">
-    <div class="back-button"
-      v-if="showBackButton"
-      v-html="backButtonText"
-      transition="fade"
-      @click="backButtonClicked($event)"
-    >
-    </div>
+    <transition name="nav-item-fade">
+      <div class="back-button"
+        v-if="showBackButton"
+        v-html="backButtonText"
+        transition="fade"
+        @click="backButtonClicked($event)"
+      >
+      </div>
+    </transition>
 
-    <div class="menu-button"
-      v-if="showMenuButton"
-      v-html="menuButtonText"
-      transition="fade"
-      @click="menuButtonClicked($event)"
-    >
-    </div>
+    <transition name="nav-item-fade">
+      <div class="menu-button"
+        v-if="showMenuButton"
+        v-html="menuButtonText"
+        transition="fade"
+        @click="menuButtonClicked($event)"
+      >
+      </div>
+    </transition>
   </div>
 </template>
 <style lang='scss'>
@@ -114,14 +118,20 @@
       }
     }
 
-    .fade-transition {
-      @include transition-duration($android-transition-duration);
-      @include transition-timing-function($android-transition-timing-function);
-      opacity: 1;
+    .nav-item-fade-enter-active,
+    .nav-item-fade-leave-active {
+      @include transition-duration($ios-transition-duration);
+      @include transition-timing-function($ios-transition-timing-function);
     }
 
-    .fade-enter, .fade-leave {
+    .nav-item-fade-enter,
+    .nav-item-fade-leave-to {
       opacity: 0;
+    }
+
+    .nav-item-fade-leave,
+    .nav-item-fade-enter-to {
+      opacity: 1;
     }
   }
 

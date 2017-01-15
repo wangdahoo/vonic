@@ -10,11 +10,18 @@ const extend = (target, source) => {
 }
 
 export default {
+  destroyed() {
+    console.log('[Vonic] dialog destroyed.')
+    let parent = this.$el.parentNode
+    parent.removeChild(this.$el)
+  },
+
   methods: {
     show(options) {
       extend(this, options)
 
-      window.$backdrop.show()
+      if ($backdrop.getState() == 0) $backdrop.show()
+
       this.state = 1
 
       this.promise = new Promise((resolve, reject) => {
@@ -30,12 +37,13 @@ export default {
 
     hide() {
       if (document.querySelectorAll('[von-dialog]').length == 1) // 只剩最后一个dialog实例的时候，backdrop才隐藏
-        window.$backdrop.hide()
+        $backdrop.hide()
+
       this.state = 2
 
       setTimeout(() => {
         this.state = 0
-        this.$destroy(true)
+        this.$destroy()
       }, popup_leave_duration)
     },
 

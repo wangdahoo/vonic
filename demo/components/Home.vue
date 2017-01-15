@@ -11,12 +11,17 @@
       <!-- Basic -->
       <div class="item item-divider">基础</div>
       <div class="list" thin-border>
-        <router-link class="item item-icon-right" to="/basic/button">
+        <router-link tag="div" class="item item-icon-right" to="/basic/button">
           Button <span class="item-note">按钮</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
-        <router-link  class="item item-icon-right" to="/basic/mdButton">
+        <router-link tag="div" class="item item-icon-right" to="/basic/mdButton">
           MdButton <span class="item-note">Material Design 风格</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link >
+
+        <router-link tag="div" class="item item-icon-right" to="/basic/dialog">
+          Dialog <span class="item-note">对话框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link >
 
@@ -28,6 +33,11 @@
           Loading <span class="item-note">加载提示</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
+
+        <!-- layout -->
+
+        <!-- advanced -->
+
       </div>
     </div>
   </div>

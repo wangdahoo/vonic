@@ -25,9 +25,7 @@
     }
   })
 
-  // mini services
-  // import './services/loading'
-  // import './services/dialog'
+  // CascadePanel
   // import './services/cascadepanel'
 
   export default {

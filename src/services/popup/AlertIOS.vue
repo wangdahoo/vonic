@@ -9,13 +9,7 @@
       </div>
 
       <div class="popup-buttons">
-        <button class="button button-block button-outline button-cancel"
-          @click="onCancel()"
-          v-html="cancelText"
-        >
-          <div class="hairline-right"></div>
-        </button>
-        <button class="button button-block button-outline button-ok"
+        <button class="button button-block button-positive button-outline button-ok"
           @click="onOk()"
           v-html="okText"
         >
@@ -25,15 +19,24 @@
   </div>
 </template>
 <style lang="scss" scoped>
-  @import "../scss/mixins";
   @import "./popup";
 
   .hairline-bottom:after {
-    @include hairline(bottom);
-  }
-
-  .hairline-right:after {
-    @include hairline(right);
+    content: '';
+    position: absolute;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    right: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #ddd;
+    display: block;
+    z-index: 15;
+    transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
   }
 
   @font-face {
@@ -43,14 +46,14 @@
 
   /* iOS 风格 */
   .popup.ios {
-    width: 280px;
     height: auto;
+    width: 280px;
     border-radius: 10px;
     .popup-head {
       padding: 20px 0 22px 0;
       border-bottom: none;
       position: relative;
-      .popup-title, .popup-sub-title, .button-ok, .button-cancel {
+      .popup-title, .popup-sub-title {
         font-family: sans-serif;
         color: #000;
       }
@@ -77,14 +80,10 @@
       height: 45px;
       min-height: 45px;
 
-      .button {
-        margin-right: 0;
-      }
-
-      .button-ok, .button-cancel {
+      .button-ok {
         -webkit-font-smoothing: subpixel-antialiased !important;
 
-        background-color: transparent;
+        background-color: none;
         border: none;
         margin-top: 0;
         font-size: 17px;
@@ -95,36 +94,18 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
 
-        &:active {
-          background-color: rgba(0,0,0,0.10);
-        }
-      }
-
-      .button-ok {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 10px;
-      }
-
-      .button-cancel {
         border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10;
-        font-weight: 600;
-        font-family: sans-serif;
+        border-bottom-right-radius: 10px;
 
+        &:active {
+          background-color: rgba(0,0,0,0.1);
+        }
       }
     }
   }
 </style>
 <script>
   import mixin from './mixin'
-
-  const extend = (target, source) => {
-    for (let key in source) {
-      target[key] = source[key]
-    }
-
-    return target
-  }
 
   export default {
     mixins: [mixin],
@@ -134,40 +115,8 @@
         title: '提示',
         content: '',
         okText: '确定',
-        cancelText: '取消',
         okTheme: 'assertive',
         state: 0 // 0: hidden, 1: showing, 2: active
-      }
-    },
-
-    methods: {
-      show(options) {
-        extend(this, options)
-
-        window.$backdrop.show()
-        this.state = 1
-
-        this.promise = new Promise((resolve, reject) => {
-          this.$on('ConfirmOkEvent', () => {
-            this.hide()
-            resolve(true)
-          })
-
-          this.$on('ConfirmCancelEvent', () => {
-            this.hide()
-            resolve(false)
-          })
-        });
-
-        return this.promise
-      },
-
-      onOk() {
-        this.$emit('ConfirmOkEvent')
-      },
-
-      onCancel() {
-        this.$emit('ConfirmCancelEvent')
       }
     }
   }

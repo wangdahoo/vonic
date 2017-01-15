@@ -20,7 +20,8 @@
             'button-royal': cancelTheme == 'royal',
             'button-stable': cancelTheme == 'stable',
             'button-light': cancelTheme == 'light',
-            'button-dark': cancelTheme == 'dark'
+            'button-dark': cancelTheme == 'dark',
+            'button-default': cancelTheme == 'default'
           }"
           @click="onCancel()"
           v-text="cancelText"
@@ -38,7 +39,8 @@
             'button-royal': okTheme == 'royal',
             'button-stable': okTheme == 'stable',
             'button-light': okTheme == 'light',
-            'button-dark': okTheme == 'dark'
+            'button-dark': okTheme == 'dark',
+            'button-default': okTheme == 'default',
           }"
           @click="onOk()"
           v-text="okText"

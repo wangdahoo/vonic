@@ -21,34 +21,12 @@ label > * {
 
 // iOS 系统字体
 body {
-  //&[font="pingfang"] {
-  //  color: #484746;
-  //  font-family: ".PingFang SC", sans-serif;
-  //}
-
   &[font="pingfang"] {
     font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
-    font-weight: 100;
+    font-weight: 300;
   }
 }
-
-//@font-face {
-//  font-family: ".PingFang SC";
-//  font-weight: 500;
-//  src: local(".PingFang-SC-Medium");
-//}
-//
-//@font-face {
-//  font-family: ".PingFang SC";
-//  font-weight: 400;
-//  src: local(".PingFang-SC-Regular");
-//}
-//@font-face {
-//  font-family: ".PingFang SC";
-//  font-weight: 300;
-//  src: local(".PingFang-SC-Light");
-//}
 
 @font-face {
   font-family: ".Helvetica";
