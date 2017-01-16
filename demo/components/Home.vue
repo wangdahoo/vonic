@@ -32,6 +32,10 @@
           Radio <span class="item-note">单选框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/basic/checkbox">
+          Checkbox <span class="item-note">复选框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
         <router-link tag="div" class="item item-icon-right" to="/basic/dialog">
           Dialog <span class="item-note">对话框</span>

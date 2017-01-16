@@ -12,6 +12,7 @@ import InputDefault from './components/InputDefault'
 import InputFloatingLabel from './components/InputFloatingLabel'
 import Search from './components/Search'
 import Radio from './components/Radio'
+import Checkbox from './components/Checkbox'
 
 import Dialog from './components/Dialog'
 
@@ -25,6 +26,7 @@ const routes = [
   { path: '/basic/inputFloatingLabel', component: InputFloatingLabel },
   { path: '/basic/search', component: Search },
   { path: '/basic/radio', component: Radio },
+  { path: '/basic/checkbox', component: Checkbox },
 
   { path: '/basic/dialog', component: Dialog },
 ]

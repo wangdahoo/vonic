@@ -1,10 +1,22 @@
 <template>
   <div class="list von-checkbox" thin-border>
     <label class="item item-icon-right"
-           v-for="(index, option) in options">
-      <input type="checkbox" name="{{ checkboxName }}" id="{{ checkboxName + '-' + index }}" @click="onOptionClick(index)">
-      <span>{{ option }}</span>
-      <i class="{{ isChecked(index) ? ('icon ion-ios-checkmark-empty ' + theme) : '' }}"></i>
+           v-for="(option, i) in options">
+      <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i"
+        v-model="v" :value="i" @click="onClick(i)">
+      <span v-text="option"></span>
+      <i
+        :class="{
+          'icon ion-ios-checkmark-empty assertive': v.indexOf(i) > -1 && theme == 'assertive',
+          'icon ion-ios-checkmark-empty positive': v.indexOf(i) > -1 && theme == 'positive',
+          'icon ion-ios-checkmark-empty balanced': v.indexOf(i) > -1 && theme == 'balanced',
+          'icon ion-ios-checkmark-empty energized': v.indexOf(i) > -1 && theme == 'energized',
+          'icon ion-ios-checkmark-empty calm': v.indexOf(i) > -1 && theme == 'calm',
+          'icon ion-ios-checkmark-empty royal': v.indexOf(i) > -1 && theme == 'royal',
+          'icon ion-ios-checkmark-empty dark': v.indexOf(i) > -1 && theme == 'dark'
+        }"
+      >
+      </i>
     </label>
   </div>
 </template>
@@ -12,7 +24,6 @@
   @import "../scss/variables";
 
   .von-checkbox {
-
     .item-icon-right {
       .icon {
         font-size: 36px;
@@ -28,7 +39,6 @@
   }
 </style>
 <script>
-
   export default{
     props: {
       options: {
@@ -37,7 +47,7 @@
       },
 
       value: {
-        type: Array,
+        type: [Array, Number],
         required: true
       },
 
@@ -47,27 +57,27 @@
       }
     },
 
-    methods: {
-      onOptionClick(index) {
-        let vIndex = this.value.indexOf(index)
-
-        if (vIndex == -1) {
-          this.value.push(index);
-        } else {
-          this.value.splice(vIndex, 1);
-        }
-
-        this.value.sort();
-      },
-
-      isChecked(index) {
-        return this.value.indexOf(index) > -1
+    computed: {
+      v: function () {
+        return this.value
       }
     },
 
     data() {
       return {
-        checkboxName: 'von-checkbox-' + Math.random().toString(36).substring(3, 8)
+        checkboxName: 'von-checkbox-' + Math.random().toString(36).substring(3, 6)
+      }
+    },
+
+    methods: {
+      onClick(i) {
+        let index = this.v.indexOf(i)
+        if (index == -1) {
+          this.v.push(i)
+        } else {
+          this.v.splice(index, 1)
+        }
+        this.v.sort()
       }
     }
   }
