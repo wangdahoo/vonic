@@ -18,17 +18,25 @@
         <router-link tag="div" class="item item-icon-right" to="/basic/mdButton">
           MdButton <span class="item-note">Material Design 风格</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </router-link >
+        </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/basic/input">
+          Input <span class="item-note">输入框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/basic/search">
+          Search <span class="item-note">搜索框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
         <router-link tag="div" class="item item-icon-right" to="/basic/radio">
           Radio <span class="item-note">单选框</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </router-link >
+        </router-link>
 
         <router-link tag="div" class="item item-icon-right" to="/basic/dialog">
           Dialog <span class="item-note">对话框</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </router-link >
+        </router-link>
 
         <div class="item item-icon-right" @click="toast()">
           Toast <span class="item-note">文字提示</span>
