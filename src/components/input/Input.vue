@@ -60,20 +60,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @mixin placeholder($color: $input-color-placeholder, $text-indent: 0) {
-    &::-moz-placeholder { // Firefox 19+
-      color: $color;
-    }
-    &:-ms-input-placeholder {
-      color: $color;
-    }
-    &::-webkit-input-placeholder {
-      color: $color;
-      // Safari placeholder margin issue
-      text-indent: $text-indent;
-    }
-  }
-
   .von-input-wrapper {
     position: relative;
 
@@ -95,10 +81,6 @@
 
       input {
         font-size: 14px;
-
-        &::-webkit-input-placeholder {
-          line-height: 22px;
-        }
       }
 
     }

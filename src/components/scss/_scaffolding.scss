@@ -14,41 +14,33 @@ label > * {
 
 .backdrop {
   background-color: rgba(0,0,0,0.3);
-
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
 }
 
+// Safari input placeholder margin issue
+.grade-a input::-webkit-input-placeholder {
+  line-height: 20px;
+}
+
 // iOS 系统字体
 body {
-  //&[font="pingfang"] {
-  //  color: #484746;
-  //  font-family: ".PingFang SC", sans-serif;
-  //}
+  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
 
-  &[font="pingfang"] {
+  &.grade-a[font="light"]
+  {
+    font-family: '-apple-system', "HelveticaNeue-Light", "Roboto-Light", "Segoe UI-Light", sans-serif-light;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: 300;
+  }
+
+  &.grade-a[font="pingfang"] {
     font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     font-weight: 100;
   }
 }
-
-//@font-face {
-//  font-family: ".PingFang SC";
-//  font-weight: 500;
-//  src: local(".PingFang-SC-Medium");
-//}
-//
-//@font-face {
-//  font-family: ".PingFang SC";
-//  font-weight: 400;
-//  src: local(".PingFang-SC-Regular");
-//}
-//@font-face {
-//  font-family: ".PingFang SC";
-//  font-weight: 300;
-//  src: local(".PingFang-SC-Light");
-//}
 
 @font-face {
   font-family: ".Helvetica";

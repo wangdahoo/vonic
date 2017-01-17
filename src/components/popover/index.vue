@@ -35,8 +35,8 @@
       background-color: rgba(0,0,0,0.8);
       color: #fff;
       font-size: 13px;
-      line-height: 18px;
-      padding: 12px;
+      line-height: 13px;
+      padding: 15px 12px 14px 12px;
       border-radius: 2px;
 
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -45,6 +45,14 @@
       &.has-close {
         padding-right: 25px + 12px;
       }
+    }
+  }
+
+  /* android */
+  .grade-b {
+    .von-popover .von-popover-content {
+      line-height: 13px;
+      padding: 15px 12px 14px 12px;
     }
   }
 </style>

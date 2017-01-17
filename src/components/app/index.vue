@@ -37,7 +37,7 @@
         gradeClass: 'grade-a'
       }
     },
-    
+
     ready() {
       // grade-a for ios, grade-b for android & other
       if (utils.is_ios_device()) {

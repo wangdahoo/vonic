@@ -18,7 +18,7 @@
           </iframe>
         </div>
 
-        <div class="item item-divider text-center code-desc">
+        <div class="text-center code-desc">
           Mobile UI Components<br>based on Vue.js and ionic CSS
         </div>
 
@@ -62,14 +62,17 @@
     line-height: 24px;
     color: #47B584;
     margin-bottom: 10px;
+    transform: translate3d(2px,0,0);
+    -webkit-transform: translate3d(2px,0,0);
   }
 
   .code-desc {
     color: #999;
+    margin: 5px auto 15px auto;
   }
 
   .vonic-stars {
-    padding-left: 25px;
+    padding-left: 27px;
     body {
       text-align: center;
     }
