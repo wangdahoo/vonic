@@ -1,5 +1,5 @@
 <template>
-  <div von-nav class="navbar" :class="{'hide': hideNavbar}">
+  <div von-nav v-show="!hideNavbar" transition="nav-fade" class="navbar">
     <div v-if="showBackButton" class="back-button" @click="backButtonClicked($event)" transition="fade">
       {{{ backButtonText }}}
     </div>
@@ -18,7 +18,13 @@
   $navbar-title-z-index: 12;
   $navbar-button-z-index: 13;
 
+  .navbar.visible {
+    visibility: visible;
+  }
+
   .navbar {
+    visibility: hidden;
+
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     position: absolute;
@@ -128,8 +134,14 @@
     }
   }
 
-  .navbar .hide {
-    visibility: hidden;
+  .nav-fade-transition {
+    @include transition-duration($ios-transition-duration);
+    @include transition-timing-function($ios-transition-timing-function);
+    opacity: 1;
+  }
+
+  .nav-fade-enter, .nav-fade-leave {
+    opacity: 0;
   }
 
 </style>
@@ -215,6 +227,8 @@
     window.__block_touch__ = false
   }
 
+  let is_first_render = true
+
   export default {
     data() {
       return {
@@ -234,6 +248,18 @@
       let c, cl;
 
       channel.$on('PageTransitionEvent', (data) => {
+        if (is_first_render) {
+          function setNavbarVisible() {
+            document.querySelector('[von-nav]').classList.add('visible')
+          }
+          if (!!data.hideNavbar) {
+            setTimeout(setNavbarVisible, utils.is_ios_device() ? 500 : 200)
+          } else {
+            setNavbarVisible()
+          }
+          is_first_render = false
+        }
+
         let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
         this.title = data.title ? data.title : ''
         this.hideNavbar = !!data.hideNavbar
