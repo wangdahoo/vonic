@@ -6,7 +6,7 @@
         <input type="search" placeholder="{{placeholder}}" v-model="value">
       </form>
     </label>
-    <button class="button button-clear button-positive" @click='clearSearch()'>
+    <button class="button button-clear button-positive" @click='cancel()'>
       {{cancelText}}
     </button>
   </div>
@@ -24,10 +24,10 @@
       },
       cancelText: {
         type: String,
-        default: '取消'
+        default: 'Cancel'
       },
       onSearch: Function,
-      clearSearch: Function
+      onCancel: Function
     },
 
     data() {
@@ -46,6 +46,10 @@
         let search = document.querySelector('#' + this.formId + ' > [type=search]')
         search.blur()
         if (this.onSearch) this.onSearch()
+      },
+
+      cancel() {
+        if (this.onCancel) this.onCancel()
       }
     }
   }

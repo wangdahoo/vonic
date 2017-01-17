@@ -2,7 +2,7 @@
   <div class="page has-navbar" v-nav="{title: '搜索框', showBackButton: true}">
     <div class="page-content">
 
-      <search :value.sync="keywords" placeholder="输入关键字" :on-search="onSearch" :clear-search="clearSearch"></search>
+      <search :value.sync="keywords" placeholder="输入关键字" :on-search="onSearch" :on-cancel="onCancel"></search>
 
       <div class="item" v-show="searching">
         searching for '{{keywords}}'.
@@ -25,7 +25,7 @@
         this.searching = true;
       },
 
-      clearSearch() {
+      onCancel() {
         this.searching = false;
         this.keywords = ''
       }
