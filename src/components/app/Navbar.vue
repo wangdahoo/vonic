@@ -1,25 +1,27 @@
 <template>
-  <div von-nav class="navbar" :class="{'hide': hideNavbar}">
-    <transition name="nav-item-fade">
-      <div class="back-button"
-        v-if="showBackButton"
-        v-html="backButtonText"
-        transition="fade"
-        @click="backButtonClicked($event)"
-      >
-      </div>
-    </transition>
+  <transition name="nav-fade">
+    <div von-nav v-show="!hideNavbar" class="navbar">
+      <transition name="nav-item-fade">
+        <div class="back-button"
+          v-if="showBackButton"
+          v-html="backButtonText"
+          transition="fade"
+          @click="backButtonClicked($event)"
+        >
+        </div>
+      </transition>
 
-    <transition name="nav-item-fade">
-      <div class="menu-button"
-        v-if="showMenuButton"
-        v-html="menuButtonText"
-        transition="fade"
-        @click="menuButtonClicked($event)"
-      >
-      </div>
-    </transition>
-  </div>
+      <transition name="nav-item-fade">
+        <div class="menu-button"
+          v-if="showMenuButton"
+          v-html="menuButtonText"
+          transition="fade"
+          @click="menuButtonClicked($event)"
+        >
+        </div>
+      </transition>
+    </div>
+  </transition>
 </template>
 <style lang='scss'>
   @import "../scss/variables";
@@ -30,7 +32,13 @@
   $navbar-title-z-index: 12;
   $navbar-button-z-index: 13;
 
+  .navbar.visible {
+    visibility: visible;
+  }
+
   .navbar {
+    visibility: hidden;
+
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     position: absolute;
@@ -146,8 +154,21 @@
     }
   }
 
-  .navbar .hide {
-    visibility: hidden;
+  .nav-fade-enter-active,
+  .nav-fade-leave-active
+  {
+    @include transition-duration($ios-transition-duration);
+    @include transition-timing-function($ios-transition-timing-function);
+  }
+
+  .nav-fade-enter,
+  .nav-fade-leave-to {
+    opacity: 0;
+  }
+
+  .nav-fade-leave,
+  .nav-fade-enter-to {
+    opacity: 1;
   }
 
 </style>
@@ -236,6 +257,8 @@
     window.__block_touch__ = false
   }
 
+  let is_first_render = true
+
   export default {
     data() {
       return {
@@ -255,6 +278,18 @@
       let c, cl;
 
       channel.$on('PageTransitionEvent', (data) => {
+        if (is_first_render) {
+          function setNavbarVisible() {
+            document.querySelector('[von-nav]').classList.add('visible')
+          }
+          if (!!data.hideNavbar) {
+            setTimeout(setNavbarVisible, is_ios_device() ? 500 : 200)
+          } else {
+            setNavbarVisible()
+          }
+          is_first_render = false
+        }
+
         let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
         this.title = data.title ? data.title : ''
         this.hideNavbar = !!data.hideNavbar
