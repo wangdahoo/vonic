@@ -57,6 +57,10 @@
           List <span class="item-note">列表</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/layout/cells">
+          Cells <span class="item-note">宫格</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
         <!-- advanced -->
 

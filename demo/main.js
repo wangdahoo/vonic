@@ -18,6 +18,7 @@ import Dialog from './components/Dialog'
 
 // Layout
 import List from './components/List'
+import Cells from './components/Cells'
 
 const routes = [
   { path: '/', component: Index },
@@ -35,6 +36,7 @@ const routes = [
 
   // Layout
   { path: '/layout/list', component: List },
+  { path: '/layout/cells', component: Cells },
 
 
 ]

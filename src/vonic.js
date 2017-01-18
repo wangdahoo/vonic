@@ -16,9 +16,12 @@ Vue.component('von-checkbox', VonCheckbox)
 
 // Layout
 import {List, Item, HairlineItem} from './components/list'
+import Cells from './components/cells'
+
 Vue.component('list', List)
 Vue.component('item', Item)
 Vue.component('hl-item', HairlineItem)
+Vue.component('cells', Cells)
 
 import Plugin from './plugin'
 
@@ -34,6 +37,7 @@ module.exports = {
   List,
   Item,
   HairlineItem,
+  Cells,
 
   app: Plugin
 }
