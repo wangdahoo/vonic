@@ -6,17 +6,7 @@
           <img src="../assets/vonic.svg" width="80" height="80"/>
         </div>
 
-        <div class="text-center code-name">Vonic</div>
-
-        <div class="text-center vonic-stars">
-          <iframe src="//ghbtns.com/github-btn.html?user=wangdahoo&repo=vonic&type=watch&count=true"
-                  allowtransparency="true"
-                  frameborder="0"
-                  scrolling="0"
-                  width="120"
-                  height="20">
-          </iframe>
-        </div>
+        <div class="text-center code-name">vonic</div>
 
         <div class="text-center code-desc">
           Mobile UI Components<br>based on Vue.js and ionic CSS
@@ -41,6 +31,17 @@
             <i class="icon ion-ios-arrow-right"></i>
           </div>
         </div>
+
+        <div class="text-center vonic-stars">
+          <iframe src="//ghbtns.com/github-btn.html?user=wangdahoo&repo=vonic&type=watch&count=true"
+                  allowtransparency="true"
+                  frameborder="0"
+                  scrolling="0"
+                  width="120"
+                  height="20">
+          </iframe>
+        </div>
+
       </div>
     </div>
 </template>
@@ -53,26 +54,25 @@
     }
   }
 
-  .code-name, .code-desc {
-    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
-  }
-
   .code-name {
+    font-family: "Monoton", sans-serif;
     font-size: 24px;
     line-height: 24px;
     color: #47B584;
     margin-bottom: 10px;
-    transform: translate3d(2px,0,0);
-    -webkit-transform: translate3d(2px,0,0);
+    padding: 5px 0 0 2px;
   }
 
   .code-desc {
     color: #999;
     margin: 5px auto 15px auto;
+    font-family: "Josefin Sans", sans-serif;
   }
 
   .vonic-stars {
-    padding-left: 27px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
     body {
       text-align: center;
     }
