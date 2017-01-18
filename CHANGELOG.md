@@ -49,3 +49,11 @@ And now, forget boring registration in your own components.
 
 ### 2017-01-11 v1.1.1
 - Fix $vonicModal bug & optimize code.
+
+
+### 2017-01-18 v1.1.2
+- Optimize navbar transition (`show` => `hide`, `hide` => `show`).
+- Add **showClose** option for method **$popup.show** to show a close button.
+- Rename **Search.clearSearch** to **Search.onCancel** and fix bug.
+- Re-define default font-stack.
+- Resolve List/Item text line-height issue in Android.
