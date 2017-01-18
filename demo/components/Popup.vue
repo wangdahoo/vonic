@@ -119,12 +119,20 @@
           title: '',
           buttons: [
             {text: '确定', theme: 'assertive'}
-          ]
+          ],
+          showClose: true
         }
 
-        let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
+        let template = `
+          <p style="margin-bottom: 10px; text-align: center; font-size: 16px;">带有关闭按钮</p>
+          <p style="margin-bottom: 0; text-align: center;">自定义内容</p>
+        `
 
-        popup.show()
+        let popup = $popup.fromTemplate(template, options)
+
+        popup.show().then((buttonIndex) => {
+          console.log(buttonIndex)
+        })
 
         /* fromTemplateUrl sample */
 

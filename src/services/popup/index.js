@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Popup from './components/Popup'
+import Popup from './Popup'
 
 const extend = (target, source) => {
   for (let key in source) {
@@ -34,6 +34,7 @@ class VonicPopup {
     let title = (options && options.title) ? options.title : ''
     let buttons = (options && options.buttons) ? options.buttons : []
     let cssClass = (options && options.cssClass) ? options.cssClass : ''
+    let showClose = !!(options && options.showClose) ? 'true' : 'false'
 
     let components = (options && options.components) ? options.components : {}
 
@@ -49,7 +50,8 @@ class VonicPopup {
       document.querySelector('[von-app]').appendChild(wrapper)
     }
 
-    wrapper.innerHTML = '<popup css-class="' + cssClass + '" effect="' + effect + '" title="' + title + '" v-ref:' + refId + '>' + template + '</popup>'
+    wrapper.innerHTML = '<popup show-close="' + showClose + '" css-class="' + cssClass
+      + '" effect="' + effect + '" title="' + title + '" v-ref:' + refId + '>' + template + '</popup>'
 
     this._vm = new Vue({
       components: extend({ Popup }, components),

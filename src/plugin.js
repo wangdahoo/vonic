@@ -103,15 +103,18 @@ export default {
       }
     }, false)
 
-    /* Disable double click to zoom */
-    let lastTouchEnd = 0;
-    document.documentElement.addEventListener('touchend', (e) => {
-      let now = (new Date()).getTime()
-      if (now - lastTouchEnd < 300) {
-        e.preventDefault()
-      }
-      lastTouchEnd = now
-    }, false)
+    /* Safari - disable double click to zoom */
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      let lastTouchEnd = 0;
+      document.documentElement.addEventListener('touchend', (e) => {
+        let now = (new Date()).getTime()
+        if (now - lastTouchEnd < 300) {
+          e.preventDefault()
+        }
+        lastTouchEnd = now
+      }, false)
+    }
+
   },
 
   setConfig(name, value) {

@@ -10,6 +10,9 @@
 
       <div class="popup-body" :class="{'no-content': state == 0}">
         <slot></slot>
+        <button v-if="showClose == 'true'" class="button button-royal button-small button-clear button-close" @click="hide(-1)">
+          <i class="ion-ios-close-empty"></i>
+        </button>
       </div>
 
       <div v-if="buttons.length > 0" class="popup-buttons">
@@ -22,9 +25,9 @@
 </template>
 
 <style lang="scss">
-  @import "../../../components/popup/popup";
-  @import "../../../components/scss/variables";
-  @import "../../../components/scss/mixins";
+  @import "../../components/popup/popup";
+  @import "../../components/scss/variables";
+  @import "../../components/scss/mixins";
 
   .popup-container .von-popup {
     background-color: #fff;
@@ -42,6 +45,13 @@
 
       &.no-content * {
         opacity: 0;
+      }
+
+      .button-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 30px;
       }
     }
 
@@ -88,11 +98,9 @@
             background-color: darken($assertive, 6.5%);
           }
         }
-
       }
     }
   }
-
 </style>
 
 <script>
@@ -112,6 +120,10 @@
       cssClass: {
         type: String,
         default: ''
+      },
+      showClose: {
+        type: String,
+        default: 'false'
       }
     },
 
