@@ -19,8 +19,16 @@ label > * {
   -webkit-transition-duration: 0.2s;
 }
 
+// Safari input placeholder margin issue
+.grade-a input::-webkit-input-placeholder {
+  line-height: 20px;
+}
+
 // iOS 系统字体
 body {
+  font-family: '-apple-system';
+  font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+
   &[font="pingfang"] {
     font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;

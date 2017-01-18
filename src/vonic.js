@@ -14,6 +14,12 @@ Vue.component('search', Search)
 Vue.component('von-radio', VonRadio)
 Vue.component('von-checkbox', VonCheckbox)
 
+// Layout
+import {List, Item, HairlineItem} from './components/list'
+Vue.component('list', List)
+Vue.component('item', Item)
+Vue.component('hl-item', HairlineItem)
+
 import Plugin from './plugin'
 
 module.exports = {
@@ -23,6 +29,11 @@ module.exports = {
   Search,
   VonRadio,
   VonCheckbox,
+
+  // Layout
+  List,
+  Item,
+  HairlineItem,
 
   app: Plugin
 }

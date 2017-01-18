@@ -52,6 +52,11 @@
         </div>
 
         <!-- layout -->
+        <div class="item item-divider">布局</div>
+        <router-link tag="div" class="item item-icon-right" to="/layout/list">
+          List <span class="item-note">列表</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
         <!-- advanced -->
 

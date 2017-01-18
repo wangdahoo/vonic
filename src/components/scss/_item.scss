@@ -3,15 +3,15 @@
 
 // reset item style
 .item {
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 14px;
   color: #444;
   min-height: 50px;
-  
+
   &.item-divider {
-    padding: 14px 16px 15px 16px;
+    padding: 18px 16px;
     border: none;
     margin-top: 1px;
   }
@@ -35,9 +35,20 @@
   }
 }
 
+.grade-a {
+  .item {
+    padding-top: 17px;
+    padding-bottom: 18px;
+
+    &.item-divider {
+      padding: 17px 16px 18px 16px;
+    }
+  }
+}
+
 // thin border list & item
-.list[thin-border], 
-.item[thin-border], 
+.list[thin-border],
+.item[thin-border],
 .list.thin-border,
 .item.thin-border,
 .list[thin-border] .item, .list.thin-border .item
@@ -65,7 +76,7 @@
 
   &.item-avatar {
     min-height: 80px;
-    padding: 16px 16px 16px 58px;
+    padding: 18px 16px 18px 58px;
 
     img:first-of-type {
       top: 16px;
@@ -86,8 +97,16 @@
   }
 }
 
+.grade-a {
+  .item-ios, .list-ios > .item {
+    &.item-avatar {
+      padding: 17px 16px 18px 58px;
+    }
+  }
+}
+
 .item.thin, .item[thin] {
   min-height: 36px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 11px;
+  padding-bottom: 11px;
 }

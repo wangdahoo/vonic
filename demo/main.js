@@ -16,6 +16,9 @@ import Checkbox from './components/Checkbox'
 
 import Dialog from './components/Dialog'
 
+// Layout
+import List from './components/List'
+
 const routes = [
   { path: '/', component: Index },
   { path: '/home', component: Home },
@@ -29,6 +32,11 @@ const routes = [
   { path: '/basic/checkbox', component: Checkbox },
 
   { path: '/basic/dialog', component: Dialog },
+
+  // Layout
+  { path: '/layout/list', component: List },
+
+
 ]
 
 Vue.use(Vonic.app, {
