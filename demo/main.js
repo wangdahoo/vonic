@@ -19,6 +19,9 @@ import Dialog from './components/Dialog'
 // Layout
 import List from './components/List'
 import Cells from './components/Cells'
+import Tabs from './components/Tabs'
+import ButtonBar from './components/ButtonBar'
+import Scalable from './components/Scalable'
 
 const routes = [
   { path: '/', component: Index },
@@ -37,6 +40,9 @@ const routes = [
   // Layout
   { path: '/layout/list', component: List },
   { path: '/layout/cells', component: Cells },
+  { path: '/layout/tabs', component: Tabs },
+  { path: '/layout/buttonbar', component: ButtonBar },
+  { path: '/layout/scalable', component: Scalable },
 
 
 ]

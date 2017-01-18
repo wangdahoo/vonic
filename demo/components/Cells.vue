@@ -13,7 +13,7 @@
       <cells class="cells-44" :items="getItems(16)" :on-cell-click="onCellClick" row="4" col="4"></cells>
 
       <!-- no outer border -->
-      <div class="item item-divider">
+      <div class="padding">
         无外边框：
       </div>
       <cells outer-border="false" class="cells-22" :items="getItems(3)" :on-cell-click="onCellClick" row="2" col="2"></cells>

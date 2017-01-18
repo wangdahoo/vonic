@@ -61,6 +61,18 @@
           Cells <span class="item-note">宫格</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/layout/tabs">
+          Tabs <span class="item-note">选项卡</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/layout/buttonbar">
+          ButtonBar <span class="item-note">iOS 选项卡</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/layout/scalable">
+          Scalable <span class="item-note">缩放</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
         <!-- advanced -->
 

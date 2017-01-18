@@ -17,11 +17,17 @@ Vue.component('von-checkbox', VonCheckbox)
 // Layout
 import {List, Item, HairlineItem} from './components/list'
 import Cells from './components/cells'
+import Tabs from './components/tabs'
+import ButtonBar from './components/buttonbar'
+import Scalable from './components/scalable'
 
 Vue.component('list', List)
 Vue.component('item', Item)
 Vue.component('hl-item', HairlineItem)
 Vue.component('cells', Cells)
+Vue.component('tabs', Tabs)
+Vue.component('button-bar', ButtonBar)
+Vue.component('scalable', Scalable)
 
 import Plugin from './plugin'
 
@@ -38,6 +44,9 @@ module.exports = {
   Item,
   HairlineItem,
   Cells,
+  Tabs,
+  ButtonBar,
+  Scalable,
 
   app: Plugin
 }
