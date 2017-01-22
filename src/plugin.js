@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 import './services/backdrop'
 import './services/loading'
 import './services/popup/dialog.js'
+import './services/popup/index.js'
 
 import VonApp from './components/app'
 

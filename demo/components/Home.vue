@@ -80,6 +80,10 @@
           Swiper <span class="item-note">轮播</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/advanced/popup">
+          Popup <span class="item-note">自定义弹层</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
       </div>
     </div>

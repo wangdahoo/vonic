@@ -27,6 +27,7 @@ import Scalable from './components/Scalable'
 import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
+import Popup from './components/Popup'
 
 const routes = [
   { path: '/', component: Index },
@@ -53,6 +54,8 @@ const routes = [
   { path: '/advanced/swiper', component: Swiper },
   { path: '/advanced/swiper/default', component: SwiperDefault },
   { path: '/advanced/swiper/vertical', component: SwiperVertical },
+
+  { path: '/advanced/popup', component: Popup },
 
 
 ]
