@@ -75,6 +75,11 @@
         </router-link>
 
         <!-- advanced -->
+        <div class="item item-divider">高级</div>
+        <router-link tag="div" class="item item-icon-right" to="/advanced/swiper">
+          Swiper <span class="item-note">轮播</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
       </div>
     </div>

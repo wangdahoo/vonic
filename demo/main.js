@@ -23,6 +23,11 @@ import Tabs from './components/Tabs'
 import ButtonBar from './components/ButtonBar'
 import Scalable from './components/Scalable'
 
+// Advanced
+import Swiper from './components/Swiper'
+import SwiperDefault from './components/SwiperDefault'
+import SwiperVertical from './components/SwiperVertical'
+
 const routes = [
   { path: '/', component: Index },
   { path: '/home', component: Home },
@@ -43,6 +48,11 @@ const routes = [
   { path: '/layout/tabs', component: Tabs },
   { path: '/layout/buttonbar', component: ButtonBar },
   { path: '/layout/scalable', component: Scalable },
+
+  // Advanced
+  { path: '/advanced/swiper', component: Swiper },
+  { path: '/advanced/swiper/default', component: SwiperDefault },
+  { path: '/advanced/swiper/vertical', component: SwiperVertical },
 
 
 ]

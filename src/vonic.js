@@ -29,6 +29,11 @@ Vue.component('tabs', Tabs)
 Vue.component('button-bar', ButtonBar)
 Vue.component('scalable', Scalable)
 
+// Advanced
+import {Swiper, SwiperItem} from './components/swiper'
+Vue.component('swiper', Swiper)
+Vue.component('swiper-item', SwiperItem)
+
 import Plugin from './plugin'
 
 module.exports = {
@@ -47,6 +52,10 @@ module.exports = {
   Tabs,
   ButtonBar,
   Scalable,
+
+  // Advanced
+  Swiper,
+  SwiperItem,
 
   app: Plugin
 }
