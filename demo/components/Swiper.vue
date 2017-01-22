@@ -77,8 +77,6 @@
 
     methods: {
       swiperInPopup() {
-        return
-
         const template = `
           <p>弹层内轮播</p>
           <swiper direction="horizontal" width="100%" height="150">

@@ -1,5 +1,8 @@
 <template>
-  <div style="overflow: hidden">
+  <div style="overflow: hidden" :style="{
+    'width': w,
+    'height': h
+  }">
     <div class="swiper">
       <slot></slot>
     </div>
@@ -107,26 +110,30 @@
     },
 
     mounted() {
-      console.log(this.w, this.h)
-      this.$el.style.width = this.w
-      this.$el.style.height = this.h
-
-      let swiper = new Swiper({
-        direction: this.direction
-      })
-
-      swiper.on('swiped', (fromIndex, toIndex) => {
-        if (this.$refs.pagination)
-          this.$refs.pagination.activate(toIndex)
-      })
-
-      this.swiper = swiper
-
-      this.itemCount = this.swiper.count
+      // console.log(this.w, this.h)
+      // this.$el.style.width = this.w
+      // this.$el.style.height = this.h
 
       Vue.nextTick(() => {
-        if (this.$refs.pagination)
-          this.$refs.pagination.init()
+
+        let swiper = new Swiper({
+          direction: this.direction
+        })
+
+        swiper.on('swiped', (fromIndex, toIndex) => {
+          if (this.$refs.pagination)
+            this.$refs.pagination.activate(toIndex)
+        })
+
+        this.swiper = swiper
+
+        this.itemCount = this.swiper.count
+
+        Vue.nextTick(() => {
+          if (this.$refs.pagination)
+            this.$refs.pagination.init()
+        })
+
       })
 
     },

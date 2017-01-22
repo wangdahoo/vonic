@@ -148,7 +148,7 @@
 
     mounted() {
       if (this.cssClass)
-        this.$el.querySelector('von-popup').classList.add(this.cssClass)
+        this.$el.querySelector('.von-popup').classList.add(this.cssClass)
     },
 
     methods: {
