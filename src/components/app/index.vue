@@ -25,9 +25,6 @@
     }
   })
 
-  // CascadePanel
-  // import './services/cascadepanel'
-
   export default {
     components: {
       Navbar,
@@ -52,9 +49,9 @@
       // Model Service
       // window.$vonicModal = this.$refs.modal
 
-      // channel.$on('VonicNotification', (data) => {
-      //   $toast.show(data.message);
-      // })
+      channel.$on('VonicNotification', (data) => {
+        $toast.show(data.message);
+      })
     }
   }
 </script>

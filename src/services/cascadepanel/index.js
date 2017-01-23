@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import {createElement, timeout} from '../utils'
-import CascadePanel from '../../cascade/CascadePanel.vue'
+import CascadePanel from '../../components/cascade/CascadePanel.vue'
 
 class CascadePanelService {
-  _vm = undefined
+  constructor() {
+    this._vm = undefined
+  }
 
   show(title, options) {
     createElement('von-cascade-panel')

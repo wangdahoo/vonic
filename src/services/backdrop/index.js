@@ -18,6 +18,13 @@ class VonicBackdrop {
     setTimeout(() => {
       this._vm.show()
     })
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        this._vm.show()
+        resolve()
+      })
+    })
   }
 
   hide() {

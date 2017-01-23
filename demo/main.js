@@ -27,6 +27,7 @@ import Scalable from './components/Scalable'
 import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
+import Cascade from './components/Cascade'
 import Popup from './components/Popup'
 
 const routes = [
@@ -55,6 +56,7 @@ const routes = [
   { path: '/advanced/swiper/default', component: SwiperDefault },
   { path: '/advanced/swiper/vertical', component: SwiperVertical },
 
+  { path: '/advanced/cascade', component: Cascade },
   { path: '/advanced/popup', component: Popup },
 
 
