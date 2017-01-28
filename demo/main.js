@@ -36,6 +36,7 @@ import TabbarDiscount from './components/tabbar/Discount'
 import TabbarCart from './components/tabbar/Cart'
 import TabbarUser from './components/tabbar/User'
 import PageFromTabbar from './components/tabbar/PageFromTabbar'
+import TabbarWithoutRoutes from './components/TabbarWithoutRoutes'
 
 const routes = [
   { path: '/', component: Index },
@@ -76,8 +77,8 @@ const routes = [
       { path: 'user', component: TabbarUser }
     ]
   },
-  { path: '/pageFromTabbar',component: PageFromTabbar},
-
+  { path: '/pageFromTabbar',component: PageFromTabbar },
+  { path: '/advanced/tabbarWithoutRoutes', component: TabbarWithoutRoutes }
 ]
 
 Vue.use(Vonic.app, {
