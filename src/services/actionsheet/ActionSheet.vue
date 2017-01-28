@@ -194,7 +194,7 @@
 
         let wrapper = document.querySelector('[von-action-sheet] > .action-sheet-wrapper')
         wrapper.addEventListener('webkitTransitionEnd', () => {
-          this.$destroy(true)
+          this.$destroy()
         }, false)
       },
 

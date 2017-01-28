@@ -30,6 +30,12 @@ import SwiperVertical from './components/SwiperVertical'
 import Cascade from './components/Cascade'
 import Popup from './components/Popup'
 import ActionSheet from './components/ActionSheet'
+import Tabbar from './components/Tabbar'
+import TabbarHome from './components/tabbar/Home'
+import TabbarDiscount from './components/tabbar/Discount'
+import TabbarCart from './components/tabbar/Cart'
+import TabbarUser from './components/tabbar/User'
+import PageFromTabbar from './components/tabbar/PageFromTabbar'
 
 const routes = [
   { path: '/', component: Index },
@@ -60,7 +66,17 @@ const routes = [
   { path: '/advanced/cascade', component: Cascade },
   { path: '/advanced/popup', component: Popup },
   { path: '/advanced/actionSheet', component: ActionSheet },
-
+  {
+    path: '/advanced/tabbar',
+    component: Tabbar,
+    children: [
+      { path: 'home', component: TabbarHome },
+      { path: 'discount', component: TabbarDiscount },
+      { path: 'cart', component: TabbarCart },
+      { path: 'user', component: TabbarUser }
+    ]
+  },
+  { path: '/pageFromTabbar',component: PageFromTabbar},
 
 ]
 

@@ -50,9 +50,11 @@
           Loading <span class="item-note">加载提示</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
+      </div>
 
-        <!-- layout -->
-        <div class="item item-divider">布局</div>
+      <!-- layout -->
+      <div class="item item-divider">布局</div>
+      <div class="list" thin-border>
         <router-link tag="div" class="item item-icon-right" to="/layout/list">
           List <span class="item-note">列表</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -74,8 +76,11 @@
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
 
-        <!-- advanced -->
-        <div class="item item-divider">高级</div>
+      </div>
+      <!-- advanced -->
+      <div class="item item-divider">高级</div>
+      <div class="list" thin-border>
+
         <router-link tag="div" class="item item-icon-right" to="/advanced/swiper">
           Swiper <span class="item-note">轮播</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -92,11 +97,21 @@
           ActionSheet <span class="item-note">操作列表</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
-
+        <router-link tag="div" class="item item-icon-right" to="/advanced/tabbar/home">
+          Tabbar <span class="item-note">嵌套路由使用</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
       </div>
+
+      <div class="footer"></div>
     </div>
   </div>
 </template>
+<style>
+  .footer {
+    height: 40px;
+  }
+</style>
 <script>
   export default {
     data() {

@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'ActionSheet', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '操作列表', showBackButton: true}">
     <div class="page-content padding-top">
       <div class="item item-icon-right thin-border" @click="showActionSheet()">
         iOS<span class="item-note">默认</span>
