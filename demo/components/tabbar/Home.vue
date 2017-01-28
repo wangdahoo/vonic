@@ -3,9 +3,9 @@
     <div class="page-content padding-top">
       <p class="text-center">Home Page</p>
       <div style="text-align: center; padding: 100px 40px">
-        <button class="button button-assertive" @click="back()">
+        <md-button class="button button-assertive" @click.native="back()">
           返回组件列表页
-        </button>
+        </md-button>
       </div>
     </div>
   </div>

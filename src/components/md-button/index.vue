@@ -1,7 +1,7 @@
 <template>
-  <button class="md-button" @click="onClick($event)">
+  <div class="md-button" @click="onClick($event)">
     <slot></slot>
-  </button>
+  </div>
 </template>
 <style lang='scss'>
   .md-button {
@@ -66,7 +66,7 @@
         ripple.style.top = y - btn.offsetHeight / 2 + 'px'
 
         btn.appendChild(ripple)
-        
+
         ripple.classList.add('md-ripple-effect')
         setTimeout(() => {
           btn.removeChild(ripple)
