@@ -23,11 +23,14 @@ import VonApp from './components/app'
 //   suppressTransitionError: false
 // }
 
-// let VonicAppConfig = {
-//   beforeEach: undefined,
-//   afterEach: undefined,
-//   routerOptions: {}
-// }
+let VonicAppConfig = {
+  // Router Global Guards
+  beforeEach: undefined,
+  afterEach: undefined,
+
+  // Router Options
+  routerOptions: {}
+}
 
 const nextDirection = (direction) => {
   let el = document.querySelector('[von-app]')
@@ -45,6 +48,12 @@ class VonicApp {
     const router = new VueRouter({
       routes: this.routes
     })
+
+    // set router global guards
+    if (typeof VonicAppConfig.beforeEach == 'function')
+      router.beforeEach(VonicAppConfig.beforeEach)
+    if (typeof VonicAppConfig.afterEach == 'function')
+      router.afterEach(VonicAppConfig.afterEach)
 
     const app = new Vue({
       router,

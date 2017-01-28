@@ -81,6 +81,53 @@ const routes = [
   { path: '/advanced/tabbarWithoutRoutes', component: TabbarWithoutRoutes }
 ]
 
+/**
+ * !! Head up
+ * Using sessionStorage, Vonic.app.pageContentScrollTop, Vonic.app.nextDirection
+ * to handle history view transition and preview page position
+ *
+ */
+
+import sess from './sess'
+
+const beforeEach = (toRoute, fromRoute, next) => {
+  const to = toRoute.path
+  const from = fromRoute.path
+  const scrollTop = Vonic.app.pageContentScrollTop()
+
+  const h = sess.get(to)
+  if (h && h.history || (from && from.indexOf(to) === 0)) {
+    Vonic.app.nextDirection('back')
+    h.history = false
+    sess.set(to, h)
+  } else {
+    sess.set(from || '/', {
+      history: true,
+      scrollTop: scrollTop
+    })
+    Vonic.app.nextDirection('forward')
+  }
+  next()
+}
+
+const afterEach = (toRoute, fromRoute) => {
+  const to = toRoute.path
+  const from = fromRoute.path
+  // [Custom Business] Never use history scrollTop when '/' => '/home'
+  if (from == '/' && to == '/home') return
+
+  const h = sess.get(to)
+  if (h && h.scrollTop) {
+    Vue.nextTick(() => {
+      Vonic.app.pageContentScrollTop(h.scrollTop)
+    })
+  }
+}
+
+// Register beforeEach and afterEach Hooks
+Vonic.app.setConfig('beforeEach', beforeEach)
+Vonic.app.setConfig('afterEach', afterEach)
+
 Vue.use(Vonic.app, {
   routes: routes
 })

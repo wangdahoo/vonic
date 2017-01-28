@@ -11,9 +11,8 @@
       <div class="popup-buttons">
         <button class="button button-block button-positive button-outline button-cancel"
           @click="onCancel()"
-          v-html="cancelText"
+          v-html="getCancelHtml()"
         >
-          <div class="hairline-right"></div>
         </button>
         <button class="button button-block button-positive button-outline button-ok"
           @click="onOk()"
@@ -168,6 +167,10 @@
 
       onCancel() {
         this.$emit('ConfirmCancelEvent')
+      },
+
+      getCancelHtml() {
+        return this.cancelText + '<div class="hairline-right"></div>'
       }
     }
   }
