@@ -7,6 +7,7 @@ import './services/loading'
 import './services/popup/dialog.js'
 import './services/popup/index.js'
 import './services/cascadepanel/index.js'
+import './services/actionsheet/index.js'
 
 import VonApp from './components/app'
 

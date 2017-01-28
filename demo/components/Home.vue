@@ -88,6 +88,10 @@
           Popup <span class="item-note">自定义弹层</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/advanced/actionsheet">
+          ActionSheet <span class="item-note">操作列表</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
       </div>
     </div>

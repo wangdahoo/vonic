@@ -11,7 +11,8 @@
       <cascade
         :fields="fields"
         ajax-url="path/to/data"
-        :value.sync="value"
+        :value="value"
+        :on-change="onChange"
       ></cascade>
       -->
 

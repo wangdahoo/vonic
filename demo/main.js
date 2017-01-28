@@ -29,6 +29,7 @@ import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
 import Cascade from './components/Cascade'
 import Popup from './components/Popup'
+import ActionSheet from './components/ActionSheet'
 
 const routes = [
   { path: '/', component: Index },
@@ -58,6 +59,7 @@ const routes = [
 
   { path: '/advanced/cascade', component: Cascade },
   { path: '/advanced/popup', component: Popup },
+  { path: '/advanced/actionSheet', component: ActionSheet },
 
 
 ]
