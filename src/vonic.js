@@ -31,9 +31,11 @@ Vue.component('scalable', Scalable)
 
 // Advanced
 import {Swiper, SwiperItem} from './components/swiper'
+import Scroll from './components/scroll'
 import Cascade from './components/cascade'
 Vue.component('swiper', Swiper)
 Vue.component('swiper-item', SwiperItem)
+Vue.component('scroll', Scroll)
 Vue.component('cascade', Cascade)
 
 import Plugin from './plugin'
@@ -58,6 +60,7 @@ module.exports = {
   // Advanced
   Swiper,
   SwiperItem,
+  Scroll,
   Cascade,
 
   app: Plugin

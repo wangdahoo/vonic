@@ -27,6 +27,7 @@ import Scalable from './components/Scalable'
 import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
+import Scroll from './components/Scroll'
 import Cascade from './components/Cascade'
 import Popup from './components/Popup'
 import ActionSheet from './components/ActionSheet'
@@ -64,6 +65,8 @@ const routes = [
   { path: '/advanced/swiper/default', component: SwiperDefault },
   { path: '/advanced/swiper/vertical', component: SwiperVertical },
 
+  { path: '/advanced/scroll', component: Scroll },
+
   { path: '/advanced/cascade', component: Cascade },
   { path: '/advanced/popup', component: Popup },
   { path: '/advanced/actionSheet', component: ActionSheet },
@@ -95,8 +98,8 @@ const beforeEach = (toRoute, fromRoute, next) => {
   const from = fromRoute.path
   const scrollTop = Vonic.app.pageContentScrollTop()
 
-  const h = sess.get(to)
-  if (h && h.history || (from && from.indexOf(to) === 0)) {
+  let h = sess.get(to)
+  if (h && h.history) {
     Vonic.app.nextDirection('back')
     h.history = false
     sess.set(to, h)

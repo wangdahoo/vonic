@@ -85,6 +85,10 @@
           Swiper <span class="item-note">轮播</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/advanced/scroll">
+          Scroll <span class="item-note">下拉刷新、无限加载</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
         <router-link tag="div" class="item item-icon-right" to="/advanced/cascade">
           Cascade <span class="item-note">级联</span>
           <i class="icon ion-ios-arrow-right"></i>
