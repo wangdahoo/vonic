@@ -5,7 +5,8 @@
       showBackButton: true,
       onBackButtonClick: back,
       showMenuButton: true,
-      menuButtonText: menuButtonText
+      menuButtonText: menuButtonText,
+      onMenuButtonClick: toggleSidebar
     }">
     <div class="page-content">
       <!-- Basic -->
@@ -101,6 +102,10 @@
           ActionSheet <span class="item-note">操作列表</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <div class="item item-icon-right" @click="toggleSidebarRight()">
+          Sidebar <span class="item-note">侧边栏</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </div>
         <router-link tag="div" class="item item-icon-right" to="/advanced/tabbar/home">
           Tabbar <span class="item-note">嵌套路由使用</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -125,16 +130,37 @@
     data() {
       return {
         menuButtonText: '<a class="button button-icon icon ion-navicon"></a>',
-        sidebar: undefined
+        sidebar: undefined,
+        sidebarRight: undefined
       }
     },
 
     mounted() {
+      let template = `
+        <p style="font-size: 13px;">
+        No man is an island,<br>
+        entire of itself.<br>
+        Every man is a piece of the continent,<br>
+        a part of the main.<br>
+        If a clod be washed away by the sea,<br>
+        Europe is the less,<br>
+        as well as if a promontory were,<br>
+        as well as if a manor of thy friend's or of thine own were.<br>
+        Any man's death diminishes me.<br>
+        Because I am involved in mankind.<br>
+        And,<br>
+        therefore,<br>
+        never send to know for whom the bells tolls,<br>
+        it tolls for thee.<br>
+        </p>
+      `
+      this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
 
+      this.sidebarRight = $sidebar.fromTemplate('<h5>右边栏</h5>', {position: 'right'})
     },
 
     destroyed() {
-
+      $sidebar.destroy()
     },
 
     methods: {
@@ -152,8 +178,15 @@
 
       toast() {
         $toast.show('发送成功')
-      }
+      },
 
+      toggleSidebar() {
+        this.sidebar.toggle()
+      },
+
+      toggleSidebarRight() {
+        this.sidebarRight.toggle()
+      }
     }
   }
 </script>
