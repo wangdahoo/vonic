@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha.1",
   "main": "dist/vonic.min.js",
   "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
@@ -17,7 +17,8 @@
   "author": "wangdahoo <157195705@qq.com>",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host 0.0.0.0 --port 8081",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "doc": "gulp doc && cross-env NODE_ENV=production BUILD=doc webpack --progress --hide-modules",
+    "build": "gulp publish && cross-env NODE_ENV=production BUILD=publish webpack --progress --hide-modules"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -33,8 +34,12 @@
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-replace": "^0.5.4",
     "html-webpack-plugin": "^2.25.0",
     "lodash": "^4.17.4",
+    "moment": "^2.17.1",
     "node-sass": "^3.9.3",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
