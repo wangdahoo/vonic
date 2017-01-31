@@ -4,9 +4,9 @@
          :class="{'click-block-hide': !opened}"
          @click="close()"
     ></div>
-    <div width="260" class="von-sidebar" :class="{'open': opened}">
+    <scroller width="260" class="von-sidebar" :class="{'open': opened}">
       <slot></slot>
-    </div>
+    </scroller>
   </div>
 </template>
 <style lang='scss'>
@@ -84,14 +84,14 @@
 </style>
 <script>
   import Vue from 'vue'
-  // import Scroller from 'vue-scroller'
+  import Scroller from 'vue-scroller'
 
   const transitionDuration = 400
 
   export default {
-    // components: {
-    //   Scroller
-    // },
+    components: {
+      Scroller
+    },
     props: {
       position: {
         type: String,
