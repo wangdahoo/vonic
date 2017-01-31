@@ -22,7 +22,8 @@
   "dependencies": {
     "axios": "^0.15.3",
     "vue": "^2.1.8",
-    "vue-router": "^2.1.0"
+    "vue-router": "^2.1.0",
+    "vue-scroller": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

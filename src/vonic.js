@@ -38,6 +38,10 @@ Vue.component('swiper-item', SwiperItem)
 Vue.component('scroll', Scroll)
 Vue.component('cascade', Cascade)
 
+// Vue Scroller
+import Scroller from 'vue-scroller'
+Vue.component('scroller', Scroller)
+
 import Plugin from './plugin'
 
 module.exports = {
@@ -61,6 +65,7 @@ module.exports = {
   Swiper,
   SwiperItem,
   Scroll,
+  Scroller,
   Cascade,
 
   app: Plugin
