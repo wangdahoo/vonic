@@ -64,6 +64,10 @@
 
     ready() {
       scaleContent(this.$el, this.scale)
+
+      window.addEventListener('orientationchange', () => {
+        scaleContent(this.$el, this.scale)
+      })
     }
   }
 </script>
