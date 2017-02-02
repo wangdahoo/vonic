@@ -9,8 +9,8 @@ import './services/popup/index.js'
 import './services/cascadepanel/index.js'
 import './services/actionsheet/index.js'
 import './services/tabbar/index.js'
-
 import './services/sidebar/index.js'
+import './services/modal/index.js'
 
 import VonApp from './components/app'
 

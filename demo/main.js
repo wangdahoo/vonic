@@ -39,6 +39,7 @@ import TabbarCart from './components/tabbar/Cart'
 import TabbarUser from './components/tabbar/User'
 import PageFromTabbar from './components/tabbar/PageFromTabbar'
 import TabbarWithoutRoutes from './components/TabbarWithoutRoutes'
+import Modal from './components/Modal'
 
 const routes = [
   { path: '/', component: Index },
@@ -51,7 +52,6 @@ const routes = [
   { path: '/basic/search', component: Search },
   { path: '/basic/radio', component: Radio },
   { path: '/basic/checkbox', component: Checkbox },
-
   { path: '/basic/dialog', component: Dialog },
 
   // Layout
@@ -81,7 +81,8 @@ const routes = [
     ]
   },
   { path: '/pageFromTabbar',component: PageFromTabbar },
-  { path: '/advanced/tabbarWithoutRoutes', component: TabbarWithoutRoutes }
+  { path: '/advanced/tabbarWithoutRoutes', component: TabbarWithoutRoutes },
+  { path: '/advanced/modal', component: Modal }
 ]
 
 /**

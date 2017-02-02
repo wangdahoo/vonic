@@ -118,6 +118,10 @@
           Tabbar Standalone <span class="item-note">单独使用</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/advanced/modal">
+          Modal <span class="item-note">模态窗</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
       </div>
 
       <div class="footer"></div>

@@ -42,6 +42,10 @@ Vue.component('cascade', Cascade)
 import Scroller from 'vue-scroller'
 Vue.component('scroller', Scroller)
 
+// Modal
+import Modal from './services/modal/Modal.vue'
+Vue.component('modal', Modal)
+
 import Plugin from './plugin'
 
 module.exports = {
@@ -67,6 +71,8 @@ module.exports = {
   Scroll,
   Scroller,
   Cascade,
+
+  Modal,
 
   app: Plugin
 }
