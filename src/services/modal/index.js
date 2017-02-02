@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import ClickBlock from './ClickBlock'
 import Modal from './Modal.vue'
+import channel from './channel'
 
 const createElement = (marker, root, tag) => {
   let target = document.querySelector(root) || document.body
@@ -18,13 +19,25 @@ class ModalManager {
   }
 
   fromComponent(com, options) {
+    // click block
+    if (!document.querySelector('[von-modal-click-block]')) {
+      createElement('von-modal-click-block')
+      let ClickBlockComponent = Vue.extend(ClickBlock)
+      new ClickBlockComponent().$mount('[von-modal-click-block]')
+    }
+
+    // init modal instance
     let title = options && options.title
+    let theme = options && options.theme
+    let destroyOnHide = options && options.destroyOnHide
     let modalId = 'modal_' + Math.random().toString(36).substr(3,6)
     createElement(modalId)
     let ModalComponent = Vue.extend(Modal)
     let modal = new ModalComponent({
       propsData: {
-        title: title
+        title: title || '',
+        theme: theme || '',
+        destroyOnHide: !!destroyOnHide
       }
     })
     modal.$mount(`[${modalId}]`)
@@ -46,6 +59,11 @@ class ModalManager {
     if (modal) {
       modal.content && modal.content.$destroy()
       modal.$destroy()
+    }
+
+    // remove click block
+    if (document.querySelectorAll('[von-modal]').length == 0) {
+      channel.$emit('RemoveClickBlock')
     }
   }
 }

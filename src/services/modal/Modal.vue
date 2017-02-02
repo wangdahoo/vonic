@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-backdrop"
+  <div von-modal class="modal-backdrop"
     :class="{'active': state > 0, 'hide': state == 0}">
     <div class="modal-backdrop-bg"></div>
     <div class="modal-wrapper">
@@ -9,15 +9,25 @@
         'ng-leave ng-leave-active': state == 3,
       }">
         <slot name="header">
-          <div class="bar bar-header">
+          <div class="bar bar-header"
+            :class="{
+              'bar-assertive': theme == 'assertive',
+              'bar-positive': theme == 'positive',
+              'bar-balanced': theme == 'balanced',
+              'bar-energized': theme == 'energized',
+              'bar-calm': theme == 'calm',
+              'bar-royal': theme == 'royal',
+              'bar-stable': theme == 'stable',
+              'bar-dark': theme == 'dark',
+              'bar-dafault': theme == 'default'
+            }"
+          >
             <h1 class="title" v-text="title"></h1>
             <button class="button button-icon icon ion-ios-close-empty" @click="hide()"></button>
           </div>
         </slot>
 
-        <div class="content" von-modal-content>
-
-        </div>
+        <div von-modal-content></div>
       </div>
     </div>
   </div>
@@ -25,17 +35,26 @@
 <style lang="scss">
   .modal {
     padding-top: 44px;
+
+    .bar.bar-header {
+      h1.title {
+        font-weight: normal;
+      }
+    }
   }
 </style>
 <script>
   import Vue from 'vue'
+  import channel from './channel'
 
   const show_modal_animate_dur = 400
   const hide_modal_animate_dur = 250
 
   export default {
     props: {
-      title: String
+      title: String,
+      theme: String,
+      destroyOnHide: Boolean
     },
 
     data() {
@@ -53,6 +72,11 @@
         this.state = 1
         setTimeout(() => {
           this.state = 2
+
+          channel.$emit('ModalSlideUpStart')
+          setTimeout(() => {
+            channel.$emit('ModalSlideUpEnd')
+          }, show_modal_animate_dur)
         }, 50)
         document.body.classList.add('modal-open')
       },
@@ -61,6 +85,10 @@
         this.state = 3
         setTimeout(() => {
           this.state = 0
+
+          if (this.destroyOnHide) {
+            this.$destroy()
+          }
         }, hide_modal_animate_dur)
         document.body.classList.remove('modal-open')
       }
