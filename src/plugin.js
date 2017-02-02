@@ -16,16 +16,12 @@ import './services/storage/index.js'
 
 import VonApp from './components/app'
 
-// const defaultRouterOptions = {
-//   hashbang: true,
-//   history: false,
-//   abstract: false,
-//   root: null,
-//   linkActiveClass: 'v-link-active',
-//   saveScrollPosition: false,
-//   transitionOnLoad: false,
-//   suppressTransitionError: false
-// }
+const defaultRouterOptions = {
+  base: '/',
+  linkActiveClass: 'router-link-active',
+  mode: 'hash',
+  scrollBehavior: undefined
+}
 
 let VonicAppConfig = {
   // Router Global Guards
@@ -49,9 +45,16 @@ class VonicApp {
   start() {
     const App = Vue.extend(VonApp)
 
-    const router = new VueRouter({
-      routes: this.routes
-    })
+    let routerOptions = Object.assign(
+      {},
+      defaultRouterOptions,
+      VonicAppConfig.routerOptions,
+      {
+        routes: this.routes
+      }
+    )
+
+    const router = new VueRouter(routerOptions)
 
     // set router global guards
     if (typeof VonicAppConfig.beforeEach == 'function')
