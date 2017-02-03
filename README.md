@@ -75,8 +75,8 @@ $ npm run dev
 That's it.
 
 ## Documents
-- [English](https://wangdahoo.github.io/vonic-doc-v1/en/)
-- [中文](https://wangdahoo.github.io/vonic-doc-v1/zh-CN/)
+- [English](https://wangdahoo.github.io/vonic-doc/v1/en/)
+- [中文](https://wangdahoo.github.io/vonic-doc/v1/zh-CN/)
 
 ## Thanks to
 - [Ionic](http://ionicframework.com/)
