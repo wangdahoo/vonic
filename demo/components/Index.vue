@@ -94,7 +94,7 @@
       },
 
       toDoc() {
-        location.href = 'https://wangdahoo.github.io/vonic-doc/'
+        location.href = 'https://wangdahoo.github.io/vonic-doc-v1/'
       }
     }
   }
