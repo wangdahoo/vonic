@@ -49,7 +49,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      'vonic': path.resolve(__dirname, './src/vonic.js'),
+      'vonic': path.resolve(__dirname, './src/index.js'),
     }
   },
   devServer: {
@@ -62,7 +62,7 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
 
   if (process.env.BUILD == 'publish') {
-    module.exports.entry = './src/vonic.js'
+    module.exports.entry = './src/index.js'
     module.exports.output = {
       path: path.resolve(__dirname, './dist'),
       filename: 'vonic.min.js',

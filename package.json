@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.6",
   "main": "dist/vonic.min.js",
   "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
@@ -46,6 +46,6 @@
     "vue-loader": "^10.0.0",
     "vue-template-compiler": "^2.1.0",
     "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+    "webpack-dev-server": "^2.3.0"
   }
 }

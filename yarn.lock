@@ -20,16 +20,16 @@ acorn-dynamic-import@^2.0.0:
     acorn "^4.0.3"
 
 acorn@^4.0.3, acorn@^4.0.4:
-  version "4.0.4"
-  resolved "http://registry.npm.taobao.org/acorn/download/acorn-4.0.4.tgz#17a8d6a7a6c4ef538b814ec9abac2779293bf30a"
+  version "4.0.8"
+  resolved "http://registry.npm.taobao.org/acorn/download/acorn-4.0.8.tgz#f41e52020ce78118a3c68ed0e9215eb8fc68b5b1"
 
 ajv-keywords@^1.1.1:
-  version "1.5.0"
-  resolved "http://registry.npm.taobao.org/ajv-keywords/download/ajv-keywords-1.5.0.tgz#c11e6859eafff83e0dafc416929472eca946aa2c"
+  version "1.5.1"
+  resolved "http://registry.npm.taobao.org/ajv-keywords/download/ajv-keywords-1.5.1.tgz#314dd0a4b3368fad3dfcdc54ede6171b886daf3c"
 
 ajv@^4.7.0:
-  version "4.10.4"
-  resolved "http://registry.npm.taobao.org/ajv/download/ajv-4.10.4.tgz#c0974dd00b3464984892d6010aa9c2c945933254"
+  version "4.11.2"
+  resolved "http://registry.npm.taobao.org/ajv/download/ajv-4.11.2.tgz#f166c3c11cbc6cb9dcc102a5bcfe5b72c95287e6"
   dependencies:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
@@ -4199,8 +4199,8 @@ stream-consume@~0.1.0:
   resolved "http://registry.npm.taobao.org/stream-consume/download/stream-consume-0.1.0.tgz#a41ead1a6d6081ceb79f65b061901b6d8f3d1d0f"
 
 stream-http@^2.3.1:
-  version "2.6.0"
-  resolved "http://registry.npm.taobao.org/stream-http/download/stream-http-2.6.0.tgz#adf3309ced17624ebfb7ef13e6ac4cfe405a8b12"
+  version "2.6.3"
+  resolved "http://registry.npm.taobao.org/stream-http/download/stream-http-2.6.3.tgz#4c3ddbf9635968ea2cfd4e48d43de5def2625ac3"
   dependencies:
     builtin-status-codes "^3.0.0"
     inherits "^2.0.1"
@@ -4661,7 +4661,7 @@ webpack-dev-middleware@^1.9.0:
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
 
-webpack-dev-server@^2.2.0:
+webpack-dev-server@^2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/webpack-dev-server/download/webpack-dev-server-2.3.0.tgz#0437704bbd4d941a6e4c061eb3cc232ed7d06101"
   dependencies:
