@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "2.0.0-alpha.3",
+  "version": "2.0.0-alpha.4",
   "main": "dist/vonic.min.js",
   "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
@@ -38,7 +38,6 @@
     "gulp-clean": "^0.3.2",
     "gulp-replace": "^0.5.4",
     "html-webpack-plugin": "^2.25.0",
-    "lodash": "^4.17.4",
     "moment": "^2.17.1",
     "node-sass": "^3.9.3",
     "sass-loader": "^4.0.2",
@@ -46,8 +45,7 @@
     "url-loader": "^0.5.7",
     "vue-loader": "^10.0.0",
     "vue-template-compiler": "^2.1.0",
-    "webpack": "^2.1.0-beta.25",
-    "webpack-dev-server": "^2.1.0-beta.9",
-    "webpack-manifest-plugin": "^1.1.0"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
   }
 }

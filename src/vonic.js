@@ -48,7 +48,7 @@ Vue.component('modal', Modal)
 
 import Plugin from './plugin'
 
-module.exports = {
+export default {
   // Basic
   MdButton,
   VonInput,
