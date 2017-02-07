@@ -46,8 +46,7 @@
           'toggle-calm': this.theme == 'calm',
           'toggle-royal': this.theme == 'royal',
           'toggle-stable': this.theme == 'stable',
-          'toggle-dark': this.theme == 'dark',
-          'toggle-assertive': this.theme == 'default'
+          'toggle-dark': this.theme == 'dark'
         }
       },
 

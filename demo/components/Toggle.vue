@@ -4,12 +4,12 @@
       <von-toggle :text="toggleText" v-model="pushNotification"></von-toggle>
       <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
 
-      <!-- <div class="item item-divider">其他主题色</div>
-      <von-toggle text="assertive" theme="assertive" :value="true"></von-toggle>
-      <von-toggle text="positive" theme="positive" :value="true"></von-toggle>
-      <von-toggle text="energized" theme="energized" :value="true"></von-toggle>
-      <von-toggle text="calm" theme="calm" :value="true"></von-toggle>
-      <von-toggle text="dark" theme="dark" :value="true"></von-toggle> -->
+      <div class="item item-divider">其他主题色</div>
+      <von-toggle text="assertive" theme="assertive" v-model="values[0]"></von-toggle>
+      <von-toggle text="positive" theme="positive" v-model="values[1]"></von-toggle>
+      <von-toggle text="energized" theme="energized" v-model="values[2]"></von-toggle>
+      <von-toggle text="calm" theme="calm" v-model="values[3]"></von-toggle>
+      <von-toggle text="dark" theme="dark" v-model="values[4]"></von-toggle>
     </div>
 
   </div>
@@ -19,7 +19,9 @@
     data(){
       return {
         toggleText: "是否开启推送",
-        pushNotification: true
+        pushNotification: true,
+
+        values: [true, true, true, true, true]
       }
     }
   }
