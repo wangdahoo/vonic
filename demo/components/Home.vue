@@ -37,6 +37,10 @@
           Checkbox <span class="item-note">复选框</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/basic/toggle">
+          Toggle <span class="item-note">开关按钮</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
         <router-link tag="div" class="item item-icon-right" to="/basic/dialog">
           Dialog <span class="item-note">对话框</span>

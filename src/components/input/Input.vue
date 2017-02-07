@@ -46,7 +46,10 @@
       },
       floatingLabel: {
         type: String,
-        default: 'false'
+        default: 'false',
+        validator(val) {
+          return val == 'true' || val == 'false'
+        }
       }
     },
 

@@ -7,12 +7,14 @@ import VonInput from './components/input/Input.vue'
 import Search from './components/input/Search.vue'
 import VonRadio from './components/radio'
 import VonCheckbox from './components/checkbox'
+import VonToggle from './components/toggle'
 
 Vue.component('md-button', MdButton)
 Vue.component('von-input', VonInput)
 Vue.component('search', Search)
 Vue.component('von-radio', VonRadio)
 Vue.component('von-checkbox', VonCheckbox)
+Vue.component('von-toggle', VonToggle)
 
 // Layout
 import {List, Item, HairlineItem} from './components/list'
