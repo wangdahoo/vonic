@@ -3,7 +3,7 @@
     <div class="page-content">
       <swiper direction="horizontal" width="100%" height="150" pager-color="#ea5a49" pager-bg-color="#e5e4e3">
         <swiper-item>
-          <h1>Item 1</h1>
+          <h1 @touchstart="onClick()">Item 1</h1>
         </swiper-item>
 
         <swiper-item>
@@ -45,3 +45,13 @@
   }
 
 </style>
+
+<script>
+  export default {
+    methods: {
+      onClick() {
+        $toast.show('clicked!')
+      }
+    }
+  }
+</script>
