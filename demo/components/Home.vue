@@ -181,15 +181,21 @@
       },
 
       loading(tips) {
-        $loading.show(tips)
+        $loading.show(tips).then(() => {
+          console.log('loading showed')
 
-        setTimeout(() => {
-          $loading.hide()
-        }, 2000)
+          $loading.hide(2000).then(() => {
+            console.log('loading hide')
+          })
+        })
       },
 
       toast() {
-        $toast.show('发送成功')
+        $toast.show('发送成功', 30000).then(() => {
+          console.log('toast hide')
+        })
+
+        $toast.hide()
       },
 
       toggleSidebar() {

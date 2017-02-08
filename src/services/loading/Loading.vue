@@ -85,6 +85,10 @@
         setTimeout(() => {
           this.hide()
         }, millsecs || 1500)
+      },
+
+      setText(t) {
+        this.tips = t
       }
     }
   }
