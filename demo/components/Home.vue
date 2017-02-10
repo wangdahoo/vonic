@@ -191,11 +191,9 @@
       },
 
       toast() {
-        $toast.show('发送成功', 30000).then(() => {
+        $toast.show('发送成功', 3000).then(() => {
           console.log('toast hide')
         })
-
-        $toast.hide()
       },
 
       toggleSidebar() {

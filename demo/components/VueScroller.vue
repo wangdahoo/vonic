@@ -1,5 +1,11 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Vue Scroller', showBackButton: true}">
+  <div class="page has-navbar"
+    v-nav="{
+      title: 'Vue Scroller',
+      showBackButton: true,
+      showMenuButton: true,
+      onMenuButtonClick: toVueScrollerRepo
+    }">
     <scroller class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite"
@@ -64,6 +70,10 @@
 
       onItemClick(index) {
         console.log(index)
+      },
+
+      toVueScrollerRepo() {
+        location.href = 'https://github.com/wangdahoo/vue-scroller'
       }
     }
 
