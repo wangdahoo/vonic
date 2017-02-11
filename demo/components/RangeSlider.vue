@@ -15,6 +15,7 @@
         v-model="volume2"
         :min="min"
         :max="max"
+        theme="balanced"
       >
         <i class="icon ion-volume-low" slot="text-left"></i>
         <i class="icon ion-volume-high" slot="text-right"></i>
@@ -22,6 +23,10 @@
 
       <div class="padding">
         volume: {{ volume2 }}
+      </div>
+
+      <div class="padding">
+        Note: Theming capabilities are not available in Chrome due to this <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=582301">issues</a>
       </div>
     </div>
   </div>
