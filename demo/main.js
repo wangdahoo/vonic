@@ -14,6 +14,7 @@ import Search from './components/Search'
 import Radio from './components/Radio'
 import Checkbox from './components/Checkbox'
 import Toggle from './components/Toggle'
+import RangeSlider from './components/RangeSlider'
 
 import Dialog from './components/Dialog'
 
@@ -54,6 +55,7 @@ const routes = [
   { path: '/basic/radio', component: Radio },
   { path: '/basic/checkbox', component: Checkbox },
   { path: '/basic/toggle', component: Toggle },
+  { path: '/basic/range', component: RangeSlider },
   { path: '/basic/dialog', component: Dialog },
 
   // Layout

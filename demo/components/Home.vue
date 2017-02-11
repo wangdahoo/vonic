@@ -41,6 +41,10 @@
           Toggle <span class="item-note">开关按钮</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/basic/range">
+          Range Slider <span class="item-note">滑块</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
 
         <router-link tag="div" class="item item-icon-right" to="/basic/dialog">
           Dialog <span class="item-note">对话框</span>
