@@ -7,6 +7,8 @@
            class="item thin-border" :class="{'item-stable': index % 2 == 0}">
         {{ item }}
       </div>
+
+      <div v-if="infiniteCount >= 2" slot="infinite" class="text-center">没有更多数据</div>
     </scroll>
   </div>
 
@@ -15,7 +17,8 @@
   export default {
     data () {
       return {
-        items: []
+        items: [],
+        infiniteCount: 0
       }
     },
 
@@ -42,11 +45,15 @@
 
       onInfinite(done) {
         setTimeout(() => {
-          let start = this.bottom + 1
-          for (let i = start; i < start + 10; i++) {
-            this.items.push(i + ' - keep walking, be 2 with you.')
+          if (this.infiniteCount < 2) {
+            let start = this.bottom + 1
+            for (let i = start; i < start + 10; i++) {
+              this.items.push(i + ' - keep walking, be 2 with you.')
+            }
+            this.bottom = this.bottom + 10;
+
+            this.infiniteCount++
           }
-          this.bottom = this.bottom + 10;
 
           done()
         }, 1500)
