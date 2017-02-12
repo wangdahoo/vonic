@@ -53,7 +53,7 @@ $ npm install vonic@2.0.0-alpha.11
 - Scroll
 - [VueScroller](https://github.com/wangdahoo/vue-scroller)
 - Cascade
-- Datepicker
+<!--- Datepicker-->
 - Dialog
 - Popup
 - Modal
