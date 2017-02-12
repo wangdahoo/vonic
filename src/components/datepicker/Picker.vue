@@ -12,6 +12,9 @@
           确定
         </slot>
       </button>
+
+
+      <div class="hairline-bottom"></div>
     </div>
 
     <div class="dp-body">
@@ -21,7 +24,7 @@
         :snapping="snapping"
         :snapHeight="snapHeight"
         :animation-duration="animationDuration"
-        width="33%"
+        width="34%"
       >
         <div class="dp-item" v-for="(y, index) in years" v-text="y"></div>
       </scroller>
@@ -88,7 +91,7 @@
       padding: 0;
       position: relative;
 
-      $dp-list-with: 33.333333%;
+      $dp-list-with: 33%;
 
       .dp-list {
         height: 100%;
@@ -96,7 +99,7 @@
         background: #FFF;
 
         &.dp-months {
-          left: $dp-list-with;
+          left: 34%;
         }
 
         &.dp-dates {
@@ -105,14 +108,20 @@
 
         .dp-item {
           height: 34px;
-          font-size: 14px;
-          line-height: 14px;
-          padding: 10px 0;
+          font-size: 16px;
+          line-height: 16px;
+          padding: 9px 0;
           text-align: center;
           opacity: .2;
         }
       }
     }
+  }
+
+  @import "../scss/mixins";
+
+  .hairline-bottom:after {
+    @include hairline(bottom);
   }
 </style>
 <script>
@@ -121,8 +130,10 @@
 
   const defaultYears = () => {
     let years = ['','','']
-    let start = (new Date()).getFullYear() - 20
-    let end = (new Date()).getFullYear() + 20
+    let today = new Date()
+    const passed = today.getFullYear() - 1975
+    let start = today.getFullYear() - passed
+    let end = today.getFullYear() + passed
     for (let y = start; y <= end; y++) years.push(y + '')
     return years.concat(['','',''])
   }
@@ -192,7 +203,7 @@
         // scroller settings
         snapping: true,
         snapHeight: 34,
-        animationDuration: 5
+        animationDuration: 150
       }
     },
 

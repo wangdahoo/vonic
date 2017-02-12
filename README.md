@@ -41,6 +41,7 @@ $ npm install vonic@2.0.0-alpha.10
 - Radio
 - Checkbox
 - Toggle
+- RangeSlider
 - Toast
 - Loading
 - List
@@ -52,6 +53,7 @@ $ npm install vonic@2.0.0-alpha.10
 - Scroll
 - [VueScroller](https://github.com/wangdahoo/vue-scroller)
 - Cascade
+- Datepicker
 - Dialog
 - Popup
 - Modal
