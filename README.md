@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%202.0.0%20alpha.11%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%202.0.0%20alpha.12%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%202.1.8%20-green.svg">
 </p>
 
@@ -22,7 +22,7 @@
 - v2.0.0-alpha.11 released.
 
 ```bash
-$ npm install vonic@2.0.0-alpha.11
+$ npm install vonic@2.0.0-alpha.12
 ```
 
 - for vue 1.0, please refer to branch **1.x**.
@@ -53,7 +53,7 @@ $ npm install vonic@2.0.0-alpha.11
 - Scroll
 - [VueScroller](https://github.com/wangdahoo/vue-scroller)
 - Cascade
-<!--- Datepicker-->
+- Datepicker
 - Dialog
 - Popup
 - Modal

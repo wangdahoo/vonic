@@ -1,7 +1,7 @@
 <template>
   <div von-datepicker class="item item-borderless item-input" @click="showPicker()">
     <span v-if="label != ''" class="input-label" v-text="label"></span>
-    <input ref="datetime" type="datetime" :value="value">
+    <input ref="datetime" type="datetime" :value="v">
 
     <span v-text="formatedDate"></span>
 
@@ -82,15 +82,6 @@
 
     mounted() {
       this.formatedDate = formatDate(this.value, this.dateFormat)
-      channel.$on('PickerOkEvent', (value) => {
-        this.v = value
-        this.$refs.datetime.value = value
-        this.$emit('input', value)
-
-        this.formatedDate = formatDate(value, this.dateFormat)
-        if (this.picker)
-          this.picker.hide()
-      })
     },
 
     methods: {
@@ -105,6 +96,19 @@
             value: this.v
           }
         }).$mount('[von-picker]')
+
+        channel.$on('PickerOkEvent', (value) => {
+          this.v = value
+          console.log('datetime input =>', this.$refs.datetime)
+          this.$refs.datetime.value = value
+          this.$emit('input', value)
+
+          this.formatedDate = formatDate(value, this.dateFormat)
+          if (this.picker)
+            this.picker.hide()
+
+          channel.$off('PickerOkEvent')
+        })
 
         this.picker.show()
       }

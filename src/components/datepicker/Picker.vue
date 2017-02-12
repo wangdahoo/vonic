@@ -7,17 +7,16 @@
         </slot>
       </button>
 
-      <button class="button button-clear button-balanced pull-right" @click="confirm()">
+      <button class="button button-clear button-balanced btn-confirm" @click="confirm()">
         <slot name="confirm">
           确定
         </slot>
       </button>
-
-
-      <div class="hairline-bottom"></div>
     </div>
 
     <div class="dp-body">
+      <div class="hairline-top"></div>
+
       <!-- years -->
       <scroller class="dp-list dp-years"
         ref="y_scroller"
@@ -84,26 +83,35 @@
       height: 45px;
       padding: 0px;
       background: #f5f5f5;
+      z-index: 2;
+
+      .btn-confirm {
+        position: absolute;
+        right: 0;
+      }
     }
 
     .dp-body {
       height: 34px*7;
       padding: 0;
       position: relative;
-
-      $dp-list-with: 33%;
+      z-index: 1;
 
       .dp-list {
         height: 100%;
-        width: $dp-list-with;
+        width: 33%;
         background: #FFF;
+
+        &.dp-years {
+          width: 34%;
+        }
 
         &.dp-months {
           left: 34%;
         }
 
         &.dp-dates {
-          left: $dp-list-with*2;
+          left: 67%;
         }
 
         .dp-item {
@@ -120,8 +128,8 @@
 
   @import "../scss/mixins";
 
-  .hairline-bottom:after {
-    @include hairline(bottom);
+  .hairline-top:before {
+    @include hairline(top);
   }
 </style>
 <script>
@@ -193,6 +201,7 @@
     data() {
       return {
         state: 0, // 0: hide, 1: show
+        value: '',
 
         years: defaultYears(),
         months: defaultMonths(),
@@ -242,8 +251,7 @@
           this.$refs.y_scroller.resize()
           this.$refs.m_scroller.resize()
           this.$refs.d_scroller.resize()
-
-          setTimeout(this.setYmd)
+          this.setYmd()
         })
       },
 
@@ -275,6 +283,7 @@
         setOpacity(this.$refs.d_scroller.$el, dIndex)
 
         this.value = this.years[yIndex] + '-' + this.months[mIndex] + '-' + this.dates[dIndex]
+        // console.log(this.value)
       },
 
       setYmd() {
