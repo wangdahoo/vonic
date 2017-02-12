@@ -106,6 +106,10 @@
           Cascade <span class="item-note">级联</span>
           <i class="icon ion-ios-arrow-right"></i>
         </router-link>
+        <router-link tag="div" class="item item-icon-right" to="/advanced/datepicker">
+          Datepicker <span class="item-note">日期选择器</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </router-link>
         <router-link tag="div" class="item item-icon-right" to="/advanced/popup">
           Popup <span class="item-note">自定义弹层</span>
           <i class="icon ion-ios-arrow-right"></i>

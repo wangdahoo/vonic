@@ -45,7 +45,7 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   .logo {
     width: 100%;
     text-align: center;
@@ -76,6 +76,11 @@
     body {
       text-align: center;
     }
+  }
+
+  *::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
   }
 </style>
 <script>

@@ -86,6 +86,10 @@
       }
     },
 
+    destroyed() {
+      document.body.removeChild(this.$el)
+    },
+
     methods: {
       reset() {
         this.title = ''
@@ -121,7 +125,7 @@
         this.state = 0
         $backdrop.hide()
         setTimeout(() => {
-          this.$destroy(true)
+          this.$destroy()
         }, animation_duration)
       },
 

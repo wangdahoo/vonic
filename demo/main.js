@@ -32,6 +32,7 @@ import SwiperVertical from './components/SwiperVertical'
 import Scroll from './components/Scroll'
 import VueScroller from './components/VueScroller'
 import Cascade from './components/Cascade'
+import Datepicker from './components/DatePicker'
 import Popup from './components/Popup'
 import ActionSheet from './components/ActionSheet'
 import Tabbar from './components/Tabbar'
@@ -86,7 +87,8 @@ const routes = [
   },
   { path: '/pageFromTabbar',component: PageFromTabbar },
   { path: '/advanced/tabbarWithoutRoutes', component: TabbarWithoutRoutes },
-  { path: '/advanced/modal', component: Modal }
+  { path: '/advanced/modal', component: Modal },
+  { path: '/advanced/datepicker', component: Datepicker },
 ]
 
 /**

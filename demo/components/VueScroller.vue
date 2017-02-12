@@ -4,6 +4,7 @@
       title: 'Vue Scroller',
       showBackButton: true,
       showMenuButton: true,
+      menuButtonText: menuButtonText,
       onMenuButtonClick: toVueScrollerRepo
     }">
     <scroller class="page-content"
@@ -21,7 +22,8 @@
   export default {
     data () {
       return {
-        items: []
+        items: [],
+        menuButtonText: '<span class="assertive">更多</span>'
       }
     },
 
@@ -73,7 +75,13 @@
       },
 
       toVueScrollerRepo() {
-        location.href = 'https://github.com/wangdahoo/vue-scroller'
+        $dialog.confirm({
+          theme: 'ios',
+          content: '去往 Vue Scroller 官网？'
+        }).then((res) => {
+          if (res)
+            location.href = 'https://wangdahoo.github.io/vue-scroller'
+        })
       }
     }
 
