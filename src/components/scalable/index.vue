@@ -71,6 +71,9 @@
 
     mounted() {
       scaleContent(this.$el, this.s)
+      window.addEventListener('resize', () => {
+        scaleContent(this.$el, this.s)
+      })
     }
   }
 </script>
