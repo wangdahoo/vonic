@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import FastClick from 'fastclick'
 Vue.use(VueRouter)
 
 import './services/backdrop'
@@ -111,6 +112,8 @@ export default {
         lastTouchEnd = now
       }, false)
     }
+
+    FastClick.attach(document.body)
   },
 
   setConfig(name, value) {

@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "2.0.0-alpha.12",
+  "version": "2.0.0-alpha.13",
   "main": "dist/vonic.min.js",
   "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "fastclick": "^1.0.6",
     "vue": "^2.1.8",
     "vue-router": "^2.1.0",
     "vue-scroller": "^2.1.2"

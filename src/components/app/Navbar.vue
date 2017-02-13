@@ -5,7 +5,6 @@
         <div class="back-button"
           v-if="showBackButton"
           v-html="backButtonText"
-          transition="fade"
           @click="backButtonClicked($event)"
         >
         </div>
@@ -15,7 +14,6 @@
         <div class="menu-button"
           v-if="showMenuButton"
           v-html="menuButtonText"
-          transition="fade"
           @click="menuButtonClicked($event)"
         >
         </div>

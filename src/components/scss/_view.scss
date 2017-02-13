@@ -16,9 +16,8 @@
 {
   @include transition-duration($ios-transition-duration);
   @include transition-timing-function($ios-transition-timing-function);
-  -webkit-transition-property: opacity, -webkit-transform, box-shadow;
-  transition-property: opacity, transform, box-shadow;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
 }
 
 .grade-b .page-enter-active,
