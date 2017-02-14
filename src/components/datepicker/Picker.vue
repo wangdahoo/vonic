@@ -15,8 +15,6 @@
     </div>
 
     <div class="dp-body">
-      <div class="hairline-top"></div>
-
       <!-- years -->
       <scroller class="dp-list dp-years"
         ref="y_scroller"
@@ -82,8 +80,10 @@
     .dp-header {
       height: 45px;
       padding: 0px;
-      background: #f5f5f5;
+      background: #fff;
       z-index: 2;
+      position: relative;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
 
       .btn-confirm {
         position: absolute;
@@ -100,7 +100,7 @@
       .dp-list {
         height: 100%;
         width: 33%;
-        background: #FFF;
+        background: #f5f5f5;
 
         &.dp-years {
           width: 34%;
@@ -124,12 +124,6 @@
         }
       }
     }
-  }
-
-  @import "../scss/mixins";
-
-  .hairline-top:before {
-    @include hairline(top);
   }
 </style>
 <script>
@@ -180,7 +174,10 @@
   const item_height = 34
 
   const setOpacity = (el, index) => {
-    el.querySelectorAll('.dp-item').forEach((e, i) => {
+    let dp_items = el.querySelectorAll('.dp-item')
+
+    for (let i = 0; i < dp_items.length; i++) {
+      let e = dp_items[i]
       if (i == index) {
         e.style.opacity = '1'
       } else if (Math.abs(i - index) == 1) {
@@ -190,7 +187,7 @@
       } else if (Math.abs(i - index) >= 3) {
         e.style.opacity = '0.1'
       }
-    })
+    }
   }
 
   export default {
