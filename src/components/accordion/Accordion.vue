@@ -13,6 +13,14 @@
     props: {
       defaultIndex: String,
       // TODO: validator
+
+      multi: {
+        type: String,
+        default: 'true',
+        validator: function (v) {
+          return v == 'true' || v == 'false'
+        }
+      }
     },
 
     computed: {

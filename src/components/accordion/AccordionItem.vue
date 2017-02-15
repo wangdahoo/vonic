@@ -5,10 +5,10 @@
     <hairline-item class="item-icon-right" @click.native="onClick()">
       <span v-text="title"></span>
       <i class="icon ion-arrow-down-b"
-        :class="{'ion-arrow-up-b': expanded}"></i>
+        :class="{'rotated': expanded}"></i>
     </hairline-item>
     <transition name="fade">
-      <div v-if="expanded" class="accordion-content">
+      <div v-show="expanded" class="accordion-content">
         <slot></slot>
       </div>
     </transition>

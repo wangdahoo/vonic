@@ -1,4 +1,3 @@
-
 .von-accordion {
   padding: 0;
   background: #FFF;
@@ -9,7 +8,6 @@
     -webkit-transition: all .15s;
     transition: all .15s;
     height: 50px;
-    background: #FFF;
 
     .item {
       padding-left: 0 !important;
@@ -19,6 +17,16 @@
       z-index: 2;
       .icon.ion-arrow-down-b {
         color: #888;
+        -webkit-transition: all .15s;
+        transition: all .15s;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        font-size: 16px;
+
+        &.rotated {
+          transform: rotate(179.9deg);
+          -webkit-transform: rotate(179.9deg);
+        }
       }
     }
 
