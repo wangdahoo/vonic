@@ -1,0 +1,43 @@
+
+.von-accordion {
+  padding: 0;
+  background: #FFF;
+
+  .list-accordion {
+    margin-top: -1px;
+    margin-bottom: 0px;
+    -webkit-transition: all .15s;
+    transition: all .15s;
+    height: 50px;
+    background: #FFF;
+
+    .item {
+      padding-left: 0 !important;
+    }
+
+    .item-icon-right {
+      z-index: 2;
+      .icon.ion-arrow-down-b {
+        color: #888;
+      }
+    }
+
+    .accordion-content {
+      z-index: 1;
+    }
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity,transform .15s;
+  -webkit-transition: opacity,-webkit-transform .15s;
+
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+}
+.fade-enter, .fade-leave-to, .fade-leave-active {
+  opacity: 0;
+  transform: translate3d(0,-50px,0);
+  -webkit-transform: translate3d(0,-50px,0);
+}

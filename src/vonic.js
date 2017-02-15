@@ -37,11 +37,14 @@ Vue.component('scalable', Scalable)
 import {Swiper, SwiperItem} from './components/swiper'
 import Scroll from './components/scroll'
 import Cascade from './components/cascade'
+import { Accordion, AccordionItem } from './components/accordion'
 import Datepicker from './components/datepicker'
 Vue.component('swiper', Swiper)
 Vue.component('swiper-item', SwiperItem)
 Vue.component('scroll', Scroll)
 Vue.component('cascade', Cascade)
+Vue.component('accordion', Accordion)
+Vue.component('accordion-item', AccordionItem)
 Vue.component('datepicker', Datepicker)
 
 // Vue Scroller
@@ -77,6 +80,9 @@ export default {
   Scroll,
   Scroller,
   Cascade,
+
+  Accordion,
+  AccordionItem,
 
   Modal,
 

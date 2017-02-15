@@ -32,6 +32,7 @@ import SwiperVertical from './components/SwiperVertical'
 import Scroll from './components/Scroll'
 import VueScroller from './components/VueScroller'
 import Cascade from './components/Cascade'
+import Accordion from './components/Accordion'
 import Datepicker from './components/DatePicker'
 import Popup from './components/Popup'
 import ActionSheet from './components/ActionSheet'
@@ -73,6 +74,7 @@ const routes = [
   { path: '/advanced/scroll', component: Scroll },
   { path: '/advanced/scroller', component: VueScroller },
   { path: '/advanced/cascade', component: Cascade },
+  { path: '/advanced/accordion', component: Accordion },
   { path: '/advanced/popup', component: Popup },
   { path: '/advanced/actionSheet', component: ActionSheet },
   {
