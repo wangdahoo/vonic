@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%202.0.0%20alpha.13%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%202.0.0%20alpha.14%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%202.1.8%20-green.svg">
 </p>
 
@@ -19,10 +19,10 @@
 </p>
 
 ## Notice
-- v2.0.0-alpha.13 released.
+- v2.0.0-alpha.14 released.
 
 ```bash
-$ npm install vonic@2.0.0-alpha.13
+$ npm install vonic@2.0.0-alpha.14
 ```
 
 - for vue 1.0, please refer to branch **1.x**.
@@ -53,7 +53,8 @@ $ npm install vonic@2.0.0-alpha.13
 - Scroll
 - [VueScroller](https://github.com/wangdahoo/vue-scroller)
 - Cascade
-<!--- Datepicker-->
+- Accordion
+- Datepicker
 - Dialog
 - Popup
 - Modal
@@ -78,9 +79,12 @@ $ npm run dev
 
 That's it.
 
+And if you start work with [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack) by vue-cli, check the following repo for reference.
+https://github.com/wangdahoo/vonic-webpack-demo
+
 ## Documents
 <!-- - [English](https://wangdahoo.github.io/vonic-doc/v1/en/)-->
-- [中文](https://wangdahoo.github.io/vonic-doc/zh-CN/)
+- [中文文档](https://wangdahoo.github.io/vonic-doc/zh-CN/)
 
 ## Thanks to
 - [Ionic](http://ionicframework.com/)
