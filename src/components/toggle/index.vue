@@ -1,8 +1,11 @@
 <template>
   <div class="item item-toggle von-toggle" thin-border>
     <span v-text="text"></span>
-    <label class="toggle" :class="themeClass()" @click="onToggle()">
-      <input type="checkbox" ref="checkbox">
+    <label class="toggle" :class="themeClass()">
+      <input v-if="value" type="checkbox" ref="checkbox" :value="value" checked
+        @click="onToggle($event.target.checked)">
+      <input v-if="!value" type="checkbox" ref="checkbox" :value="value"
+        @click="onToggle($event.target.checked)">
 
       <div class="track">
         <div class="handle"></div>
@@ -32,10 +35,6 @@
       },
     },
 
-    mounted() {
-      this.$refs.checkbox.checked = this.value
-    },
-
     methods: {
       themeClass() {
         return {
@@ -50,8 +49,8 @@
         }
       },
 
-      onToggle() {
-        this.$emit('input', this.$refs.checkbox.checked)
+      onToggle(value) {
+        this.$emit('input', value)
       }
     }
   }
