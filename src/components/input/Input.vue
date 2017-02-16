@@ -4,19 +4,19 @@
       <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}" v-text="label"></span>
       <!-- text -->
       <input v-if="type == 'text'" type="text" :placeholder="placeholder"
-        ref="input" :value="value" @input="updateValue($event.target.value)">
+        ref="input" :value="value" @change="updateValue($event.target.value)">
 
       <!-- password -->
       <input v-if="type == 'password'" type="password" :placeholder="placeholder"
-        ref="input" :value="value" @input="updateValue($event.target.value)">
+        ref="input" :value="value" @change="updateValue($event.target.value)">
 
       <!-- email -->
       <input v-if="type == 'email'" type="email" :placeholder="placeholder"
-        ref="input" :value="value" @input="updateValue($event.target.value)">
+        ref="input" :value="value" @change="updateValue($event.target.value)">
 
       <!-- tel -->
       <input v-if="type == 'tel'" type="tel" :placeholder="placeholder"
-        ref="input" :value="value" @input="updateValue($event.target.value)">
+        ref="input" :value="value" @change="updateValue($event.target.value)">
     </label>
 
     <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>

@@ -3,7 +3,7 @@
     <label class="item-input-wrapper">
       <i class="icon ion-ios-search placeholder-icon"></i>
       <form action='' :id="formId" >
-        <input ref="input" type="search" :placeholder="placeholder" :value="value" @input="updateValue($event.target.value)">
+        <input ref="input" type="search" :placeholder="placeholder" :value="value" @change="updateValue($event.target.value)">
       </form>
     </label>
     <button class="button button-clear button-positive"
