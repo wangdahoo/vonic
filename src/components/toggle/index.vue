@@ -2,7 +2,7 @@
   <div class="item item-toggle von-toggle" thin-border>
     <span v-text="text"></span>
     <label class="toggle" :class="themeClass()" @click="onToggle()">
-      <input type="checkbox" ref="checkbox">
+      <input type="checkbox" ref="checkbox" v-model="value">
 
       <div class="track">
         <div class="handle"></div>
