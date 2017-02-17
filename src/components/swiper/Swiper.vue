@@ -117,6 +117,11 @@
       })
     },
 
+    destroyed() {
+      if (this.swiper)
+        this.swiper.destroy()
+    },
+
     methods: {
       go(index) {
         this.swiper.go(index)
