@@ -5,18 +5,14 @@
       <router-view></router-view>
     </transition>
   </div>
-
-  <!-- <modal v-ref:modal></modal> -->
 </template>
 <style lang='scss'>
   @import "../scss/vonic";
 </style>
 <script>
   import Vue from 'vue'
-  import Navbar from './Navbar'
-  // import { Modal } from '../modal'
-
   import channel from './channel'
+  import Navbar from './Navbar'
 
   Vue.directive('nav', {
     inserted: function (el, binding) {
@@ -27,8 +23,7 @@
 
   export default {
     components: {
-      Navbar,
-      // Modal
+      Navbar
     },
 
     data() {
@@ -45,9 +40,6 @@
         this.gradeClass = 'grade-b'
       }
       document.querySelector('body').className = this.gradeClass
-
-      // Model Service
-      // window.$vonicModal = this.$refs.modal
 
       channel.$on('VonicNotification', (data) => {
         $toast.show(data.message);

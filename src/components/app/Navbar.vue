@@ -46,24 +46,14 @@
     height: 44px;
     z-index: $navbar-z-index;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
     /* 用阴影替代 */
     /*
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    */
+
     &:after {
       @include hairline(bottom);
-    }
-    */
-    &[theme="dark"] {
-      background-color: #000;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      .button {
-        color: #fff;
-      }
-
-      .center {
-        color: #fff;
-      }
     }
 
     .back-button, .menu-button {

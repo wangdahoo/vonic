@@ -6,7 +6,7 @@
         <img src="../assets/vonic.svg" width="80" height="80"/>
       </div>
 
-      <div class="text-center code-name">vonic</div>
+      <div class="text-center code-name">VONIC</div>
 
       <div class="text-center code-desc">
         Mobile UI Components<br>based on Vue.js and ionic CSS
