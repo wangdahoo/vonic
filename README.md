@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%202.0.0%20alpha.14%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%202.0.0%20alpha.15%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%202.1.8%20-green.svg">
 </p>
 
@@ -19,10 +19,10 @@
 </p>
 
 ## Notice
-- v2.0.0-alpha.14 released.
+- v2.0.0-alpha.15 released.
 
 ```bash
-$ npm install vonic@2.0.0-alpha.14
+$ npm install vonic@2.0.0-alpha.15
 ```
 
 - for vue 1.0, please refer to branch **1.x**.
