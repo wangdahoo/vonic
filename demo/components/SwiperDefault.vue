@@ -1,10 +1,9 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '水平 (默认)', showBackButton: true}">
     <div class="page-content">
-      <swiper direction="horizontal" width="100%" height="150" pager-color="#ea5a49" pager-bg-color="#e5e4e3">
+      <swiper ref="swiper" direction="horizontal" width="100%" height="150" pager-color="#ea5a49" pager-bg-color="#e5e4e3">
         <swiper-item>
-          <!-- <h1 @touchstart="onClick()">Item 1</h1> -->
-          <h1>Item 1</h1>
+          <h1 @click="onClick()">Item 1</h1>
         </swiper-item>
 
         <swiper-item>
@@ -15,6 +14,23 @@
           <h1>Item 3</h1>
         </swiper-item>
       </swiper>
+
+      <div class="row">
+        <div class="col col-50">
+          <button class="button button-assertive button-block" @click="prev()">prev</button>
+        </div>
+
+        <div class="col col-50">
+          <button class="button button-assertive button-block" @click="next()">next</button>
+        </div>
+      </div>
+
+      <div style="height: 20px;"></div>
+
+      <div class="item item-icon-right" thin-border @click="$router.forward('/advanced/swiper/vertical')">
+        Switch between pages having swiper component
+        <i class="icon ion-ios-arrow-right"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -52,6 +68,14 @@
     methods: {
       onClick() {
         $toast.show('clicked!')
+      },
+
+      next() {
+        this.$refs.swiper.next()
+      },
+
+      prev() {
+        this.$refs.swiper.prev()
       }
     }
   }

@@ -3,7 +3,7 @@
     'width': w,
     'height': h
   }">
-    <div class="swiper">
+    <div class="swiper" id="swiper">
       <slot></slot>
     </div>
 
@@ -15,7 +15,6 @@
   </div>
 </template>
 <style lang='scss'>
-
   .swiper {
     width: 100%;
     height: 100%;
@@ -28,27 +27,13 @@
       position: relative;
       overflow: hidden;
       float: left;
-
-      &.swiper-item-active {
-        .animated {
-          animation-fill-mode: both;
-          opacity: 1;
-        }
-      }
-
-      &:not(.active) {
-        .animated {
-          animation: none;
-          opacity: 0;
-        }
-      }
     }
   }
 
 </style>
 <script>
   import Vue from 'vue'
-  import Swiper from './swiper.js'
+  import Swiper from './core.js'
   import SwiperPagination from './SwiperPagination'
 
   const re = /^[\d]+(\%)?$/
@@ -110,32 +95,26 @@
     },
 
     mounted() {
-      // console.log(this.w, this.h)
-      // this.$el.style.width = this.w
-      // this.$el.style.height = this.h
-
       Vue.nextTick(() => {
-
-        let swiper = new Swiper({
-          direction: this.direction
-        })
-
-        swiper.on('swiped', (fromIndex, toIndex) => {
-          if (this.$refs.pagination)
-            this.$refs.pagination.activate(toIndex)
+        let container = this.$el.querySelector('.swiper')
+        let swiper = new Swiper(container, {
+          direction: this.direction,
+          transitionEnd: (prev, current) => {
+            if (this.$refs.pagination) {
+              this.$refs.pagination.activate(current)
+            }
+          }
         })
 
         this.swiper = swiper
-
-        this.itemCount = this.swiper.count
+        this.itemCount = swiper.count
 
         Vue.nextTick(() => {
-          if (this.$refs.pagination)
+          if (this.$refs.pagination) {
             this.$refs.pagination.init()
+          }
         })
-
       })
-
     },
 
     methods: {
@@ -145,14 +124,10 @@
 
       next() {
         this.swiper.next()
-        if (this.$refs.pagination)
-          this.$refs.pagination.activate(this.swiper.activeIndex())
       },
 
       prev() {
         this.swiper.prev()
-        if (this.$refs.pagination)
-          this.$refs.pagination.activate(this.swiper.activeIndex())
       }
     }
   }

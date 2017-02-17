@@ -55,7 +55,8 @@
   }
 
   .code-name {
-    font-family: "Monoton", sans-serif;
+    // font-family: "Monoton", sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     font-size: 24px;
     line-height: 24px;
     color: #47B584;
@@ -66,7 +67,8 @@
   .code-desc {
     color: #999;
     margin: 5px auto 15px auto;
-    font-family: "Josefin Sans", sans-serif;
+    // font-family: "Josefin Sans", sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
   }
 
   .vonic-stars {
