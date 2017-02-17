@@ -30,7 +30,7 @@ class ModalManager {
     let title = options && options.title
     let theme = options && options.theme
     let destroyOnHide = options && options.destroyOnHide
-    let modalId = 'modal_' + Math.random().toString(36).substr(3,6)
+    let modalId = 'modal_' + Math.random().toString(36).substr(3, 6)
     createElement(modalId)
     let ModalComponent = Vue.extend(Modal)
     let modal = new ModalComponent({

@@ -102,6 +102,8 @@
           })
         });
 
+        document.body.classList.add('popup-open')
+
         return this.promise
       },
 

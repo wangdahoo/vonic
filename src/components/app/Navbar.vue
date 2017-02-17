@@ -183,7 +183,7 @@
   }
 
   function centerElement(navbar, title, direction) {
-    let centerId = Math.random().toString(36).substring(3, 8)
+    let centerId = Math.random().toString(36).substring(3, 6)
     let c = document.createElement('div')
     c.id = centerId
     c.className = 'center'

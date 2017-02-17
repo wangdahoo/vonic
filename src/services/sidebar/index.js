@@ -21,7 +21,7 @@ class VonicSidebar {
   }
 
   _init(template, options) {
-    let refId = (options && options.refId) ? options.refId : Math.random().toString(36).substr(3,8)
+    let refId = (options && options.refId) ? options.refId : Math.random().toString(36).substr(3, 6)
     let position = (options && options.position) ? options.position : 'left'
     let wrapper = document.createElement('div')
     wrapper.setAttribute('von-sidebar-container', '')

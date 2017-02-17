@@ -8,7 +8,7 @@ import ConfirmIOS from './ConfirmIOS'
 
 class Dialog {
   show(type, options) {
-    let rnd = Math.random().toString(36).substring(3, 8)
+    let rnd = Math.random().toString(36).substring(3, 6)
     let marker = `von-${type}-${rnd}`
     createElement(marker)
     let selector = `[${marker}]`

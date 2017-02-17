@@ -48,6 +48,8 @@
         有一天我心血来潮骑它去赶集。<br>
         有一天我心血来潮骑它去赶集。<br>
       </p>
+
+      <button class="button button-assertive button-small" @click="showAlert()">show dialog</button>
     </div>
   </div>
 </template>
@@ -62,6 +64,12 @@
     methods: {
       more() {
         this.showMore = true
+      },
+
+      showAlert() {
+        $dialog.alert({
+          content: '测试模态窗内的对话框'
+        })
       }
     }
   }

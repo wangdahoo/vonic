@@ -156,6 +156,8 @@
         this.state = 1
         window.$backdrop.show()
 
+        document.body.classList.add('popup-open')
+
         return new Promise((resolve, reject) => {
           this.$on('PopupButtonClickEvent', (data) => {
             resolve(data.buttonIndex)
@@ -166,6 +168,7 @@
       hide(buttonIndex) {
         this.state = 2
         window.$backdrop.hide()
+        document.body.classList.remove('popup-open')
 
         setTimeout(() => {
           this.state = 0

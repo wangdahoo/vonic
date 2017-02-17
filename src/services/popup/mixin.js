@@ -30,14 +30,18 @@ export default {
           this.hide()
           resolve()
         })
-      });
+      })
+
+      document.body.classList.add('popup-open')
 
       return this.promise
     },
 
     hide() {
-      if (document.querySelectorAll('[von-dialog]').length == 1) // 只剩最后一个dialog实例的时候，backdrop才隐藏
+      if (document.querySelectorAll('[von-dialog]').length == 1)  { // 只剩最后一个dialog实例的时候，backdrop才隐藏
         $backdrop.hide()
+        document.body.classList.remove('popup-open')
+      }
 
       this.state = 2
 
