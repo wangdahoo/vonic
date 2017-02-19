@@ -9,6 +9,7 @@ import VonRadio from './components/radio'
 import VonCheckbox from './components/checkbox'
 import VonToggle from './components/toggle'
 import VonRange from './components/range'
+import {VonHeader} from './components/header'
 
 Vue.component('md-button', MdButton)
 Vue.component('von-input', VonInput)
@@ -17,6 +18,7 @@ Vue.component('von-radio', VonRadio)
 Vue.component('von-checkbox', VonCheckbox)
 Vue.component('von-toggle', VonToggle)
 Vue.component('von-range', VonRange)
+Vue.component('von-header', VonHeader)
 
 // Layout
 import {List, Item, HairlineItem} from './components/list'

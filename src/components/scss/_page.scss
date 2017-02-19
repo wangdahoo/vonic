@@ -41,7 +41,6 @@
   width: auto;
   height: auto;
 
-  padding-top: 44px;
   background-color: $default-page-bg;
 
   // Safari -webkit-overflow-scrolling bug
@@ -56,4 +55,8 @@
   &.padding-top {
     padding-top: 54px;
   }
+}
+
+.modal .page-content {
+  padding-top: 44px;
 }

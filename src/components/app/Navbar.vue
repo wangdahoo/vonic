@@ -48,13 +48,13 @@
     background-color: #fff;
 
     /* 用阴影替代 */
-    /*
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    */
 
+    /*
     &:after {
       @include hairline(bottom);
     }
+    */
 
     .back-button, .menu-button {
       position: absolute;

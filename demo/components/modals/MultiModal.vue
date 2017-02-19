@@ -1,8 +1,6 @@
 <template>
-  <div class="page has-navbar">
-    <div class="page-content padding padding-top">
-      <button class="button button-balanced button-block" @click="show()">Create</button>
-    </div>
+  <div class="page-content padding padding-top">
+    <button class="button button-balanced button-block" @click="show()">Create</button>
   </div>
 </template>
 <script>

@@ -45,6 +45,8 @@ import PageFromTabbar from './components/tabbar/PageFromTabbar'
 import TabbarWithoutRoutes from './components/TabbarWithoutRoutes'
 import Modal from './components/Modal'
 
+import Header from './components/Header'
+
 const routes = [
   { path: '/', component: Index },
   { path: '/home', component: Home },
@@ -91,6 +93,9 @@ const routes = [
   { path: '/advanced/tabbarWithoutRoutes', component: TabbarWithoutRoutes },
   { path: '/advanced/modal', component: Modal },
   { path: '/advanced/datepicker', component: Datepicker },
+
+  // test
+  { path: '/header', component: Header }
 ]
 
 /**

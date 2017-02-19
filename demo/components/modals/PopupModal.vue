@@ -1,45 +1,43 @@
 <template>
-  <div class="page has-navbar">
-    <div class="page-content padding-top">
+  <div class="page-content padding-top">
 
-      <div class="item item-icon-right thin-border" @click="showAlert()">
-        Alert <span class="item-note">提示框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showConfirm()">
-        Confirm <span class="item-note">确认框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showAlertIOS()">
-        iOS Alert <span class="item-note">iOS 风格提示框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showConfirmIOS()">
-        iOS Confirm <span class="item-note">iOS 风格确认框</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="multiMode()">
-        Multi Mode <span class="item-note">多个同时出现</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-
-      <div class="item item-icon-right thin-border" @click="showAlert('scale')">
-        Scale Effect
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showAlert('slide')">
-        Slide Effect
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-
-      <div style="height: 10px;"></div>
-
-      <div class="item item-icon-right thin-border" @click="showCustomPopup()">
-        Custom Popup
-        <i class="icon ion-ios-arrow-right"></i>
-      </div>
-
+    <div class="item item-icon-right thin-border" @click="showAlert()">
+      Alert <span class="item-note">提示框</span>
+      <i class="icon ion-ios-arrow-right"></i>
     </div>
+    <div class="item item-icon-right thin-border" @click="showConfirm()">
+      Confirm <span class="item-note">确认框</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+    <div class="item item-icon-right thin-border" @click="showAlertIOS()">
+      iOS Alert <span class="item-note">iOS 风格提示框</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+    <div class="item item-icon-right thin-border" @click="showConfirmIOS()">
+      iOS Confirm <span class="item-note">iOS 风格确认框</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+    <div class="item item-icon-right thin-border" @click="multiMode()">
+      Multi Mode <span class="item-note">多个同时出现</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+
+    <div class="item item-icon-right thin-border" @click="showAlert('scale')">
+      Scale Effect
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+    <div class="item item-icon-right thin-border" @click="showAlert('slide')">
+      Slide Effect
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+
+    <div style="height: 10px;"></div>
+
+    <div class="item item-icon-right thin-border" @click="showCustomPopup()">
+      Custom Popup
+      <i class="icon ion-ios-arrow-right"></i>
+    </div>
+
   </div>
 </template>
 <script>
