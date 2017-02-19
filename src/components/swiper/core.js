@@ -24,7 +24,6 @@ module.exports = function Swiper(container, swiperOptions) {
   let prev = 0
   let current = 0
   let offset = 0
-  let activeIndex = 0
 
   let items =  container.querySelectorAll(options.itemClass)
   let count = items.length
@@ -73,8 +72,6 @@ module.exports = function Swiper(container, swiperOptions) {
 
     style.webkitTransform =
     style.transform = transform
-
-    activeIndex = index
   }
 
   // Events
@@ -207,10 +204,14 @@ module.exports = function Swiper(container, swiperOptions) {
 
     go: function (index) {
       noTransition()
-      activate(index)
+      current = index
+      activate(current)
     },
 
     count: count,
-    activeIndex: activeIndex
+
+    activeIndex: function () {
+      return current;
+    }
   }
 }

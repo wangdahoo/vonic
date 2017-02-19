@@ -87,10 +87,11 @@
       }
     },
 
-    data(){
+    data() {
       return {
         swiper: undefined,
-        itemCount: 0
+        itemCount: 0,
+        activeIndex: 0
       }
     },
 
@@ -100,6 +101,7 @@
         let swiper = new Swiper(container, {
           direction: this.direction,
           transitionEnd: (prev, current) => {
+            this.activeIndex = current
             if (this.$refs.pagination) {
               this.$refs.pagination.activate(current)
             }
