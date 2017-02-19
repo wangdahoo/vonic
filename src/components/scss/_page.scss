@@ -38,12 +38,20 @@
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   width: auto;
   height: auto;
 
   padding-top: 44px;
   background-color: $default-page-bg;
+
+  // Safari -webkit-overflow-scrolling bug
+  // 解决滑动几次后可滚动区域卡住不能再滑动的问题
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+
+  &.no-scrolling {
+    -webkit-overflow-scrolling: auto;
+  }
 
   &.padding-top {
     padding-top: 54px;
