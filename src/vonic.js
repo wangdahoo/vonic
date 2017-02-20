@@ -9,7 +9,7 @@ import VonRadio from './components/radio'
 import VonCheckbox from './components/checkbox'
 import VonToggle from './components/toggle'
 import VonRange from './components/range'
-import {VonHeader} from './components/header'
+import VonHeader from './components/header'
 
 Vue.component('md-button', MdButton)
 Vue.component('von-input', VonInput)
@@ -66,6 +66,7 @@ export default {
   Search,
   VonRadio,
   VonCheckbox,
+  VonHeader,
 
   // Layout
   List,
