@@ -1,3 +1,4 @@
+import assign from 'object-assign'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import FastClick from 'fastclick'
@@ -46,7 +47,7 @@ class VonicApp {
   start() {
     const App = Vue.extend(VonApp)
 
-    let routerOptions = Object.assign(
+    let routerOptions = assign(
       {},
       defaultRouterOptions,
       VonicAppConfig.routerOptions,

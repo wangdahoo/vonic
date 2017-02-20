@@ -23,6 +23,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "fastclick": "^1.0.6",
+    "object-assign": "^4.1.1",
     "vue": "^2.1.8",
     "vue-router": "^2.1.0",
     "vue-scroller": "^2.1.2"

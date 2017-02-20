@@ -1,3 +1,4 @@
+import assign from 'object-assign'
 import Vue from 'vue'
 import Tabbar from './Tabbar'
 import channel from './channel'
@@ -16,7 +17,7 @@ Vue.directive('tabbar', {
       if (data.onMenuClick) props.onMenuClick = data.onMenuClick
 
       createElement('von-tabbar')
-      _vm = new Vue(Object.assign({}, Tabbar, {
+      _vm = new Vue(assign({}, Tabbar, {
         data: {
           menus: data.menus,
           menuIndex: 0,

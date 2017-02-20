@@ -137,6 +137,8 @@
 
 </style>
 <script>
+  import assign from 'object-assign'
+
   export default {
     data() {
       return {
@@ -174,7 +176,7 @@
       },
 
       show(options) {
-        let _options = Object.assign({}, this.defaultOptions, options)
+        let _options = assign({}, this.defaultOptions, options)
         let theme = _options.theme
         if (theme == 'android' || theme == 'weixin') {
           this.$el.setAttribute('theme', theme)
