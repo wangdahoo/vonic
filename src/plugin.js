@@ -39,6 +39,11 @@ const nextDirection = (direction) => {
   if (el) el.setAttribute('transition-direction', direction);
 }
 
+const setTitle = (title) => {
+  let el = document.querySelector('[von-nav] > .center > .title')
+  if (el) el.textContent = title
+}
+
 class VonicApp {
   constructor(options) {
     this.routes = options.routes
@@ -68,8 +73,13 @@ class VonicApp {
       router,
       components: {
         VonApp
+      },
+      methods: {
+        setTitle: setTitle
       }
     }).$mount('von-app')
+
+    window.$app = app
 
     router._push = router.push
 

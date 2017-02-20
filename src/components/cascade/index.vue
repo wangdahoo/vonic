@@ -24,6 +24,7 @@
   }
 </style>
 <script>
+  import axios from 'axios'
   import Vue from 'vue'
   import channel from '../app/channel'
 

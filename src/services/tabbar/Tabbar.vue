@@ -78,6 +78,11 @@
 
   const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
+  const switchNavTransition = (enable) => {
+    let nav = document.querySelector('[von-nav]')
+    nav[enable ? 'removeAttribute' : 'setAttribute']('no-transition', '')
+  }
+
   export default {
     components: {
       Scalable
@@ -115,6 +120,7 @@
 
     beforeDestroy() {
       window.__disable_nav_title_transition__ = false
+      switchNavTransition(true)
     },
 
     desctoryed() {
@@ -132,6 +138,7 @@
     methods: {
       menuClicked(menuIndex) {
         window.__disable_nav_title_transition__ = true
+        switchNavTransition(false)
 
         this.menuIndex = menuIndex
         if (this.menus[menuIndex].path)

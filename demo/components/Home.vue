@@ -181,6 +181,9 @@
       this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
 
       this.sidebarRight = $sidebar.fromTemplate('<h5>右边栏</h5>', {position: 'right'})
+
+      // setTimeout(() => {$app.setTitle('标题文字')}, 1000)
+
     },
 
     destroyed() {

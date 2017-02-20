@@ -1,6 +1,6 @@
 <template>
   <transition name="nav-fade">
-    <div von-nav v-show="!hideNavbar" class="navbar">
+    <div von-nav v-show="!hideNavbar" class="navbar" no-transtion>
       <transition name="nav-item-fade">
         <div class="back-button"
           v-if="showBackButton"
@@ -159,6 +159,10 @@
     opacity: 1;
   }
 
+  [no-transition] {
+    @include transition-duration(0ms !important);
+  }
+
 </style>
 <script>
   import channel from './channel'
@@ -173,7 +177,7 @@
   }
 
   function centerElement(navbar, title, direction) {
-    let centerId = Math.random().toString(36).substring(3, 6)
+    let centerId = Math.random().toString(36).substr(3, 6)
     let c = document.createElement('div')
     c.id = centerId
     c.className = 'center'
@@ -268,7 +272,9 @@
       channel.$on('PageTransitionEvent', (data) => {
         if (is_first_render) {
           function setNavbarVisible() {
-            document.querySelector('[von-nav]').classList.add('visible')
+            let nav = document.querySelector('[von-nav]')
+            nav.classList.add('visible')
+            nav.removeAttribute('no-transition')
           }
           if (!!data.hideNavbar) {
             setTimeout(setNavbarVisible, is_ios_device() ? 500 : 200)
