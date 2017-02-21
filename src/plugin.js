@@ -18,6 +18,8 @@ import './services/storage/index.js'
 
 import VonApp from './components/app'
 
+import channel from './components/app/channel'
+
 const defaultRouterOptions = {
   base: '/',
   linkActiveClass: 'router-link-active',
@@ -42,6 +44,10 @@ const nextDirection = (direction) => {
 const setTitle = (title) => {
   let el = document.querySelector('[von-nav] > .center > .title')
   if (el) el.textContent = title
+}
+
+const updateNavbar = (options) => {
+  channel.$emit('UpdateNavbarEvent', options)
 }
 
 class VonicApp {
@@ -75,7 +81,8 @@ class VonicApp {
         VonApp
       },
       methods: {
-        setTitle: setTitle
+        setTitle: setTitle,
+        updateNavbar: updateNavbar
       }
     }).$mount('von-app')
 

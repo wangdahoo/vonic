@@ -269,12 +269,19 @@
       // center & center leave
       let c, cl;
 
+      channel.$on('UpdateNavbarEvent', (options) => {
+        let nav = document.querySelector('[von-nav]')
+        nav.setAttribute('no-transition', '')
+        window.__disable_nav_title_transition__ = true
+        // if (!!options.title) nav.querySelector('.center .title').textContent = options.title
+        channel.$emit('PageTransitionEvent', options)
+      })
+
       channel.$on('PageTransitionEvent', (data) => {
+        let nav = document.querySelector('[von-nav]')
         if (is_first_render) {
           function setNavbarVisible() {
-            let nav = document.querySelector('[von-nav]')
             nav.classList.add('visible')
-            nav.removeAttribute('no-transition')
           }
           if (!!data.hideNavbar) {
             setTimeout(setNavbarVisible, is_ios_device() ? 500 : 200)
@@ -325,6 +332,8 @@
           this.menuButtonText = data.menuButtonText
         else
           this.menuButtonText = defaultMenuButtonText()
+
+        nav.removeAttribute('no-transition')
       })
     },
 
