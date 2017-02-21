@@ -1,5 +1,5 @@
 <template>
-  <div class="page" v-nav="{hideNavbar: true}">
+  <div class="page has-navbar" v-nav="{hideNavbar: true}">
     <div class="page-content">
 
       <div class="logo">
@@ -13,19 +13,19 @@
       </div>
 
       <div class="list" thin-border>
-        <div class="item item-icon-left item-icon-right" @click="toDemo()">
+        <div class="item item-icon-left item-icon-right" @click="demo()">
           <i class="icon ion-heart assertive"></i>
           <span class="item-note">Demo</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
-        <div class="item item-icon-left item-icon-right" @click="toGitHub()">
+        <div class="item item-icon-left item-icon-right" @click="github()">
           <i class="icon ion-social-github"></i>
           <span class="item-note">GitHub</span>
           <i class="icon ion-ios-arrow-right"></i>
         </div>
 
-        <div class="item item-icon-left item-icon-right" @click="toDoc()">
+        <div class="item item-icon-left item-icon-right" @click="doc()">
           <i class="icon ion-ios-book positive"></i>
           <span class="item-note">Doc</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -92,15 +92,15 @@
     },
 
     methods: {
-      toDemo() {
+      demo() {
         $router.push({ path: '/home' })
       },
 
-      toGitHub() {
+      github() {
         location.href = 'https://github.com/wangdahoo/vonic'
       },
 
-      toDoc() {
+      doc() {
         location.href = 'https://wangdahoo.github.io/vonic-doc/zh-CN/'
       }
     }

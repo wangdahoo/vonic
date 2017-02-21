@@ -3,26 +3,33 @@
     <label class="item item-input thin-border von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
       <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}" v-text="label"></span>
       <!-- text -->
-      <input v-if="type == 'text'" type="text" :placeholder="placeholder"
-        ref="input" :value="value" @change="updateValue($event.target.value)">
+      <input v-if="type == 'text'" type="text" :placeholder="placeholder" ref="input" :value="value"
+        @compositionstart="compositionStart($event)"
+        @compositionend="compositionEnd($event)"
+        @input="input($event)"
+      >
 
       <!-- password -->
       <input v-if="type == 'password'" type="password" :placeholder="placeholder"
-        ref="input" :value="value" @change="updateValue($event.target.value)">
+        ref="input" :value="value" @input="updateValue($event.target.value)">
 
       <!-- email -->
       <input v-if="type == 'email'" type="email" :placeholder="placeholder"
-        ref="input" :value="value" @change="updateValue($event.target.value)">
+        ref="input" :value="value" @input="updateValue($event.target.value)">
 
       <!-- tel -->
       <input v-if="type == 'tel'" type="tel" :placeholder="placeholder"
-        ref="input" :value="value" @change="updateValue($event.target.value)">
+        ref="input" :value="value" @input="updateValue($event.target.value)">
     </label>
 
     <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>
   </div>
 </template>
 <script>
+  import Vue from 'vue'
+
+  let lock = false
+
   export default {
     props: {
       type: {
@@ -69,7 +76,28 @@
       updateValue(value) {
         this.$refs.input.value = value
         this.$emit('input', value)
+      },
+
+      input($event) {
+        if (lock) {
+          $event.preventDefault()
+          return
+        }
+
+        let value = $event.target.value
+        this.$refs.input.value = value
+        this.$emit('input', value)
+      },
+
+      compositionStart($event) {
+        lock = true
+      },
+
+      compositionEnd($event) {
+        lock = false
+        this.$emit('input', this.$refs.input.value)
       }
+
     },
 
     watch: {
