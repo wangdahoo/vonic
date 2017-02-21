@@ -35,35 +35,28 @@
   export default {
     data () {
       return {
-        showSpinner: true,
         state: 0,
-        tips: ''
+        tips: '',
+        showSpinner: true
       }
     },
 
     destroyed() {
+      console.log('[Vonic] Loading _vm destroyed')
       removeElement('von-loading')
     },
 
     methods: {
-      showLoading(tips) {
+      show(options) {
+        this.tips = options.tips
+        this.showSpinner = !!options.showSpinner
+
         window.$backdrop.show()
 
-        this.tips = tips || '正在加载'
         this.state = 1
         setTimeout(() => {
           this.state = 2
         })
-      },
-
-      show(tips) {
-        if (this.state == 2) {
-          this.tips = tips || '正在加载'
-          return
-        }
-
-        this.showSpinner = true
-        this.showLoading(tips)
       },
 
       hide() {
@@ -78,17 +71,13 @@
         }, 300)
       },
 
-      toast(tips, millsecs) {
-        this.showSpinner = false
-        this.showLoading(tips)
-
-        setTimeout(() => {
-          this.hide()
-        }, millsecs || 1500)
+      update(options) {
+        this.tips = options.tips
+        this.showSpinner = !!options.showSpinner
       },
 
-      setText(t) {
-        this.tips = t
+      getState() {
+        return this.state
       }
     }
   }

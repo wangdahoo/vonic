@@ -47,6 +47,8 @@ import Modal from './components/Modal'
 
 import Header from './components/Header'
 
+import Test from './components/Test'
+
 const routes = [
   { path: '/', component: Index },
   { path: '/home', component: Home },
@@ -95,7 +97,9 @@ const routes = [
   { path: '/advanced/datepicker', component: Datepicker },
 
   // test
-  { path: '/header', component: Header }
+  { path: '/header', component: Header },
+
+  { path: '/test', component: Test }
 ]
 
 /**

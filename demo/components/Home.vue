@@ -196,13 +196,11 @@
       },
 
       loading(tips) {
-        $loading.show(tips).then(() => {
-          console.log('loading showed')
+        $loading.show(tips)
 
-          $loading.hide(2000).then(() => {
-            console.log('loading hide')
-          })
-        })
+        setTimeout(() => {
+          $loading.hide()
+        }, 2000)
       },
 
       toast() {
