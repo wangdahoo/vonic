@@ -1,6 +1,11 @@
 <template>
   <div von-backdrop class="backdrop visible" :class="{'active': state == 1}"></div>
 </template>
+<style lang="scss">
+  .backdrop {
+    pointer-events: auto;
+  }
+</style>
 <script>
   import {timeout, removeElement} from '../utils'
 

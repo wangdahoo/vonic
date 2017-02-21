@@ -21,6 +21,7 @@
     background-color: #f5f5f5;
     z-index: 12;
     box-sizing: border-box;
+    pointer-events: auto !important;
 
     transition: transform .2s ease-in-out;
     -webkit-transition: -webkit-transform .2s ease-in-out;
@@ -113,6 +114,8 @@
           }
         })
 
+        document.body.classList.add('popup-open')
+
         return new Promise((resolve) => {
           bus.$on('optionClickedEvent', (data) => {
             resolve(data.optionIndex)
@@ -124,6 +127,9 @@
       _hide() {
         this.state = 0
         $backdrop.hide()
+
+        document.body.classList.remove('popup-open')
+
         setTimeout(() => {
           this.$destroy()
         }, animation_duration)
