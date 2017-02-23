@@ -31,7 +31,9 @@ let VonicAppConfig = {
   afterEach: undefined,
 
   // Router Options
-  routerOptions: {}
+  routerOptions: {},
+
+  pushMethod: 'push'
 }
 
 const nextDirection = (direction) => {
@@ -81,19 +83,34 @@ class VonicApp {
 
     window.$app = app
 
-    router._push = router.push
+    let pushMethod = VonicAppConfig.pushMethod
+    router['_' + pushMethod] = router[pushMethod]
 
-    router.forward = router.push = (target) => {
+    router.forward = router[pushMethod] = (target) => {
       if (window.__block_touch__) return
       nextDirection('forward')
-      setTimeout(() => { router._push(target) })
+      setTimeout(() => { router['_' + pushMethod](target) })
     }
 
     router.back = (target) => {
       if (window.__block_touch__) return
       nextDirection('back')
-      setTimeout(() => { router._push(target) })
+      setTimeout(() => { router['_' + pushMethod](target) })
     }
+
+    // router._push = router.push
+
+    // router.forward = router.push = (target) => {
+    //   if (window.__block_touch__) return
+    //   nextDirection('forward')
+    //   setTimeout(() => { router._push(target) })
+    // }
+
+    // router.back = (target) => {
+    //   if (window.__block_touch__) return
+    //   nextDirection('back')
+    //   setTimeout(() => { router._push(target) })
+    // }
 
     window.$router = router
   }
@@ -128,12 +145,13 @@ export default {
   },
 
   setConfig(name, value) {
-    if (['beforeEach', 'afterEach', 'routerOptions'].indexOf(name) == -1) throw 'Unknown config name.'
+    if (['beforeEach', 'afterEach', 'routerOptions', 'pushMethod'].indexOf(name) == -1) throw 'Unknown config name.'
+    if (name == 'pushMethod' && value != 'push' && value != 'replace') throw 'Wrong value for config [pushMethod]'
     VonicAppConfig[name] = value
   },
 
   getConfig(name) {
-    if (['beforeEach', 'afterEach', 'routerOptions'].indexOf(name) == -1) throw 'Unknown config name.'
+    if (['beforeEach', 'afterEach', 'routerOptions', 'pushMethod'].indexOf(name) == -1) throw 'Unknown config name.'
     return VonicAppConfig[name]
   },
 

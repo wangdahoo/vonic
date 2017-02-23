@@ -93,7 +93,7 @@
 
     methods: {
       demo() {
-        $router.push({ path: '/home' })
+        $router.forward({ path: '/home' })
       },
 
       github() {

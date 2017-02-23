@@ -149,6 +149,8 @@ const afterEach = (toRoute, fromRoute) => {
 Vonic.app.setConfig('beforeEach', beforeEach)
 Vonic.app.setConfig('afterEach', afterEach)
 
+// Vonic.app.setConfig('pushMethod', 'replace')
+
 Vue.use(Vonic.app, {
   routes: routes
 })

@@ -239,13 +239,13 @@
 
   function navTransitionStart() {
     var navbar = document.querySelector('.navbar')
-    navbar.style.position = 'absolute'
+    // navbar.style.position = 'absolute'
     window.__block_touch__ = true
   }
 
   function navTransitionEnd() {
     var navbar = document.querySelector('.navbar')
-    navbar.style.position = 'fixed'
+    // navbar.style.position = 'fixed'
     window.__block_touch__ = false
   }
 
