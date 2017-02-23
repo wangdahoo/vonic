@@ -63,7 +63,7 @@ function set(key, value) {
 }
 
 function remove(key) {
-  dispatch(key, value)
+  dispatch(key, undefined)
   return ls.removeItem(key)
 }
 
