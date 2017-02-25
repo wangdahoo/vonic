@@ -7,19 +7,27 @@
         @compositionstart="compositionStart($event)"
         @compositionend="compositionEnd($event)"
         @input="input($event)"
+        @focus="focus($event)"
+        @blur="blur($event)"
       >
 
       <!-- password -->
-      <input v-if="type == 'password'" type="password" :placeholder="placeholder"
-        ref="input" :value="value" @input="updateValue($event.target.value)">
+      <input v-if="type == 'password'" type="password" :placeholder="placeholder" ref="input" :value="value"
+        @input="updateValue($event.target.value)"
+        @focus="focus($event)"
+        @blur="blur($event)">
 
       <!-- email -->
-      <input v-if="type == 'email'" type="email" :placeholder="placeholder"
-        ref="input" :value="value" @input="updateValue($event.target.value)">
+      <input v-if="type == 'email'" type="email" :placeholder="placeholder" ref="input" :value="value"
+        @input="updateValue($event.target.value)"
+        @focus="focus($event)"
+        @blur="blur($event)">
 
       <!-- tel -->
-      <input v-if="type == 'tel'" type="tel" :placeholder="placeholder"
-        ref="input" :value="value" @input="updateValue($event.target.value)">
+      <input v-if="type == 'tel'" type="tel" :placeholder="placeholder" ref="input" :value="value"
+        @input="updateValue($event.target.value)"
+        @focus="focus($event)"
+        @blur="blur($event)">
     </label>
 
     <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>
@@ -96,8 +104,15 @@
       compositionEnd($event) {
         lock = false
         this.$emit('input', this.$refs.input.value)
-      }
+      },
 
+      focus($event) {
+        this.showClearButton = true
+      },
+
+      blur($event) {
+        this.showClearButton = false
+      }
     },
 
     watch: {
