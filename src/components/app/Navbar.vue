@@ -1,7 +1,6 @@
 <template>
-  <div von-nav class="navbar">
+  <div von-nav class="navbar" :class="{'visible': visible}" :style="navStyle()">
     <div class="navbar-container">
-
     </div>
   </div>
 </template>
@@ -9,8 +8,13 @@
   $navbar-z-index: 10;
 
   .navbar {
-    position: fixed;
+    position: absolute;
     z-index: $navbar-z-index;
+    visibility: hidden;
+    background: #FFF;
+    &.visible {
+      visibility: visible;
+    }
 
     .navbar-container {
       position: absolute;
@@ -29,10 +33,13 @@
   import assign from 'object-assign'
   import channel from './channel'
   import Vue from 'vue'
+  import Header from './header'
 
-  const timeout = (duration = 0) => {
+  const noop = () => {}
+
+  const timeout = (result = undefined, duration = 0) => {
     return new Promise((resolve, reject) => {
-      setTimeout(resolve, duration);
+      setTimeout(() => { resolve(result) }, duration);
     })
   }
 
@@ -40,77 +47,84 @@
     return /iPad|iPhone|iPod/.test(navigator.userAgent)
   }
 
-  const defaultBackButtonText = () => {
-    return is_ios_device() ?
-      '<a class="button button-icon icon ion-ios-arrow-back"></a>' :
-      '<a class="button button-icon icon ion-android-arrow-back"></a>'
-  }
-
-  const defaultMenuButtonText = () => {
-    return '<a class="button button-icon icon ion-navicon"></a>'
-  }
-
-  window.__block_touch__ = false
-
-  const NAV_DEFAULT = {
-    title: '',
-    showBackButton: false,
-    onBackButtonClick: undefined,
-    showMenuButton: false,
-    onMenuButtonClick: undefined,
-    backButtonText: defaultBackButtonText(),
-    menuButtonText: defaultMenuButtonText(),
-    hideNavbar: false
-  }
-
   export default {
     data() {
       return {
-        title: '',
-        showBackButton: false,
-        onBackButtonClick: undefined,
-        showMenuButton: false,
-        onMenuButtonClick: undefined,
-        backButtonText: defaultBackButtonText(),
-        menuButtonText: defaultMenuButtonText(),
-        hideNavbar: false
+        visible: false,
+        enableTransition: false,
+
+        headers: []
       }
     },
 
     mounted() {
-      let el = this.$el
-      channel.$on('PageTransitionEvent', (data) => {
-        assign(this.$data, NAV_DEFAULT, data)
+      channel.$on('EnableNavbarTransition', () => {
+        this.enableTransition = true
+      })
 
-        console.log(this.$data)
+      channel.$on('DisableNavbarTransition', () => {
+        this.enableTransition = false
+      })
+
+      channel.$on('UpdateNavbar', (data) => {
+        this.visible = !data.hideNavbar
+        console.log('createHeader options => ', data)
+        this.createHeader(data)
       })
     },
 
+    watch: {
+      'headers': function (newVal, oldVal) {
+        console.log('headers => ', newVal.length)
+      }
+    },
+
     methods: {
-      backButtonClicked(e) {
-        if (window.__block_touch__) {
-          e.preventDefault()
-          return
+      navStyle() {
+        if (this.enableTransition) {
+          return {
+            webkitTransition: '300ms',
+            transition: '300ms',
+            opacity: this.visible ? '1' : '0'
+          }
         }
 
-        if (this.onBackButtonClick) {
-          this.onBackButtonClick()
-          return
+        return {
+          webkitTransition: '0s',
+          transition: '0s',
+          opacity: '1'
         }
-
-        document.querySelector('[von-app]').setAttribute('transition-direction', 'back')
-        history.go(-1)
       },
 
-      menuButtonClicked() {
-        if (window.__block_touch__) {
-          e.preventDefault()
-          return
-        }
+      _createHeaderDom() {
+        let container = this.$el.querySelector('.navbar-container')
+        let el = document.createElement('div')
+        container.appendChild(el)
+        return timeout(el, 0)
+      },
 
-        if (this.onMenuButtonClick) {
-          this.onMenuButtonClick()
-        }
+      createHeader(options) {
+        let props = {}
+        if (options.title) props.title = options.title
+        if (options.onBackButtonClick) props.onBack = options.onBackButtonClick
+        if (options.onMenuButtonClick) props.onMenu = options.onMenuButtonClick
+        let HeaderComponent = Vue.extend(Header)
+        this._createHeaderDom().then(el => {
+          let vm = new HeaderComponent({
+            propsData: props
+          }).$mount(el)
+
+          let headers = this.headers
+          // let headerToCache = headers[headers.length - 1]
+          // if (headerToCache) {
+          //   headerToCache.cache()
+          // }
+          let headerToDestroy = headers.pop()
+          if (headerToDestroy) {
+            headerToDestroy.$destroy()
+          }
+          headers.push(vm)
+        })
       }
     }
   }

@@ -17,7 +17,7 @@
   Vue.directive('nav', {
     inserted: function (el, binding) {
       let data = binding.value
-      channel.$emit('PageTransitionEvent', data)
+      channel.$emit('UpdateNavbar', data)
     }
   })
 
