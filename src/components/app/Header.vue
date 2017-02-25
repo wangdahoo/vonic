@@ -1,15 +1,19 @@
 <template>
   <div class="bar bar-header bar-transparent" :class="{'cached': cached}">
-    <div class="buttons">
-      <button class="button button-icon ion-ios-arrow-back" @click="onBackClick()"></button>
+    <div class="buttons" v-if="showBack">
+      <button class="button button-icon" @click="onBackClick()">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
     </div>
 
     <h1 class="title">
       <span v-text="title"></span>
     </h1>
 
-    <div class="buttons">
-      <button class="button button-icon ion-ion-navicon" @click="onMenuClick()"></button>
+    <div class="buttons" v-if="showMenu">
+      <button class="button button-icon" @click="onMenuClick()">
+        <i class="icon ion-navicon"></i>
+      </button>
     </div>
   </div>
 </template>
@@ -36,22 +40,25 @@
   }
 </style>
 <script>
-  import { timeout, is_ios_device } from './utils'
+  import channel from './channel'
+  import { is_ios_device } from './utils'
 
-  const TITLE_TRANSITION = '400ms cubic-bezier(.36, .66, .04, 1)'
+  const TITLE_TRANSITION = () => (is_ios_device() && !window.__disable_nav_title_transition__) ?
+    '400ms cubic-bezier(.36, .66, .04, 1)' : '0ms'
 
   export default {
     props: {
       title: String,
+      showBack: Boolean,
       onBack: Function,
+      showMenu: Boolean,
       onMenu: Function,
       enableTitleTransition: Boolean
     },
 
     data() {
       return {
-        cached: false,
-        animated: false
+        cached: false
       }
     },
 
@@ -60,7 +67,7 @@
     },
 
     destroyed() {
-      // console.log('destroy header')
+      console.log('destroy header')
       this.$el.parentNode.removeChild(this.$el)
     },
 
@@ -83,6 +90,12 @@
       },
 
       cache() {
+        if (window.__disable_nav_title_transition__) {
+          this.$destroy()
+          return
+        }
+
+        console.log('cache header')
         this.cached = true
         this.titleLeave()
       },
@@ -101,7 +114,6 @@
         style.transition = 'none'
 
         let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
-        console.log(dist)
         let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
         style.webkitTransform =
         style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + dist + ',0,0)'
@@ -112,7 +124,7 @@
           style.transform = 'translate3d(0,0,0)'
 
           style.webkitTransition
-          style.transition = TITLE_TRANSITION
+          style.transition = this.enableTitleTransition ? TITLE_TRANSITION() : 'none'
         }, 0)
       },
 
@@ -134,7 +146,7 @@
           style.opacity = 0
 
           style.webkitTransition
-          style.transition = TITLE_TRANSITION
+          style.transition = this.enableTitleTransition ? TITLE_TRANSITION() : 'none'
 
           el.addEventListener('transitionEnd', () => {}, false)
           el.addEventListener('webkitTransitionEnd', this._titleTransitionEnd, false)
@@ -142,8 +154,11 @@
       },
 
       _titleTransitionEnd() {
-        console.log('title to leave transition end')
         this.$destroy()
+
+        setTimeout(() => {
+          document.querySelector('[von-nav]').style.position = 'fixed'
+        }, 10)
       }
     }
   }

@@ -78,6 +78,7 @@
 
   const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
+  // TODO: DELETE ??
   const switchNavTransition = (enable) => {
     let nav = document.querySelector('[von-nav]')
     nav[enable ? 'removeAttribute' : 'setAttribute']('no-transition', '')
@@ -115,7 +116,7 @@
       this.show()
       setTimeout(() => {
         this.$el.classList.add('fixed')
-      }, 600)
+      }, 400)
     },
 
     beforeDestroy() {

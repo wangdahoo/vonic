@@ -46,6 +46,10 @@ const setTitle = (title) => {
   if (el) el.textContent = title
 }
 
+const is_ios = () => {
+ return /iPad|iPhone|iPod/.test(navigator.userAgent)
+}
+
 class VonicApp {
   constructor(options) {
     this.routes = options.routes
@@ -103,9 +107,14 @@ class VonicApp {
       setTimeout(() => { router['_' + pushMethod](target) })
     }
 
+    window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false
+    if (!is_ios()) window.__disable_nav_title_transition__ = true
+
     window.$router = router
   }
 }
+
+const CONFIG_LIST = ['beforeEach', 'afterEach', 'routerOptions', 'pushMethod', 'disableNavTitleTransition']
 
 export default {
   install(Vue, options) {
@@ -121,7 +130,7 @@ export default {
     }, false)
 
     /* iOS Safari - Disable double click to zoom */
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+    if (is_ios()) {
       let lastTouchEnd = 0;
       document.documentElement.addEventListener('touchend', (e) => {
         let now = (new Date()).getTime()
@@ -136,13 +145,13 @@ export default {
   },
 
   setConfig(name, value) {
-    if (['beforeEach', 'afterEach', 'routerOptions', 'pushMethod'].indexOf(name) == -1) throw 'Unknown config name.'
+    if (CONFIG_LIST.indexOf(name) == -1) throw 'Unknown config name.'
     if (name == 'pushMethod' && value != 'push' && value != 'replace') throw 'Wrong value for config [pushMethod]'
     VonicAppConfig[name] = value
   },
 
   getConfig(name) {
-    if (['beforeEach', 'afterEach', 'routerOptions', 'pushMethod'].indexOf(name) == -1) throw 'Unknown config name.'
+    if (CONFIG_LIST.indexOf(name) == -1) throw 'Unknown config name.'
     return VonicAppConfig[name]
   },
 

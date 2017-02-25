@@ -8,7 +8,7 @@
   $navbar-z-index: 10;
 
   .navbar {
-    position: absolute;
+    position: fixed;
     z-index: $navbar-z-index;
     visibility: hidden;
     background: #FFF;
@@ -37,6 +37,8 @@
 
   import { timeout, is_ios_device } from './utils'
 
+  let isFirstRender = true
+
   export default {
     data() {
       return {
@@ -57,6 +59,10 @@
 
       channel.$on('UpdateNavbar', (data) => {
         this.visible = !data.hideNavbar
+        if (!data.hideNavbar) {
+          this.visible = true
+          this.$el.style.position = 'absolute'
+        }
         // console.log('createHeader options => ', data)
         this.createHeader(data)
       })
@@ -94,11 +100,18 @@
 
       createHeader(options) {
         let props = {
-          enableTitleTransition: is_ios_device()
+          enableTitleTransition: is_ios_device(),
+          showBack: false,
+          showMenu: false
         }
         if (options.title) props.title = options.title
         if (options.onBackButtonClick) props.onBack = options.onBackButtonClick
         if (options.onMenuButtonClick) props.onMenu = options.onMenuButtonClick
+        props.showBack = !!options.showBackButton
+        props.showMenu = !!options.showMenuButton
+        props.enableTitleTransition = !isFirstRender
+        isFirstRender = false
+
         let HeaderComponent = Vue.extend(Header)
         this._createHeaderDom().then(el => {
           let vm = new HeaderComponent({
