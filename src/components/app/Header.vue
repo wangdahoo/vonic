@@ -1,6 +1,6 @@
 <template>
   <div class="bar bar-header bar-transparent" :class="{'cached': cached}">
-    <div class="buttons" v-if="showBack">
+    <div class="buttons" :class="{'hide': cached}" v-if="showBack">
       <button class="button button-icon" @click="onBackClick()">
         <span v-html="backText">
         </span>
@@ -11,7 +11,7 @@
       <span v-text="title"></span>
     </h1>
 
-    <div class="buttons" v-if="showMenu">
+    <div class="buttons" :class="{'hide': cached}" v-if="showMenu">
       <button class="button button-icon" @click="onMenuClick()">
         <span v-html="menuText">
         </span>
@@ -19,7 +19,7 @@
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
   .bar.bar-header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     z-index: 2;
@@ -39,6 +39,10 @@
       transition-property: opacity, transform;
       opacity: 0;
     }
+
+    .hide {
+      display: none;
+    }
   }
 </style>
 <script>
@@ -54,13 +58,19 @@
   export default {
     props: {
       title: String,
-      showBack: Boolean,
+      showBack: {
+        type: Boolean,
+        default: false
+      },
       backText: {
         type: String,
         default: DEFAULT_BACK_TEXT
       },
       onBack: Function,
-      showMenu: Boolean,
+      showMenu: {
+        type: Boolean,
+        default: false
+      },
       menuText: {
         type: String,
         default: DEFAULT_MENU_TEXT
@@ -73,6 +83,10 @@
       return {
         cached: false
       }
+    },
+
+    created() {
+      console.log()
     },
 
     mounted() {
@@ -171,7 +185,7 @@
 
         setTimeout(() => {
           document.querySelector('[von-nav]').style.position = 'fixed'
-        }, 10)
+        }, 50)
       }
     }
   }

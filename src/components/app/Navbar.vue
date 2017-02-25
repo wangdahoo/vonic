@@ -43,7 +43,7 @@
     data() {
       return {
         visible: false,
-        enableTransition: false,
+        enableTransition: true,
         headers: []
       }
     },
@@ -70,7 +70,7 @@
 
     watch: {
       'headers': function (newVal, oldVal) {
-        // console.log('headers => ', newVal.length)
+        console.log('headers => ', newVal.length)
       }
     },
 
@@ -107,12 +107,14 @@
         if (options.title) props.title = options.title
         if (options.onBackButtonClick) props.onBack = options.onBackButtonClick
         if (options.onMenuButtonClick) props.onMenu = options.onMenuButtonClick
-        props.showBack = !!options.showBackButton
-        props.showMenu = !!options.showMenuButton
+        if (options.showBackButton) props.showBack = options.showBackButton
+        if (options.showMenuButton) props.showMenu = options.showMenuButton
         if (options.backButtonText) props.backText = options.backButtonText
         if (options.menuButtonText) props.menuText = options.menuButtonText
         props.enableTitleTransition = !isFirstRender
         isFirstRender = false
+
+        console.log('header props => ', props)
 
         let HeaderComponent = Vue.extend(Header)
         this._createHeaderDom().then(el => {
@@ -121,7 +123,7 @@
           }).$mount(el)
 
           let headers = this.headers
-          let headerToCache = headers[headers.length - 1]
+          let headerToCache = headers.pop()
           if (headerToCache) {
             headerToCache.cache()
           }
