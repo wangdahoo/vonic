@@ -76,6 +76,11 @@ class VonicApp {
       components: {
         VonApp
       },
+      propsData: {
+        meta: {
+          pushMethod: VonicAppConfig.pushMethod
+        }
+      },
       methods: {
         setTitle: setTitle
       }
@@ -83,7 +88,7 @@ class VonicApp {
 
     window.$app = app
 
-    let pushMethod = VonicAppConfig.pushMethod
+    let pushMethod = window.__push_method__ = VonicAppConfig.pushMethod
     router['_' + pushMethod] = router[pushMethod]
 
     router.forward = router[pushMethod] = (target) => {
@@ -97,20 +102,6 @@ class VonicApp {
       nextDirection('back')
       setTimeout(() => { router['_' + pushMethod](target) })
     }
-
-    // router._push = router.push
-
-    // router.forward = router.push = (target) => {
-    //   if (window.__block_touch__) return
-    //   nextDirection('forward')
-    //   setTimeout(() => { router._push(target) })
-    // }
-
-    // router.back = (target) => {
-    //   if (window.__block_touch__) return
-    //   nextDirection('back')
-    //   setTimeout(() => { router._push(target) })
-    // }
 
     window.$router = router
   }
