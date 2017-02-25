@@ -35,24 +35,13 @@
   import Vue from 'vue'
   import Header from './header'
 
-  const noop = () => {}
-
-  const timeout = (result = undefined, duration = 0) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => { resolve(result) }, duration);
-    })
-  }
-
-  const is_ios_device = () => {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent)
-  }
+  import { timeout, is_ios_device } from './utils'
 
   export default {
     data() {
       return {
         visible: false,
         enableTransition: false,
-
         headers: []
       }
     },
@@ -68,14 +57,14 @@
 
       channel.$on('UpdateNavbar', (data) => {
         this.visible = !data.hideNavbar
-        console.log('createHeader options => ', data)
+        // console.log('createHeader options => ', data)
         this.createHeader(data)
       })
     },
 
     watch: {
       'headers': function (newVal, oldVal) {
-        console.log('headers => ', newVal.length)
+        // console.log('headers => ', newVal.length)
       }
     },
 
@@ -104,7 +93,9 @@
       },
 
       createHeader(options) {
-        let props = {}
+        let props = {
+          enableTitleTransition: is_ios_device()
+        }
         if (options.title) props.title = options.title
         if (options.onBackButtonClick) props.onBack = options.onBackButtonClick
         if (options.onMenuButtonClick) props.onMenu = options.onMenuButtonClick
@@ -115,13 +106,9 @@
           }).$mount(el)
 
           let headers = this.headers
-          // let headerToCache = headers[headers.length - 1]
-          // if (headerToCache) {
-          //   headerToCache.cache()
-          // }
-          let headerToDestroy = headers.pop()
-          if (headerToDestroy) {
-            headerToDestroy.$destroy()
+          let headerToCache = headers[headers.length - 1]
+          if (headerToCache) {
+            headerToCache.cache()
           }
           headers.push(vm)
         })
