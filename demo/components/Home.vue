@@ -5,7 +5,6 @@
       showBackButton: true,
       onBackButtonClick: back,
       showMenuButton: true,
-      menuButtonText: menuButtonText,
       onMenuButtonClick: toggleSidebar
     }">
     <div class="page-content">
@@ -153,7 +152,6 @@
   export default {
     data() {
       return {
-        menuButtonText: '<a class="button button-icon icon ion-navicon"></a>',
         sidebar: undefined,
         sidebarRight: undefined
       }

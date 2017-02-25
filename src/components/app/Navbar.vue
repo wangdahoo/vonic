@@ -109,6 +109,8 @@
         if (options.onMenuButtonClick) props.onMenu = options.onMenuButtonClick
         props.showBack = !!options.showBackButton
         props.showMenu = !!options.showMenuButton
+        if (options.backButtonText) props.backText = options.backButtonText
+        if (options.menuButtonText) props.menuText = options.menuButtonText
         props.enableTitleTransition = !isFirstRender
         isFirstRender = false
 

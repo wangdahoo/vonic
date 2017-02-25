@@ -2,7 +2,8 @@
   <div class="bar bar-header bar-transparent" :class="{'cached': cached}">
     <div class="buttons" v-if="showBack">
       <button class="button button-icon" @click="onBackClick()">
-        <i class="icon ion-ios-arrow-back"></i>
+        <span v-html="backText">
+        </span>
       </button>
     </div>
 
@@ -12,7 +13,8 @@
 
     <div class="buttons" v-if="showMenu">
       <button class="button button-icon" @click="onMenuClick()">
-        <i class="icon ion-navicon"></i>
+        <span v-html="menuText">
+        </span>
       </button>
     </div>
   </div>
@@ -46,12 +48,23 @@
   const TITLE_TRANSITION = () => (is_ios_device() && !window.__disable_nav_title_transition__) ?
     '400ms cubic-bezier(.36, .66, .04, 1)' : '0ms'
 
+  const DEFAULT_BACK_TEXT = '<i class="icon ion-ios-arrow-back"></i>'
+  const DEFAULT_MENU_TEXT = '<i class="icon ion-navicon"></i>'
+
   export default {
     props: {
       title: String,
       showBack: Boolean,
+      backText: {
+        type: String,
+        default: DEFAULT_BACK_TEXT
+      },
       onBack: Function,
       showMenu: Boolean,
+      menuText: {
+        type: String,
+        default: DEFAULT_MENU_TEXT
+      },
       onMenu: Function,
       enableTitleTransition: Boolean
     },
