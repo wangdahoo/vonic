@@ -38,7 +38,6 @@
       -webkit-transition-property: opacity, -webkit-transform;
       transition-property: opacity, transform;
       opacity: 0;
-      font-weight: 300;
     }
 
     .hide {
@@ -86,16 +85,12 @@
       }
     },
 
-    created() {
-      console.log()
-    },
-
     mounted() {
+      console.log('Navbar Header mounted time:', +new Date())
       this.titleEnter()
     },
 
     destroyed() {
-      console.log('destroy header')
       this.$el.parentNode.removeChild(this.$el)
     },
 
@@ -123,7 +118,6 @@
           return
         }
 
-        console.log('cache header')
         this.cached = true
         this.titleLeave()
       },
@@ -153,6 +147,8 @@
 
           style.webkitTransition
           style.transition = this.enableTitleTransition ? TITLE_TRANSITION() : 'none'
+
+          console.log('NavTitleEnter time:', +new Date())
         }, 0)
       },
 
@@ -167,7 +163,6 @@
 
         setTimeout(() => {
           let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
-          console.log(dist)
           let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
           style.webkitTransform =
           style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + dist + ',0,0)'

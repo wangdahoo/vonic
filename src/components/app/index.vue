@@ -1,7 +1,7 @@
 <template>
   <div von-app>
     <navbar></navbar>
-    <transition name="page">
+    <transition name="page" v-on:before-enter="beforePageEnter">
       <router-view></router-view>
     </transition>
   </div>
@@ -44,6 +44,12 @@
       channel.$on('VonicNotification', (data) => {
         $toast.show(data.message);
       })
+    },
+
+    methods: {
+      beforePageEnter(el) {
+        console.log('beforePageEnter time:', +new Date())
+      }
     }
   }
 </script>

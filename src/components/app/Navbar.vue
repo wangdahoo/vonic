@@ -58,20 +58,14 @@
       })
 
       channel.$on('UpdateNavbar', (data) => {
+        console.log('UpdateNavbar time:', +new Date())
         this.visible = !data.hideNavbar
         if (!data.hideNavbar) {
           this.visible = true
           this.$el.style.position = 'absolute'
         }
-        // console.log('createHeader options => ', data)
         this.createHeader(data)
       })
-    },
-
-    watch: {
-      'headers': function (newVal, oldVal) {
-        console.log('headers => ', newVal.length)
-      }
     },
 
     methods: {
@@ -113,8 +107,6 @@
         if (options.menuButtonText) props.menuText = options.menuButtonText
         props.enableTitleTransition = !isFirstRender
         isFirstRender = false
-
-        console.log('header props => ', props)
 
         let HeaderComponent = Vue.extend(Header)
         this._createHeaderDom().then(el => {
