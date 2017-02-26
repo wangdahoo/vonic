@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var pkg = require('./package.json')
 var moment = require('moment')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './demo/main.js',
@@ -80,7 +81,7 @@ if (process.env.NODE_ENV === 'production') {
     ]
     module.exports.output = {
       path: path.resolve(__dirname, './docs'),
-      filename: 'build.js'
+      filename: '[name].js'
     }
   }
 
@@ -94,10 +95,38 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
+        drop_console: true,
       }
     })
   ])
+
+  if (process.env.BUILD == 'doc') {
+    module.exports.plugins = (module.exports.plugins || []).concat([
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: function (module, count) {
+          // any required modules inside node_modules are extracted to vendor
+          return (
+            module.resource &&
+            /\.js$/.test(module.resource) &&
+            module.resource.indexOf(
+              path.join(__dirname, './node_modules')
+            ) === 0
+          )
+        }
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'manifest',
+        chunks: ['vendor']
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: 'index.tpl.html',
+        inject: true
+      })
+    ])
+  }
 
   if (process.env.BUILD == 'publish') {
     // Banner
