@@ -1,2 +1,3 @@
-const Vue = require('vue')
-module.exports = new Vue()
+import Vue from 'vue'
+let vm = new Vue()
+export default vm
