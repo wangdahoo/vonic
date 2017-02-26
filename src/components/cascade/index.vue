@@ -1,17 +1,17 @@
 <template>
-  <div class="list list-ios thin-border von-cascade">
+  <list class="list-ios von-cascade">
     <label v-for="(f, index) in fields"
            class="item item-ios item-icon-right"
            @click="showCascadePanel(index)">
+      <hairline-top v-if="index > 0"></hairline-top>
       <span v-text="f"></span>
       <i class="icon ion-ios-arrow-right"></i>
       <span class="item-note" v-text="value[index]"></span>
+      <hairline-bottom v-if="index < fields.length - 1"></hairline-bottom>
     </label>
-  </div>
+  </list>
 </template>
 <style lang='scss' scoped>
-  @import "../scss/item";
-
   .von-cascade {
     padding-left: 16px;
     background: #FFF;
@@ -27,6 +27,9 @@
   import axios from 'axios'
   import Vue from 'vue'
   import channel from '../app/channel'
+  import HairlineList from '../list/HairlineList'
+  import HairlineTop from '../list/HairlineTop'
+  import HairlineBottom from '../list/HairlineBottom'
 
   const filter = (filters, data) => {
     let options = []
@@ -49,6 +52,12 @@
   }
 
   export default {
+    components: {
+      HairlineList,
+      HairlineTop,
+      HairlineBottom
+    },
+
     props: {
       fields: {
         type: Array,

@@ -1,20 +1,20 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '操作列表', showBackButton: true}">
     <div class="page-content padding-top">
-      <div class="item item-icon-right thin-border" @click="showActionSheet()">
+      <item class="item-icon-right" @click.native="showActionSheet()">
         iOS<span class="item-note">默认</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </item>
 
-      <div class="item item-icon-right thin-border" @click="showActionSheet('android')">
+      <item class="item-icon-right" @click.native="showActionSheet('android')">
         Android<span class="item-note"></span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </item>
 
-      <div class="item item-icon-right thin-border" @click="showActionSheet('weixin')">
+      <item class="item-icon-right" @click.native="showActionSheet('weixin')">
         微信<span class="item-note"></span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </item>
     </div>
   </div>
 </template>

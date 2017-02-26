@@ -32,7 +32,7 @@
         <button-bar theme="assertive" :tab-items="promotions" :tab-index="promotionIndex"
           :on-tab-click="index => promotionIndex = index"></button-bar>
       </div>
-      <div class="item thin-border">
+      <div class="item item-borderless">
         选中: {{ promotions[promotionIndex] }}
       </div>
 

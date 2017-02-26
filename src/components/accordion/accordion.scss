@@ -3,15 +3,10 @@
   background: #FFF;
 
   .list-accordion {
-    margin-top: -1px;
-    margin-bottom: 0px;
+    margin: -1px 0 0 0;
     -webkit-transition: all .15s;
     transition: all .15s;
     height: 50px;
-
-    .item {
-      padding-left: 0 !important;
-    }
 
     .item-icon-right {
       z-index: 2;
@@ -32,6 +27,7 @@
 
     .accordion-content {
       z-index: 1;
+      padding-left: 15px;
     }
   }
 }

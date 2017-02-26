@@ -3,10 +3,9 @@
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
-      <div v-for="(item, index) in items" @click="onItemClick(index)"
-           class="item thin-border" :class="{'item-stable': index % 2 == 0}">
+      <item v-for="(item, index) in items" @click.native="onItemClick(index)" :class="{'item-stable': index % 2 == 0}">
         {{ item }}
-      </div>
+      </item>
 
       <div v-if="infiniteCount >= 2" slot="infinite" class="text-center">没有更多数据</div>
     </scroll>

@@ -2,35 +2,35 @@
   <div class="page has-navbar" v-nav="{title: '对话框', showBackButton: true}">
     <div class="page-content padding-top">
 
-      <div class="item item-icon-right thin-border" @click="showAlert()">
+      <item class="item-icon-right" @click.native="showAlert()">
         Alert <span class="item-note">提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showConfirm()">
+      </item>
+      <item class="item-icon-right" @click.native="showConfirm()">
         Confirm <span class="item-note">确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showAlertIOS()">
+      </item>
+      <item class="item-icon-right" @click.native="showAlertIOS()">
         iOS Alert <span class="item-note">iOS 风格提示框</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showConfirmIOS()">
+      </item>
+      <item class="item-icon-right" @click.native="showConfirmIOS()">
         iOS Confirm <span class="item-note">iOS 风格确认框</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="multiMode()">
+      </item>
+      <item class="item-icon-right" @click.native="multiMode()">
         Multi Mode <span class="item-note">多个同时出现</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </item>
 
-      <div class="item item-icon-right thin-border" @click="showAlert('scale')">
+      <item class="item-icon-right" @click.native="showAlert('scale')">
         Scale Effect
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showAlert('slide')">
+      </item>
+      <item class="item-icon-right" @click.native="showAlert('slide')">
         Slide Effect
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </item>
 
       <div style="height: 50px;"></div>
 

@@ -12,24 +12,24 @@
         Mobile UI Components<br>based on Vue.js and ionic CSS
       </div>
 
-      <div class="list" thin-border>
-        <div class="item item-icon-left item-icon-right" @click="demo()">
+      <div class="list list-borderless">
+        <hl-item class="item-icon-left item-icon-right" @click.native="demo()">
           <i class="icon ion-heart assertive"></i>
           <span class="item-note">Demo</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </div>
+        </hl-item>
 
-        <div class="item item-icon-left item-icon-right" @click="github()">
+        <hl-item class="item-icon-left item-icon-right" @click.native="github()">
           <i class="icon ion-social-github"></i>
           <span class="item-note">GitHub</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </div>
+        </hl-item>
 
-        <div class="item item-icon-left item-icon-right" @click="doc()">
+        <hl-item class="item-icon-left item-icon-right" @click.native="doc()">
           <i class="icon ion-ios-book positive"></i>
           <span class="item-note">Doc</span>
           <i class="icon ion-ios-arrow-right"></i>
-        </div>
+        </hl-item>
       </div>
 
       <div class="vonic-stars">
@@ -41,7 +41,6 @@
                 height="20">
         </iframe>
       </div>
-
     </div>
   </div>
 </template>

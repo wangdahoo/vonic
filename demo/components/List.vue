@@ -6,79 +6,51 @@
         Thin Border
       </div>
 
-      <div class="item thin-border">
+      <item>
         normal
-      </div>
-
-      <div class="item item-icon-left thin-border">
+      </item>
+      <item class="item-icon-left">
         icon left
         <i class="icon ion-social-github dark"></i>
-      </div>
-
-      <div class="item item-icon-right thin-border">
+      </item>
+      <item class="item-icon-right">
         icon right
         <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
-      </div>
-
-      <div class="item item-icon-right" thin-border>
+      </item>
+      <item class="item-icon-right">
         Item Title
         <span class="item-note">item note</span>
         <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
-      </div>
+      </item>
 
       <div class="item item-divider">
         iOS style
       </div>
 
-      <div class="list list-ios" thin-border>
-        <div class="item item-ios">
+      <list class="list-ios">
+        <item>
           Item - 1
-          <span class="item-note"></span>
-        </div>
-        <div class="item item-ios">Item - 2</div>
-        <div class="item item-ios">Item - 3</div>
-      </div>
+        </item>
+        <item>
+          Item - 2
+        </item>
+        <item>
+          Item - 3
+        </item>
+      </list>
 
-      <div class="list list-ios" thin-border>
-        <div class="item item-ios" thin>
-          <span style="color: #888;">小标题</span>
-        </div>
-        <div class="item item-ios">
+      <list>
+        <item thin>
+          小标题
+        </item>
+        <item>
           正文
           <span class="item-note">
             备注
           </span>
-        </div>
-      </div>
-
-      <div class="list list-ios" thin-border>
-        <div class="item item-ios" thin>
-          <span style="color: #888;">Framework</span>
-        </div>
-        <div class="item item-avatar item-ios">
-          <img src="../assets/vonic.svg" style="border-radius: 0;">
-          <div class="title">
-            Vonic
-          </div>
-          <div class="item-note">
-            Mobile UI Components
-          </div>
-        </div>
-      </div>
-
-      <list>
-        <item class="item-icon-right">
-          文字
-          <div class="item-note">
-            备注
-          </div>
-          <span class="icon ion-ios-arrow-right"></span>
         </item>
       </list>
 
-      <div class="item item-divider">
-        Hairline Item
-      </div>
       <hl-item class="item-icon-right">
         文字
         <div class="item-note">

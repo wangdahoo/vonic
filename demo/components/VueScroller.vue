@@ -12,7 +12,7 @@
             :on-infinite="onInfinite"
             ref="scroller">
       <div v-for="(item, index) in items" @click="onItemClick(index)"
-           class="item thin-border" :class="{'item-stable': index % 2 == 0}">
+           class="item item-borderless" :class="{'item-stable': index % 2 == 0}">
         {{ item }}
       </div>
     </scroller>

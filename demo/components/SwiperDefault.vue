@@ -27,7 +27,7 @@
 
       <div style="height: 20px;"></div>
 
-      <div class="item item-icon-right" thin-border @click="$router.forward('/advanced/swiper/vertical')">
+      <div class="item item-borderless item-icon-right" thin-border @click="$router.forward('/advanced/swiper/vertical')">
         Switch between pages having swiper component
         <i class="icon ion-ios-arrow-right"></i>
       </div>

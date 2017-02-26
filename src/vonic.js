@@ -20,14 +20,16 @@ Vue.component('von-range', VonRange)
 Vue.component('von-header', VonHeader)
 
 // Layout
-import {List, Item, HairlineItem} from './components/list'
+import HairlineList from './components/list/HairlineList'
+import HairlineItem from './components/list/HairlineItem'
 import Cells from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
 import Scalable from './components/scalable'
 
-Vue.component('list', List)
-Vue.component('item', Item)
+Vue.component('list', HairlineList)
+Vue.component('item', HairlineItem)
+Vue.component('hl-list', HairlineList)
 Vue.component('hl-item', HairlineItem)
 Vue.component('cells', Cells)
 Vue.component('tabs', Tabs)
@@ -68,8 +70,9 @@ export default {
   VonHeader,
 
   // Layout
-  List,
-  Item,
+  List: HairlineList,
+  Item: HairlineItem,
+  HairlineList,
   HairlineItem,
   Cells,
   Tabs,

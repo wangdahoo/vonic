@@ -1,5 +1,6 @@
 <template>
-  <div class="item item-toggle von-toggle" thin-border>
+  <div class="item item-borderless item-toggle von-toggle">
+    <hairline-top></hairline-top>
     <span v-text="text"></span>
     <label class="toggle" :class="themeClass()">
       <input v-if="value" type="checkbox" ref="checkbox" :value="value" checked
@@ -11,6 +12,7 @@
         <div class="handle"></div>
       </div>
     </label>
+    <hairline-bottom></hairline-bottom>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -19,7 +21,15 @@
   }
 </style>
 <script>
+  import HairlineTop from '../list/HairlineTop'
+  import HairlineBottom from '../list/HairlineBottom'
+
   export default{
+    components: {
+      HairlineTop,
+      HairlineBottom
+    },
+
     props: {
       text: {
         type: String,

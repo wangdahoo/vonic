@@ -2,20 +2,20 @@
   <div class="page has-navbar page-swiper" v-nav="{title: '轮播', showBackButton: true}">
     <div class="page-content padding-top">
 
-      <router-link tag="div" thin-border class="item item-icon-right" to="/advanced/swiper/default">
+      <item class="item-icon-right" @click.native="$router.forward('/advanced/swiper/default')">
         Horizontal (default)<span class="item-note">水平 (默认)</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </router-link>
+      </item>
 
-      <router-link tag="div" thin-border class="item item-icon-right" to="/advanced/swiper/vertical">
+      <item class="item-icon-right" @click.native="$router.forward('/advanced/swiper/vertical')">
         Vertical <span class="item-note">垂直</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </router-link>
+      </item>
 
-      <div thin-border class="item item-icon-right" @click="swiperInPopup()">
+      <item class="item-icon-right" @click.native="swiperInPopup()">
         Swiper in Popup<span class="item-note">弹层内轮播</span>
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </item>
 
     </div>
   </div>

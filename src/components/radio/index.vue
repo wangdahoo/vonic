@@ -1,8 +1,9 @@
 <template>
-  <div class="list von-radio" thin-border>
+  <div class="list von-radio">
     <label class="item item-icon-left"
            v-for="(option, i) in options"
     >
+      <hairline-top v-if="i > 0"></hairline-top>
       <input type="radio" :name="radioId" v-model="v" :value="i" @click="onClick(i)">
       <i
         class="icon ion-ios-checkmark"
@@ -19,6 +20,8 @@
       >
       </i>
       <span v-text="option"></span>
+
+      <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
     </label>
   </div>
 </template>
@@ -29,6 +32,7 @@
   .von-radio {
     padding-left: 16px;
     background-color: #fff;
+    padding-top: 2px;
 
     .item {
       padding: 15px 15px 15px 30px;
@@ -63,7 +67,15 @@
   }
 </style>
 <script>
+  import HairlineTop from '../list/HairlineTop'
+  import HairlineBottom from '../list/HairlineBottom'
+
   export default {
+    components: {
+      HairlineTop,
+      HairlineBottom
+    },
+
     props: {
       options: {
         type: Array,

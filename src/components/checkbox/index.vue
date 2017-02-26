@@ -1,7 +1,9 @@
 <template>
-  <div class="list von-checkbox" thin-border>
-    <label class="item item-icon-right"
+  <div class="list list-ios von-checkbox">
+    <label class="item item-borderless item-icon-right"
            v-for="(option, i) in options">
+      <hairline-top v-if="i > 0"></hairline-top>
+
       <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i"
         v-model="v" :value="i" @click="onClick(i)">
       <span v-text="option"></span>
@@ -17,6 +19,8 @@
         }"
       >
       </i>
+
+      <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
     </label>
   </div>
 </template>
@@ -24,6 +28,8 @@
   @import "../scss/variables";
 
   .von-checkbox {
+    padding-top: 2px;
+
     .item-icon-right {
       .icon {
         font-size: 36px;
@@ -39,7 +45,15 @@
   }
 </style>
 <script>
+  import HairlineTop from '../list/HairlineTop'
+  import HairlineBottom from '../list/HairlineBottom'
+
   export default{
+    components: {
+      HairlineTop,
+      HairlineBottom
+    },
+
     props: {
       options: {
         type: Array,

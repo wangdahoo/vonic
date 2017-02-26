@@ -1,6 +1,8 @@
 <template>
   <div class="von-input-wrapper" :class="{'has-floating-label': floatingLabel == 'true'}">
-    <label class="item item-input thin-border von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
+    <label class="item item-borderless item-input von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
+      <hairline-top></hairline-top>
+
       <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}" v-text="label"></span>
       <!-- text -->
       <input v-if="type == 'text'" type="text" :placeholder="placeholder" ref="input" :value="value"
@@ -28,6 +30,8 @@
         @input="updateValue($event.target.value)"
         @focus="focus($event)"
         @blur="blur($event)">
+
+      <hairline-bottom></hairline-bottom>
     </label>
 
     <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>
@@ -35,10 +39,17 @@
 </template>
 <script>
   import Vue from 'vue'
+  import HairlineTop from '../list/HairlineTop'
+  import HairlineBottom from '../list/HairlineBottom'
 
   let lock = false
 
   export default {
+    components: {
+      HairlineTop,
+      HairlineBottom
+    },
+
     props: {
       type: {
         type: String,

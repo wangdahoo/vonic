@@ -38,7 +38,7 @@
     padding: 12px;
 
     .tag {
-      font-size: 22px;
+      font-size: 18px;
       line-height: 32px;
       border-radius: 4px;
       padding: 2px 8px;

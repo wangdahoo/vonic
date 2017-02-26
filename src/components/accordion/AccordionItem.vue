@@ -1,15 +1,16 @@
 <template>
-  <div class="list list-ios list-borderless list-accordion"
+  <div class="list list-borderless list-accordion"
     :style="{height: getHeight()}"
     >
-    <hairline-item class="item-icon-right" @click.native="onClick()">
+    <item class="item-icon-right" @click.native="onClick()">
       <span v-text="title"></span>
       <i class="icon ion-arrow-down-b"
         :class="{'rotated': expanded}"></i>
-    </hairline-item>
+    </item>
     <transition name="fade">
       <div v-show="expanded" class="accordion-content">
         <slot></slot>
+        <HairlineBottom></HairlineBottom>
       </div>
     </transition>
   </div>
@@ -20,10 +21,12 @@
 <script>
   import channel from './channel'
   import HairlineItem from '../list/HairlineItem'
+  import HairlineBottom from '../list/HairlineBottom'
 
   export default {
     components: {
-      HairlineItem
+      Item: HairlineItem,
+      HairlineBottom
     },
 
     props: {

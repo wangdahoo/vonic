@@ -2,14 +2,14 @@
   <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
     <div class="page-content padding-top">
 
-      <div class="item item-icon-right thin-border" @click="showCustomPopup()">
+      <item class="item item-icon-right" @click.native="showCustomPopup()">
         Custom Popup
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
-      <div class="item item-icon-right thin-border" @click="showCustomPopup2()">
+      </item>
+      <item class="item-icon-right" @click.native="showCustomPopup2()">
         Custom Popup 2
         <i class="icon ion-ios-arrow-right"></i>
-      </div>
+      </item>
 
     </div>
   </div>
@@ -18,7 +18,6 @@
   export default {
 
     methods: {
-
       showCustomPopup() {
         let options = {
           effect: 'scale',
