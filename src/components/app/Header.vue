@@ -38,6 +38,7 @@
       -webkit-transition-property: opacity, -webkit-transform;
       transition-property: opacity, transform;
       opacity: 0;
+      font-weight: 300;
     }
 
     .hide {

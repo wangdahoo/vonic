@@ -40,15 +40,8 @@
   overflow-y: auto;
   width: auto;
   height: auto;
-
   background-color: $default-page-bg;
-
-  // Safari -webkit-overflow-scrolling bug
-  // 解决滑动几次后可滚动区域卡住不能再滑动的问题
   -webkit-overflow-scrolling: touch;
-  * {
-    z-index: 1;
-  }
 
   &.no-scrolling {
     -webkit-overflow-scrolling: auto;

@@ -9,6 +9,10 @@
   @include translate3d(-33%, 0, 0);
 }
 
+@mixin view-center() {
+  @include translate3d(0, 0, 0);
+}
+
 .page-enter-active,
 .page-leave-active,
 .grade-a .page-enter-active,
@@ -27,52 +31,54 @@
   @include transition-timing-function($android-transition-timing-function);
 }
 
-.page-enter-to, .page-leave-to {
-  @include translate3d(0,0,0);
-}
-
 [transition-direction="forward"] {
   .page-enter {
     @include view-right();
-    z-index: 2;
     opacity: 1;
+    z-index: 2;
+  }
+  .page-enter-active {
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
   }
   .page-enter-to {
-    @include translate3d(0,0,0);
-    z-index: 1;
+    @include view-center();
     opacity: 1;
+    z-index: 2;
   }
   .page-leave {
-    @include translate3d(0,0,0);
+    @include view-center();
+    opacity: 0.8;
     z-index: 1;
-    opacity: 1;
   }
   .page-leave-to {
     @include view-left();
+    opacity: 0;
     z-index: 1;
-    opacity: 0.8;
   }
 }
 
 [transition-direction="back"] {
   .page-enter {
     @include view-left();
+    opacity: 0.8;
     z-index: 1;
-    opacity: 1;
   }
   .page-enter-to {
-    @include translate3d(0,0,0);
-    z-index: 1;
+    @include view-center();
     opacity: 1;
+    z-index: 1;
   }
   .page-leave {
-    @include translate3d(0,0,0);
-    z-index: 2;
+    @include view-center();
     opacity: 1;
+    z-index: 2;
+  }
+  .page-leave-active {
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
   }
   .page-leave-to {
     @include view-right();
+    opacity: 1;
     z-index: 2;
-    opacity: 0.8;
   }
 }

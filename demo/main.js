@@ -151,10 +151,6 @@ Vonic.app.setConfig('afterEach', afterEach)
 
 // Vonic.app.setConfig('pushMethod', 'replace')
 
-if (/iPad|iPhone|iPod/.test(navigator.userAgent) && document.body.offsetWidth == 320) {
-  Vonic.app.setConfig('disableNavTitleTransition', true)
-}
-
 Vue.use(Vonic.app, {
   routes: routes
 })
