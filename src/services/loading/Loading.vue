@@ -51,8 +51,6 @@
         this.tips = options.tips
         this.showSpinner = !!options.showSpinner
 
-        window.$backdrop.show()
-
         this.state = 1
         setTimeout(() => {
           this.state = 2
@@ -60,8 +58,6 @@
       },
 
       hide() {
-        window.$backdrop.hide()
-
         this.state = 1
         setTimeout(() => {
           this.state = 0
