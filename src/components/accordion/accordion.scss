@@ -1,19 +1,21 @@
+$accordion-transition: all .2s cubic-bezier(0.4, 0.6, 0.2, 1);
+
 .von-accordion {
   padding: 0;
   background: #FFF;
 
   .list-accordion {
     margin: -1px 0 0 0;
-    -webkit-transition: all .15s;
-    transition: all .15s;
+    -webkit-transition: $accordion-transition;
+    transition: $accordion-transition;
     height: 50px;
 
     .item-icon-right {
       z-index: 2;
       .icon.ion-arrow-down-b {
         color: #888;
-        -webkit-transition: all .15s;
-        transition: all .15s;
+        -webkit-transition: $accordion-transition;
+        transition: $accordion-transition;
         transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
         font-size: 16px;
@@ -33,8 +35,8 @@
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity,transform .15s;
-  -webkit-transition: opacity,-webkit-transform .15s;
+  transition: $accordion-transition;
+  -webkit-transition: $accordion-transition;
 
   opacity: 1;
   transform: translate3d(0,0,0);
