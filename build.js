@@ -1,5 +1,5 @@
 process.env.NODE_ENV = 'production'
-process.env.BUILD = 'publish'
+if (!process.env.BUILD) process.env.BUILD = 'publish'
 
 var ora = require('ora')
 var path = require('path')
@@ -8,7 +8,8 @@ var shell = require('shelljs')
 var webpack = require('webpack')
 var webpackConfig = require('./webpack.config')
 
-var spinner = ora('building vonic for production...')
+var spinner = ora('building ' +
+  (process.env.BUILD == 'publish' ? 'vonic for production' : 'gh-pages') + '...')
 spinner.start()
 
 // shell.rm('-rf', './dist')

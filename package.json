@@ -1,6 +1,6 @@
 {
   "name": "vonic",
-  "version": "2.0.0-alpha.24",
+  "version": "2.0.0-alpha.25",
   "main": "dist/vonic.min.js",
   "description": "Mobile UI Components, based on Vue.js and ionic CSS.",
   "keywords": [
@@ -17,7 +17,7 @@
   "author": "wangdahoo <157195705@qq.com>",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host 0.0.0.0 --port 8081",
-    "doc": "cross-env NODE_ENV=production BUILD=doc webpack --progress --hide-modules",
+    "doc": "BUILD=doc node build.js",
     "build": "node build.js"
   },
   "dependencies": {
