@@ -118,7 +118,7 @@
       },
 
       focus($event) {
-        this.showClearButton = true
+        this.showClearButton = !!this.$refs.input.value
       },
 
       blur($event) {
