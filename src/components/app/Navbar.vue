@@ -48,6 +48,12 @@
       }
     },
 
+    watch: {
+      headers: (newVal) => {
+        console.log('headers count => ', newVal.length)
+      }
+    },
+
     mounted() {
       channel.$on('EnableNavbarTransition', () => {
         this.enableTransition = true
@@ -117,6 +123,7 @@
           let headers = this.headers
           let headerToCache = headers.pop()
           if (headerToCache) {
+            headerToCache.$el.setAttribute('von-navbar', 'cached')
             headerToCache.cache()
           }
           headers.push(vm)

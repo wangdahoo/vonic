@@ -1,5 +1,5 @@
 <template>
-  <div class="bar bar-header bar-transparent" :class="{'cached': cached}">
+  <div von-navbar="active" class="bar bar-header bar-transparent" :class="{'cached': cached}">
     <div class="buttons" :class="{'hide': cached}" v-if="showBack">
       <button class="button button-icon" @click="onBackClick()">
         <span v-html="backText">
@@ -91,7 +91,14 @@
     },
 
     destroyed() {
-      this.$el.parentNode.removeChild(this.$el)
+      let navContainer = document.querySelector('[von-nav] .navbar-container')
+      let cached = document.querySelectorAll('[von-navbar="cached"]')
+
+      let i = 0
+      while (i < cached.length) {
+        navContainer.removeChild(cached[i])
+        i++
+      }
     },
 
     methods: {
