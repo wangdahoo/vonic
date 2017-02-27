@@ -19,7 +19,7 @@
 
     &.hl-item-borderless {
       .hairline-top:before,
-      .hairline-bottom:before
+      .hairline-bottom:after
       {
         visibility: hidden;
       }

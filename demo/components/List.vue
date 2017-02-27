@@ -39,6 +39,18 @@
         </item>
       </list>
 
+      <list class="list-ios hl-list-borderless">
+        <item>
+          Item - 1
+        </item>
+        <item>
+          Item - 2
+        </item>
+        <item>
+          Item - 3
+        </item>
+      </list>
+
       <list>
         <item thin>
           小标题

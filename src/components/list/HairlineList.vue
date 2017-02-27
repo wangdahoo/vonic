@@ -6,6 +6,21 @@
 <style lang="scss">
   .hl-list {
     padding-top: 1px !important;
+
+    &.hl-list-borderless {
+      .hl-item {
+        &:first-of-type {
+          .hairline-top:before {
+            visibility: hidden;
+          }
+        }
+
+        &:last-of-type {
+          .hairline-bottom:after {
+            visibility: hidden;
+          }
+        }
+      }
+    }
   }
 </style>
-
