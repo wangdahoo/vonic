@@ -26,11 +26,10 @@ label > * {
 
 // iOS 系统字体
 body {
-  font-family: '-apple-system';
-  font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: "-apple-system", ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
 
-  &[font="pingfang"] {
-    font-family: ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  &[font="light"], &[font="pingfang"] {
+    font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
     -webkit-font-smoothing: subpixel-antialiased;
     font-weight: 300;
   }
