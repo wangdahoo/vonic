@@ -1,3 +1,5 @@
+import Promise from 'es6-promise'
+Promise.polyfill()
 import assign from 'object-assign'
 import Vue from 'vue'
 import VueRouter from 'vue-router'

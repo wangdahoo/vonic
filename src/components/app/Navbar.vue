@@ -78,8 +78,8 @@
       navStyle() {
         if (this.enableTransition) {
           return {
-            webkitTransition: '300ms',
-            transition: '300ms',
+            webkitTransition: '400ms',
+            transition: '400ms',
             opacity: this.visible ? '1' : '0'
           }
         }
