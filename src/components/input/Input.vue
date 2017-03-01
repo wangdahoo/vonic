@@ -90,6 +90,7 @@
         this.$refs.input.value = ''
         this.$emit('input', '')
         this.showClearButton = false
+        this.$refs.input.focus()
       },
 
       updateValue(value) {

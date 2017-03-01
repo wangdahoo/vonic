@@ -33,6 +33,10 @@
 <script>
   import {removeElement} from '../utils'
 
+  function preventDefault (e) {
+    e.preventDefault()
+  }
+
   export default {
     data () {
       return {
@@ -56,6 +60,8 @@
         setTimeout(() => {
           this.state = 2
         })
+
+        document.body.addEventListener('touchmove', preventDefault)
       },
 
       hide() {
@@ -66,6 +72,8 @@
             this.$destroy()
           })
         }, 300)
+
+        document.body.removeEventListener('touchmove', preventDefault)
       },
 
       update(options) {
