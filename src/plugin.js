@@ -47,13 +47,6 @@ const nextDirection = (direction) => {
   if (el) el.setAttribute('transition-direction', direction);
 }
 
-const removeDirection = () => {
-  setTimeout(() => {
-    let el = document.querySelector('[von-app]')
-    if (el) el.removeAttribute('transition-direction');
-  }, is_ios ? 600 : 300)
-}
-
 const setTitle = (title) => {
   let el = document.querySelector('[von-navbar="active"] > .title > span')
   if (el) el.textContent = title
@@ -107,13 +100,11 @@ class VonicApp {
     router.forward = router[pushMethod] = (target) => {
       nextDirection('forward')
       setTimeout(() => { router['_' + pushMethod](target) })
-      removeDirection()
     }
 
     router.back = (target) => {
       nextDirection('back')
       setTimeout(() => { router['_' + pushMethod](target) })
-      removeDirection()
     }
 
     window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false

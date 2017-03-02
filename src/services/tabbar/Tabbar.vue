@@ -116,7 +116,7 @@
       this.show()
       setTimeout(() => {
         this.$el.classList.add('fixed')
-      }, 400)
+      }, 600)
     },
 
     beforeDestroy() {
