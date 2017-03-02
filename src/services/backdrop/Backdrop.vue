@@ -12,6 +12,10 @@
   // transition duration
   const duration = 200
 
+  const preventDefault = (e) => {
+    e.preventDefault()
+  }
+
   export default {
     data() {
       return {
@@ -26,10 +30,12 @@
 
     methods: {
       show() {
+        document.body.addEventListener('touchmove', preventDefault)
         this.state = 1
       },
 
       hide() {
+        document.body.removeEventListener('touchmove', preventDefault)
         this.state = 0
         return timeout(duration)
       },

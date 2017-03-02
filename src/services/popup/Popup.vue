@@ -28,8 +28,10 @@
             'button-light': !b.theme,
           }"
           @click="hide(index)"
-          v-html="b.text"
         >
+        <div class="hairline-top"></div>
+        <div class="hairline-right"></div>
+        <span v-text="b.text"></span>
         </button>
       </div>
     </div>
@@ -41,6 +43,14 @@
   @import "../../components/scss/variables";
   @import "../../components/scss/mixins";
 
+  .hairline-top:before {
+    @include hairline(top);
+  }
+
+  .hairline-right:after {
+    @include hairline(right);
+  }
+
   .popup-container .von-popup {
     background-color: #fff;
 
@@ -49,7 +59,7 @@
     }
 
     .popup-body {
-      padding: 22px 19px;
+      padding: 22px 18px;
       p {
         font-weight: 100 !important;
         -webkit-font-smoothing: subpixel-antialiased;
@@ -76,8 +86,7 @@
         font-size: 14px;
         line-height: 20px;
 
-        border-top: 1px solid #eee;
-        border-right: 1px solid #eee;
+        border: none;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
 
