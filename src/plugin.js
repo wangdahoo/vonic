@@ -98,13 +98,11 @@ class VonicApp {
     router['_' + pushMethod] = router[pushMethod]
 
     router.forward = router[pushMethod] = (target) => {
-      if (window.__block_touch__) return
       nextDirection('forward')
       setTimeout(() => { router['_' + pushMethod](target) })
     }
 
     router.back = (target) => {
-      if (window.__block_touch__) return
       nextDirection('back')
       setTimeout(() => { router['_' + pushMethod](target) })
     }

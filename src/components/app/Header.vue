@@ -76,7 +76,8 @@
         default: DEFAULT_MENU_TEXT
       },
       onMenu: Function,
-      enableTitleTransition: Boolean
+      enableTitleTransition: Boolean,
+      renderCount: Number
     },
 
     data() {
@@ -87,6 +88,7 @@
 
     mounted() {
       console.log('Navbar Header mounted time:', +new Date())
+      console.log('Navbar Render Count =>', this.renderCount)
       this.titleEnter()
     },
 
@@ -156,6 +158,15 @@
           style.transition = this.enableTitleTransition ? TITLE_TRANSITION() : 'none'
 
           console.log('NavTitleEnter time:', +new Date())
+
+          if (this.renderCount == 1) {
+            this.fixNavbar()
+          }
+
+          if (this.renderCount == 2) {
+            el.addEventListener('transitionEnd', () => {}, false)
+            el.addEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd, false)
+          }
         }, 0)
       },
 
@@ -176,16 +187,27 @@
           style.opacity = 0
 
           style.webkitTransition
-          style.transition = this.enableTitleTransition ? TITLE_TRANSITION() : 'none'
+          style.transition = (this.renderCount == 1 || this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
 
           el.addEventListener('transitionEnd', () => {}, false)
-          el.addEventListener('webkitTransitionEnd', this._titleTransitionEnd, false)
+          el.addEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd, false)
         }, 0)
       },
 
-      _titleTransitionEnd() {
-        this.$destroy()
+      _titleEnterTransitionEnd(e) {
+        console.log('titleEnterTransitionEnd')
+        this.fixNavbar()
+        e.target.removeEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd)
+      },
 
+      _titleLeaveTransitionEnd(e) {
+        console.log('titleLeaveTransitionEnd')
+        this.$destroy()
+        this.fixNavbar()
+        e.target.removeEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd)
+      },
+
+      fixNavbar() {
         setTimeout(() => {
           document.querySelector('[von-nav]').style.position = 'fixed'
         }, 50)

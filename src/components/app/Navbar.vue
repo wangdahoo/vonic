@@ -37,7 +37,7 @@
 
   import { timeout, is_ios_device } from './utils'
 
-  let isFirstRender = true
+  let renderCount = 0
 
   export default {
     data() {
@@ -48,11 +48,11 @@
       }
     },
 
-    watch: {
-      headers: (newVal) => {
-        console.log('headers count => ', newVal.length)
-      }
-    },
+    // watch: {
+    //   headers: (newVal) => {
+    //     console.log('headers count => ', newVal.length)
+    //   }
+    // },
 
     mounted() {
       channel.$on('EnableNavbarTransition', () => {
@@ -76,7 +76,7 @@
 
     methods: {
       navStyle() {
-        if (this.enableTransition) {
+        if (renderCount && this.enableTransition) {
           return {
             webkitTransition: '400ms',
             transition: '400ms',
@@ -87,7 +87,7 @@
         return {
           webkitTransition: '0s',
           transition: '0s',
-          opacity: '1'
+          opacity: this.visible ? '1' : '0'
         }
       },
 
@@ -111,8 +111,9 @@
         if (options.showMenuButton) props.showMenu = options.showMenuButton
         if (options.backButtonText) props.backText = options.backButtonText
         if (options.menuButtonText) props.menuText = options.menuButtonText
-        props.enableTitleTransition = !isFirstRender
-        isFirstRender = false
+        props.enableTitleTransition = renderCount != 0
+        renderCount++
+        props.renderCount = renderCount
 
         let HeaderComponent = Vue.extend(Header)
         this._createHeaderDom().then(el => {
