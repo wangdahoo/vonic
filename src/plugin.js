@@ -20,6 +20,10 @@ import './services/storage/index.js'
 
 import VonApp from './components/app'
 
+const is_ios = () => {
+ return /iPad|iPhone|iPod/.test(navigator.userAgent)
+}
+
 const defaultRouterOptions = {
   base: '/',
   linkActiveClass: 'router-link-active',
@@ -43,13 +47,16 @@ const nextDirection = (direction) => {
   if (el) el.setAttribute('transition-direction', direction);
 }
 
+const removeDirection = () => {
+  setTimeout(() => {
+    let el = document.querySelector('[von-app]')
+    if (el) el.removeAttribute('transition-direction');
+  }, is_ios ? 600 : 300)
+}
+
 const setTitle = (title) => {
   let el = document.querySelector('[von-navbar="active"] > .title > span')
   if (el) el.textContent = title
-}
-
-const is_ios = () => {
- return /iPad|iPhone|iPod/.test(navigator.userAgent)
 }
 
 class VonicApp {
@@ -100,11 +107,13 @@ class VonicApp {
     router.forward = router[pushMethod] = (target) => {
       nextDirection('forward')
       setTimeout(() => { router['_' + pushMethod](target) })
+      removeDirection()
     }
 
     router.back = (target) => {
       nextDirection('back')
       setTimeout(() => { router['_' + pushMethod](target) })
+      removeDirection()
     }
 
     window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false

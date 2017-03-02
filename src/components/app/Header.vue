@@ -146,8 +146,10 @@
 
         let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
         let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
-        style.webkitTransform =
-        style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + dist + ',0,0)'
+        if (direction) {
+          style.webkitTransform =
+          style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + dist + ',0,0)'
+        }
 
         setTimeout(() => {
           style.opacity = 1
@@ -155,7 +157,7 @@
           style.transform = 'translate3d(0,0,0)'
 
           style.webkitTransition
-          style.transition = this.enableTitleTransition ? TITLE_TRANSITION() : 'none'
+          style.transition = (direction && this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
 
           console.log('NavTitleEnter time:', +new Date())
 
@@ -182,12 +184,14 @@
         setTimeout(() => {
           let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
           let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
-          style.webkitTransform =
-          style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + dist + ',0,0)'
+          if (direction) {
+            style.webkitTransform =
+            style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + dist + ',0,0)'
+          }
           style.opacity = 0
 
           style.webkitTransition
-          style.transition = (this.renderCount == 1 || this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
+          style.transition = direction && (this.renderCount == 1 || this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
 
           el.addEventListener('transitionEnd', () => {}, false)
           el.addEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd, false)
