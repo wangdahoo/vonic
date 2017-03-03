@@ -111,6 +111,8 @@
         }
 
         if (window.__push_method__ === 'push') {
+          let root = document.querySelector('[von-app]')
+          if (root) root.setAttribute('transition-direction', 'back');
           history.go(-1)
         }
       },
