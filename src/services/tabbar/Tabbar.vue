@@ -13,6 +13,8 @@
           <span v-text="menu.text"></span>
         </scalable>
       </div>
+
+      <badge class="" v-if="menu.badge" :num="menu.badge"></badge>
     </div>
   </div>
 </template>
@@ -54,6 +56,7 @@
       @include display-flex();
       @include flex(1);
       @include flex-direction(column);
+      position: relative;
 
       .icon-wrapper {
         @include flex(none);
@@ -69,12 +72,20 @@
         font-size: 20px;
         line-height: 20px;
       }
+
+      .von-badge {
+        position: absolute;
+        top: 2px;
+        left: 50%;
+        margin-left: 6px;
+      }
     }
 
   }
 </style>
 <script>
   import Scalable from '../../components/scalable'
+  import Badge from '../../components/badge'
 
   const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
@@ -86,7 +97,8 @@
 
   export default {
     components: {
-      Scalable
+      Scalable,
+      Badge
     },
 
     props: {

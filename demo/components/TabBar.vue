@@ -1,5 +1,5 @@
 <template>
-  <div class="page" v-tabbar="{'menus': menus, menuColor: '#888', activeMenuColor: '#FF4400', onMenuClick: menuClicked}">
+  <div class="page" v-tabbar="{'menus': menus, menuColor: '#B5B5B5', activeMenuColor: '#44CC00', onMenuClick: menuClicked}">
     <router-view></router-view>
   </div>
 </template>
@@ -24,7 +24,8 @@
             iconOn: 'ion-ios-cart',
             iconOff: 'ion-ios-cart-outline',
             text: '购物车',
-            path: '/advanced/tabbar/cart'
+            path: '/advanced/tabbar/cart',
+            badge: '5'
           },
           {
             iconOn: 'ion-ios-person',
