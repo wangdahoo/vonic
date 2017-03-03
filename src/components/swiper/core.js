@@ -3,7 +3,7 @@ const DEFAULT_OPTIONS = {
   itemClass: '.swiper-item',
   direction: 'vertical',
   threshold: 30,
-  duration: 200,
+  duration: 300,
   transitionEnd: noop
 }
 
