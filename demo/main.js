@@ -46,6 +46,7 @@ import TabbarWithoutRoutes from './components/TabbarWithoutRoutes'
 import Modal from './components/Modal'
 
 import Header from './components/Header'
+import Badge from './components/Badge'
 
 import Test from './components/Test'
 
@@ -98,6 +99,7 @@ const routes = [
 
   // test
   { path: '/header', component: Header },
+  { path: '/badge', component: Badge },
 
   { path: '/test', component: Test }
 ]
