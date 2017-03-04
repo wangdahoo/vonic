@@ -2,8 +2,8 @@
   <div class="page has-navbar" v-nav="{hideNavbar: true}">
     <div class="page-content">
       <von-header :theme="themes[themeIndex]">
-        <button class="button button-icon ion-ios-arrow-back" slot="left"></button>
-        <span slot="title">标题</span>
+        <button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/home')"></button>
+        <span slot="title">标题文字</span>
         <button class="button button-icon ion-navicon" slot="right"></button>
       </von-header>
 
@@ -30,10 +30,6 @@
         ],
         themeIndex: 0
       }
-    },
-
-    methods: {
-
     }
   }
 </script>

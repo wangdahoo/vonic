@@ -11,8 +11,8 @@
       <!-- Basic -->
       <div class="item item-divider">基础</div>
 
-      <list class="list-ios">
-        <item class="item-icon-right hl-item-borderless-top" @click.native="$router.forward('/basic/button')">
+      <list class="list-ios hl-list-borderless">
+        <item class="item-icon-right" @click.native="$router.forward('/basic/button')">
           Button <span class="item-note">按钮</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
@@ -44,6 +44,10 @@
           Range Slider <span class="item-note">滑块</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
+        <item class="item-icon-right" @click.native="$router.forward('/basic/badge')">
+          Badge <span class="item-note">徽章</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
         <item class="item-icon-right" @click.native="$router.forward('/basic/dialog')">
           Dialog <span class="item-note">对话框</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -52,7 +56,7 @@
           Toast <span class="item-note">文字提示</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
-        <item class="item-icon-right hl-item-borderless-bottom" @click.native="loading('正在加载..')">
+        <item class="item-icon-right" @click.native="loading('正在加载..')">
           Loading <span class="item-note">加载提示</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
@@ -60,8 +64,12 @@
 
       <!-- layout -->
       <div class="item item-divider">布局</div>
-      <list class="list-ios">
-        <item class="item-icon-right hl-item-borderless-top" @click.native="$router.forward('/layout/list')">
+      <list class="list-ios hl-list-borderless">
+        <item class="item-icon-right" @click.native="$router.forward('/layout/header')">
+          Header <span class="item-note">页头</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/layout/list')">
           List <span class="item-note">列表</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
@@ -77,7 +85,7 @@
           ButtonBar <span class="item-note">iOS 选项卡</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
-        <item class="item-icon-right hl-item-borderless-bottom" @click.native="$router.forward('/layout/scalable')">
+        <item class="item-icon-right" @click.native="$router.forward('/layout/scalable')">
           Scalable <span class="item-note">缩放</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
@@ -85,8 +93,8 @@
 
       <!-- advanced -->
       <div class="item item-divider">高级</div>
-      <list class="list-ios">
-        <item class="item-icon-right hl-item-borderless-top" @click.native="$router.forward('/advanced/swiper')">
+      <list class="list-ios hl-list-borderless">
+        <item class="item-icon-right" @click.native="$router.forward('/advanced/swiper')">
           Swiper <span class="item-note">轮播</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
@@ -130,7 +138,7 @@
           Tabbar Standalone <span class="item-note">单独使用</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
-        <item class="item-icon-right hl-item-borderless-bottom" @click.native="$router.forward('/advanced/modal')">
+        <item class="item-icon-right" @click.native="$router.forward('/advanced/modal')">
           Modal <span class="item-note">模态窗</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>

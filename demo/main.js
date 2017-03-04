@@ -15,10 +15,11 @@ import Radio from './components/Radio'
 import Checkbox from './components/Checkbox'
 import Toggle from './components/Toggle'
 import RangeSlider from './components/RangeSlider'
-
+import Badge from './components/Badge'
 import Dialog from './components/Dialog'
 
 // Layout
+import Header from './components/Header'
 import List from './components/List'
 import Cells from './components/Cells'
 import Tabs from './components/Tabs'
@@ -45,9 +46,6 @@ import PageFromTabbar from './components/tabbar/PageFromTabbar'
 import TabbarWithoutRoutes from './components/TabbarWithoutRoutes'
 import Modal from './components/Modal'
 
-import Header from './components/Header'
-import Badge from './components/Badge'
-
 import Test from './components/Test'
 
 const routes = [
@@ -63,9 +61,11 @@ const routes = [
   { path: '/basic/checkbox', component: Checkbox },
   { path: '/basic/toggle', component: Toggle },
   { path: '/basic/range', component: RangeSlider },
+  { path: '/basic/badge', component: Badge },
   { path: '/basic/dialog', component: Dialog },
 
   // Layout
+  { path: '/layout/header', component: Header },
   { path: '/layout/list', component: List },
   { path: '/layout/cells', component: Cells },
   { path: '/layout/tabs', component: Tabs },
@@ -98,9 +98,6 @@ const routes = [
   { path: '/advanced/datepicker', component: Datepicker },
 
   // test
-  { path: '/header', component: Header },
-  { path: '/badge', component: Badge },
-
   { path: '/test', component: Test }
 ]
 

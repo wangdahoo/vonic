@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar has-tabbar" v-nav="{title: '徽章'}">
+  <div class="page has-navbar has-tabbar" v-nav="{title: '徽章', showBackButton: true}">
     <div class="page-content">
       <div class="padding">
         <badge num="2"></badge>
