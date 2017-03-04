@@ -132,7 +132,8 @@
     },
 
     beforeDestroy() {
-      window.__disable_nav_title_transition__ = false
+      if (document.body.classList.contains('grade-a'))
+        window.__disable_nav_title_transition__ = false
       switchNavTransition(true)
     },
 

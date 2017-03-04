@@ -153,7 +153,7 @@ Vonic.app.setConfig('afterEach', afterEach)
 
 // Vonic.app.setConfig('pushMethod', 'replace')
 
-Vonic.app.setConfig('pageTransition', 'android')
+// Vonic.app.setConfig('pageTransition', 'android')
 
 Vue.use(Vonic.app, {
   routes: routes

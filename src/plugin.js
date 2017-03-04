@@ -80,6 +80,11 @@ class VonicApp {
     if (typeof VonicAppConfig.afterEach == 'function')
       router.afterEach(VonicAppConfig.afterEach)
 
+    window.__page_transition__ = VonicAppConfig.pageTransition
+
+    window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false
+    if (!is_ios()) window.__disable_nav_title_transition__ = true
+
     const app = new Vue({
       router,
       components: {
@@ -109,11 +114,6 @@ class VonicApp {
       nextDirection('back')
       setTimeout(() => { router['_' + pushMethod](target) })
     }
-
-    window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false
-    if (!is_ios()) window.__disable_nav_title_transition__ = true
-
-    window.__page_transition__ = VonicAppConfig.pageTransition
 
     window.$router = router
   }

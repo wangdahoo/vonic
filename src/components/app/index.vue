@@ -39,6 +39,14 @@
       } else {
         this.gradeClass = 'grade-b'
       }
+
+      if (window.__page_transition__ == 'ios') {
+        this.gradeClass = 'grade-a'
+      } else if (window.__page_transition__ == 'android') {
+        this.gradeClass = 'grade-b'
+        window.__disable_nav_title_transition__ = true
+      }
+
       document.querySelector('body').className = this.gradeClass
 
       channel.$on('VonicNotification', (data) => {
