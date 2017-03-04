@@ -47,9 +47,8 @@
 </style>
 <script>
   import channel from './channel'
-  import { is_ios_device } from './utils'
 
-  const TITLE_TRANSITION = () => (is_ios_device() && !window.__disable_nav_title_transition__) ?
+  const TITLE_TRANSITION = () => (document.body.classList.contains('grade-a') && !window.__disable_nav_title_transition__) ?
     '500ms cubic-bezier(.36, .66, .04, 1)' : '0ms'
 
   const DEFAULT_BACK_TEXT = '<i class="icon ion-ios-arrow-back"></i>'

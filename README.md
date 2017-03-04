@@ -4,7 +4,7 @@
   </a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-%202.0.0%20beta.4%20-green.svg">
+  <img src="https://img.shields.io/badge/version-%202.0.0%20beta.5%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%202.1.8%20-green.svg">
 </p>
 
@@ -19,17 +19,17 @@
 </p>
 
 ## Notice
-- v2.0.0-beta.4 released.
+- v2.0.0-beta.5 released.
 
 ```bash
-$ npm install vonic@2.0.0-beta.4
+$ npm install vonic@2.0.0-beta.5
 ```
 
 - for vue 1.0, please refer to branch **1.x**.
 
 ## Features
 - Equip with Vue.js, Vue-Router, ES6 & Babel 6
-- Build with Webpack 2.0 & Vue Loader
+- Cool with Webpack 2.0 & Vue Loader
 - Ionic CSS Components
 - Stylesheets in Sass
 - [Starter Project](https://github.com/wangdahoo/vonic-template#2.0) for Development Quick Start
@@ -42,8 +42,10 @@ $ npm install vonic@2.0.0-beta.4
 - Checkbox
 - Toggle
 - RangeSlider
+- Badge
 - Toast
 - Loading
+- Header
 - List
 - Cells
 - Tabs
@@ -61,8 +63,6 @@ $ npm install vonic@2.0.0-beta.4
 - ActionSheet
 - Sidebar
 - TabBar
-- Header
-- Badge
 
 ## Getting started
 
