@@ -34,3 +34,5 @@ $ios-transition-timing-function:       cubic-bezier(.36, .66, .04, 1) !default;
 
 $android-transition-duration:          200ms !default;
 $android-transition-timing-function:   cubic-bezier(0.4, 0.6, 0.2, 1) !default;
+
+$font-stack: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;

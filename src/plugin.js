@@ -39,7 +39,10 @@ let VonicAppConfig = {
   // Router Options
   routerOptions: {},
 
-  pushMethod: 'push'
+  pushMethod: 'push',
+
+  // Page Transition
+  pageTransition: undefined
 }
 
 const nextDirection = (direction) => {
@@ -110,11 +113,14 @@ class VonicApp {
     window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false
     if (!is_ios()) window.__disable_nav_title_transition__ = true
 
+    window.__page_transition__ = VonicAppConfig.pageTransition
+
     window.$router = router
   }
 }
 
-const CONFIG_LIST = ['beforeEach', 'afterEach', 'routerOptions', 'pushMethod', 'disableNavTitleTransition']
+const CONFIG_LIST = ['beforeEach', 'afterEach', 'routerOptions', 'pushMethod',
+  'disableNavTitleTransition', 'pageTransition']
 
 export default {
   install(Vue, options) {

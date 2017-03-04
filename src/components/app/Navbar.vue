@@ -64,7 +64,6 @@
       })
 
       channel.$on('UpdateNavbar', (data) => {
-        console.log('UpdateNavbar time:', +new Date())
         this.visible = !data.hideNavbar
         if (!data.hideNavbar) {
           this.visible = true

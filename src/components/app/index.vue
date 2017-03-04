@@ -48,7 +48,7 @@
 
     methods: {
       beforePageEnter(el) {
-        console.log('beforePageEnter time:', +new Date())
+        // console.log('beforePageEnter time:', +new Date())
       }
     }
   }

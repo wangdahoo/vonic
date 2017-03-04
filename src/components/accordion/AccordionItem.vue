@@ -7,7 +7,7 @@
       <i class="icon ion-arrow-down-b"
         :class="{'rotated': expanded}"></i>
     </item>
-    <transition name="fade">
+    <transition name="von-accordion">
       <div v-show="expanded" class="accordion-content">
         <slot></slot>
         <HairlineBottom></HairlineBottom>

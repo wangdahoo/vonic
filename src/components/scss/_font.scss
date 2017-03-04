@@ -1,0 +1,55 @@
+@import "variables";
+
+$font-base: sans-serif;
+
+@mixin pingfang-ultralight() {
+  font-family: "PingFangSC-Ultralight", $font-base;
+}
+
+@mixin pingfang-light() {
+  font-family: "PingFangSC-Light", $font-base;
+}
+
+@mixin pingfang-thin() {
+  font-family: "PingFangSC-Thin", $font-base;
+}
+
+@mixin pingfang-regular() {
+  font-family: "PingFangSC-Regular", $font-base;
+}
+
+@mixin pingfang-medium() {
+  font-family: "PingFangSC-Medium", $font-base;
+}
+
+@mixin pingfang-semibold() {
+  font-family: "PingFangSC-Semibold", $font-base;
+}
+
+.pingfang-ultralight {
+  @include pingfang-ultralight();
+}
+
+.pingfang-light {
+  @include pingfang-light();
+}
+
+.pingfang-thin {
+  @include pingfang-thin();
+}
+
+.pingfang-regular {
+  @include pingfang-regular();
+}
+
+.pingfang-medium {
+  @include pingfang-medium();
+}
+
+.pingfang-semibold {
+  @include pingfang-semibold();
+}
+
+body[font="pingfang"] {
+  @include pingfang-light();
+}

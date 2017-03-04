@@ -1,4 +1,4 @@
-$accordion-transition: all .2s cubic-bezier(0.4, 0.6, 0.2, 1);
+$accordion-transition: all .25s cubic-bezier(0.4, 0.6, 0.2, 1);
 
 .von-accordion {
   padding: 0;
@@ -34,16 +34,11 @@ $accordion-transition: all .2s cubic-bezier(0.4, 0.6, 0.2, 1);
   }
 }
 
-.fade-enter-active, .fade-leave-active {
+.von-accordion-enter-active, .von-accordion-leave-active {
   transition: $accordion-transition;
   -webkit-transition: $accordion-transition;
-
   opacity: 1;
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
 }
-.fade-enter, .fade-leave-to, .fade-leave-active {
+.von-accordion-enter, .von-accordion-leave-to {
   opacity: 0;
-  transform: translate3d(0,-50px,0);
-  -webkit-transform: translate3d(0,-50px,0);
 }

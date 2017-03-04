@@ -87,8 +87,6 @@
     },
 
     mounted() {
-      console.log('Navbar Header mounted time:', +new Date())
-      console.log('Navbar Render Count =>', this.renderCount)
       this.titleEnter()
     },
 
@@ -161,8 +159,6 @@
           style.webkitTransition
           style.transition = (direction && this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
 
-          console.log('NavTitleEnter time:', +new Date())
-
           if (this.renderCount == 1) {
             this.fixNavbar()
           }
@@ -201,13 +197,11 @@
       },
 
       _titleEnterTransitionEnd(e) {
-        console.log('titleEnterTransitionEnd')
         this.fixNavbar()
         e.target.removeEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd)
       },
 
       _titleLeaveTransitionEnd(e) {
-        console.log('titleLeaveTransitionEnd')
         this.$destroy()
         this.fixNavbar()
         e.target.removeEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd)

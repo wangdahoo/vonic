@@ -3,9 +3,14 @@
     <div class="action-sheet-wrapper" :class="{'action-sheet-up': state == 1}">
       <div class="action-sheet">
         <div class="action-sheet-group">
-          <div class="action-sheet-title">{{ title }}</div>
+          <div class="action-sheet-title">
+            <span v-text="title"></span>
+          </div>
           <button class="button action-sheet-option"
-            v-for="(b, index) in buttons" @click="hide(index)" v-text="b.text">
+            v-for="(b, index) in buttons" @click="hide(index)">
+            <div class="hairline-top" v-if="index == 0"></div>
+            <span v-text="b.text"></span>
+            <div class="hairline-bottom"></div>
           </button>
         </div>
 
@@ -20,6 +25,13 @@
   @import "../../components/scss/variables";
   @import "../../components/scss/mixins";
 
+  .hairline-bottom:after {
+    @include hairline(bottom);
+  }
+  .hairline-top:before {
+    @include hairline(top);
+  }
+
   .action-sheet-wrapper .action-sheet {
     .action-sheet-group {
       border-radius: 8px;
@@ -30,12 +42,19 @@
 
       .action-sheet-option {
         font-size: 16px;
+        border: transparent;
       }
 
       &.action-sheet-cancel {
         .button {
           font-size: 16px;
         }
+      }
+
+      .button.active,
+      .button.activated,
+      .button:active {
+        background: #e8e8e8;
       }
     }
   }
@@ -139,6 +158,10 @@
 <script>
   import assign from 'object-assign'
 
+  const preventDefault = (e) => {
+    e.preventDefault()
+  }
+
   export default {
     data() {
       return {
@@ -185,10 +208,14 @@
         this.buttons = this._buttonList(_options.buttons)
         this.cancelText = _options.cancelText
         this.state = 1
+
+        document.body.addEventListener('touchmove', preventDefault)
       },
 
       hide(buttonIndex) {
         this.state = 0
+
+        document.body.removeEventListener('touchmove', preventDefault)
 
         if (buttonIndex > -1) {
           this.buttons[buttonIndex].callback()

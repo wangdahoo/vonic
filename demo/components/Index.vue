@@ -2,11 +2,9 @@
   <div class="page has-navbar" v-nav="{hideNavbar: true}">
     <div class="page-content">
 
-      <div class="logo">
-        <img src="../assets/vonic.svg" width="80" height="80"/>
-      </div>
+      <div class="logo"></div>
 
-      <div class="text-center code-name">VONIC</div>
+      <div class="code-name">vonic</div>
 
       <div class="text-center code-desc">
         Mobile UI Components<br>based on Vue.js and ionic CSS
@@ -47,27 +45,26 @@
 <style lang="scss">
   .logo {
     width: 100%;
-    text-align: center;
-    img {
-      margin: 30px auto 0 auto;
-    }
+    height: 80px;
+    background-image: url(../assets/vonic.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px 60px;
   }
 
   .code-name {
-    // font-family: "Monoton", sans-serif;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-family: "Monoton", sans-serif;
     font-size: 24px;
     line-height: 24px;
     color: #47B584;
     margin-bottom: 10px;
-    padding: 5px 0 0 2px;
   }
 
   .code-desc {
     color: #999;
     margin: 5px auto 15px auto;
-    // font-family: "Josefin Sans", sans-serif;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: "Josefin Sans", sans-serif;
   }
 
   .vonic-stars {

@@ -14,7 +14,6 @@ label > * {
 
 .backdrop {
   background-color: rgba(0,0,0,0.3);
-
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
 }
@@ -24,22 +23,6 @@ label > * {
   line-height: 20px;
 }
 
-// iOS 系统字体
-body {
-  font-family: "-apple-system", ".Helvetica", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-
-  &[font="light"], &[font="pingfang"] {
-    font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-    -webkit-font-smoothing: subpixel-antialiased;
-    font-weight: 300;
-  }
-}
-
-@font-face {
-  font-family: ".Helvetica";
-  src: local("Helvetica");
-}
-
 // button
 .button {
   min-height: 44px;
@@ -47,8 +30,3 @@ body {
     min-height: 30px;
   }
 }
-
-// bar box-shadow
-// .bar, .bar.bar-header {
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-// }
