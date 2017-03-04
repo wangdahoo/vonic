@@ -30,7 +30,7 @@
           @click="hide(index)"
         >
         <div class="hairline-top"></div>
-        <div class="hairline-right"></div>
+        <div class="hairline-right" v-if="index < buttons.length - 1"></div>
         <span v-text="b.text"></span>
         </button>
       </div>
