@@ -7,7 +7,7 @@
   .hl-list {
     padding-top: 1px !important;
 
-    &.hl-list-borderless {
+    &.hl-list-borderless, &.list-ios {
       .hl-item {
         &:first-of-type {
           .hairline-top:before {
