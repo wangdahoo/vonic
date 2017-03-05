@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Tabs', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '选项卡', showBackButton: true}">
     <tabs :tab-items="tabs" :tab-index="tabIndex" :on-tab-click="onTabClick"></tabs>
 
     <div class="page-content">

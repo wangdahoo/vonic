@@ -34,7 +34,7 @@
       <hairline-bottom></hairline-bottom>
     </label>
 
-    <span class="input-clear" :class="{'active': showClearButton}" @click="clear()"></span>
+    <span class="input-clear" :class="{'active': showClearButton}" @click="clear(value)"></span>
   </div>
 </template>
 <script>
@@ -86,7 +86,8 @@
     },
 
     methods: {
-      clear() {
+      clear(value) {
+        this.$refs.input.blur()
         this.$refs.input.value = ''
         this.$emit('input', '')
         this.showClearButton = false
