@@ -86,7 +86,7 @@ https://github.com/wangdahoo/vonic-webpack-demo
 
 ## Documents
 <!-- - [English](https://wangdahoo.github.io/vonic-doc/v1/en/)-->
-- [中文文档](https://wangdahoo.github.io/vonic-doc/zh-CN/)
+- [中文文档](https://wangdahoo.github.io/vonic-documents)
 
 ## Thanks to
 - [Ionic](http://ionicframework.com/)
