@@ -81,11 +81,10 @@ $ npm run dev
 
 That's it.
 
-And if you start work with [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack) by vue-cli, check the following repo for reference.
-https://github.com/wangdahoo/vonic-webpack-demo
+And if you start with [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack) by vue-cli, check the following starter for your reference.
+https://github.com/wangdahoo/vonic-webpack-starter
 
 ## Documents
-<!-- - [English](https://wangdahoo.github.io/vonic-doc/v1/en/)-->
 - [中文文档](https://wangdahoo.github.io/vonic-documents)
 
 ## Thanks to
