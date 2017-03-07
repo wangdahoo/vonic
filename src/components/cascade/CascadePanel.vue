@@ -116,7 +116,7 @@
           this.state = 1
         })
 
-        $backdrop.show().then(() => {
+        $backdrop.show(true).then(() => {
           let backdrop = document.querySelector('[von-backdrop]')
           backdrop.onclick = () => {
             bus.$emit('optionClickedEvent', {optionIndex: -1})
@@ -136,7 +136,7 @@
 
       _hide() {
         this.state = 0
-        $backdrop.hide()
+        $backdrop.hide(true)
 
         document.body.classList.remove('popup-open')
 

@@ -29,13 +29,15 @@
     },
 
     methods: {
-      show() {
-        document.body.addEventListener('touchmove', preventDefault)
+      show(allowTouchMove) {
+        if (!allowTouchMove)
+          document.body.addEventListener('touchmove', preventDefault)
         this.state = 1
       },
 
-      hide() {
-        document.body.removeEventListener('touchmove', preventDefault)
+      hide(allowTouchMove) {
+        if (!allowTouchMove)
+          document.body.removeEventListener('touchmove', preventDefault)
         this.state = 0
         return timeout(duration)
       },
