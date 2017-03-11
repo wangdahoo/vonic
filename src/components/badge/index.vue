@@ -3,7 +3,7 @@
     <div v-html="num" class="von-badge-num"></div>
   </span>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../scss/variables";
 
   .von-badge {

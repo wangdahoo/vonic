@@ -15,7 +15,7 @@
     </transition>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   @import "./accordion.scss";
 </style>
 <script>

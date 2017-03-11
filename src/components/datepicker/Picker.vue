@@ -51,7 +51,7 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   [von-picker], .von-datepicker {
     position: fixed;
     left: 0;

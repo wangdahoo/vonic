@@ -10,7 +10,7 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   .loading-container {
     .loading {
       padding: 15px;

@@ -7,7 +7,7 @@
     ></a>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../scss/variables";
 
   $border-radius: 5px;

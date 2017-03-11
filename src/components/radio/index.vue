@@ -25,7 +25,7 @@
     </label>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../scss/variables";
   @import "../scss/mixins";
 

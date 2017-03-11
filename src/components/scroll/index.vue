@@ -171,7 +171,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
   $layer-height: 40px;
   $color-text-gray: #aaa;

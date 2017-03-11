@@ -9,7 +9,7 @@
     <div class="hairline-bottom"></div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../scss/mixins";
 
   .hairline-top:before {

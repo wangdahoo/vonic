@@ -15,7 +15,7 @@
     <hairline-bottom></hairline-bottom>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
   .von-toggle {
     height: 50px;
   }

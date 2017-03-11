@@ -11,7 +11,7 @@
     </label>
   </list>
 </template>
-<style lang='scss' scoped>
+<style lang='scss'>
   .von-cascade {
     padding-left: 16px;
     background: #FFF;
