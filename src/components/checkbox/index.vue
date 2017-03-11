@@ -24,26 +24,6 @@
     </label>
   </div>
 </template>
-<style lang="scss" scoped>
-  @import "../scss/variables";
-
-  .von-checkbox {
-    padding-top: 2px;
-
-    .item-icon-right {
-      .icon {
-        font-size: 36px;
-        right: 5px;
-      }
-    }
-
-    input[type=checkbox] {
-      position: absolute;
-      top: -50000px;
-      left: -50000px;
-    }
-  }
-</style>
 <script>
   import HairlineTop from '../list/HairlineTop'
   import HairlineBottom from '../list/HairlineBottom'

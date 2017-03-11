@@ -32,17 +32,6 @@
     </div>
   </div>
 </template>
-<style lang="scss">
-  .modal {
-    padding-top: 44px;
-
-    .bar.bar-header {
-      h1.title {
-        font-weight: normal;
-      }
-    }
-  }
-</style>
 <script>
   import Vue from 'vue'
   import channel from './channel'

@@ -3,6 +3,58 @@ var webpack = require('webpack');
 var pkg = require('./package.json')
 var moment = require('moment')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+var scssRule = process.env.NODE_ENV == 'production'
+  ? {
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          },
+          'sass-loader'
+        ]
+      })
+    }
+  : {
+      test: /\.scss$/,
+      loader: 'style-loader!css-loader!sass-loader'
+    }
+
+var rules = [
+  {
+    test: /\.vue$/,
+    loader: 'vue-loader',
+    options: {
+      loaders: {
+        scss: 'vue-style-loader!css-loader!sass-loader'
+      }
+    }
+  },
+  {
+    test: /\.js$/,
+    loader: 'babel-loader',
+    exclude: /node_modules/
+  },
+  scssRule,
+  {
+    test: /\.(png|jpg|gif|svg)|((eot|woff|ttf|svg)[\?]?.*)$/,
+    loader: 'url-loader',
+    query: {
+      limit: 10000,
+      name: '[name].[ext]?[hash]'
+    }
+  },
+  {
+    test: /vue-scroller.src.*?js$/,
+    loader: 'babel-loader'
+  }
+]
 
 module.exports = {
   entry: './demo/main.js',
@@ -12,39 +64,7 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader'
-          }
-        }
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.(png|jpg|gif|svg)|((eot|woff|ttf|svg)[\?]?.*)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: '[name].[ext]?[hash]'
-        }
-      },
-
-      {
-        test: /vue-scroller.src.*?js$/,
-        loader: 'babel-loader'
-      }
-    ],
+    rules: rules,
   },
   resolve: {
     extensions: ['.js', '.vue'],
@@ -102,7 +122,7 @@ if (process.env.NODE_ENV === 'production') {
   ])
 
   if (process.env.BUILD == 'doc') {
-    module.exports.plugins = (module.exports.plugins || []).concat([
+    module.exports.plugins = module.exports.plugins.concat([
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         minChunks: function (module, count) {
@@ -131,11 +151,14 @@ if (process.env.NODE_ENV === 'production') {
   if (process.env.BUILD == 'publish') {
     // Banner
     var banner = 'Vonic \nversion: ' + pkg.version + ' \nrepo: https://github.com/wangdahoo/vonic \nbuild: ' + moment().format('YYYY-MM-DD HH:mm:ss')
-    module.exports.plugins.push(
+
+    module.exports.plugins = module.exports.plugins.concat([
+      new ExtractTextPlugin('vonic.css'),
+
       new webpack.BannerPlugin({
         banner: banner,
         entryOnly: true
       })
-    )
+    ])
   }
 }

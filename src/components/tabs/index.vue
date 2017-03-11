@@ -9,24 +9,6 @@
     </div>
   </div>
 </template>
-<style lang="scss">
-  @import "../scss/variables";
-
-  .tabs-top .tab-item {
-    margin-top: 1px;
-  }
-
-  .tabs-bottom .tab-item {
-    margin-top: 0px;
-  }
-
-  .tabs-top > .tabs {
-     border-bottom: 1px solid $default-border-color;
-     @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-      border-bottom: 0.5px solid $default-border-color;
-    }
-  }
-</style>
 <script>
   export default{
     props: {

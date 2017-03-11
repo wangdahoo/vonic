@@ -31,9 +31,6 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-  @import "./popup";
-</style>
 <script>
   import mixin from './mixin'
 

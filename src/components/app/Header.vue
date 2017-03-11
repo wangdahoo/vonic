@@ -19,32 +19,6 @@
     </div>
   </div>
 </template>
-<style lang="scss">
-  .bar.bar-header {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    z-index: 2;
-    padding: 5px 0px;
-
-    &.bar-transparent {
-      background: transparent;
-    }
-
-    &.cached {
-      box-shadow: none;
-      z-index: 1;
-    }
-
-    .title {
-      -webkit-transition-property: opacity, -webkit-transform;
-      transition-property: opacity, transform;
-      opacity: 0;
-    }
-
-    .hide {
-      display: none;
-    }
-  }
-</style>
 <script>
   import channel from './channel'
 

@@ -3,52 +3,6 @@
     <slot></slot>
   </div>
 </template>
-<style lang='scss'>
-  .md-button {
-    position: relative;
-    overflow: hidden;
-    border: none;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  }
-
-  .md-ripple {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(#FFF, 0.4);
-    min-width: 20px;
-    min-height: 20px;
-    opacity: 0;
-  }
-
-  .md-ripple-effect {
-    animation: ripple 2s;
-    -webkit-animation: ripple 2s;
-  }
-
-  @keyframes ripple {
-    0% {
-      transform: scale(1);
-      opacity: 0.4;
-    }
-    100% {
-      transform: scale(20);
-      opacity: 0;
-    }
-  }
-
-  @-webkit-keyframes ripple {
-    0% {
-      -webkit-transform: scale(1);
-      opacity: 0.4;
-    }
-    100% {
-      -webkit-transform: scale(20);
-      opacity: 0;
-    }
-  }
-
-</style>
 <script>
   export default {
     methods: {

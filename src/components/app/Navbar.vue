@@ -4,31 +4,6 @@
     </div>
   </div>
 </template>
-<style lang='scss'>
-  $navbar-z-index: 10;
-
-  .navbar {
-    position: fixed;
-    z-index: $navbar-z-index;
-    visibility: hidden;
-    background: #FFF;
-    &.visible {
-      visibility: visible;
-    }
-
-    .navbar-container {
-      position: absolute;
-    }
-  }
-
-  .navbar,
-  .navbar > .navbar-container {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 44px;
-  }
-</style>
 <script>
   import assign from 'object-assign'
   import channel from './channel'

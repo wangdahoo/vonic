@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 html, body {
   height: 100%;
   background-color: $default-page-bg;
@@ -16,6 +19,7 @@ label > * {
   background-color: rgba(0,0,0,0.3);
   transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
+  pointer-events: auto;
 }
 
 // Safari input placeholder margin issue
@@ -29,4 +33,22 @@ label > * {
   &.button-small {
     min-height: 30px;
   }
+}
+
+// hairline
+
+.hairline-top:before {
+  @include hairline(top);
+}
+
+.hairline-bottom:after {
+  @include hairline(bottom);
+}
+
+.hairline-left:before {
+  @include hairline(left);
+}
+
+.hairline-right:after {
+  @include hairline(right);
 }

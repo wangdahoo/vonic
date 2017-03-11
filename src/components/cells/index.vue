@@ -10,43 +10,6 @@
     <div v-if="outerBorder == true || outerBorder == 'true'" class="hairline-bottom"></div>
   </div>
 </template>
-
-<style lang="scss">
-  @import "../scss/mixins";
-
-  .hairline-top:before {
-    @include hairline(top);
-  }
-
-  .hairline-bottom:after {
-    @include hairline(bottom);
-  }
-
-  .hairline-left:before {
-    @include hairline(left);
-  }
-
-  .hairline-right:after {
-    @include hairline(right);
-  }
-
-  .cells {
-    margin: 10px 0;
-    position: relative;
-    background-color: #FFF;
-    .row {
-      position: relative;
-      margin: 0;
-      padding: 0;
-      .col {
-        margin: 0;
-        padding: 0;
-        position: relative;
-        text-align: center;
-      }
-    }
-  }
-</style>
 <script>
   const range = (n) => {
     let l = []

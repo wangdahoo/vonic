@@ -1,3 +1,5 @@
+import './scss/vonic.scss'
+
 import Vue from 'vue'
 
 // Basic

@@ -9,26 +9,6 @@
     <div class="hairline-bottom"></div>
   </div>
 </template>
-<style lang="scss">
-  @import "../scss/mixins";
-
-  .hairline-top:before {
-    @include hairline(top);
-  }
-
-  .hairline-bottom:after {
-    @include hairline(bottom);
-  }
-
-  [von-datepicker] {
-    height: 50px;
-    input[type=datetime] {
-      position: absolute;
-      top: -50000px;
-      left: -50000px;
-    }
-  }
-</style>
 <script>
   import Vue from 'vue'
   import Picker from './Picker.vue'

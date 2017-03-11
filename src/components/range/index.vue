@@ -19,11 +19,6 @@
     </slot>
   </hairline-item>
 </template>
-<style>
-  [von-range] {
-    height: 60px;
-  }
-</style>
 <script>
   import HairlineItem from '../list/HairlineItem'
 

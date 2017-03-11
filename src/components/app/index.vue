@@ -6,9 +6,6 @@
     </transition>
   </div>
 </template>
-<style lang='scss'>
-  @import "../scss/vonic";
-</style>
 <script>
   import Vue from 'vue'
   import channel from './channel'

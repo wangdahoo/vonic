@@ -11,18 +11,6 @@
     </label>
   </list>
 </template>
-<style lang='scss'>
-  .von-cascade {
-    padding-left: 16px;
-    background: #FFF;
-
-    .item-icon-right {
-      .icon {
-        color: #DDD;
-      }
-    }
-  }
-</style>
 <script>
   import axios from 'axios'
   import Vue from 'vue'

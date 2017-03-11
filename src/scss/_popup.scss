@@ -1,0 +1,450 @@
+.popup-container .popup {
+  color: #484746;
+  width: 275px;
+  border-radius: 4px;
+
+  .popup-head {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.popup-buttons > .button {
+  margin-bottom: 0;
+
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &.button-block {
+    margin-top: 0;
+  }
+
+  .button-default {
+    border: 1px solid #e3e3e3;
+  }
+}
+
+// Default Effect
+
+// Scale Out
+// Scale from hero (1 in this case) to zero
+// -------------------------------
+
+@-webkit-keyframes scaleOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+// Super Scale In
+// Scale from super (1.x) to duper (1 in this case)
+// -------------------------------
+
+@-webkit-keyframes superScaleIn {
+  from {
+    -webkit-transform: scale(1.3);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1
+  }
+}
+
+@keyframes superScaleIn {
+  from {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-container.popup-hidden .popup {
+  -webkit-animation-duration: 0.1s;
+  animation-duration: 0.1s;
+}
+
+.popup-container.active .popup {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+}
+
+// Scale Effect
+
+// Scale In
+// -------------------------------
+@-webkit-keyframes customScaleIn {
+  from {
+    -webkit-transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes customScaleIn {
+  from {
+    -webkit-transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Scale Out
+// -------------------------------
+@-webkit-keyframes customScaleOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes customScaleOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+}
+
+// Slide
+
+// Slide Down In
+// -------------------------------
+@-webkit-keyframes slideDownIn {
+  from {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownIn {
+  from {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Slide Up Out
+// -------------------------------
+@-webkit-keyframes slideUpOut {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideUpOut {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+}
+
+.popup-container[effect='scale'] {
+  &.popup-hidden .popup {
+    -webkit-animation-name: customScaleOut;
+    animation-name: customScaleOut;
+
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s;
+  }
+
+  &.active .popup {
+    -webkit-animation-name: customScaleIn;
+    animation-name: customScaleIn;
+
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s;
+  }
+}
+
+.popup-container[effect='slide'] {
+  &.popup-hidden .popup {
+    -webkit-animation-name: slideUpOut;
+    animation-name: slideUpOut;
+    -webkit-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
+
+  &.active .popup {
+    -webkit-animation-name: slideDownIn;
+    animation-name: slideDownIn;
+    -webkit-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+  }
+}
+
+/* iOS 风格 */
+.popup.ios {
+  height: auto;
+  width: 280px;
+  border-radius: 10px;
+  .popup-head {
+    padding: 20px 0 22px 0;
+    border-bottom: none;
+    position: relative;
+    .popup-title, .popup-sub-title {
+      font-family: sans-serif;
+      color: #000;
+    }
+
+    .popup-title {
+      -webkit-font-smoothing: subpixel-antialiased !important;
+      font-weight: 300;
+
+      font-size: 17px;
+      line-height: 17px;
+      font-weight: bold;
+    }
+    .popup-sub-title {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 13px;
+      -webkit-font-smoothing: antialiased !important;
+      font-weight: normal;
+    }
+  }
+
+  .popup-buttons {
+    padding: 0;
+    height: 45px;
+    min-height: 45px;
+
+    .button-ok {
+      -webkit-font-smoothing: subpixel-antialiased !important;
+
+      background-color: none;
+      border: none;
+      margin-top: 0;
+      font-size: 17px;
+      line-height: 45px;
+      min-height: 45px;
+      height: 45px;
+      padding: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      &:active {
+        background-color: rgba(0,0,0,0.1);
+      }
+    }
+  }
+}
+
+/* iOS 风格 confirm */
+.popup.ios.confirm {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  .popup-head {
+    padding: 20px 0 22px 0;
+    border-bottom: none;
+    position: relative;
+    .popup-title, .popup-sub-title, .button-ok, .button-cancel {
+      font-family: sans-serif;
+      color: #000;
+    }
+
+    .popup-title {
+      -webkit-font-smoothing: subpixel-antialiased !important;
+      font-weight: 300;
+
+      font-size: 17px;
+      line-height: 17px;
+      font-weight: bold;
+    }
+    .popup-sub-title {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 13px;
+      -webkit-font-smoothing: antialiased !important;
+      font-weight: normal;
+    }
+  }
+
+  .popup-buttons {
+    padding: 0;
+    height: 45px;
+    min-height: 45px;
+
+    .button {
+      margin-right: 0;
+    }
+
+    .button-ok, .button-cancel {
+      -webkit-font-smoothing: subpixel-antialiased !important;
+
+      background-color: transparent;
+      border: none;
+      margin-top: 0;
+      font-size: 17px;
+      line-height: 45px;
+      min-height: 45px;
+      height: 45px;
+      padding: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      &:active {
+        background-color: rgba(0,0,0,0.10);
+      }
+    }
+
+    .button-ok {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 10px;
+    }
+
+    .button-cancel {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10;
+      font-weight: 600;
+      font-family: sans-serif;
+
+    }
+  }
+}
+
+.hairline-top:before {
+  @include hairline(top);
+}
+
+.hairline-right:after {
+  @include hairline(right);
+}
+
+.popup-container .von-popup {
+  background-color: #fff;
+
+  .popup-head {
+    border-bottom: none;
+  }
+
+  .popup-body {
+    padding: 22px 18px;
+    p {
+      font-weight: 100 !important;
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    &.no-content * {
+      opacity: 0;
+    }
+
+    .button-close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 30px;
+    }
+  }
+
+  .popup-buttons {
+    padding: 0;
+    min-height: 45px;
+
+    .button {
+      min-height: 45px;
+      font-size: 14px;
+      line-height: 20px;
+
+      border: none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+
+      &:first-of-type {
+        border-bottom-left-radius: 4px;
+      }
+
+      &:last-of-type {
+        border-right: none;
+        border-bottom-right-radius: 4px;
+      }
+
+      margin-right: 0;
+      background-color: transparent;
+
+      &.button-light {
+        background-color: #fff;
+        &:active {
+          background-color: rgba(0,0,0,0.1);
+        }
+      }
+
+      &.button-assertive {
+        border-top: none;
+        background-color: $assertive;
+        &:active {
+          background-color: darken($assertive, 6.5%);
+        }
+      }
+    }
+  }
+}

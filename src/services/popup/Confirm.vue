@@ -50,13 +50,6 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
-  @import "./popup";
-
-  .button-default {
-    border: 1px solid #e3e3e3;
-  }
-</style>
 <script>
   import mixin from './mixin'
 

@@ -3,9 +3,6 @@
     <slot></slot>
   </div>
 </template>
-<style lang="scss">
-  @import "./accordion.scss";
-</style>
 <script>
   import channel from './channel'
 

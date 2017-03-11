@@ -5,36 +5,3 @@
     <slot></slot>
   </div>
 </template>
-<style lang='scss'>
-  @import "../scss/mixins";
-
-  .hl-item {
-    .hairline-top:before {
-      @include hairline(top);
-    }
-
-    .hairline-bottom:after {
-      @include hairline(bottom);
-    }
-
-    &.hl-item-borderless {
-      .hairline-top:before,
-      .hairline-bottom:after
-      {
-        visibility: hidden;
-      }
-    }
-
-    &.hl-item-borderless-top {
-      .hairline-top:before {
-        visibility: hidden;
-      }
-    }
-
-    &.hl-item-borderless-bottom {
-      .hairline-bottom:after {
-        visibility: hidden;
-      }
-    }
-  }
-</style>

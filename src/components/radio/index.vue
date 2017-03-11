@@ -25,47 +25,6 @@
     </label>
   </div>
 </template>
-<style lang="scss">
-  @import "../scss/variables";
-  @import "../scss/mixins";
-
-  .von-radio {
-    padding-left: 16px;
-    background-color: #fff;
-    padding-top: 2px;
-
-    .item {
-      padding: 15px 15px 15px 30px;
-      font-size: 14px;
-      line-height: 20px;
-
-      &:first-of-type, &:last-of-type {
-        border: none;
-      }
-    }
-
-    .item-icon-left {
-      .icon {
-        font-size: 24px;
-        left: -6px;
-
-        &.grey {
-          color: #BBB;
-        }
-      }
-    }
-
-    .ion-ios-circle-outline {
-      color: #ccc;
-    }
-
-    input[type=radio] {
-      position: absolute;
-      top: -50000px;
-      left: -50000px;
-    }
-  }
-</style>
 <script>
   import HairlineTop from '../list/HairlineTop'
   import HairlineBottom from '../list/HairlineBottom'

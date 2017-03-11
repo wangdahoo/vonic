@@ -15,9 +15,6 @@
     </transition>
   </div>
 </template>
-<style lang="scss">
-  @import "./accordion.scss";
-</style>
 <script>
   import channel from './channel'
   import HairlineItem from '../list/HairlineItem'

@@ -14,23 +14,6 @@
       ref="pagination"></pagination>
   </div>
 </template>
-<style lang='scss'>
-  .swiper {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-    .swiper-item {
-      height: 100%;
-      background-position: center center;
-      background-size: cover;
-      position: relative;
-      overflow: hidden;
-      float: left;
-    }
-  }
-
-</style>
 <script>
   import Vue from 'vue'
   import Swiper from './core.js'

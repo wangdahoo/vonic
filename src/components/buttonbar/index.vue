@@ -7,31 +7,6 @@
     ></a>
   </div>
 </template>
-<style lang="scss">
-  @import "../scss/variables";
-
-  $border-radius: 5px;
-
-  .von-button-bar {
-    margin: 10px 0;
-
-    .button-small {
-      font-size: 12px;
-      line-height: 28px;
-    }
-
-    >.button:first-child {
-      border-top-left-radius: $border-radius;
-      border-bottom-left-radius: $border-radius;
-    }
-
-    >.button:last-child {
-      border-top-right-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
-    }
-  }
-
-</style>
 <script>
   export default{
     props: {

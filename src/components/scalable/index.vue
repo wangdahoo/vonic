@@ -5,14 +5,6 @@
     </div>
   </div>
 </template>
-<style lang='scss'>
-  .von-scalable-wrapper {
-    position: relative;
-    .von-scalable {
-      position: absolute;
-    }
-  }
-</style>
 <script>
   const re = /^[\d]+(\%)?$/
 

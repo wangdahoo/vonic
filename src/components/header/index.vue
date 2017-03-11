@@ -35,11 +35,6 @@
 
   </div>
 </template>
-<style lang="scss">
-  .bar.bar-header {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  }
-</style>
 <script>
   export default {
     props: {

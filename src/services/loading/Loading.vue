@@ -10,26 +10,6 @@
     </div>
   </div>
 </template>
-<style lang="scss">
-  .loading-container {
-    .loading {
-      padding: 15px;
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    .spinner svg {
-      width: 28px;
-      height: 28px;
-      stroke: #FFF;
-      fill: #FFF;
-    }
-
-    .tips {
-      font-size: 14px;
-      line-height: 14px;
-    }
-  }
-</style>
 <script>
   import {removeElement} from '../utils'
 

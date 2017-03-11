@@ -15,11 +15,6 @@
     <hairline-bottom></hairline-bottom>
   </div>
 </template>
-<style lang="scss">
-  .von-toggle {
-    height: 50px;
-  }
-</style>
 <script>
   import HairlineTop from '../list/HairlineTop'
   import HairlineBottom from '../list/HairlineBottom'
