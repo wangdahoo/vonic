@@ -12,8 +12,7 @@ var spinner = ora('building ' +
   (process.env.BUILD == 'publish' ? 'vonic for production' : 'gh-pages') + '...')
 spinner.start()
 
-// shell.rm('-rf', './dist')
-// shell.config.silent = false
+shell.rm('-rf', './dist')
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()

@@ -6,7 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin')
 
-var scssRule = process.env.NODE_ENV == 'production' && process.env.BUILD !== 'doc'
+var scssRule = process.env.NODE_ENV == 'production'
   ? {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
@@ -48,7 +48,7 @@ var rules = [
     loader: 'url-loader',
     query: {
       limit: 10000,
-      name: '[name].[ext]?[hash]'
+      name: '[name].[ext]'
     }
   },
   {
@@ -71,7 +71,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      'vonic': path.resolve(__dirname, './src/index.js'),
+      'vonic': path.resolve(__dirname, './src/index.js')
     }
   },
   devServer: {
@@ -119,8 +119,7 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false,
         drop_console: true,
       }
-    }),
-    new OptimizeCssPlugin()
+    })
   ])
 
   if (process.env.BUILD == 'doc') {
@@ -146,7 +145,9 @@ if (process.env.NODE_ENV === 'production') {
         filename: 'index.html',
         template: 'index.tpl.html',
         inject: true
-      })
+      }),
+      new ExtractTextPlugin('app.css'),
+      new OptimizeCssPlugin()
     ])
   }
 
@@ -156,6 +157,7 @@ if (process.env.NODE_ENV === 'production') {
 
     module.exports.plugins = module.exports.plugins.concat([
       new ExtractTextPlugin('vonic.css'),
+      new OptimizeCssPlugin(),
 
       new webpack.BannerPlugin({
         banner: banner,
