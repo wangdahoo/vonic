@@ -14,7 +14,7 @@
         </scalable>
       </div>
 
-      <badge class="" v-if="menu.badge" :num="menu.badge"></badge>
+      <badge v-if="menu.badge" :num="menu.badge"></badge>
     </div>
   </div>
 </template>
@@ -23,12 +23,6 @@
   import Badge from '../../components/badge'
 
   const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
-
-  // TODO: DELETE ??
-  const switchNavTransition = (enable) => {
-    let nav = document.querySelector('[von-nav]')
-    nav[enable ? 'removeAttribute' : 'setAttribute']('no-transition', '')
-  }
 
   export default {
     components: {
@@ -69,7 +63,6 @@
     beforeDestroy() {
       if (document.body.classList.contains('grade-a'))
         window.__disable_nav_title_transition__ = false
-      switchNavTransition(true)
     },
 
     desctoryed() {
@@ -87,7 +80,6 @@
     methods: {
       menuClicked(menuIndex) {
         window.__disable_nav_title_transition__ = true
-        switchNavTransition(false)
 
         this.menuIndex = menuIndex
         if (this.menus[menuIndex].path)
@@ -109,8 +101,12 @@
       getIconClass(menu, index) {
         let iconClass = {}
         iconClass['icon ' + menu.iconOn] = this.menuIndex == index
-        iconClass['icon ' + menu.iconOff] = this.menuIndex != index
+        iconClass['icon  ' + menu.iconOff] = this.menuIndex != index
         return iconClass
+      },
+
+      setBadgeNum(menuIndex, num) {
+        this.menus[menuIndex].bage = num
       }
     },
   }

@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-  export default{
+  export default {
     props: {
       position: {
         type: String,

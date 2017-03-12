@@ -11,7 +11,7 @@
       Scalable
     },
     props: {
-      num: String
+      num: [String, Number]
     }
   }
 </script>

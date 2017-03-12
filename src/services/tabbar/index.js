@@ -61,4 +61,10 @@ channel.$on('hideTabbar', () => {
   }
 })
 
+channel.$on('updateTabbarBadge', (menuIndex, num) => {
+  if (_vm) {
+    _vm.setBadgeNum(menuIndex, num)
+  }
+})
+
 window.$tabbar = window.$tabbarEmmiter = channel
