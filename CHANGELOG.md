@@ -1,5 +1,9 @@
 # Change Logs
 
+### 2017-03-12 v1.1.3
+- Fix #37
+- License Info
+
 ### 2017-01-18 v1.1.2
 - Optimize navbar transition for `show` => `hide` and `hide` => `show` cases.
 - Add **showClose** option for method **$popup.show** to show a close button.

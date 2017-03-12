@@ -19,7 +19,7 @@
 </p>
 
 ## Notice
-- v1.1.2 released.
+- v1.1.3 released.
 
 ## [Change logs](https://github.com/wangdahoo/vonic/blob/master/CHANGELOG.md)
 
