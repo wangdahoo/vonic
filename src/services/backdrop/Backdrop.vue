@@ -25,14 +25,12 @@
 
     methods: {
       show(allowTouchMove) {
-        if (!allowTouchMove)
-          document.body.addEventListener('touchmove', preventDefault)
+        if (!allowTouchMove) document.body.addEventListener('touchmove', preventDefault)
         this.state = 1
       },
 
       hide(allowTouchMove) {
-        if (!allowTouchMove)
-          document.body.removeEventListener('touchmove', preventDefault)
+        if (!allowTouchMove) document.body.removeEventListener('touchmove', preventDefault)
         this.state = 0
         return timeout(duration)
       },

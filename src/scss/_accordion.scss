@@ -39,6 +39,7 @@ $accordion-transition: all .25s cubic-bezier(0.4, 0.6, 0.2, 1);
   -webkit-transition: $accordion-transition;
   opacity: 1;
 }
+
 .von-accordion-enter, .von-accordion-leave-to {
   opacity: 0;
 }

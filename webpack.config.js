@@ -4,8 +4,9 @@ var pkg = require('./package.json')
 var moment = require('moment')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin')
 
-var scssRule = process.env.NODE_ENV == 'production'
+var scssRule = process.env.NODE_ENV == 'production' && process.env.BUILD !== 'doc'
   ? {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
@@ -87,8 +88,8 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.output = {
       path: path.resolve(__dirname, './dist'),
       filename: 'vonic.min.js',
-      libraryTarget: 'var',
-      library: 'Vonic'
+      library: 'Vonic',
+      libraryTarget: 'umd'
     }
     module.exports.externals = {
       'vue': 'Vue',
@@ -118,7 +119,8 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false,
         drop_console: true,
       }
-    })
+    }),
+    new OptimizeCssPlugin()
   ])
 
   if (process.env.BUILD == 'doc') {

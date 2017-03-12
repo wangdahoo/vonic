@@ -7,7 +7,7 @@ class VonicBackdrop {
     this._vm = undefined
   }
 
-  show() {
+  show(allowTouchMove) {
     if (!document.querySelector('[von-backdrop]')) {
       createElement('von-backdrop')
     }
@@ -16,20 +16,20 @@ class VonicBackdrop {
     this._vm.$mount('[von-backdrop]')
 
     setTimeout(() => {
-      this._vm.show()
+      this._vm.show(allowTouchMove)
     })
 
     return new Promise((resolve) => {
       setTimeout(() => {
-        this._vm.show()
+        this._vm.show(allowTouchMove)
         resolve()
       })
     })
   }
 
-  hide() {
+  hide(allowTouchMove) {
     if (this._vm) {
-      this._vm.hide().then(() => {
+      this._vm.hide(allowTouchMove).then(() => {
         this._vm.$destroy()
       })
     }

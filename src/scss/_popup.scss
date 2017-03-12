@@ -252,11 +252,11 @@
     .popup-title {
       -webkit-font-smoothing: subpixel-antialiased !important;
       font-weight: 300;
-
       font-size: 17px;
       line-height: 17px;
       font-weight: bold;
     }
+
     .popup-sub-title {
       margin-top: 8px;
       font-size: 13px;
@@ -297,34 +297,6 @@
 
 /* iOS 风格 confirm */
 .popup.ios.confirm {
-  width: 280px;
-  height: auto;
-  border-radius: 10px;
-  .popup-head {
-    padding: 20px 0 22px 0;
-    border-bottom: none;
-    position: relative;
-    .popup-title, .popup-sub-title, .button-ok, .button-cancel {
-      font-family: sans-serif;
-      color: #000;
-    }
-
-    .popup-title {
-      -webkit-font-smoothing: subpixel-antialiased !important;
-      font-weight: 300;
-
-      font-size: 17px;
-      line-height: 17px;
-      font-weight: bold;
-    }
-    .popup-sub-title {
-      margin-top: 8px;
-      font-size: 13px;
-      line-height: 13px;
-      -webkit-font-smoothing: antialiased !important;
-      font-weight: normal;
-    }
-  }
 
   .popup-buttons {
     padding: 0;
@@ -364,17 +336,8 @@
       border-bottom-right-radius: 10;
       font-weight: 600;
       font-family: sans-serif;
-
     }
   }
-}
-
-.hairline-top:before {
-  @include hairline(top);
-}
-
-.hairline-right:after {
-  @include hairline(right);
 }
 
 .popup-container .von-popup {
@@ -446,5 +409,11 @@
         }
       }
     }
+  }
+}
+
+.popup-buttons {
+  .button-default {
+    border: 1px solid #e5e5e5;
   }
 }

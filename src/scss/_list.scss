@@ -1,6 +1,4 @@
 .hl-list {
-  padding-top: 1px !important;
-
   &.hl-list-borderless, &.list-ios {
     .hl-item {
       &:first-of-type {
@@ -19,7 +17,6 @@
 }
 
 .hl-item {
-
   &.hl-item-borderless {
     .hairline-top:before,
     .hairline-bottom:after
