@@ -94,3 +94,6 @@ https://github.com/wangdahoo/vonic-webpack-starter
 - [vum](http://getvum.com/)
 - [vux](https://github.com/airyland/vux)
 - [Angular Material](https://material.angularjs.org/)
+
+## LICENSE
+MIT

@@ -15,6 +15,7 @@
     "spa"
   ],
   "author": "wangdahoo <157195705@qq.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host 0.0.0.0 --port 8081",
     "doc": "BUILD=doc node build.js",
