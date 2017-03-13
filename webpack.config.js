@@ -6,6 +6,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin')
 
+function resolve (dir) {
+  return path.join(__dirname, '.', dir)
+}
+
 var scssRule = process.env.NODE_ENV == 'production'
   ? {
       test: /\.scss$/,
@@ -50,10 +54,6 @@ var rules = [
       limit: 10000,
       name: '[name].[ext]'
     }
-  },
-  {
-    test: /vue-scroller.src.*?js$/,
-    loader: 'babel-loader'
   }
 ]
 

@@ -11,14 +11,10 @@
 </template>
 <script>
   import Vue from 'vue'
-  import Scroller from 'vue-scroller'
 
   const transitionDuration = 400
 
   export default {
-    components: {
-      Scroller
-    },
     props: {
       position: {
         type: String,

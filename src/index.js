@@ -1,6 +1,8 @@
 import './scss/vonic.scss'
 
 import Vue from 'vue'
+import VueScroller from 'vue-scroller'
+Vue.use(VueScroller)
 
 // Basic
 import MdButton from './components/md-button'
@@ -54,10 +56,6 @@ Vue.component('accordion', Accordion)
 Vue.component('accordion-item', AccordionItem)
 Vue.component('datepicker', Datepicker)
 
-// Vue Scroller
-import Scroller from 'vue-scroller'
-Vue.component('scroller', Scroller)
-
 // Modal
 import Modal from './services/modal/Modal.vue'
 Vue.component('modal', Modal)
@@ -88,7 +86,6 @@ export default {
   Swiper,
   SwiperItem,
   Scroll,
-  Scroller,
   Cascade,
 
   Accordion,

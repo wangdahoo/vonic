@@ -52,7 +52,6 @@
   </div>
 </template>
 <script>
-  import Scroller from 'vue-scroller'
   import channel from './channel'
 
   const defaultYears = () => {
@@ -116,10 +115,6 @@
   }
 
   export default {
-    components: {
-      Scroller
-    },
-
     data() {
       return {
         state: 0, // 0: hide, 1: show

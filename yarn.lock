@@ -3890,9 +3890,9 @@ vue-router@^2.1.0:
   version "2.1.1"
   resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.1.1.tgz#10c31bbdcb6da92bd3e0223fa12345e73018625a"
 
-vue-scroller@^2.1.2:
-  version "2.1.2"
-  resolved "http://registry.npm.taobao.org/vue-scroller/download/vue-scroller-2.1.2.tgz#272d556c30fefb22dcc60c78f61ab6b94cb6c684"
+vue-scroller@2.2.0-alpha.1:
+  version "2.2.0-alpha.1"
+  resolved "http://registry.npm.taobao.org/vue-scroller/download/vue-scroller-2.2.0-alpha.1.tgz#7f71bd352ad69589f51b71019be927e1049c95c2"
   dependencies:
     vue "^2.1.0"
     vue-router "^2.1.0"
