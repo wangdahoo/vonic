@@ -3,7 +3,7 @@
     'width': w,
     'height': h
   }">
-    <div class="swiper" id="swiper">
+    <div class="swiper">
       <slot></slot>
     </div>
 
@@ -118,6 +118,10 @@
 
       prev() {
         this.swiper.prev()
+      },
+
+      resize() {
+        this.swiper.resize()
       }
     }
   }

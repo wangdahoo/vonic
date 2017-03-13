@@ -58,6 +58,7 @@ const setTitle = (title) => {
 class VonicApp {
   constructor(options) {
     this.routes = options.routes
+    this.store = options.store
   }
 
   start() {
@@ -85,7 +86,7 @@ class VonicApp {
     window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false
     if (!is_ios()) window.__disable_nav_title_transition__ = true
 
-    const app = new Vue({
+    let appOptions = {
       router,
       components: {
         VonApp
@@ -98,7 +99,11 @@ class VonicApp {
       methods: {
         setTitle: setTitle
       }
-    }).$mount('von-app')
+    }
+
+    if (this.store) appOptions.store = this.store
+
+    const app = new Vue(appOptions).$mount('von-app')
 
     window.$app = app
 
