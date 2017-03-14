@@ -28,7 +28,10 @@
     mounted() {
       $modal.fromComponent(DefaultModal, {
         title: '模态窗标题',
-        theme: 'default'
+        theme: 'default',
+        onHide: () => {
+          console.log('modal hide')
+        }
       }).then((modal) => {
         this.modal = modal
       })

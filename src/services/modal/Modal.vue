@@ -43,7 +43,8 @@
     props: {
       title: String,
       theme: String,
-      destroyOnHide: Boolean
+      destroyOnHide: Boolean,
+      onHide: Function
     },
 
     data() {
@@ -71,6 +72,10 @@
       },
 
       hide() {
+        if (this.onHide) {
+          this.onHide()
+        }
+
         this.state = 3
         setTimeout(() => {
           this.state = 0
