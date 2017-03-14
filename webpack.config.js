@@ -82,7 +82,6 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-
   if (process.env.BUILD == 'publish') {
     module.exports.entry = './src/index.js'
     module.exports.output = {
@@ -114,6 +113,8 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
+    new ExtractTextPlugin(process.env.BUILD == 'publish' ? 'vonic.min.css' : 'app.css'),
+    new OptimizeCssPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
@@ -145,9 +146,7 @@ if (process.env.NODE_ENV === 'production') {
         filename: 'index.html',
         template: 'index.tpl.html',
         inject: true
-      }),
-      new ExtractTextPlugin('app.css'),
-      new OptimizeCssPlugin()
+      })
     ])
   }
 
@@ -156,9 +155,6 @@ if (process.env.NODE_ENV === 'production') {
     var banner = 'Vonic \nversion: ' + pkg.version + ' \nrepo: https://github.com/wangdahoo/vonic \nbuild: ' + moment().format('YYYY-MM-DD HH:mm:ss')
 
     module.exports.plugins = module.exports.plugins.concat([
-      new ExtractTextPlugin('vonic.css'),
-      new OptimizeCssPlugin(),
-
       new webpack.BannerPlugin({
         banner: banner,
         entryOnly: true
