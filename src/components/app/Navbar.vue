@@ -18,16 +18,10 @@
     data() {
       return {
         visible: false,
-        enableTransition: true,
+        enableTransition: false,
         headers: []
       }
     },
-
-    // watch: {
-    //   headers: (newVal) => {
-    //     console.log('headers count => ', newVal.length)
-    //   }
-    // },
 
     mounted() {
       channel.$on('EnableNavbarTransition', () => {
@@ -46,6 +40,10 @@
         }
         this.createHeader(data)
       })
+
+      setTimeout(() => {
+        this.enableTransition = true
+      }, 500)
     },
 
     methods: {
