@@ -9,7 +9,7 @@
         'ng-leave ng-leave-active': state == 3,
       }">
         <slot name="header">
-          <div class="bar bar-header"
+          <div v-if="title" class="bar bar-header"
             :class="{
               'bar-assertive': theme == 'assertive',
               'bar-positive': theme == 'positive',
