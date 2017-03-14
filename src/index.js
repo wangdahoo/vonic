@@ -62,7 +62,7 @@ Vue.component('modal', Modal)
 
 import Plugin from './plugin'
 
-export default {
+let Vonic = {
   // Basic
   MdButton,
   VonInput,
@@ -95,3 +95,9 @@ export default {
 
   app: Plugin
 }
+
+if (typeof window !== undefined && window.Vue) {
+  window.Vonic = Vonic
+}
+
+export default Vonic
