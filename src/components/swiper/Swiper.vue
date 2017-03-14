@@ -7,7 +7,7 @@
       <slot></slot>
     </div>
 
-    <pagination v-if="direction == 'horizontal'"
+    <pagination v-if="direction == 'horizontal' && hidePager == 'false'"
       :size="itemCount"
       :pager-color="pagerColor"
       :pager-bg-color="pagerBgColor"
@@ -57,7 +57,15 @@
       pagerBgColor: {
         type: String,
         default: '#333'
-      }
+      },
+      hidePager: {
+        type: String,
+        default: 'false',
+        validator: (v) => {
+          return v === 'true' || v === 'false'
+        }
+      },
+      callback: Function
     },
 
     computed: {
@@ -87,6 +95,11 @@
             this.activeIndex = current
             if (this.$refs.pagination) {
               this.$refs.pagination.activate(current)
+            }
+
+            // add callback
+            if (this.callback) {
+              this.callback(prev, current)
             }
           }
         })

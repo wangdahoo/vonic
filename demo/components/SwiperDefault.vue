@@ -1,7 +1,7 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '水平 (默认)', showBackButton: true}">
     <div class="page-content">
-      <swiper ref="swiper" direction="horizontal" width="100%" height="150" pager-color="#ea5a49" pager-bg-color="#e5e4e3">
+      <swiper ref="swiper" direction="horizontal" width="100%" height="150" pager-color="#ea5a49" pager-bg-color="#e5e4e3" :callback="callback">
         <swiper-item>
           <h1 @click="onClick()">Item 1</h1>
         </swiper-item>
@@ -76,6 +76,10 @@
 
       prev() {
         this.$refs.swiper.prev()
+      },
+
+      callback(prev, current) {
+        console.log(prev, current)
       }
     }
   }
