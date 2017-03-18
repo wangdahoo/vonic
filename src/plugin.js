@@ -175,7 +175,8 @@ export default {
   pageContentScrollTop(scrollTop) {
     const root = document.querySelector('[von-app]')
     if (typeof scrollTop == 'number') {
-      const content = root && root.querySelectorAll('.page .page-content')[1]
+      const pages = root && root.querySelectorAll('.page .page-content')
+      const content = pages[pages.length - 1]
       if (content) {
         content.scrollTop = scrollTop
       }
