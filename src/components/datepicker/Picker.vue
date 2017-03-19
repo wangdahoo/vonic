@@ -129,14 +129,14 @@
         // scroller settings
         snapping: true,
         snapHeight: 34,
-        animationDuration: 150
+        animationDuration: 1
       }
     },
 
     mounted() {
       this.timer = setInterval(() => {
         this.updateYmd()
-      }, 10)
+      }, 50)
 
       channel.$on('PickerCancelEvent', () => {
         this.hide()
@@ -199,8 +199,21 @@
         setOpacity(this.$refs.m_scroller.$el, mIndex)
         setOpacity(this.$refs.d_scroller.$el, dIndex)
 
+        let yyyy = this.years[yIndex]
+        let mm = this.months[mIndex]
+        let dd = this.dates[dIndex]
+        let newDates = defaultDates(yyyy, mm)
+
+        if (newDates.length !== this.dates.length) {
+          this.dates = newDates
+          setTimeout(this.$refs.d_scroller.resize, 0)
+        }
+
+        if (this.dates.indexOf(dd) === -1) {
+          dIndex = this.dates.length - 4
+        }
+
         this.value = this.years[yIndex] + '-' + this.months[mIndex] + '-' + this.dates[dIndex]
-        // console.log(this.value)
       },
 
       setYmd() {
