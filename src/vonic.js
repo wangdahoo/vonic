@@ -4,6 +4,9 @@ import Vue from 'vue'
 import VueScroller from 'vue-scroller'
 Vue.use(VueScroller)
 
+import VSwipe from 'vswipe'
+Vue.use(VSwipe)
+
 // Basic
 import MdButton from './components/md-button'
 import VonInput from './components/input/Input.vue'

@@ -98,6 +98,10 @@
           Swiper <span class="item-note">轮播</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
+        <item class="item-icon-right" @click.native="$router.forward('/advanced/vswipe')">
+          VSwipe <span class="item-note">v1.0.0</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
         <item class="item-icon-right" @click.native="$router.forward('/advanced/scroll')">
           Scroll <span class="item-note">下拉刷新、无限加载</span>
           <i class="icon ion-ios-arrow-right"></i>

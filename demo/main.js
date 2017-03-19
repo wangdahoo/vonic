@@ -30,6 +30,7 @@ import Scalable from './components/Scalable'
 import Swiper from './components/Swiper'
 import SwiperDefault from './components/SwiperDefault'
 import SwiperVertical from './components/SwiperVertical'
+import VSwipe from './components/VSwipe'
 import Scroll from './components/Scroll'
 import VueScroller from './components/VueScroller'
 import Cascade from './components/Cascade'
@@ -76,6 +77,7 @@ const routes = [
   { path: '/advanced/swiper', component: Swiper },
   { path: '/advanced/swiper/default', component: SwiperDefault },
   { path: '/advanced/swiper/vertical', component: SwiperVertical },
+  { path: '/advanced/vswipe', component: VSwipe },
   { path: '/advanced/scroll', component: Scroll },
   { path: '/advanced/scroller', component: VueScroller },
   { path: '/advanced/cascade', component: Cascade },
