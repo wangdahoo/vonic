@@ -44,6 +44,8 @@
 
   let lock = false
 
+  const is_ios = /iPad|iPhone|iPod/.test(navigator.userAgent)
+
   export default {
     components: {
       HairlineTop,
@@ -120,11 +122,11 @@
       },
 
       focus($event) {
-        this.showClearButton = !!this.$refs.input.value
+        if (is_ios) this.showClearButton = !!this.$refs.input.value
       },
 
       blur($event) {
-        this.showClearButton = false
+        if (is_ios) this.showClearButton = false
       }
     },
 

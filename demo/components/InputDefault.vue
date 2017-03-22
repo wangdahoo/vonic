@@ -7,7 +7,7 @@
       <div class="item item-divider">
         有标签: {{username}}
       </div>
-      <von-input type="text" v-model="username" placeholder="用户名/手机/邮箱" label="用户名"></von-input>
+      <von-input type="text" v-model="username" placeholder="用户名" label="用户名"></von-input>
       <von-input type="password" v-model="password" placeholder="密码" label="密码" style="margin-bottom: 5px;"></von-input>
 
       <div class="padding">
@@ -15,9 +15,9 @@
       </div>
 
       <div class="item item-divider">
-        无标签:
+        无标签: {{tel}}
       </div>
-      <von-input type="text" v-model="username" placeholder="用户名/手机/邮箱"></von-input>
+      <von-input type="tel" v-model="tel" placeholder="手机"></von-input>
 
     </div>
   </div>
@@ -27,7 +27,8 @@
     data() {
       return {
         username: '',
-        password: ''
+        password: '',
+        tel: ''
       }
     }
   }
