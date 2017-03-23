@@ -3869,7 +3869,7 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vswipe@^1.0.0:
+vswipe@1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/vswipe/download/vswipe-1.0.0.tgz#fcd084d1664c5006ba063d63044e1b9aad6fd922"
   dependencies:
@@ -3900,9 +3900,9 @@ vue-router@^2.1.0:
   version "2.1.1"
   resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.1.1.tgz#10c31bbdcb6da92bd3e0223fa12345e73018625a"
 
-vue-scroller@2.2.0-alpha.2:
-  version "2.2.0-alpha.2"
-  resolved "http://registry.npm.taobao.org/vue-scroller/download/vue-scroller-2.2.0-alpha.2.tgz#20415871b500d5a7528a1e34154a5a0ffb3fb30c"
+vue-scroller@2.2.0-alpha.3:
+  version "2.2.0-alpha.3"
+  resolved "http://registry.npm.taobao.org/vue-scroller/download/vue-scroller-2.2.0-alpha.3.tgz#a1fa27b982cef182d2eac00d3aade7c659ce57f5"
   dependencies:
     vue "^2.1.0"
     vue-router "^2.1.0"
