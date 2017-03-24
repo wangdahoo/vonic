@@ -3,7 +3,7 @@
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
-      <item v-for="(item, index) in items" @click.native="onItemClick(index)" :class="{'item-stable': index % 2 == 0}">
+      <item v-for="(item, index) in items" :key="index" @click.native="onItemClick(index)" :class="{'item-stable': index % 2 == 0}">
         {{ item }}
       </item>
 

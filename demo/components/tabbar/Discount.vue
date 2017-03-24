@@ -6,7 +6,7 @@
 
     <div class="page-content padding-top">
       <p class="text-center">Discount</p>
-      <item v-for="(item, index) in items">
+      <item v-for="(item, index) in items" :key="index">
         discount item
       </item>
     </div>

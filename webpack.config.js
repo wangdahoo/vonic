@@ -88,7 +88,8 @@ if (process.env.NODE_ENV === 'production') {
       path: path.resolve(__dirname, './dist'),
       filename: 'vonic.min.js',
       library: 'Vonic',
-      libraryTarget: 'umd'
+      libraryTarget: 'umd',
+      umdNamedDefine: true
     }
     module.exports.externals = {
       'vue': 'Vue',
