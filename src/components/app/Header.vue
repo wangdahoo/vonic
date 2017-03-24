@@ -28,6 +28,8 @@
   const DEFAULT_BACK_TEXT = '<i class="icon ion-ios-arrow-back"></i>'
   const DEFAULT_MENU_TEXT = '<i class="icon ion-navicon"></i>'
 
+  import { timeout } from './utils'
+
   export default {
     props: {
       title: String,
@@ -124,7 +126,7 @@
           style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + dist + ',0,0)'
         }
 
-        setTimeout(() => {
+        timeout().then(() => {
           style.opacity = 1
           style.webkitTransform =
           style.transform = 'translate3d(0,0,0)'
@@ -140,7 +142,7 @@
             el.addEventListener('transitionEnd', () => {}, false)
             el.addEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd, false)
           }
-        }, 0)
+        })
       },
 
       titleLeave() {
@@ -152,7 +154,7 @@
         style.webkitTransition
         style.transition = 'none'
 
-        setTimeout(() => {
+        timeout().then(() => {
           let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
           let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
           if (direction) {
@@ -166,7 +168,7 @@
 
           el.addEventListener('transitionEnd', () => {}, false)
           el.addEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd, false)
-        }, 0)
+        })
       },
 
       _titleEnterTransitionEnd(e) {
