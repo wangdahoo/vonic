@@ -48,6 +48,8 @@
         }).then(() => {
           console.log('alert hide.')
         })
+
+        setTimeout($dialog.hide, 2000)
       },
 
       showConfirm() {

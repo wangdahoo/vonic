@@ -16,14 +16,14 @@ let frozon = false
 export const _body = {
   freeze: () => {
     if (frozon) return
-    console.log('freeze body')
+    // console.log('freeze body')
     document.body.addEventListener('touchstart', preventDefault)
     document.body.addEventListener('touchend', preventDefault)
     frozon = true
   },
   unfreeze: () => {
     if (!frozon) return
-    console.log('unfreeze body')
+    // console.log('unfreeze body')
     document.body.removeEventListener('touchstart', preventDefault)
     document.body.removeEventListener('touchend', preventDefault)
     frozon = false
