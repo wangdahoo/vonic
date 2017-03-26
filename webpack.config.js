@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 var pkg = require('./package.json')
 var moment = require('moment')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
