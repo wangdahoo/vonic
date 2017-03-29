@@ -3915,9 +3915,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vswipe@1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/vswipe/download/vswipe-1.0.0.tgz#fcd084d1664c5006ba063d63044e1b9aad6fd922"
+vswipe@1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/vswipe/download/vswipe-1.0.1.tgz#9157ae8d7afac265f44625910934738b62485712"
   dependencies:
     swipe-js-iso "^2.0.3"
 
