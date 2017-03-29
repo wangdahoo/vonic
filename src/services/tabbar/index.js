@@ -3,7 +3,15 @@ import Vue from 'vue'
 import Tabbar from './Tabbar'
 import channel from './channel'
 
-import {createElement} from '../utils'
+const createElement = (marker, tag) => {
+  let el = document.createElement(tag || 'div')
+  el.setAttribute(marker, '')
+
+  let vonModalClickBlock = document.querySelector('[von-modal-click-block]')
+  vonModalClickBlock
+    ? document.body.insertBefore(el, vonModalClickBlock)
+    : document.body.appendChild(el)
+}
 
 let _vm = undefined;
 
