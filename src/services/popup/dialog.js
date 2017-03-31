@@ -6,12 +6,10 @@ import AlertIOS from './AlertIOS'
 import Confirm from './Confirm'
 import ConfirmIOS from './ConfirmIOS'
 
-let vm = undefined
+let vm
 
 class Dialog {
   show(type, options) {
-    if (vm) return
-
     let rnd = Math.random().toString(36).substring(3, 6)
     let marker = `von-${type}-${rnd}`
     createElement(marker)
