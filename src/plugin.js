@@ -16,7 +16,8 @@ import './services/tabbar/index.js'
 import './services/sidebar/index.js'
 import './services/modal/index.js'
 
-import './services/storage/index.js'
+import Storage from 'storage-js-iso'
+window.$storage = Storage
 
 import VonApp from './components/app'
 
