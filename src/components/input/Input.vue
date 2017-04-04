@@ -123,10 +123,12 @@
 
       focus($event) {
         if (is_ios) this.showClearButton = !!this.$refs.input.value
+        this.$emit('on-focus');
       },
 
       blur($event) {
         if (is_ios) this.showClearButton = false
+        this.$emit('on-blur');
       }
     },
 
