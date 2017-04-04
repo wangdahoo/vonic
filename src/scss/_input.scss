@@ -36,9 +36,9 @@
     background-repeat: no-repeat;
     background-position: 5px 5px;
 
-    visibility: hidden;
+    opacity: 0;
     &.active {
-      visibility: visible;
+      opacity: 1;
     }
   }
 
