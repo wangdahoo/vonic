@@ -1,11 +1,10 @@
 <template>
   <div class="list list-ios von-checkbox">
-    <label class="item item-borderless item-icon-right"
-           v-for="(option, i) in options">
+    <div class="item item-borderless item-icon-right"
+           v-for="(option, i) in options" @click="onClick(i)">
       <hairline-top v-if="i > 0"></hairline-top>
 
-      <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i"
-        v-model="v" :value="i" @click="onClick(i)">
+      <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i" v-model="v" :value="i">
       <span v-text="option"></span>
       <i
         :class="{
@@ -21,7 +20,7 @@
       </i>
 
       <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
-    </label>
+    </div>
   </div>
 </template>
 <script>
