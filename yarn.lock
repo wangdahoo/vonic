@@ -3946,16 +3946,15 @@ vue-loader@^11.0.0:
     vue-style-loader "^2.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-router@^2.1.0, vue-router@^2.3.0:
+vue-router@^2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.3.0.tgz#a25c8359e8ca989d22ce79f64322eb0ad0c8670f"
 
-vue-scroller@2.2.0-alpha.3:
-  version "2.2.0-alpha.3"
-  resolved "http://registry.npm.taobao.org/vue-scroller/download/vue-scroller-2.2.0-alpha.3.tgz#a1fa27b982cef182d2eac00d3aade7c659ce57f5"
+vue-scroller@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/vue-scroller/-/vue-scroller-2.2.0.tgz#4bf70ae14a25b543e779ab20c9daed6ffc549753"
   dependencies:
-    vue "^2.1.0"
-    vue-router "^2.1.0"
+    vue "^2.2.6"
 
 vue-style-loader@^2.0.0:
   version "2.0.4"
@@ -3964,9 +3963,9 @@ vue-style-loader@^2.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.2.5:
-  version "2.2.5"
-  resolved "http://registry.npm.taobao.org/vue-template-compiler/download/vue-template-compiler-2.2.5.tgz#71b1366c3f716e8137a87f82591de9f816609b57"
+vue-template-compiler@^2.2.6:
+  version "2.2.6"
+  resolved "http://registry.npm.taobao.org/vue-template-compiler/download/vue-template-compiler-2.2.6.tgz#2e2928daf0cd0feca9dfc35a9729adeae173ec68"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -3975,9 +3974,9 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.5.0"
   resolved "http://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.5.0.tgz#e4f672ab1718a3abf9171a080daefac31be117e1"
 
-vue@^2.1.0, vue@^2.2.5:
-  version "2.2.5"
-  resolved "http://registry.npm.taobao.org/vue/download/vue-2.2.5.tgz#528eba68447d7eff99f86767b31176aa656c6963"
+vue@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.npmjs.org/vue/-/vue-2.2.6.tgz#451714b394dd6d4eae7b773c40c2034a59621aed"
 
 watchpack@^1.2.0:
   version "1.2.0"
