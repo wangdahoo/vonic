@@ -75,4 +75,4 @@ channel.$on('updateTabbarBadge', (menuIndex, num) => {
   }
 })
 
-window.$tabbar = window.$tabbarEmmiter = channel
+export default window.$tabbarEmmiter = channel

@@ -61,4 +61,4 @@ class VonicSidebar {
   }
 }
 
-window.$sidebar = new VonicSidebar()
+export default new VonicSidebar()

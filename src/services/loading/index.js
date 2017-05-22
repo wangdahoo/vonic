@@ -63,12 +63,12 @@ function VonicLoading() {
 
 let loading = new VonicLoading()
 
-window.$loading = {
+export const $loading = {
   show: loading.showLoading,
   hide: loading.hide
 }
 
-window.$toast = {
+export const $toast = {
   show: loading.showToast,
   hide: loading.hide
 }

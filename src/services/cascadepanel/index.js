@@ -20,4 +20,4 @@ class CascadePanelService {
   }
 }
 
-window.$cascadePanel = new CascadePanelService()
+export default new CascadePanelService()

@@ -1,7 +1,8 @@
 import Vue from 'vue'
-import Vonic from 'vonic'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+import Vonic from 'vonic'
+Vue.use(Vonic)
 
 import Index from './components/Index'
 import Home from './components/Home'

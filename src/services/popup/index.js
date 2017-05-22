@@ -82,4 +82,4 @@ class VonicPopup {
   }
 }
 
-window.$popup = new VonicPopup()
+export default new VonicPopup()

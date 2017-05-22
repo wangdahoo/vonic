@@ -1,25 +1,8 @@
-import Promise from 'es6-promise'
-Promise.polyfill()
 import assign from 'object-assign'
+import VonApp from './app'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import FastClick from 'fastclick'
 Vue.use(VueRouter)
-
-import './services/backdrop'
-import './services/loading'
-import './services/popup/dialog.js'
-import './services/popup/index.js'
-import './services/cascadepanel/index.js'
-import './services/actionsheet/index.js'
-import './services/tabbar/index.js'
-import './services/sidebar/index.js'
-import './services/modal/index.js'
-
-import Storage from 'storage-js-iso'
-window.$storage = Storage
-
-import VonApp from './components/app'
 
 const is_ios = () => {
  return /iPad|iPhone|iPod/.test(navigator.userAgent)
@@ -132,28 +115,6 @@ export default {
   install(Vue, options) {
     let app = new VonicApp(options)
     app.start()
-
-    /* 类似的这种兼容性代码, 暂时放在这个位置 */
-    /* for iOS 10, users can now pinch-to-zoom even when a website sets user-scalable=no in the viewport. */
-    document.documentElement.addEventListener('touchstart', (e) => {
-      if (e.touches.length > 1) {
-        e.preventDefault()
-      }
-    }, false)
-
-    /* iOS Safari - Disable double click to zoom */
-    if (is_ios()) {
-      let lastTouchEnd = 0;
-      document.documentElement.addEventListener('touchend', (e) => {
-        let now = (new Date()).getTime()
-        if (now - lastTouchEnd < 300) {
-          e.preventDefault()
-        }
-        lastTouchEnd = now
-      }, false)
-    }
-
-    FastClick.attach(document.body)
   },
 
   setConfig(name, value) {

@@ -28,4 +28,4 @@ class VonicActionSheet {
   }
 }
 
-window.$actionSheet = new VonicActionSheet()
+export default new VonicActionSheet()

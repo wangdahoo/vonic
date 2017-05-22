@@ -40,4 +40,4 @@ class VonicBackdrop {
   }
 }
 
-window.$backdrop = new VonicBackdrop()
+export default new VonicBackdrop()
