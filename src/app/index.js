@@ -1,5 +1,4 @@
 import assign from 'object-assign'
-import VueRouter from 'vue-router'
 import VonApp from './components/app'
 import state from './state'
 import {is_ios} from './utils'
@@ -57,6 +56,10 @@ export default {
 
     Vue.prototype.$app = window.$app = app
     window.$router = router
+
+    return store
+      ? {app, router, store}
+      : {app, router}
   },
 
   nextDirection: nextDirection,
