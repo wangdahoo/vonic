@@ -20,16 +20,16 @@
   </div>
 </template>
 <script>
-  import channel from './channel'
+  import state from '../state'
 
-  const TITLE_TRANSITION = () => (document.body.classList.contains('grade-a') && !window.__disable_nav_title_transition__) ?
+  const TITLE_TRANSITION = () => (document.body.classList.contains('grade-a') && !state.__disable_nav_title_transition__) ?
     // '500ms cubic-bezier(.36, .66, .04, 1)' : '0ms'
     '500ms cubic-bezier(.15, .1, .02, 1)' : '0ms'
 
   const DEFAULT_BACK_TEXT = '<i class="icon ion-ios-arrow-back"></i>'
   const DEFAULT_MENU_TEXT = '<i class="icon ion-navicon"></i>'
 
-  import { timeout, _body, page_in_transition } from './utils'
+  import { timeout, _body, page_in_transition } from '../utils'
 
   export default {
     props: {
@@ -84,7 +84,7 @@
           return
         }
 
-        if (window.__push_method__ === 'push') {
+        if (state.__push_method__ === 'push') {
           let root = document.querySelector('[von-app]')
           if (root) root.setAttribute('transition-direction', 'back');
           history.go(-1)
@@ -98,7 +98,7 @@
       },
 
       cache() {
-        if (window.__disable_nav_title_transition__) {
+        if (state.__disable_nav_title_transition__) {
           this.$destroy()
           return
         }
@@ -145,7 +145,6 @@
           }
         })
 
-        // freeze body
         _body.freeze()
         let unfreezeTimer = setInterval(() => {
           if (!page_in_transition()) {

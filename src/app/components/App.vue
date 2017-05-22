@@ -8,8 +8,9 @@
 </template>
 <script>
   import Vue from 'vue'
-  import channel from './channel'
+  import channel from '../channel'
   import Navbar from './Navbar'
+  import state from '../state'
 
   Vue.directive('nav', {
     inserted: function (el, binding) {
@@ -37,19 +38,15 @@
         this.gradeClass = 'grade-b'
       }
 
-      if (window.__page_transition__ == 'ios') {
+      if (state.__page_transition__ == 'ios') {
         this.gradeClass = 'grade-a'
-        window.__disable_nav_title_transition__ = false
-      } else if (window.__page_transition__ == 'android') {
+        state.__disable_nav_title_transition__ = false
+      } else if (state.__page_transition__ == 'android') {
         this.gradeClass = 'grade-b'
-        window.__disable_nav_title_transition__ = true
+        state.__disable_nav_title_transition__ = true
       }
 
       document.querySelector('body').className = this.gradeClass
-
-      channel.$on('VonicNotification', (data) => {
-        $toast.show(data.message);
-      })
     },
 
     methods: {

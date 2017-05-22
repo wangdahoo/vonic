@@ -179,13 +179,16 @@ const afterEach = (toRoute, fromRoute) => {
   }
 }
 
-// Register beforeEach and afterEach Hooks
-Vonic.app.setConfig('beforeEach', beforeEach)
-Vonic.app.setConfig('afterEach', afterEach)
+const router = new VueRouter({
+  routes: routes
+})
 
-// Vonic.app.setConfig('pushMethod', 'replace')
-// Vonic.app.setConfig('pageTransition', 'ios')
+// register global guards
+router.beforeEach(beforeEach)
+router.afterEach(afterEach)
 
 Vue.use(Vonic.app, {
-  routes: routes
+  router,
+  pushMehod: 'push', // push, replace
+  pageTransition: 'ios'
 })
