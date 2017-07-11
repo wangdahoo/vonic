@@ -7,7 +7,7 @@
 <script>
   import assign from 'object-assign'
   import Vue from 'vue'
-  import Header from './header'
+  import Header from './Header'
   import channel from '../channel'
   import { timeout, is_ios } from '../utils'
 

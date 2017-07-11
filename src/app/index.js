@@ -1,5 +1,5 @@
 import assign from 'object-assign'
-import VonApp from './components/app'
+import VonApp from './components/App'
 import state from './state'
 import {is_ios} from './utils'
 
