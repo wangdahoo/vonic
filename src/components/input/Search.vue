@@ -49,7 +49,10 @@
       },
 
       cancel() {
-        if (this.onCancel) this.onCancel()
+        if (this.onCancel) {
+          this.$refs.input.value = ''
+          this.onCancel()
+        }
       },
 
       updateValue(value) {
