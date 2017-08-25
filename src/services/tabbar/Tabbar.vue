@@ -106,7 +106,7 @@
       },
 
       setBadgeNum(menuIndex, num) {
-        this.menus[menuIndex].bage = num
+        this.menus[menuIndex].badge = num
       }
     },
   }
