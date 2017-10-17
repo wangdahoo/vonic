@@ -5,7 +5,7 @@
       <hairline-top v-if="i > 0"></hairline-top>
 
       <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i" v-model="v" :value="i">
-      <span v-text="option"></span>
+      <span v-html="option"></span>
       <i
         :class="{
           'icon ion-ios-checkmark-empty assertive': v.indexOf(i) > -1 && theme == 'assertive',

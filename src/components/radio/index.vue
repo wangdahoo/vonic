@@ -19,7 +19,7 @@
         }"
       >
       </i>
-      <span v-text="option"></span>
+      <span v-html="option"></span>
 
       <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
     </div>

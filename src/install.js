@@ -82,7 +82,8 @@ export default function install (Vue, options) {
   Vue.component('button-bar', ButtonBar)
   Vue.component('scalable', Scalable)
 
-  // Advanced ComponentsVue.component('swiper', Swiper)
+  // Advanced Components
+  Vue.component('swiper', Swiper)
   Vue.component('swiper-item', SwiperItem)
   Vue.component('scroll', Scroll)
   Vue.component('cascade', Cascade)
