@@ -6,6 +6,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/version-%202.0.0%20beta.15%20-green.svg">
   <img src="https://img.shields.io/badge/vue-%202.1.10%20-green.svg">
+  <a href="https://cdnjs.com/libraries/vonic"><img src="https://img.shields.io/cdnjs/v/vonic.svg"></a>
 </p>
 
 <p align="center">Mobile UI Components, based on Vue.js and ionic CSS.</p>
