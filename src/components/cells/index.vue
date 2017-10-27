@@ -47,7 +47,6 @@
 
     methods: {
       cellClicked(cellIndex) {
-        // console.log(cellIndex)
         if (this.onCellClick) this.onCellClick(cellIndex)
       }
     }

@@ -106,7 +106,6 @@
 
         let title = f[index]
         let options = this.filter(index)
-        // console.log('show cascade panel =>', title, options)
 
         $cascadePanel
           .show(title, options)

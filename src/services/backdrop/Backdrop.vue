@@ -19,7 +19,6 @@
     },
 
     destroyed() {
-      console.log('[Vonic] Backdrop _vm destroyed.')
       removeElement('[von-backdrop]')
     },
 

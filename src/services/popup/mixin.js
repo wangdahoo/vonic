@@ -11,7 +11,6 @@ const extend = (target, source) => {
 
 export default {
   destroyed() {
-    console.log('[Vonic] dialog destroyed.')
     let parent = this.$el.parentNode
     parent.removeChild(this.$el)
   },
@@ -26,7 +25,6 @@ export default {
 
       this.promise = new Promise((resolve, reject) => {
         this.$on('AlertOkEvent', () => {
-          // console.log('AlertOkEvent');
           this.hide()
           resolve()
         })

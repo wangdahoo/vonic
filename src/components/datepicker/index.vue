@@ -79,7 +79,6 @@
 
         channel.$on('PickerOkEvent', (value) => {
           this.v = value
-          console.log('datetime input =>', this.$refs.datetime)
           this.$refs.datetime.value = value
           this.$emit('input', value)
 

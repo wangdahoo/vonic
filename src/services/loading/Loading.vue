@@ -27,7 +27,6 @@
     },
 
     destroyed() {
-      console.log('[Vonic] Loading _vm destroyed')
       removeElement('von-loading')
     },
 
