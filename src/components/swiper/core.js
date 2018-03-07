@@ -165,7 +165,7 @@ function Swiper(container, swiperOptions) {
     container.removeEventListener('touchmove', events.move)
     container.removeEventListener('touchend', events.end)
     container.removeEventListener('transitionEnd', noop)
-    container.removeEventListener('webkitTransitionEnd', events.transitonEnd)
+    container.removeEventListener('webkitTransitionEnd', events.transitionEnd)
     container.removeEventListener('resize', resize)
   }
 
