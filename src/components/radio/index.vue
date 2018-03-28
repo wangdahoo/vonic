@@ -1,6 +1,6 @@
 <template>
   <div class="list von-radio">
-    <div class="item item-borderless item-icon-left"
+    <label class="item item-borderless item-icon-left"
            v-for="(option, i) in options" @click="onClick(i)"
     >
       <hairline-top v-if="i > 0"></hairline-top>
@@ -23,7 +23,7 @@
       
 
       <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
-    </div>
+    </label>
   </div>
 </template>
 <script>
