@@ -1,20 +1,21 @@
 <template>
   <div class="list list-ios von-checkbox">
-    <div class="item item-borderless item-icon-right"
-           v-for="(option, i) in options" @click="onClick(i)">
+    <div class="item item-borderless item-icon-left" v-for="(option, i) in options">
       <hairline-top v-if="i > 0"></hairline-top>
 
-      <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i" v-model="v" :value="i">
+      <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i"
+        v-model="v" :value="i" @click="onClick(i)" hidden>
       <span v-text="option"></span>
-      <i
+      <i class="icon ion-ios-checkmark"
         :class="{
-          'icon ion-ios-checkmark-empty assertive': v.indexOf(i) > -1 && theme == 'assertive',
-          'icon ion-ios-checkmark-empty positive': v.indexOf(i) > -1 && theme == 'positive',
-          'icon ion-ios-checkmark-empty balanced': v.indexOf(i) > -1 && theme == 'balanced',
-          'icon ion-ios-checkmark-empty energized': v.indexOf(i) > -1 && theme == 'energized',
-          'icon ion-ios-checkmark-empty calm': v.indexOf(i) > -1 && theme == 'calm',
-          'icon ion-ios-checkmark-empty royal': v.indexOf(i) > -1 && theme == 'royal',
-          'icon ion-ios-checkmark-empty dark': v.indexOf(i) > -1 && theme == 'dark'
+          'grey': v.indexOf(i) <= -1,
+          'assertive': v.indexOf(i) > -1 && theme == 'assertive',
+          'positive': v.indexOf(i) > -1 && theme == 'positive',
+          'balanced': v.indexOf(i) > -1 && theme == 'balanced',
+          'energized': v.indexOf(i) > -1 && theme == 'energized',
+          'calm': v.indexOf(i) > -1 && theme == 'calm',
+          'royal': v.indexOf(i) > -1 && theme == 'royal',
+          'dark': v.indexOf(i) > -1 && theme == 'dark'
         }"
       >
       </i>
@@ -51,8 +52,11 @@
     },
 
     computed: {
-      v: function () {
-        return this.value
+      v: {
+        get:function(){
+          return this.value
+        },
+        set:function(){}
       }
     },
 
