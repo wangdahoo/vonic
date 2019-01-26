@@ -45,7 +45,7 @@
         e.preventDefault()
         let search = document.querySelector('#' + this.formId + ' > [type=search]')
         search.blur()
-        if (this.onSearch) this.onSearch()
+        if (this.onSearch) this.onSearch(this.$refs.input.value)
       },
 
       cancel() {
