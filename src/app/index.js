@@ -50,7 +50,7 @@ export default {
     }
 
     // vuex store
-    if (!store) appOptions.store = store
+    if (store) appOptions.store = store
 
     const app = new Vue(appOptions).$mount('von-app')
 
