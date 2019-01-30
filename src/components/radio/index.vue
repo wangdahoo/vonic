@@ -1,28 +1,29 @@
 <template>
   <div class="list von-radio">
-    <div class="item item-borderless item-icon-left"
+    <label class="item item-borderless item-icon-left"
            v-for="(option, i) in options" @click="onClick(i)"
     >
       <hairline-top v-if="i > 0"></hairline-top>
-      <input type="radio" :name="radioId" v-model="v" :value="i">
+      <input type="radio" :name="radioId" v-model="v" :value="i" @click="onClick(i)" hidden>
+      <span v-text="option"></span>
       <i
-        class="icon ion-ios-checkmark"
+        class="icon"
         :class="{
-          'grey': v != i,
-          'assertive': v == i && theme == 'assertive',
-          'positive': v == i && theme == 'positive',
-          'balanced': v == i && theme == 'balanced',
-          'energized': v == i && theme == 'energized',
-          'calm': v == i && theme == 'calm',
-          'royal': v == i && theme == 'royal',
-          'dark': v == i && theme == 'dark'
+          'ion-android-radio-button-off grey': v != i,
+          'ion-android-radio-button-on assertive': v == i && theme == 'assertive',
+          'ion-android-radio-button-on positive': v == i && theme == 'positive',
+          'ion-android-radio-button-on balanced': v == i && theme == 'balanced',
+          'ion-android-radio-button-on energized': v == i && theme == 'energized',
+          'ion-android-radio-button-on calm': v == i && theme == 'calm',
+          'ion-android-radio-button-on royal': v == i && theme == 'royal',
+          'ion-android-radio-button-on dark': v == i && theme == 'dark'
         }"
       >
       </i>
-      <span v-text="option"></span>
+      
 
       <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
-    </div>
+    </label>
   </div>
 </template>
 <script>
@@ -53,8 +54,11 @@
     },
 
     computed: {
-      v: function () {
-        return this.value
+      v: {
+        get:function(){
+          return this.value
+        },
+        set:function(){}
       }
     },
 

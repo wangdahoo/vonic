@@ -1,13 +1,30 @@
 .von-checkbox {
   padding-top: 2px;
 
-  .item-icon-right {
-    .icon {
-      font-size: 36px;
-      right: 5px;
+  .item {
+    padding: 15px 15px 15px 30px;
+    font-size: 14px;
+    line-height: 20px;
+
+    &:first-of-type, &:last-of-type {
+      border: none;
     }
   }
 
+  .item-icon-left {
+    .icon {
+      font-size: 24px;
+      left: -6px;
+
+      &.grey {
+        color: #BBB;
+      }
+    }
+  }
+
+  .ion-ios-circle-outline {
+    color: #ccc;
+  }
   input[type=checkbox] {
     position: absolute;
     top: -50000px;

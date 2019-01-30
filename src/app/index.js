@@ -41,6 +41,7 @@ export default {
 
     const appOptions = {
       router,
+      store,
       components: { VonApp },
       propsData: {
         meta: { // What for?
