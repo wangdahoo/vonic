@@ -54,8 +54,6 @@
         }
       }
 
-      // console.log('accordion item index => ', this.index)
-
       channel.$on('activeIndexChanged', activeIndex => {
         if (activeIndex != this.index)
           this.expanded = false
