@@ -66,7 +66,7 @@ $ npm install vonic@2.0.0-beta.15
 
 ## Getting started
 
-quick start with vue-cli.
+Quick start with vue-cli.
 ```
 $ npm i vue-cli -g
 $ vue init wangdahoo/vonic-template#2.0 my-vonic-app
